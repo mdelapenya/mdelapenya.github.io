@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title:            Site Title
+title:            Thoughts on Software Engineering
 locale:           en_US
-url:              
+url:              https://mdelapenya.github.io
 
 
 # Jekyll configuration
@@ -26,25 +26,25 @@ kramdown:
 
 # Site owner
 owner:
-  name: Your Name
+  name: Manuel de la Peña
   avatar: bio-photo.jpg
-  bio: "Describe your self."
-  email: 
-  disqus-shortname: 
-  twitter: #username
+  bio: "Software Engineer in Liferay, Inc."
+  email: manuel.delapenya@liferay.com
+  disqus-shortname:
+  twitter: mdelapenya
   facebook: #username
   google:
     plus: #username
-    analytics: 
-    verify: 
-    ad-client: 
-    ad-slot: 
-  bing-verify: 
-  github: #username
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: mdelapenya
   stackoverflow: #http://stackoverflow.com/users/123456/username
   linkedin: #username
   xing: #username
-  instagram: #username
+  instagram: mdelapenya
   lastfm: #username
   tumblr: #username
   pinterest: #username
