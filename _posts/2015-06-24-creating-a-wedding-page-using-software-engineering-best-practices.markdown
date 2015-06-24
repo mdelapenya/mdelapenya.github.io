@@ -2,14 +2,16 @@
 layout: post
 title: Creating a Wedding Page Using Software Engineering Best Practices
 modified:
-categories: 
+categories:
 excerpt:
 tags: []
-image: 
-  feature: 
+image:
+  feature:
 date: 2015-06-24T09:16:43+02:00
 comments: true
 ---
+{% include _toc.html %}
+
 Imagine you get married next summer and you decide to have a nice website for the wedding, with some cool pictures and good information for your guests.
 
 Imagine you are software engineer, and you want to create it by yourself.
