@@ -2,6 +2,10 @@
 layout: page
 title: Presentations
 excerpt: "A List of Presentations"
+image:
+  feature: sample-image-6.jpg
+  credit: WeGraphics
+  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
 
 - [Deployments in production with one click](http://www.slideshare.net/ManueldelaPeaPea/deployments-in-one-click) - Software Craftsmanship Toledo (2015.05.28)
