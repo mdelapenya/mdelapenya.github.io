@@ -6,7 +6,9 @@ categories:
 excerpt:
 tags: []
 image:
-  feature:
+  feature: sample-image-4.jpg
+  credit: WeGraphics
+  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 date: 2015-06-24T09:16:43+02:00
 comments: true
 ---
