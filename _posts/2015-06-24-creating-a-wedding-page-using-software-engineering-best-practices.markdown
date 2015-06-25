@@ -52,7 +52,7 @@ https://api.instagram.com/v1/tags/{tag-name}?access_token=ACCESS-TOKEN
 
 Just to make it cooler, I worked on adding the picture of the user who took the picture as an “overlayed” badge on the Instagram picture, so everybody could see who took it (self pride). I also added the number of likes of each picture to create satisfaction on photographers for seeing how many likes got their photo.
 
-## Deplot time
+## Deploy time
 Well, the website/application is almost done. The next thing you have to think about is where to publish it. As I said, I could have used a hosting provider, with Apache+PHP installed by default. But I did not wanted to pay anything for this small project.
 
 Another weird thing of hosting providers I totally hate is the **upload process**.
