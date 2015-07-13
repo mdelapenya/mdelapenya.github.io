@@ -6,7 +6,9 @@ categories: jenkins
 excerpt:
 tags: [jenkins, hardware]
 image:
-  feature:
+  feature: google-datacenter-tech-131.jpg
+  credit: RevistaItNow
+  creditlink: https://revistaitnow.com/wp-content/uploads/2014/07/google-datacenter-tech-131.jpg
 date: 2015-07-08T06:50:43+02:00
 ---
 
