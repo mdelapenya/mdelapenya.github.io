@@ -3,9 +3,9 @@ layout: page
 title: Presentations
 excerpt: "A List of Presentations"
 image:
-  feature: sample-image-6.jpg
-  credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+  feature: presentation-background-blue.jpg
+  credit: PowerPointBackground
+  creditlink: http://www.powerpointbackground.net/wp-content/uploads/2015/03/blue-background-bokeh-presentation-background.jpg
 ---
 
 <ul>
