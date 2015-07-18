@@ -6,9 +6,9 @@ categories:
 excerpt:
 tags: []
 image:
-  feature: sample-image-4.jpg
-  credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+  feature: church.jpg
+  credit: Santos Mártires Talavera
+  creditlink: http://santosmartirestalavera.blogspot.com.es/p/la-parroquia-historia.html
 date: 2015-06-24T09:16:43+02:00
 comments: true
 ---
