@@ -13,7 +13,7 @@ image:
 date: 2015-06-24T09:16:43+02:00
 comments: true
 ---
-{% include _toc.html %}
+{% include _toc_.html %}
 
 Imagine you get married next summer and you decide to have a nice website for the wedding, with some cool pictures and good information for your guests.
 
