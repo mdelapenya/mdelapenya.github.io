@@ -5,7 +5,7 @@ modified:
 categories:
 comments: true
 excerpt:
-tags: []
+tags: [software engineering, heroku, git, instagram]
 image:
   feature: church.jpg
   credit: Santos Mártires Talavera
