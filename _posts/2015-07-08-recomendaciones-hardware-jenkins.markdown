@@ -3,6 +3,7 @@ layout: post
 title: Recomendaciones hardware para Jenkins
 modified:
 categories: jenkins
+comments: true
 excerpt:
 tags: [jenkins, hardware]
 image:

@@ -3,6 +3,7 @@ layout: post
 title: Creating a Wedding Page Using Software Engineering Best Practices
 modified:
 categories:
+comments: true
 excerpt:
 tags: []
 image:
