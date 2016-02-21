@@ -44,6 +44,7 @@ El diagrama conceptual categoriza las tecnologías de componentes Java en nivele
 
 **Java Language**
 **Tools & Tool APIs**
+{% highlight text %}
 java
 javac
 javadoc
@@ -64,10 +65,14 @@ Troubleshoot
 Scripting
 Web Services
 RMI
+{% endhighlight %}
 **Deployment**
+{% highlight text %}
 Java Web Start
 Applet / Java Plug-in
+{% endhighlight %}
 **User Interface Toolkits**
+{% highlight text %}
 JavaFX
 AWT
 Swing
@@ -78,14 +83,18 @@ Input Methods
 Image I/O
 Print Service
 Sound
+{% endhighlight %}
 **Integration Libraries**
+{% highlight text %}
 IDL
 JDBC
 JNDI
 RMI
 RMI-IIOP
 Scripting
+{% endhighlight %}
 **Other Base Libraries**
+{% highlight text %}
 Beans
 Int'l Support
 Input/Output
@@ -98,7 +107,9 @@ Security
 Serialization
 Extension Mechanism
 XML JAXP
+{% endhighlight %}
 **lang and util Base Libraries**
+{% highlight text %}
 lang and util
 Collections
 Concurrency Utilities
@@ -112,25 +123,36 @@ Regular Expressions
 Versioning
 Zip
 Instrumentation
+{% endhighlight %}
 **Java Virtual Machine**
+{% highlight text %}
 Java HotSpot VM
+{% endhighlight %}
 
 La JDK consiste en todos los niveles anteriores.
 
 El JRE consiste en los siguientes niveles:
 
 **Deployment**
+
 **User Interface Toolkits**
+
 **Integration Libraries**
+
 **Other Base Libraries**
+
 **lang and util Base Libraries**
+
 **Java Virtual Machine**
 
 El API de Java SE consiste en los siguientes niveles:
 
 **User Interface Toolkits except JavaFX**
+
 **Integration Libraries**
+
 **Other Base Libraries**
+
 **lang and util Base Libraries**
 
 Veamos a continuación los diferentes elementos de la Plataforma para tener una visión de conjunto de la misma.
