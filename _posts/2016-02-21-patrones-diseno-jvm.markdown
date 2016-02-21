@@ -13,6 +13,8 @@ image:
 date: 2016-02-21T13:50:43+02:00
 ---
 
+*  Auto generated table of contents
+{:toc}
 
 # Introducción
 
