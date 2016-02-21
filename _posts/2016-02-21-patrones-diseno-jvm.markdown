@@ -13,7 +13,6 @@ image:
 date: 2016-02-21T13:50:43+02:00
 ---
 
-{% include _toc_.html%}
 
 # Introducción
 
