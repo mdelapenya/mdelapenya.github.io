@@ -7,9 +7,9 @@ comments: true
 excerpt:
 tags: [design patterns, jdk, jvm, patterns, software patterns]
 image:
-  feature: google-datacenter-tech-131.jpg
-  credit: RevistaItNow
-  creditlink: https://revistaitnow.com/wp-content/uploads/2014/07/google-datacenter-tech-131.jpg
+  feature: patterns.jpg
+  credit: Matt Lockyer
+  creditlink: http://mattlockyer.github.io/iat167/img/uml/patterns.jpg
 date: 2016-02-21T13:50:43+02:00
 ---
 
