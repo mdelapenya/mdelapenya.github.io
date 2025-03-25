@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/mdelapenya
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://mdelapenya.xyz
+  * I am mdelapenya (https://keybase.io/mdelapenya) on keybase.
+  * I have a public key ASBUWBai8-UJjHSfNPN006lhslgzvFLIItoNnnrSoZmF2Ao
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012088de6ad90b475eb81beca9865d872852d8eadce0b16fe84f01c8dd393b952a300a",
+      "host": "keybase.io",
+      "kid": "0120545816a2f3e5098c749f34f374d3a961b25833bc52c822da0d9e7ad2a19985d80a",
+      "uid": "063e482bb0196da3ed377feb359fbe19",
+      "username": "mdelapenya"
+    },
+    "merkle_root": {
+      "ctime": 1640792219,
+      "hash": "246dbface60a0014169265c3f8e1b131f817f3c8cc358943f606d220cadeecea8c4a34de96e105b67e6cdae1a48cd89e3c084ef86bd2c922815788af4e9cf0d7",
+      "hash_meta": "83225d7a1007ad1d29b67cd2458509278b3af6f0265e1b2020e3542570984e74",
+      "seqno": 21526452
+    },
+    "service": {
+      "entropy": "9D2ZkZyZZeBQXhH/pRsdZ4U9",
+      "hostname": "mdelapenya.xyz",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.9.0"
+  },
+  "ctime": 1640792230,
+  "expire_in": 504576000,
+  "prev": "c82bf50316a83439d5d694893e47595063d05f9acdf6bb0a42cd26b227ed7759",
+  "seqno": 17,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgVFgWovPlCYx0nzTzdNOpYbJYM7xSyCLaDZ560qGZhdgKp3BheWxvYWTESpcCEcQgyCv1AxaoNDnV1pSJPkdZUGPQX5rN9rsKQs0msiftd1nEIPXlQPxsSmSq8KsLgBJxcYN2WrU/B24hBykSX9XASUvaAgHCo3NpZ8RAGFLQKbNqKJTs8z2xOLmSWid2JQEIetuVEES0r7ydv4h/HRyFMCwnfrLuC2+kedzQztGNwEHz2id+mr4hs8YlDahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJNXxmE+Rgi9doptsjBz+TVEQKv3+o2QnKb9sVYIsqhWo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mdelapenya
+
+==================================================================
