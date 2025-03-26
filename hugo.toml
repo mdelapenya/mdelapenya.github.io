@@ -8,6 +8,10 @@ pygmentsStyle = "monokai"
 theme = "gokarna"
 title = "Manuel de la Peña"
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [params]
   avatarAltText = "avatar"
   avatarSize = "size-m"
