@@ -60,3 +60,16 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+/* Add responsive breakpoints */
+@media screen and (max-width: 768px) {
+    .image-gallery li {
+        width: 32%; /* 3 columns for tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image-gallery li {
+        width: 48%; /* 2 columns for phones */
+    }
+}
