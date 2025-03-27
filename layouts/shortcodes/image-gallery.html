@@ -2,18 +2,29 @@
 {{ if not $dir }}
     {{ $dir = .Page.File.BaseFileName }}
 {{ end }}
-<ul class="image-gallery">
-{{ range (readDir (printf "assets/album/%s" $dir)) }}
-  {{- $imagePath := printf "album/%s/%s" $dir .Name -}}
-  {{- if $image := resources.Get $imagePath -}}
-    {{- $imagetitle := index (split .Name ".") 0 -}}
-    <li>
-      <a href="#" data-image="{{ ($image.Fit "1600x1600 q50").Permalink }}" data-title="{{ $imagetitle }}" class="gallery-image">
-        <img src="{{ ($image.Fill "300x300 q50").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
-        <span>{{ $imagetitle }}</span>
-      </a>
-    </li>
-  {{- end -}}
+{{ $dirPath := printf "assets/album/%s" $dir }}
+{{ if not (fileExists $dirPath) }}
+    <p>Gallery directory not found: {{ $dir }}</p>
+{{ else }}
+    {{ $images := readDir $dirPath }}
+    {{ if eq (len $images) 0 }}
+        <p>No images found in gallery: {{ $dir }}</p>
+    {{ else }}
+    <ul class="image-gallery">
+    {{ range $images }}
+      {{- $imagePath := printf "album/%s/%s" $dir .Name -}}
+      {{- if $image := resources.Get $imagePath -}}
+        {{- $imagetitle := index (split .Name ".") 0 -}}
+        <li>
+          <a href="#" data-image="{{ ($image.Fit "1600x1600 q50").Permalink }}" data-title="{{ $imagetitle }}" class="gallery-image">
+            <img src="{{ ($image.Fill "300x300 q50").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
+            <span>{{ $imagetitle }}</span>
+          </a>
+        </li>
+      {{- end -}}
+    {{ end }}
+    </ul>
+    {{ end }}
 {{ end }}
 </ul>
 
