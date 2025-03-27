@@ -7,6 +7,9 @@
 </style>
 
 {{ $dir := .Get "gallery_dir" }}
+{{ if not $dir }}
+    {{ $dir = .Page.File.BaseFileName }}
+{{ end }}
 <ul class="image-gallery">
 {{ range (readDir (printf "assets/album/%s" $dir)) }}
   {{- $imagePath := printf "album/%s/%s" $dir .Name -}}

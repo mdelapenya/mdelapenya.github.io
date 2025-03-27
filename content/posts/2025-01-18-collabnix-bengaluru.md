@@ -67,4 +67,4 @@ The last talk, “Generative AI 102: A Recap of 101 with Ollama and n8n“ by Ra
 
 These are the ones I took, but if you check the LinkedIn feed for the event, you’ll find plenty of them. I was impressed by them wanting pictures with us. We are not rock stars!! 😳😳😳
 
-{{< image-gallery gallery_dir="2025-01-18-collabnix-bengaluru" >}}
+{{< image-gallery >}}
