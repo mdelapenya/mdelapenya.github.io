@@ -108,3 +108,8 @@ title = "Manuel de la Peña"
 
 [minify]
     minifyOutput = true
+
+[imaging]
+  anchor = "Smart"
+  quality = 75
+  resampleFilter = "Lanczos"
