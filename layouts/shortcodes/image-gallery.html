@@ -28,9 +28,13 @@
 {{ end }}
 </ul>
 
-<!-- Modal -->
-<div id="imageModal" class="modal">
-    <span class="modal-close">&times;</span>
-    <div class="loader" id="imageLoader"></div>
-    <img class="modal-content" id="modalImage">
+<!-- Modal with improved accessibility -->
+<div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+  <div class="modal-dialog" role="document">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="loader" id="imageLoader" aria-hidden="true"></div>
+      <img class="modal-content" id="modalImage" alt="">
+      <div id="modalTitle" class="sr-only"></div>
+      <div id="modalDescription" class="sr-only">Press Escape to close. Use Arrow Left and Arrow Right to navigate between images.</div>
+  </div>
 </div>
