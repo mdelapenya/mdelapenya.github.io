@@ -4,6 +4,38 @@
     .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
     .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
     .image-gallery li a img {width: 100%; display: block;}
+
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 90vh;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .modal-close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 </style>
 
 {{ $dir := .Get "gallery_dir" }}
@@ -16,7 +48,7 @@
   {{- if $image := resources.Get $imagePath -}}
     {{- $imagetitle := index (split .Name ".") 0 -}}
     <li>
-      <a href="{{ ($image.Fit "1600x1600 q50").Permalink }}" title="{{ $imagetitle }}" class="lightbox-image">
+      <a href="#" data-image="{{ ($image.Fit "1600x1600 q50").Permalink }}" data-title="{{ $imagetitle }}" class="gallery-image">
         <img src="{{ ($image.Fill "300x300 q50").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
         <span>{{ $imagetitle }}</span>
       </a>
@@ -24,3 +56,45 @@
   {{- end -}}
 {{ end }}
 </ul>
+
+<!-- Modal -->
+<div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.getElementsByClassName('modal-close')[0];
+
+    // Open modal
+    document.querySelectorAll('.gallery-image').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = "block";
+            modalImg.src = this.getAttribute('data-image');
+        });
+    });
+
+    // Close modal
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close on outside click
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Close on escape key press
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === "block") {
+            modal.style.display = "none";
+        }
+    });
+});
+</script>
