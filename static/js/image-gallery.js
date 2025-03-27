@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
+    const loader = document.getElementById('imageLoader');
     const closeBtn = document.getElementsByClassName('modal-close')[0];
 
     // Open modal
@@ -8,7 +9,23 @@ document.addEventListener('DOMContentLoaded', function() {
         item.addEventListener('click', function(e) {
             e.preventDefault();
             modal.style.display = "block";
-            modalImg.src = this.getAttribute('data-image');
+            loader.style.display = "block"; // Show loader
+            modalImg.style.display = "none"; // Hide image while loading
+            
+            const newImage = new Image();
+            newImage.src = this.getAttribute('data-image');
+            
+            newImage.onload = function() {
+                loader.style.display = "none"; // Hide loader
+                modalImg.src = newImage.src;
+                modalImg.style.display = "block"; // Show image
+            };
+            
+            newImage.onerror = function() {
+                loader.style.display = "none";
+                alert('Error loading image');
+                modal.style.display = "none";
+            };
         });
     });
 
