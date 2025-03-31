@@ -6,6 +6,7 @@ categories: jenkins
 tags: [jenkins, hardware]
 type: post
 weight: 25
+lang: es
 showTableOfContents: true
 ---
 
