@@ -1,0 +1,68 @@
+{{/* 
+    flex-gallery shortcode
+    Creates a responsive flex container with images that flow into rows.
+    Images are automatically sized and will wrap to new rows when needed.
+    Images can be marked to occupy a single row using the single_row_N parameter.
+
+    Usage:
+    {{< flex-gallery 
+        src_1="image1.jpg" 
+        alt_1="Description of image 1" 
+        caption_1="Caption for image 1"
+        single_row_1="true"
+        src_2="image2.jpg" 
+        alt_2="Description of image 2" 
+        caption_2="Caption for image 2"
+        # ... more images ...
+    >}}
+
+    Parameters:
+    - gallery_dir: (optional) Directory name under assets/album/. If not provided, uses the current page's base filename
+    - src_N: Source filename for image N (required)
+    - alt_N: Alt text for image N (required)
+    - caption_N: Caption for image N (optional)
+    - single_row_N: Set to "true" to make image N occupy a full row (optional)
+
+    Notes:
+    - Images are expected to be in assets/album/[gallery_dir]/
+    - Images are automatically resized to 400x400 with 80% quality
+    - Number of images is unlimited - the shortcode automatically detects how many images are provided
+    - CSS class 'flex-container', 'flex-image', and 'flex-image-single-row' must be defined in your stylesheet
+*/}}
+
+{{ $dir := .Get "gallery_dir" }}
+{{ if not $dir }}
+    {{ $dir = .Page.File.BaseFileName }}
+{{ end }}
+
+{{/* Find the highest image number to determine how many images to process */}}
+{{ $maxImages := 0 }}
+{{ range $k, $v := .Params }}
+    {{ if hasPrefix $k "src_" }}
+        {{ $num := index (split $k "_") 1 }}
+        {{ if gt (int $num) $maxImages }}
+            {{ $maxImages = int $num }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{/* Create flex container and process each image */}}
+<div class="flex-container">
+{{ range $i := seq 1 $maxImages }}
+    {{ $src := printf "src_%d" $i }}
+    {{ $alt := printf "alt_%d" $i }}
+    {{ $caption := printf "caption_%d" $i }}
+    {{ $singleRow := printf "single_row_%d" $i }}
+    {{ if $.Get $src }}
+        {{/* Construct image path and process image */}}
+        {{ $imagePath := printf "album/%s/%s" $dir ($.Get $src) }}
+        {{- if $image := resources.Get $imagePath -}}
+            {{ $img := $image.Resize "1200x q95" }}
+            <figure class="flex-image {{ if eq ($.Get $singleRow) "true" }}flex-image-single-row{{ end }}">
+                <img src="{{ $img.Permalink }}" alt="{{ $.Get $alt }}">
+                {{ with $.Get $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+            </figure>
+        {{- end -}}
+    {{ end }}
+{{ end }}
+</div> 

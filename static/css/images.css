@@ -1,0 +1,27 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.flex-image {
+    flex: 1 1 300px;
+    margin: 0;
+}
+
+.flex-image-single-row {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+
+.flex-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.flex-image figcaption {
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 0.5rem;
+}
