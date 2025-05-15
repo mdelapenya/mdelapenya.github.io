@@ -15,15 +15,15 @@ Back in October I met Ajeet Raina at Devoxx Belgium, and from there, while we we
 
 ## The agenda
 
-9:00 AM - 10:00 AM - Welcome and Registration
-10:00 AM - 11:00 AM - Testing GenAI applications in Go using Docker and Testcontainers by Manuel De La Peña, Docker Team
-11:00 AM - 11:45 AM - Building Fast, Securing More, Testing Better. How Docker Fuels Developer Productivity, Rebant Malhotra, Docker and Ajeet Singh Raina, Docker
-11:45 AM - 12:30 PM - Introduction to Confidential containers, Balasundaram and Sangam Biradar
-12:30 PM - 1:00 PM - Designing an Agentic System with GraphRAG (Unstructured data meets structured data), Alagu Prakalya, ASAPP
-1:00 PM - 2:00 PM - Lunch
-2:00 PM - 2:30 PM - Dev-Test Simplified: Building Production-like Environments with vCluster" by Rashi Chaubal, Infracloud Technologies
-2:30 PM - 3:00 PM - Secure by design in the AI Era, Arun Kumar G, GitLab
-3:00 PM - 3:30 PM - Generative AI 102: A Recap of 101 with Ollama and n8n by Raveendiran RR
+- 9:00 AM - 10:00 AM - Welcome and Registration
+- 10:00 AM - 11:00 AM - Testing GenAI applications in Go using Docker and Testcontainers by Manuel De La Peña, Docker Team
+- 11:00 AM - 11:45 AM - Building Fast, Securing More, Testing Better. How Docker Fuels Developer Productivity, Rebant Malhotra, Docker and Ajeet Singh Raina, Docker
+- 11:45 AM - 12:30 PM - Introduction to Confidential containers, Balasundaram and Sangam Biradar
+- 12:30 PM - 1:00 PM - Designing an Agentic System with GraphRAG (Unstructured data meets structured data), Alagu Prakalya, ASAPP
+- 1:00 PM - 2:00 PM - Lunch
+- 2:00 PM - 2:30 PM - Dev-Test Simplified: Building Production-like Environments with vCluster" by Rashi Chaubal, Infracloud Technologies
+- 2:30 PM - 3:00 PM - Secure by design in the AI Era, Arun Kumar G, GitLab
+- 3:00 PM - 3:30 PM - Generative AI 102: A Recap of 101 with Ollama and n8n by Raveendiran RR
 
 The last two talks came with some natural delay, so we finished the event around 5PM.
 
