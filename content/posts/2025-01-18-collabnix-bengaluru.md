@@ -67,4 +67,116 @@ The last talk, “Generative AI 102: A Recap of 101 with Ollama and n8n“ by Ra
 
 These are the ones I took, but if you check the LinkedIn feed for the event, you’ll find plenty of them. I was impressed by them wanting pictures with us. We are not rock stars!! 😳😳😳
 
-{{< image-gallery >}}
+{{< flex-gallery 
+    src_1="PXL_20250118_034338039.jpg"
+    alt_1="Nokia Building"
+    caption_1="SILICON VALLEY. Bangalore is considered the Silicon Valley of India. Lots of Big Tech companies have buildings in there. Did you know that DELL has 25k employees in the city?"
+
+    src_2="PXL_20250118_035003197.MP.jpg"
+    alt_2="Empty venue"
+    caption_2="SILENT. The room before everything started."
+
+    src_3="PXL_20250118_061724775.jpg"
+    alt_3="Meetup overflow"
+    caption_3="MEETUP OVERFLOW. As Ajeet named, the room was packed."
+
+    src_4="PXL_20250118_061711277.jpg"
+    alt_4="Ajeet and Rebant"
+    caption_4="TEAM. Ajeet and Rebant starting the talk."
+
+    src_5="PXL_20250118_073235015.jpg"
+    alt_5="Docker Team"
+    caption_5="TEAM. Docker folks + Koti and Shub."
+
+    src_6="PXL_20250118_075907317.jpg"
+    alt_6="Another speaker"
+
+    src_7="PXL_20250118_091206885.MP.jpg"
+    alt_7="Serving the pizzas"
+    caption_7="LUNCH TIME. Everybody waited patiently for their lunch."
+
+    src_8="PXL_20250118_093434442.jpg"
+    alt_8="Pizza time"
+    caption_8="EQUITY. Partners came with lunch and drinks for everybody. Here in Spain, also in other countries I’ve attended meetups, the organisation brings big pizzas for everybody. Here, each person received the same box of pizza, including a dessert and drinks."
+
+    src_9="PXL_20250118_121535451.jpg"
+    alt_9="Organisers"
+    
+    src_10="PXL_20250119_131149794.jpg"
+    alt_10="These guys!"
+    caption_10="FIVE GUYS (Koti missing). They, and probably more, are building a really strong Tech community in Bangalore, a lifeline for many CS students in this fast-paced world."
+
+    src_11="PXL_20250119_131202726.jpg"
+    alt_11="Me and the Rockstars"
+    caption_11="PROUD. I finally met real rockstars."
+>}}
+
+### Some other pictures from the trip
+
+Ajeet picked me up from the hotel the first morning (Friday), and drove me to a special place for him and his family: [Adiyogi](https://isha.sadhguru.org/en/center/consecrated-spaces/adiyogi-chikkaballapur-bangalore), which took us almost 2h to get there. Yes, traffic in Bangalore works like this and “*you always start 3h earlier, otherwise you miss the meeting or the flight*”.
+
+To me, this is also work. Meeting with people from your company, and just talking make you feel them as if you worked with them side by side in an office. You talk about family, friends and life, but work conversations naturally emerge and with more energy. That’s why I really believe offsites are critical for creating and fostering a culture in which we trust each other. Just walking back to the hotel, in a more relaxed environment, can lead to insightful conversations. Being remote (async + distributed) is a great benefit, but as a drawback we could be missing these social interactions that create bonds. Let’s not lose this.
+
+{{< flex-gallery 
+    src_1="PXL_20250117_081954564.jpg"
+    alt_1="Monkeys in the wild"
+    caption_1="MONKEYS. I had never seen a monkey in the Wild!"
+
+    src_2="PXL_20250117_082624940.jpg"
+    alt_2="Shiva's head"
+    caption_2="SHIVA’s HEAD. The monument is gorgeous but, by night, it’s even better because it illuminates from the inside with multiple colours."
+
+    src_3="PXL_20250117_083139396.NIGHT~2.jpg"
+    alt_3="Nandi"
+    caption_3="NANDI. This is Shiva’s vehicle. Nandi is the bearer of truth and righteousness. This picture is using Pixel 9’s 'remove people in the background' feature."
+
+    src_4="PXL_20250117_084655896.BURST-01.COVER.jpg"
+    alt_4="Ajeet and I"
+    caption_4="INCLUDEME. This picture was taking with Pixel 9’s new 'Include me' feature. Cool!"
+
+    src_5="PXL_20250117_085334564.jpg"
+    alt_5="Ajeet and I"
+    single_row_5="true"
+    caption_5="NO SHOES. Ajeet and I are barefoot in this picture, as we saw everybody in the temple were removing their shoes and socks."
+
+    src_6="PXL_20250117_124613335.MP.jpg"
+    alt_6="A family of 5 in a scooter"
+    caption_6="TWO-WHEELERS. Living in an European country, and seeing scenes like this one, makes you realise how privileged we are by the place we were born. Diversity please!"
+
+    src_7="PXL_20250117_131126097.MP.jpg"
+    alt_7="Cows are let free in the streets"
+    caption_7="COWS. This we usually see in the news: a cow going free in the streets."
+
+    src_8="PXL_20250118_172155742.jpg"
+    alt_8="Bangalore skyline by night, from the hotel"
+    single_row_8="true"
+    caption_8="BANGALORE BY NIGHT. NOKIA offices are in that area, about 25 minutes walking distance from my hotel, but it was almost impossible to walk there because of the heavy traffic and the constructions for the new train."
+
+    src_9="PXL_20250119_060817414.PORTRAIT.ORIGINAL.jpg"
+    alt_9="Indian souvenirs"
+    caption_9="GIFTS. A souvenir from the hotel when I shared it was my first time in India."
+    
+    src_10="ajeet-and-family.png"
+    alt_10="Ajeet's family"
+    caption_10="FAMILY. Maja and I were very lucky to meet Ajeet’s family at their place."
+
+    src_12="namaste.png"
+    alt_12="Me and the Rockstars"
+    single_row_12="true"
+    caption_12="NAMASTE. To Ajeet, to my team, to Docker."
+
+    src_13="food.png"
+    alt_13="Indian family food"
+    caption_13="FAMILY. Ajeet’s family prepared Indian meals for us. Delicious, but spicy, but delicious! Well, actually all Indian meals are spicy to me, even causing crusts (and blood) in my lips."
+
+    src_14="PXL_20250119_110912479.jpg"
+    alt_14="Indian Museum of Music"
+    caption_14="KNOW YOUR HISTORY. Ajeet and the Collabnix organisers dedicated their free Sunday to stay with us, taking us to the Indian Museum of Music. A real experience!"
+>}}
+
+### Side topics
+
+- Docker Hub cafe: https://www.linkedin.com/posts/kunal-sarpatil-79587b157_just-when-we-thought-docker-was-all-about-activity-7287330190773383168-73M7?utm_source=share&utm_medium=member_desktop
+- *Container Rules, Docker cools!*: https://www.linkedin.com/posts/shubhendu-shubham_dockerbengaluru-meetup-ugcPost-7286440882289942528-_mIr?utm_source=share&utm_medium=member_desktop
+- The biases of an European in India: https://www.linkedin.com/posts/mdelapenya_biases-india-community-activity-7287312477963325440-Fm8H?utm_source=share&utm_medium=member_desktop
+- A personal experience happening at the airport: https://www.linkedin.com/posts/mdelapenya_id-like-to-share-this-feedback-after-a-really-activity-7288064800872407040-pKRL?utm_source=share&utm_medium=member_desktop
