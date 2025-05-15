@@ -59,10 +59,23 @@
         {{- if $image := resources.Get $imagePath -}}
             {{ $img := $image.Resize "1200x q95" }}
             <figure class="flex-image {{ if eq ($.Get $singleRow) "true" }}flex-image-single-row{{ end }}">
-                <img src="{{ $img.Permalink }}" alt="{{ $.Get $alt }}">
+                <a href="#" data-image="{{ ($img.Fit "1600x1600 q50").Permalink }}" data-title="{{ $.Get $alt }}" class="gallery-image">
+                    <img src="{{ $img.Permalink }}" alt="{{ $.Get $alt }}">
+                </a>
                 {{ with $.Get $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
             </figure>
         {{- end -}}
     {{ end }}
 {{ end }}
-</div> 
+</div>
+
+<!-- Modal with improved accessibility -->
+<div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+  <div class="modal-dialog" role="document">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="loader" id="imageLoader" aria-hidden="true"></div>
+      <img class="modal-content" id="modalImage" alt="">
+      <div id="modalTitle" class="sr-only"></div>
+      <div id="modalDescription" class="sr-only">Press Escape to close. Use Arrow Left and Arrow Right to navigate between images.</div>
+  </div>
+</div>
