@@ -37,8 +37,11 @@ He was still tired after his flight, so he could not join me, so I decided to ex
 
 That day, Valentine Chua, main organiser of the conference, created a whatsapp group with all the speakers and volunteers, and offered to go for dinner. Only Ron and I were already there, so we three went to a really good Noodles place.
 
-{{< figure src="/album/2025-01-24-gophercon-singapore/noodles.png" alt="Noodles dinner with Ron and Valentine" caption="NOODLES. Delicious meal @ Hill Street Tai Hwa Pork Noodle: https://maps.app.goo.gl/wVdjDQwKzfv7xXXP8. Ron, Manu and Valentine." >}}
-
+{{< flex-gallery 
+    src_1="noodles.png" 
+    alt_1="Noodles dinner with Ron and Valentine" 
+    caption_1="NOODLES. Delicious meal @ Hill Street Tai Hwa Pork Noodle: https://maps.app.goo.gl/wVdjDQwKzfv7xXXP8. Ron, Manu and Valentine." 
+>}}
 
 After that, we went for a walk, talking a lot about the conference, about our previous experiences, and also talking about families and friends, which is what I always say about this kind of events: knowing people in person allows you to connect with them more in depth.
 
