@@ -511,6 +511,8 @@ Thanks to Testcontainers, tests can run alongside the application, each using it
 
 Fiber v3’s Services abstraction combined with Testcontainers unlocks a simple, production-like local dev experience. No more hand-crafted scripts, no more out-of-sync environments — just Go code that runs clean everywhere, providing a "Clone & Run" experience. Besides that, using Testcontainers offers a unified developer experience for both integration testing and local development, a great way to test your application cleanly and deterministically—with real dependencies.
 
+Because we’ve separated configuration for production and local development, the same codebase can cleanly support both environments—without polluting production with development-only tools or dependencies.
+
 ## What's next?
 
 - Check the different testcontainers modules in the [Testcontainers Modules Catalog](https://testcontainers.com/modules?language=go).
