@@ -249,24 +249,44 @@ We need to define a context provider for the services startup and shutdown, and 
 // falls back to a default connection string targeting localhost if DB is not set.
 func ConfigureApp(cfg fiber.Config) (*AppConfig, error) {
 	// Define a context provider for the services startup.
-	// This is useful to cancel the startup of the services if the context is canceled.
-	// Default is context.Background().
-	startupCtx, startupCancel := context.WithTimeout(context.Background(), 10*time.Second)
+	// The timeout is applied when the context is actually used during startup.
+	startupCtx, startupCancel := context.WithCancel(context.Background())
+	var startupTimeoutCancel context.CancelFunc
 	cfg.ServicesStartupContextProvider = func() context.Context {
-		return startupCtx
+		// Cancel any previous timeout context
+		if startupTimeoutCancel != nil {
+			startupTimeoutCancel()
+		}
+		// Create a new timeout context
+		ctx, cancel := context.WithTimeout(startupCtx, 10*time.Second)
+		startupTimeoutCancel = cancel
+		return ctx
 	}
 
 	// Define a context provider for the services shutdown.
-	// This is useful to cancel the shutdown of the services if the context is canceled.
-	// Default is context.Background().
-	shutdownCtx, shutdownCancel := context.WithTimeout(context.Background(), 10*time.Second)
+	// The timeout is applied when the context is actually used during shutdown.
+	shutdownCtx, shutdownCancel := context.WithCancel(context.Background())
+	var shutdownTimeoutCancel context.CancelFunc
 	cfg.ServicesShutdownContextProvider = func() context.Context {
-		return shutdownCtx
+		// Cancel any previous timeout context
+		if shutdownTimeoutCancel != nil {
+			shutdownTimeoutCancel()
+		}
+		// Create a new timeout context
+		ctx, cancel := context.WithTimeout(shutdownCtx, 10*time.Second)
+		shutdownTimeoutCancel = cancel
+		return ctx
 	}
 
 	// Add the Postgres service to the app, including custom configuration.
 	srv, err := setupPostgres(&cfg)
 	if err != nil {
+		if startupTimeoutCancel != nil {
+			startupTimeoutCancel()
+		}
+		if shutdownTimeoutCancel != nil {
+			shutdownTimeoutCancel()
+		}
 		startupCancel()
 		shutdownCancel()
 		return nil, fmt.Errorf("add postgres service: %w", err)
@@ -279,6 +299,12 @@ func ConfigureApp(cfg fiber.Config) (*AppConfig, error) {
 
 	connString, err := postgresSrv.Container().ConnectionString(context.Background())
 	if err != nil {
+		if startupTimeoutCancel != nil {
+			startupTimeoutCancel()
+		}
+		if shutdownTimeoutCancel != nil {
+			shutdownTimeoutCancel()
+		}
 		startupCancel()
 		shutdownCancel()
 		return nil, fmt.Errorf("get postgres connection string: %w", err)
@@ -288,15 +314,25 @@ func ConfigureApp(cfg fiber.Config) (*AppConfig, error) {
 	DB = connString
 
 	return &AppConfig{
-		App:            app,
-		StartupCancel:  startupCancel,
-		ShutdownCancel: shutdownCancel,
+		App: app,
+		StartupCancel: func() {
+			if startupTimeoutCancel != nil {
+				startupTimeoutCancel()
+			}
+			startupCancel()
+		},
+		ShutdownCancel: func() {
+			if shutdownTimeoutCancel != nil {
+				shutdownTimeoutCancel()
+			}
+			shutdownCancel()
+		},
 	}, nil
 }
 ```
 
 This function:
-- Defines a context provider for the services startup and shutdown.
+- Defines a context provider for the services startup and shutdown, defining a timeout for the startup and shutdown when the context is actually used during startup and shutdown.
 - Adds the PostgreSQL service to the app config.
 - Retrieves the PostgreSQL service from the app's state cache.
 - Uses the PostgreSQL service to obtain the connection string.
