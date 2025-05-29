@@ -77,8 +77,11 @@ The application we are going to build is a simple Fiber app that uses a PostgreS
 |         └── types.go
 ├── config
 |    ├── database
-|    |    ├── database.go
-|    |    └── env.go
+|    |    └── database.go
+|    ├── config.go
+|    ├── config_dev.go
+|    ├── env.go
+|    └── types.go
 ├── utils
 |    ├── jwt
 |    |    └── jwt.go
@@ -97,7 +100,83 @@ This app exposes several endpoints, for `/users` and `/todos`, and stores data i
 
 Since the application is based on a recipe, we’ll skip the details of creating the routes, the services and the data access layer. You can find the complete code in the [GitHub repository](https://github.com/gofiber/recipes/tree/master/todo-app-with-auth-gorm).
 
-But I'll cover the details about how to use Testcontainers to start the PostgreSQL container, and how to use the Services API to manage the lifecycle of the container, so that the data access layer can use it without having to worry about the lifecycle of the container.
+But I'll cover the details about how to use Testcontainers to start the PostgreSQL container, and how to use the Services API to manage the lifecycle of the container, so that the data access layer can use it without having to worry about the lifecycle of the container. Furthermore, I'll cover how to use `air` to have a fast local development experience, and how to handle the graceful shutdown of the application, separating the configuration for production and local development.
+
+In the `config` package, we have defined three files that will be used to configure the application, depending on a Go build tag. The first one, the `config/types.go` file, defines a struct to hold the application configuration and the cleanup functions for the services startup and shutdown.
+
+```go
+package config
+
+import (
+	"context"
+
+	"github.com/gofiber/fiber/v3"
+)
+
+// AppConfig holds the application configuration and cleanup functions
+type AppConfig struct {
+	// App is the Fiber app instance.
+	App *fiber.App
+	// StartupCancel is the context cancel function for the services startup.
+	StartupCancel context.CancelFunc
+	// ShutdownCancel is the context cancel function for the services shutdown.
+	ShutdownCancel context.CancelFunc
+}
+
+```
+
+The `config.go` file have the configuration for production environments:
+
+```go
+//go:build !dev
+
+package config
+
+import (
+	"github.com/gofiber/fiber/v3"
+)
+
+// ConfigureApp configures the fiber app, including the database connection string.
+// The connection string is retrieved from the environment variable DB, or using
+// falls back to a default connection string targeting localhost if DB is not set.
+func ConfigureApp(cfg fiber.Config) (*AppConfig, error) {
+	app := fiber.New(cfg)
+
+	db := getEnv("DB", "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable")
+	DB = db
+
+	return &AppConfig{
+		App:            app,
+		StartupCancel:  func() {}, // No-op for production
+		ShutdownCancel: func() {}, // No-op for production
+	}, nil
+}
+```
+
+The `ConfigureApp` function is responsible for creating the Fiber app, and it's used in the `main.go` file to initialize the application. By default, it will try to connect to a PostgreSQL instance, using the `DB` environment variable, falling back to a local PostgreSQL instance if the environment variable is not set. It also uses empty functions for the `StartupCancel` and `ShutdownCancel` fields, as we don't need to cancel anything in production.
+
+When running the app with `go run main.go`, the `!dev` tag applies by default, and the `ConfigureApp` function will be used to initialize the application. But the application will not start, as the connection to the PostgreSQL instance will fail.
+
+```shell
+go run main.go
+
+2025/05/29 11:55:36 gofiber-services/config/database/database.go:18
+[error] failed to initialize database, got error failed to connect to `user=postgres database=postgres`:
+        [::1]:5432 (localhost): dial error: dial tcp [::1]:5432: connect: connection refused
+        127.0.0.1:5432 (localhost): dial error: dial tcp 127.0.0.1:5432: connect: connection refused
+panic: gorm open: failed to connect to `user=postgres database=postgres`:
+                [::1]:5432 (localhost): dial error: dial tcp [::1]:5432: connect: connection refused
+                127.0.0.1:5432 (localhost): dial error: dial tcp 127.0.0.1:5432: connect: connection refused
+
+goroutine 1 [running]:
+gofiber-services/config/database.Connect({0x105164a30?, 0x0?})
+        gofiber-services/config/database/database.go:33 +0x9c
+main.main()
+        gofiber-services/main.go:34 +0xbc
+exit status 2
+```
+
+Let's fix that!
 
 ### Step 1: Add the dependencies
 
@@ -115,29 +194,28 @@ go get gorm.io/driver/postgres
 
 ### Step 2: Define a PostgreSQL Service using Testcontainers
 
-To leverage the new `Services` API, we need to define a new service. We can implement the interface exposed by the Fiber app, as shown in the [Services API docs](https://docs.gofiber.io/next/api/services#example-adding-a-service), or simply use the Testcontainers `contrib` module to create a new service, as we are going to do in this example.
+To leverage the new `Services` API, we need to define a new service. We can implement the interface exposed by the Fiber app, as shown in the [Services API docs](https://docs.gofiber.io/next/api/services#example-adding-a-service), or simply use the Testcontainers `contrib` module to create a new service, as we are going to do next.
 
-### Step 3: Add the PostgreSQL Service to the Fiber app
-
-In the `main.go` file, we define a new function to add a PostgreSQL container as a service to the Fiber application:
+In the `config/config_dev.go` file, we define a new function to add a PostgreSQL container as a service to the Fiber application, using the Testcontainers `contrib` module. This file is using the `dev` build tag, so it will only be used when we start the application with `air`.
 
 ```go
+//go:build dev
+
+package config
+
 import (
-    // ...
-    "github.com/gofiber/contrib/testcontainers"
+	"fmt"
+
+	"github.com/gofiber/contrib/testcontainers"
 	"github.com/gofiber/fiber/v3"
-    // ...
 	tc "github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/modules/postgres"
-    // ...
 )
 
-//...
-
-// setupPostgres adds a PostgreSQL service to the app, including custom configuration to allow
+// setupPostgres adds a Postgres service to the app, including custom configuration to allow
 // reusing the same container while developing locally.
 func setupPostgres(cfg *fiber.Config) (*testcontainers.ContainerService[*postgres.PostgresContainer], error) {
-	// Add the PostgreSQL service to the app, including custom configuration.
+	// Add the Postgres service to the app, including custom configuration.
 	srv, err := testcontainers.AddService(cfg, testcontainers.NewModuleConfig(
 		"postgres-db",
 		"postgres:16",
@@ -154,37 +232,26 @@ func setupPostgres(cfg *fiber.Config) (*testcontainers.ContainerService[*postgre
 
 	return srv, nil
 }
+
 ```
 
 This creates a reusable `Service` that Fiber will automatically start and stop along with the app, and it's registered as part of the `fiber.Config` struct that our application uses. This new service uses the `postgres` module from the `testcontainers` package to create the container. To learn more about the PostgreSQL module, please refer to the [Testcontainers PostgreSQL module documentation](https://golang.testcontainers.org/modules/postgres/).
 
-### Step 4: Reuse the container while developing locally
+### Step 3: Initialize the Fiber App with the PostgreSQL Service
 
-Please note that the `tc.WithReuseByName` option is used to reuse the same container while developing locally. This is useful to avoid having to wait for the database to be ready when the application is started. Set `TESTCONTAINERS_RYUK_DISABLED=true` to prevent container cleanup between hot reloads. In the `.env` file, add the following:
-
-```txt
-TESTCONTAINERS_RYUK_DISABLED=true
-```
-
-[Ryuk](https://golang.testcontainers.org/features/garbage_collector/#ryuk) is the Testcontainers companion container that removes the Docker resources created by Testcontainers. For our use case, where we want to develop locally using `air`, we don't want to remove the container when the application is hot-reloaded, so we disable Ryuk and give the container a name that will be reused across multiple runs of the application.
-
-### Step 5: Initialize the Fiber App with the PostgreSQL Service
-
-For our `fiber.App` to initialize the PostgreSQL service, we need to pass the `fiber.Config` struct including the services to the `fiber.New` function.
+Our `fiber.App` is initialized in the `config/config.go` file, using the `ConfigureApp` function for production environments. For local development, instead, we need to initialize the `fiber.App` in the `config/config_dev.go` file, using a function with the same signature, but using the contrib module to add the PostgreSQL service to the app config.
 
 We need to define a context provider for the services startup and shutdown, and add the PostgreSQL service to the app config, including custom configuration. The context provider is useful to define a cancel policy for the services startup and shutdown, so we can cancel the startup or shutdown if the context is canceled. If no context provider is defined, the default is to use the `context.Background()`.
 
 ```go
-func main() {
-    cfg := fiber.Config{
-		ErrorHandler: utils.ErrorHandler,
-	}
-
+// ConfigureApp configures the fiber app, including the database connection string.
+// The connection string is retrieved from the environment variable DB, or using
+// falls back to a default connection string targeting localhost if DB is not set.
+func ConfigureApp(cfg fiber.Config) (*AppConfig, error) {
 	// Define a context provider for the services startup.
 	// This is useful to cancel the startup of the services if the context is canceled.
 	// Default is context.Background().
-	startupCtx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	defer cancel()
+	startupCtx, startupCancel := context.WithTimeout(context.Background(), 10*time.Second)
 	cfg.ServicesStartupContextProvider = func() context.Context {
 		return startupCtx
 	}
@@ -192,27 +259,66 @@ func main() {
 	// Define a context provider for the services shutdown.
 	// This is useful to cancel the shutdown of the services if the context is canceled.
 	// Default is context.Background().
-	shutdownCtx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	defer cancel()
+	shutdownCtx, shutdownCancel := context.WithTimeout(context.Background(), 10*time.Second)
 	cfg.ServicesShutdownContextProvider = func() context.Context {
 		return shutdownCtx
 	}
 
-	// Add the PostgreSQL service to the app config, including custom configuration.
+	// Add the Postgres service to the app, including custom configuration.
 	srv, err := setupPostgres(&cfg)
 	if err != nil {
-		panic(err)
+		startupCancel()
+		shutdownCancel()
+		return nil, fmt.Errorf("add postgres service: %w", err)
 	}
 
 	app := fiber.New(cfg)
 
-    // ...
+	// Retrieve the Postgres service from the app, using the service key.
+	postgresSrv := fiber.MustGetService[*testcontainers.ContainerService[*postgres.PostgresContainer]](app.State(), srv.Key())
+
+	connString, err := postgresSrv.Container().ConnectionString(context.Background())
+	if err != nil {
+		startupCancel()
+		shutdownCancel()
+		return nil, fmt.Errorf("get postgres connection string: %w", err)
+	}
+
+	// Override the default database connection string with the one from the Testcontainers service.
+	DB = connString
+
+	return &AppConfig{
+		App:            app,
+		StartupCancel:  startupCancel,
+		ShutdownCancel: shutdownCancel,
+	}, nil
 }
 ```
 
+This function:
+- Defines a context provider for the services startup and shutdown.
+- Adds the PostgreSQL service to the app config.
+- Retrieves the PostgreSQL service from the app's state cache.
+- Uses the PostgreSQL service to obtain the connection string.
+- Overrides the default database connection string with the one from the Testcontainers service.
+- Returns the app config.
+
 As a result, the `fiber.App` will be initialized with the PostgreSQL service, and it will be automatically started and stopped along with the app. The service representing the PostgreSQL container will be available as part of the application `State`, which we can easily retrieve from the app's state cache. Please refer to the [State Management docs](https://docs.gofiber.io/next/api/state) for more details about how to use the `State` cache.
 
-### Step 6: Retrieve and Inject the PostgreSQL Connection
+### Step 4: Optimizing Local Dev with Container Reuse
+
+Please note that, in the `config/config_dev.go` file, the `tc.WithReuseByName` option is used to reuse the same container while developing locally. This is useful to avoid having to wait for the database to be ready when the application is started.
+
+Also, set `TESTCONTAINERS_RYUK_DISABLED=true` to prevent container cleanup between hot reloads. In the `.env` file, add the following:
+
+```txt
+TESTCONTAINERS_RYUK_DISABLED=true
+```
+
+[Ryuk](https://golang.testcontainers.org/features/garbage_collector/#ryuk) is the Testcontainers companion container that removes the Docker resources created by Testcontainers. For our use case, where we want to develop locally using `air`, we don't want to remove the container when the application is hot-reloaded, so we disable Ryuk and give the container a name that will be reused across multiple runs of the application.
+
+
+### Step 5: Retrieve and Inject the PostgreSQL Connection
 
 Now that the PostgreSQL service is part of the application, we can use it in our data access layer. The application has a global configuration variable that includes the database connection string, in the `config/env.go` file:
 
@@ -258,6 +364,14 @@ Once we have the `postgresSrv` service, we can use it to connect to the database
 	database.Connect(config.DB)
 ```
 
+### Step 6: Live reload with air
+
+Let's add the build tag to the `air` command, so our local development experience is complete. We need to add the `-tags dev` flag to the command used to build the application. In `.air.conf`, add the `-tags dev` flag to ensure the development configuration is used:
+
+```txt
+cmd = "go build -tags dev -o ./todo-api ./main.go"
+```
+
 ### Step 7: Graceful Shutdown
 
 Fiber automatically shuts down the application and all its services when the application is stopped. But `air` is not passing the right signal to the application to trigger the shutdown, so we need to do it manually.
@@ -294,11 +408,13 @@ With this, `air` will send an interrupt signal to the application when the appli
 
 ## Seeing it in action
 
-With the application ready, let’s see it in action.
+Now, we can start the application with `air`, and it will start the PostgreSQL container automatically, and it will handle the graceful shutdown when we stop the application. Let's see it in action!
 
 Let's start the application with `air`. You should see output like this in the logs:
 
 ```bash
+air
+
 `.air.conf` will be deprecated soon, recommend using `.air.toml`.
 
   __    _   ___  
@@ -388,6 +504,8 @@ go test -v ./app/dal
 ```
 
 In less than 10 seconds, we have a clean database and our persistence layer is verified to behave as expected!
+
+Thanks to Testcontainers, tests can run alongside the application, each using its own isolated container with random ports.
 
 ## Conclusion
 
