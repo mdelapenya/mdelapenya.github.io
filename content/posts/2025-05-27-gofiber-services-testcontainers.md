@@ -11,11 +11,11 @@ showTableOfContents: true
 
 With the upcoming v3 release, `Fiber` is introducing a powerful new abstraction: `Services`. These provide a standardized way to start and manage backing services like databases, queues, and cloud emulators, enabling you to manage backing services directly as part of your app's lifecycle, with no extra orchestration required. Even more exciting is the new `contrib` module that connects `Services` with `Testcontainers`, allowing you to spin up real service dependencies in a clean and testable way.
 
-In this post, I’ll walk through how to use these new features by building a small Fiber app that uses a PostgreSQL container for persistence, all managed via the new Service interface.
+In this post, I'll walk through how to use these new features by building a small Fiber app that uses a PostgreSQL container for persistence, all managed via the new Service interface.
 
 ## TL;DR
 
-- Use Fiber v3’s new `Services` API to manage backing containers.
+- Use Fiber v3's new `Services` API to manage backing containers.
 - Integrate with `testcontainers-go` to start a PostgreSQL container automatically.
 - Add hot-reloading with `air` for a fast local dev loop.
 - Reuse containers during dev by disabling Ryuk and naming them consistently.
@@ -24,9 +24,9 @@ In this post, I’ll walk through how to use these new features by building a sm
 
 ## Local Development, state of the art
 
-This is a blog post about developing in Go, but let’s look at how other major frameworks approach local development, even across different programming languages.
+This is a blog post about developing in Go, but let's look at how other major frameworks approach local development, even across different programming languages.
 
-In the Java ecosystem, the most important frameworks, such as `Spring Boot`, `Micronaut` and `Quarkus`, have the concept of `Development-time Services`. Let’s look at how other ecosystems handle this concept of services.
+In the Java ecosystem, the most important frameworks, such as `Spring Boot`, `Micronaut` and `Quarkus`, have the concept of `Development-time Services`. Let's look at how other ecosystems handle this concept of services.
 
 From [Spring Boot docs](https://docs.spring.io/spring-boot/reference/features/dev-services.html):
 
@@ -49,7 +49,7 @@ Back to Go, one of the most popular frameworks, [Fiber](https://gofiber.io/), ha
 Among all the new features in Fiber v3, we have two main ones that are relevant to this post:
 
 - 🔌 [Services](https://docs.gofiber.io/next/api/services): Define and attach external resources (like databases) to your app in a composable way. This new approach ensures external services are automatically started and stopped with your Fiber app.
-- 🧪 [Contrib module for Testcontainers](https://docs.gofiber.io/contrib/next/testcontainers/): Start real backing services using Docker containers, managed directly from your app’s lifecycle in a programmable way.
+- 🧪 [Contrib module for Testcontainers](https://docs.gofiber.io/contrib/next/testcontainers/): Start real backing services using Docker containers, managed directly from your app's lifecycle in a programmable way.
 
 ## A Simple Fiber App using Testcontainers
 
@@ -96,9 +96,9 @@ The application we are going to build is a simple Fiber app that uses a PostgreS
 └── go.sum
 ```
 
-This app exposes several endpoints, for `/users` and `/todos`, and stores data in a PostgreSQL instance started using Testcontainers. Here’s how it's put together.
+This app exposes several endpoints, for `/users` and `/todos`, and stores data in a PostgreSQL instance started using Testcontainers. Here's how it's put together.
 
-Since the application is based on a recipe, we’ll skip the details of creating the routes, the services and the data access layer. You can find the complete code in the [GitHub repository](https://github.com/gofiber/recipes/tree/master/todo-app-with-auth-gorm).
+Since the application is based on a recipe, we'll skip the details of creating the routes, the services and the data access layer. You can find the complete code in the [GitHub repository](https://github.com/gofiber/recipes/tree/master/todo-app-with-auth-gorm).
 
 But I'll cover the details about how to use Testcontainers to start the PostgreSQL container, and how to use the Services API to manage the lifecycle of the container, so that the data access layer can use it without having to worry about the lifecycle of the container. Furthermore, I'll cover how to use `air` to have a fast local development experience, and how to handle the graceful shutdown of the application, separating the configuration for production and local development.
 
@@ -182,7 +182,7 @@ Let's fix that!
 
 First, we need to make sure we have the dependencies added to the `go.mod` file:
 
-> ⚠️ Note: Fiber v3 is still in development. To use Services, you’ll need to pull the main branch from GitHub:
+> ⚠️ Note: Fiber v3 is still in development. To use Services, you'll need to pull the main branch from GitHub:
 
 ```bash
 go get github.com/gofiber/fiber/v3@main
@@ -363,7 +363,7 @@ Now that the PostgreSQL service is part of the application, we can use it in our
 	DB = getEnv("DB", "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable")
 ```
 
-Retrieve the service from the app’s state and use it to connect:
+Retrieve the service from the app's state and use it to connect:
 
 ```go
     // Add the PostgreSQL service to the app, including custom configuration.
@@ -545,9 +545,9 @@ Thanks to Testcontainers, tests can run alongside the application, each using it
 
 ## Conclusion
 
-Fiber v3’s Services abstraction combined with Testcontainers unlocks a simple, production-like local dev experience. No more hand-crafted scripts, no more out-of-sync environments — just Go code that runs clean everywhere, providing a "Clone & Run" experience. Besides that, using Testcontainers offers a unified developer experience for both integration testing and local development, a great way to test your application cleanly and deterministically—with real dependencies.
+Fiber v3's Services abstraction combined with Testcontainers unlocks a simple, production-like local dev experience. No more hand-crafted scripts, no more out-of-sync environments — just Go code that runs clean everywhere, providing a "Clone & Run" experience. Besides that, using Testcontainers offers a unified developer experience for both integration testing and local development, a great way to test your application cleanly and deterministically—with real dependencies.
 
-Because we’ve separated configuration for production and local development, the same codebase can cleanly support both environments—without polluting production with development-only tools or dependencies.
+Because we've separated configuration for production and local development, the same codebase can cleanly support both environments—without polluting production with development-only tools or dependencies.
 
 ## What's next?
 
@@ -555,4 +555,4 @@ Because we’ve separated configuration for production and local development, th
 - Check the [Testcontainers Go](https://github.com/testcontainers/testcontainers-go) repository for more information about the Testcontainers Go library.
 - Try [Testcontainers Cloud](https://testcontainers.com/cloud) to run the Service containers in a reliable manner, locally and in your CI.
 
-💬 Have feedback or want to share how you’re using Fiber v3? Drop a comment or open an issue in the [GitHub repo](https://github.com/mdelapenya/testcontainers-go-examples)!
+💬 Have feedback or want to share how you're using Fiber v3? Drop a comment or open an issue in the [GitHub repo](https://github.com/mdelapenya/testcontainers-go-examples)!
