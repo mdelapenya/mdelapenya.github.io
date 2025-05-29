@@ -1,6 +1,7 @@
 ---
 title: "Fiber v3 + Testcontainers: Production-like Local Dev with Air"
 date: 2025-05-27 10:00:00 +0530
+image: "/images/posts/2025-05-27-gofiber-services-testcontainers/cover.png"
 description: "How to Use Fiber v3 Services with Testcontainers and Air for Fast Local Dev"
 categories: [Go, Fiber, GoFiber, Testcontainers]
 tags: ["go", "gofiber", "testcontainers", "air", "local-development", "gorm", "postgres"]
@@ -8,6 +9,8 @@ type: post
 weight: 25
 showTableOfContents: true
 ---
+
+![Fiber v3 + Testcontainers](/images/posts/2025-05-27-gofiber-services-testcontainers/cover.png)
 
 With the upcoming v3 release, `Fiber` is introducing a powerful new abstraction: `Services`. These provide a standardized way to start and manage backing services like databases, queues, and cloud emulators, enabling you to manage backing services directly as part of your app's lifecycle, with no extra orchestration required. Even more exciting is the new `contrib` module that connects `Services` with `Testcontainers`, allowing you to spin up real service dependencies in a clean and testable way.
 
