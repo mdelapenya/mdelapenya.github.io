@@ -96,9 +96,9 @@ title = "Manuel de la Peña"
     weight = 6
 
   [[menu.main]]
-    identifier = "buymeacoffee"
-    pre = "<span data-feather='coffee'></span>"
-    url = "https://www.buymeacoffee.com/mdelapenya"
+    identifier = "sponsors"
+    pre = "<span data-feather='heart'></span>"
+    url = "https://github.com/sponsors/mdelapenya"
     weight = 7
 
   [[menu.main]]
