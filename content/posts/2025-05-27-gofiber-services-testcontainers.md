@@ -248,8 +248,7 @@ We need to define a context provider for the services startup and shutdown, and 
 
 ```go
 // ConfigureApp configures the fiber app, including the database connection string.
-// The connection string is retrieved from the environment variable DB, or using
-// falls back to a default connection string targeting localhost if DB is not set.
+// The connection string is retrieved from the PostgreSQL service.
 func ConfigureApp(cfg fiber.Config) (*AppConfig, error) {
 	// Define a context provider for the services startup.
 	// The timeout is applied when the context is actually used during startup.
