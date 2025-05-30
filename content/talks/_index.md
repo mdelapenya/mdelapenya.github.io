@@ -24,7 +24,8 @@ Here are the talks I've given so far.
 - Conf42 Golang 2025: “_Delightful Integration tests in Go_”
     - :link: URL: https://www.conf42.com/Golang_2025_Manuel_de_la_Pena_testing_go_integration 
     - :movie_camera: [Video](https://www.youtube.com/watch?v=VsiaUdMes3k&t=126s&ab_channel=Conf42)
-- Cloud-Native AI Day Singapore Jan ‘25: “_Testing GenAI applications in Go_”. https://www.meetup.com/es-ES/collabnix/events/304968647/ 
+- Cloud-Native AI Day Singapore Jan ‘25: “_Testing GenAI applications in Go_”.
+    - :link: URL: https://www.meetup.com/es-ES/collabnix/events/304968647/ 
 - Gophercon SG ‘25: “_Testing GenAI applications in Go_”, accepted for the conference.
     - :link: URL: https://2025.gophercon.sg/
     - :movie_camera: Video: Pending
