@@ -19,6 +19,7 @@ Here are the talks I've given so far.
     - :link: URL: http://www.ies-azarquiel.es/index.php/al-dia/1119-jornadas-de-ciberseguridad
     - :movie_camera: [Video (Spanish)](https://www.youtube.com/live/FqL5Xicd5fI?si=6U2SFXkUyJgbuE-g&t=4832)
 - :no_entry_sign: Presented 2 talks to GoLab ‘25. Both rejected.
+- :no_entry_sign: Presented 1 talk to Gophercon UK ‘25. Rejected.
 - :no_entry_sign: Presented 2 talks to Gophercon EU ‘25. Both rejected.
 - :no_entry_sign: Presented 1 talk to Gophercon US ‘25. Rejected.
 - Conf42 Golang 2025: “_Delightful Integration tests in Go_”
