@@ -69,10 +69,12 @@
 {{ end }}
 </div>
 
-<!-- Modal with improved accessibility -->
+<!-- Modal with improved accessibility and navigation arrows -->
 <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
   <div class="modal-dialog" role="document">
       <button class="modal-close" aria-label="Close modal">&times;</button>
+      <button class="modal-nav modal-nav-prev" aria-label="Previous image">‹</button>
+      <button class="modal-nav modal-nav-next" aria-label="Next image">›</button>
       <div class="loader" id="imageLoader" aria-hidden="true"></div>
       <img class="modal-content" id="modalImage" alt="">
       <div id="modalTitle" class="sr-only"></div>

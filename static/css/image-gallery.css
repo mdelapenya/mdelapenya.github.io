@@ -90,13 +90,15 @@
 /* Add responsive breakpoints */
 @media screen and (max-width: 768px) {
     .image-gallery li {
-        width: 32%; /* 3 columns for tablets */
+        width: 32%;
+        /* 3 columns for tablets */
     }
 }
 
 @media screen and (max-width: 480px) {
     .image-gallery li {
-        width: 48%; /* 2 columns for phones */
+        width: 48%;
+        /* 2 columns for phones */
     }
 }
 
@@ -117,8 +119,13 @@
 }
 
 @keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 /* Accessibility helper class */
@@ -131,4 +138,54 @@
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1001;
+    border-radius: 4px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.modal-nav:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-nav-prev {
+    left: 20px;
+}
+
+.modal-nav-next {
+    right: 20px;
+}
+
+.modal-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .modal-nav {
+        font-size: 1.5rem;
+        padding: 0.75rem 0.25rem;
+        min-width: 40px;
+    }
+
+    .modal-nav-prev {
+        left: 10px;
+    }
+
+    .modal-nav-next {
+        right: 10px;
+    }
 }

@@ -11,6 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let focusableElements;
     let lastFocusedElement;
 
+    // Function to get navigation buttons (they might be created dynamically)
+    function getNavigationButtons() {
+        const prevBtn = document.getElementsByClassName('modal-nav-prev')[0];
+        const nextBtn = document.getElementsByClassName('modal-nav-next')[0];
+        
+        return { prev: prevBtn, next: nextBtn };
+    }
+
     // Function to get all focusable elements in modal
     function getFocusableElements() {
         return modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
@@ -67,6 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
         focusableElements = getFocusableElements();
         document.addEventListener('focus', trapFocus, true);
         closeBtn.focus();
+        
+        // Set up navigation button handlers after modal is opened
+        setTimeout(setupNavigationButtons, 100); // Small delay to ensure DOM is ready
     }
 
     // Function to close modal
@@ -78,6 +89,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Function to set up navigation button handlers
+    function setupNavigationButtons() {
+        const buttons = getNavigationButtons();
+        
+        if (buttons.prev) {
+            buttons.prev.onclick = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                navigateImages(-1);
+            };
+        }
+        
+        if (buttons.next) {
+            buttons.next.onclick = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                navigateImages(1);
+            };
+        }
+    }
+
     // Event Listeners
     galleryImages.forEach(item => {
         item.addEventListener('click', function(e) {
@@ -86,7 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    closeBtn.onclick = closeModal;
+    if (closeBtn) {
+        closeBtn.onclick = closeModal;
+    }
 
     window.onclick = function(event) {
         if (event.target == modal) {
