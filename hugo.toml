@@ -51,7 +51,7 @@ title = "Manuel de la Peña"
 
   socialIcons = [
     {name = "github", url = "https://github.com/mdelapenya"},
-    {name = "linkedin", url = "https://linkedin.com/in/mdelapena"},
+    {name = "linkedin", url = "https://linkedin.com/in/mdelapenya"},
     {name = "twitter", url = "https://twitter.com/@mdelapenya"},
     {name = "mastodon", url = "https://hachyderm.io/@mdelapenya"},
     {name = "sessionize", url = "https://sessionize.com/mdelapenya"},
