@@ -12,6 +12,10 @@ Here are the talks I've given so far.
 - ContainerDays 2025: “_Delightful Integration tests in Go_”
     - :link: URL: https://www.containerdays.io/containerdays-conference-2025/
     - :movie_camera: Video: Not available yet
+- Mes de QA 2025: “_Testing GenAI applications with Docker_”
+    - :link: URL: https://mesdeqa.github.io/2025/
+    - :movie_camera: [Video (Spanish)](https://www.youtube.com/watch?v=xhm_-uIhgXE&ab_channel=MesdeQA)
+    - :scroll: [Slides](/slides/2025-07-02-mes-de-qa/Testing-GenAI-app-with-Docker.pdf)
 - Localstack Community Meetup: "_Lambda in a box: Real Integration Tests with Localstack and Go_"
     - :link: URL: https://www.meetup.com/localstack-community/events/307083096/
     - :movie_camera: [Video](https://www.youtube.com/live/qf4JQzqnpmQ?si=6YGZz784uT6OZLPi&t=2678)
@@ -27,11 +31,14 @@ Here are the talks I've given so far.
     - :movie_camera: [Video](https://www.youtube.com/watch?v=VsiaUdMes3k&t=126s&ab_channel=Conf42)
 - Cloud-Native AI Day Singapore Jan ‘25: “_Testing GenAI applications in Go_”.
     - :link: URL: https://www.meetup.com/es-ES/collabnix/events/304968647/ 
+    - :scroll: [Slides](/slides/2025-01-24-gophercon-singapore/Testing_GenAI_apps_in_Go_Cloud-Native_AI_Day_Singapore.pdf)
 - Gophercon SG ‘25: “_Testing GenAI applications in Go_”, accepted for the conference.
     - :link: URL: https://2025.gophercon.sg/
     - :movie_camera: Video: Pending
+    - :scroll: [Slides](/slides/2025-01-24-gophercon-singapore/Testing_GenAI_apps_in_Go_Gophercon_SG.pdf)
 - DevTools Day Bengaluru Jan ‘25: “_Testing GenAI applications in Go_”.
-    - :link: URL: https://www.meetup.com/es-ES/collabnix/events/304968647/ 
+    - :link: URL: https://www.meetup.com/es-ES/collabnix/events/304968647/
+    - :scroll: [Slides](/slides/2025-01-18-collabnix-bengaluru/testing-genai-in-go.pdf)
 
 ### 2024
 
