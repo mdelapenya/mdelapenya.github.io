@@ -12,6 +12,8 @@ Here are the talks I've given so far.
 - ContainerDays 2025: “_Delightful Integration tests in Go_”
     - :link: URL: https://www.containerdays.io/containerdays-conference-2025/
     - :movie_camera: Video: Not available yet
+- GoMAD: Madrid, ES - Sep 2025: “_Testing GenAI applications in Go with Docker_”
+    - :scroll: [Slides](/slides/2025-09-03-gomad/Testing-GenAI-app-with-Docker.pdf)
 - Mes de QA 2025: “_Testing GenAI applications with Docker_”
     - :link: URL: https://mesdeqa.github.io/2025/
     - :movie_camera: [Video (Spanish)](https://www.youtube.com/watch?v=xhm_-uIhgXE&ab_channel=MesdeQA)
