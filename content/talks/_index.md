@@ -13,6 +13,7 @@ Here are the talks I've given so far.
     - :link: URL: https://www.containerdays.io/containerdays-conference-2025/
     - :movie_camera: Video: Not available yet
 - GoMAD: Madrid, ES - Sep 2025: “_Testing GenAI applications in Go with Docker_”
+    - :link: URL: https://www.meetup.com/es-ES/go-mad/events/310717890/
     - :scroll: [Slides](/slides/2025-09-03-gomad/Testing-GenAI-app-with-Docker.pdf)
 - Mes de QA 2025: “_Testing GenAI applications with Docker_”
     - :link: URL: https://mesdeqa.github.io/2025/
