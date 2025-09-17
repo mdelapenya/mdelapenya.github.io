@@ -171,7 +171,7 @@ Having a background in Observability, I was interested in this talk. The title, 
 
 The conference was finished, so I had lunch there and I went for a quick nap to the hotel. That evening was the only free time that I would have during the week, so I was decided to explore a bit the city. One of the developers I met, suggested visiting [Miniatur Wunderland](https://www.miniatur-wunderland.com/), a huge model railway museum with a lot of details, so there I went. I took a bus to the downtown, right next to the hotel, and in 20 minutes I was there. I really recommend this place, it's impressive how detailed the models are, and how day and night happens every 15 minutes, changing the lights of the models. Please do not miss the Monaco F1 track, it's fabulous!
 
-I walked in the area, looking for a good burger place. I stopped by an open cinema in the middle of the lake, as they were about to screen "My neighbor Totoro", a Japanese animated film by Studio Ghibli. Hamburg is really vibrant.
+I walked in the area, looking for a good burger place, but before that, I stopped by an open cinema in the middle of the lake, as they were about to screen "My neighbor Totoro", a Japanese animated film by Studio Ghibli. Hamburg is really vibrant.
 
 {{< flex-gallery 
     src_1="monaco-by-night.jpg" 
