@@ -7,12 +7,14 @@ HUGO_BUILT_IMAGE=hugo-local
 # Build the Docker image
 build:
 	docker build -t $(HUGO_BUILT_IMAGE) \
+		--platform linux/amd64 \
 		--build-arg HUGO_VERSION=$(HUGO_VERSION) \
 		.
 
 # Serve the site locally
 serve: build
 	docker run --rm -it \
+		--platform linux/amd64 \
 		-v ${PWD}:/src \
 		-p $(PORT):1313 \
 		$(HUGO_BUILT_IMAGE) \
