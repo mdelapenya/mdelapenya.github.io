@@ -44,6 +44,9 @@ During the dinner, I also met two important people from the Testcontainers commu
     src_5="with-alex.jpeg" 
     alt_5="With Alex Pliutau, after this talk that Wednesday"
     caption_5="With Alex Pliutau, after this talk that Wednesday."
+    src_6="finnish-cup.jpg" 
+    alt_6="A beautiful cup that Nikolay gave me, directly from Finland. My kids loved it!"
+    caption_6="A beautiful cup that Nikolay gave me, directly from Finland. My kids loved it!"
 >}}
 
 ## The conference
