@@ -694,16 +694,18 @@ This follow-up work demonstrated that the AI-assisted pattern is repeatable for 
 
 Let's be honest about the metrics:
 
-| Phase | Duration | Modules | Modules/Day | Total Lines Changed |
-|-------|----------|---------|-------------|-------------------|
-| **Manual (Me)** | 7 days | 22 | 3.1 | ~5,000+ |
-| **AI-Assisted (Migration)** | 3 days | 41 | 13.67 | ~10,000+ |
-| **AI-Assisted (Consistency)** | 0.5 days | 6 | 12 | ~500+ |
-| **Total** | **10.5 days** | **69** | **6.6** | **~15,500+** |
+| Phase | Duration | Modules | Modules/Day | Files | Insertions | Deletions | Net |
+|-------|----------|---------|-------------|-------|------------|-----------|-----|
+| **Manual (Me)** | 7 days | 19 | 2.7 | 51 | +1,004 | -1,184 | -180 |
+| **AI-Assisted (Migration)** | 3 days | 41 | 13.67 | 60 | +1,357 | -1,557 | -200 |
+| **AI-Assisted (Consistency)** | 0.5 days | 6 | 12 | 6 | +81 | -66 | +15 |
+| **Total** | **10.5 days** | **66** | **6.3** | **117** | **+2,442** | **-2,807** | **-365** |
 
-**The AI multiplier: 4.4x faster** (13.67 vs 3.1 modules/day for initial migration)
+**The AI multiplier: 5.0x faster** (13.67 vs 2.7 modules/day for initial migration)
 
-**Follow-up consistency work**: Once the pattern was established, applying it to catch edge cases was even faster—6 modules in half a day with full test coverage.
+**Why negative net lines?** The refactoring simplified code by replacing verbose `GenericContainer` initialization with cleaner functional options. Less code, same functionality—that's good refactoring!
+
+**Follow-up consistency work**: Once the pattern was established, applying it to catch edge cases was even faster—6 modules in half a day, touching just 6 files with minimal changes.
 
 But the raw speed isn't the full story.
 
@@ -1057,8 +1059,8 @@ The future isn't "AI vs. Humans." It's **"Senior Developer + AI = Superpowers"**
 
 ## Conclusion
 
-I migrated and standardized 69 Go modules in 10.5 days:
-- **22 modules manually** (7 days) - Learning patterns
+I migrated and standardized 66 Go modules in 10.5 days:
+- **19 modules manually** (7 days) - Learning patterns
 - **41 modules with Claude** (3 days) - Applying migration patterns
 - **6 modules with Claude** (0.5 days) - Applying consistency patterns
 
