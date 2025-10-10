@@ -1,5 +1,5 @@
 ---
-title: "Refactoring 63 Go Modules with an AI Coding Agent: A Senior Developer's Experience"
+title: "Refactoring 60 Go Modules with an AI Coding Agent: A Senior Developer's Experience"
 date: 2025-10-10 09:00:00 +0100
 description: "How I used Claude to refactor 41 modules in 4 days after learning patterns myself from 19 modules. A real story about human-AI collaboration in production code."
 image: "/images/posts/2025-10-10-coding-agents/cover.png"
@@ -16,7 +16,7 @@ showTableOfContents: true
 
 ## The Challenge
 
-The Testcontainers for Go project needed a major refactoring: migrate all 63 modules from using `testcontainers.GenericContainer()` to the new `testcontainers.Run()` API. Each module represents a different technology: PostgreSQL, Redis, Kafka, MongoDB, Elasticsearch, etc.
+The Testcontainers for Go project needed a major refactoring: migrate all 60 modules from using `testcontainers.GenericContainer()` to the new `testcontainers.Run()` API. Each module represents a different technology: PostgreSQL, Redis, Kafka, MongoDB, Elasticsearch, etc.
 
 This wasn't just a find-and-replace job. Each module had its own quirks:
 - Different configuration patterns
@@ -965,7 +965,7 @@ The test suite became my confidence check. If tests pass, the migration is likel
 
 ## The Meta Pattern That Emerged
 
-Looking back, the real value wasn't just migrating 63 modules. It was establishing a **scalable collaboration pattern**:
+Looking back, the real value wasn't just migrating 60 modules. It was establishing a **scalable collaboration pattern**:
 
 1. **Learn patterns** through hands-on experience (19 modules)
 2. **Document thoroughly** what works and why (`plan.txt`, `AI.md`)
