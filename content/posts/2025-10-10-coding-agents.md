@@ -636,9 +636,9 @@ Even the complex ones followed the pattern:
 
 I had time to polish the docs, of course, assisted by the agent:
 
-- Updated `docs/modules/index.md` with comprehensive best practices
-- Created `AI.md` file with guidelines for future AI agents
-- Updated module generator templates
+- Updated `docs/modules/index.md` with comprehensive best practices ([#3445](https://github.com/testcontainers/testcontainers-go/pull/3445))
+- Updated module generator templates ([#3445](https://github.com/testcontainers/testcontainers-go/pull/3445))
+- Created `AI.md` file with guidelines for future AI agents ([#3446](https://github.com/testcontainers/testcontainers-go/pull/3446))
 
 ### Phase 3: Follow-up Consistency Pass (Oct 10)
 
@@ -649,6 +649,8 @@ This was a perfect test case for the pattern we'd established. I asked Claude to
 2. Fix only the modules that had the issue
 3. Test each one individually
 4. Commit with the pattern: `chore(module): apply consistent patterns for options`
+
+Please check the results of the PRs in [#3447](https://github.com/testcontainers/testcontainers-go/pull/3447).
 
 **Result: 6 modules fixed in a few hours**
 
