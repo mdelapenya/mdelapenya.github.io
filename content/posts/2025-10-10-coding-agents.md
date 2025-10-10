@@ -1,7 +1,7 @@
 ---
 title: "Refactoring 63 Go Modules with an AI Coding Agent: A Senior Developer's Experience"
 date: 2025-10-10 09:00:00 +0100
-description: "How I used Claude to refactor 41 modules in 4 days after learning patterns myself from 22 modules. A real story about human-AI collaboration in production code."
+description: "How I used Claude to refactor 41 modules in 4 days after learning patterns myself from 19 modules. A real story about human-AI collaboration in production code."
 image: "/images/posts/2025-10-10-coding-agents/cover.png"
 categories: [Go, AI, Development]
 tags: ["go", "ai", "coding-agents", "refactoring", "testcontainers", "claude", "docker"]
@@ -33,7 +33,7 @@ I decided to try an experiment: **do part of the migration manually to understan
 
 ### Phase 1: Manual Migration (Sept 26 - Oct 3)
 
-I started alphabetically with `aerospike` and worked my way through to `grafana-lgtm`—**22 modules in 7 days**.
+I started alphabetically with `aerospike` and worked my way through to `grafana-lgtm`—**19 modules in 7 days**.
 
 Why go manual first? Because I needed to:
 - Understand what patterns actually worked
@@ -149,7 +149,7 @@ for _, env := range inspect.Config.Env {
 - ✅ Always initialize container variable before error check
 - ✅ Container naming: use `Container`, not `PostgresContainer`
 
-After 7 days and 22 modules, I had:
+After 7 days and 19 modules, I had:
 1. A proven pattern that worked
 2. Multiple reference implementations
 3. Confidence that this was the right approach
@@ -967,7 +967,7 @@ The test suite became my confidence check. If tests pass, the migration is likel
 
 Looking back, the real value wasn't just migrating 63 modules. It was establishing a **scalable collaboration pattern**:
 
-1. **Learn patterns** through hands-on experience (22 modules)
+1. **Learn patterns** through hands-on experience (19 modules)
 2. **Document thoroughly** what works and why (`plan.txt`, `AI.md`)
 3. **Create references** for AI to learn from (postgres, redis, etc.)
 4. **Delegate implementation** while maintaining architectural oversight (41 modules)
