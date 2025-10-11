@@ -25,7 +25,7 @@ This wasn't just a find-and-replace job. Each module had its own quirks:
 - TLS support and credentials
 - Wait strategies and health checks
 
-The scope? Roughly 15,000+ lines of code across modules, tests, and examples. All had to maintain backward compatibility, pass existing tests, and follow our coding conventions.
+The scope? Roughly 5,000+ lines of code across modules, tests, and examples. All had to maintain backward compatibility, pass existing tests, and follow our coding conventions.
 
 ## The Experiment: Learn First, Then Delegate
 
