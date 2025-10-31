@@ -3,7 +3,7 @@ title: "5th DevTools Day Bengaluru (Collabnix Docker Community)"
 date: 2025-01-18T09:00:00+05:30
 description: "My experience at the 5th DevTools Day Bengaluru (Collabnix Docker Community)"
 categories: [Community]
-tags: [Docker, DevTools Day, Bengaluru, India, Community, Events, Testing, Testcontainers, Go, GenAI, Ollama, LLMs]
+tags: [docker, devtools-day, bengaluru, india, community, events, testing, testcontainers, go, genai, ollama, llms]
 type: post
 weight: 25
 showTableOfContents: true

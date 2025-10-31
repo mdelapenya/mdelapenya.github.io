@@ -4,7 +4,7 @@ date: 2011-05-02 08:00:00 +0200
 image: ""
 description: "En este post querría mostrar brevemente las ventajas de utilizar un producto Open Source como Liferay Portal como gestor de portales."
 categories: [Liferay, "Desarrollo Web"]
-tags: ["Liferay", "Portal", "Open Source", "Java"]
+tags: ["liferay", "portal", "open-source", "java"]
 type: post
 weight: 1
 lang: es

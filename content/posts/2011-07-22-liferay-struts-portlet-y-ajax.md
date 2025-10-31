@@ -4,7 +4,7 @@ date: 2011-07-22 08:00:00 +0200
 image: ""
 description: "Cómo realizar un uso específico de Ajax para presentar datos dentro de un portlet de Struts en Liferay."
 categories: [Liferay]
-tags: ["Liferay", "Struts", "Ajax", "jQuery", "portlet", "Java", "servlets"]
+tags: ["liferay", "struts", "ajax", "jquery", "portlet", "java", "servlets"]
 type: post
 weight: 1
 lang: es

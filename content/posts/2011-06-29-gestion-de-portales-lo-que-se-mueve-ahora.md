@@ -4,7 +4,7 @@ date: 2011-06-29 16:00:00 +0200
 image: ""
 description: "Reflexiones sobre la adquisición de Fatwire por Oracle y su impacto en el mercado de gestión de portales."
 categories: [Desarrollo Web, Liferay]
-tags: ["Liferay", "Oracle", "Fatwire", "portal", "Oracle Portal", "Weblogic", "OAS", "Java"]
+tags: ["liferay", "oracle", "fatwire", "portal", "oracle-portal", "weblogic", "oas", "java"]
 type: post
 weight: 1
 lang: es

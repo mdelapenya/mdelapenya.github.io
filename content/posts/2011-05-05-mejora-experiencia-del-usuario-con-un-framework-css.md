@@ -4,7 +4,7 @@ date: 2011-05-05 08:00:00 +0200
 image: ""
 description: "Hablaremos en este post del desarrollo de interfaces de usuario en entornos web."
 categories: [CSS]
-tags: ["CSS", "framework", "blueprint", "960gs", "cssgrid", "yui"]
+tags: ["css", "framework", "blueprint", "960gs", "cssgrid", "yui"]
 type: post
 weight: 1
 lang: es

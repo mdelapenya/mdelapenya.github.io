@@ -4,7 +4,7 @@ date: 2011-05-12 08:00:00 +0200
 image: ""
 description: "Arquitectura para construir un CAS en Liferay, validando usuarios contra una entidad certificadora de certificados digitales."
 categories: [Liferay]
-tags: ["Liferay", "CAS", "Autenticación", "certificado electrónico", "plugins", "Java"]
+tags: ["liferay", "cas", "autenticación", "certificado electrónico", "plugins", "java"]
 type: post
 weight: 1
 lang: es
