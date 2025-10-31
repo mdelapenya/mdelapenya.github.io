@@ -59,7 +59,7 @@ Ya centrándome en jQueryui, lo recomiendo por dos motivos principales:
 1. Está muy difundido entre la comunidad de desarrolladores, y
 2. Ofrece una variedad bastante grande de combinaciones de estilos en su web [jqueryui.com](http://jqueryui.com/), desde la que podremos utilizar alguna de los interfaces ya existentes, o bien configurar nosotros mismos el aspecto final de nuestra hoja de estilos. Para ello dispone de una (maravillosa) herramienta ([Themeroller](http://jqueryui.com/themeroller/)) para poder personalizar la el aspecto de la hoja de estilos del paquete a descargar, que permite visualizar el aspecto final del paquete en caliente (con todos los widgets del framework cambiando su aspecto según se modifican en la herramienta).
 
-![Montaje con los temas predefinidos en Themeroller](/posts/2011-05-05-mejora-experiencia-del-usuario-con-un-framework-css/jqueryui-theme-roller-gallery.png)
+![Montaje con los temas predefinidos en Themeroller](/images/posts/2011-05-05-framework-css/jqueryui-theme-roller-gallery.png)
 
 Además, desde la opción «Roll your Own» podremos personalizar las siguientes categorías, junto con las propiedades asociadas:
 
@@ -75,7 +75,7 @@ Además, desde la opción «Roll your Own» podremos personalizar las siguientes
 - **Modal Screen for overlays**: Color de fondo y textura (via imagen)  y opacidad del fondo de las capas modales.
 - **Drop Shadows**: Color de fondo y textura (via imagen) , opacidad, grosor de la opacidad, offsets (top y left) y redondeo de las esquinas (en px) de las sombras.
 
-![Montaje con la modificación del tema con Themeroller](/posts/2011-05-05-mejora-experiencia-del-usuario-con-un-framework-css/jqueryui-theme-roller-your-own.png)
+![Montaje con la modificación del tema con Themeroller](/images/posts/2011-05-05-framework-css/jqueryui-theme-roller-your-own.png)
 
 Y con un simple click lo tendríamos listo para descargar!
 
