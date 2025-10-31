@@ -1,0 +1,42 @@
+{{ define "main" }}
+<div class="container tags-list">
+
+    <h1 class="list-title">{{ i18n "tags" }}</h1>
+    {{if eq (len $.Site.Taxonomies.tags) 0}}
+        {{ i18n "nothing" }}
+    {{else}}
+
+    {{/* Calculate min and max counts for weight calculation */}}
+    {{ $maxCount := 0 }}
+    {{ $minCount := 999999 }}
+    {{ range $.Site.Taxonomies.tags }}
+        {{ if gt .Count $maxCount }}
+            {{ $maxCount = .Count }}
+        {{ end }}
+        {{ if lt .Count $minCount }}
+            {{ $minCount = .Count }}
+        {{ end }}
+    {{ end }}
+
+    <ul class="post-tags">
+        {{ range $.Site.Taxonomies.tags.ByCount }}
+        {{/* Calculate weight class (1-5 scale) */}}
+        {{ $weight := 1 }}
+        {{ if gt $maxCount $minCount }}
+            {{ $range := sub $maxCount $minCount }}
+            {{ $normalized := div (mul (sub .Count $minCount) 4.0) $range }}
+            {{ $weight = add (math.Round $normalized) 1 }}
+        {{ end }}
+
+        <li class="post-tag tag-weight-{{ $weight }}">
+            <a href="{{ .Page.RelPermalink }}">
+                <div class="tag-name">{{ .Name }}</div>
+                <div class="tag-posts-count">{{ .Count }}</div>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+
+</div>
+{{ end }}

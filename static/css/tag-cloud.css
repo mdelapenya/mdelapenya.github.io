@@ -1,0 +1,134 @@
+/* Tag Cloud Styles - Visual Weight Based on Usage */
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    text-align: justify;
+}
+
+.post-tags::after {
+    content: "";
+    flex: auto;
+}
+
+.post-tag {
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.post-tag a {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.post-tag:hover {
+    transform: scale(1.05);
+}
+
+.post-tag a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tag-name {
+    font-weight: 400;
+}
+
+.tag-posts-count {
+    opacity: 0.5;
+    font-size: 0.85em;
+}
+
+/* Weight classes - 5 levels based on usage count */
+.tag-weight-1 .tag-name {
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+.tag-weight-2 .tag-name {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.tag-weight-3 .tag-name {
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+.tag-weight-4 .tag-name {
+    font-size: 1.15rem;
+    opacity: 0.95;
+    font-weight: 500;
+}
+
+.tag-weight-5 .tag-name {
+    font-size: 1.4rem;
+    opacity: 1;
+    font-weight: 600;
+}
+
+/* Adjust count badge size based on weight */
+.tag-weight-1 .tag-posts-count {
+    font-size: 0.7em;
+}
+
+.tag-weight-2 .tag-posts-count {
+    font-size: 0.75em;
+}
+
+.tag-weight-3 .tag-posts-count {
+    font-size: 0.8em;
+}
+
+.tag-weight-4 .tag-posts-count {
+    font-size: 0.85em;
+}
+
+.tag-weight-5 .tag-posts-count {
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .post-tags {
+        gap: 0.5rem;
+    }
+
+    .tag-weight-1 .tag-name {
+        font-size: 0.65rem;
+    }
+
+    .tag-weight-2 .tag-name {
+        font-size: 0.75rem;
+    }
+
+    .tag-weight-3 .tag-name {
+        font-size: 0.9rem;
+    }
+
+    .tag-weight-4 .tag-name {
+        font-size: 1.05rem;
+    }
+
+    .tag-weight-5 .tag-name {
+        font-size: 1.25rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .post-tag a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
