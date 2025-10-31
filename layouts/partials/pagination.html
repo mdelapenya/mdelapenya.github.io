@@ -1,0 +1,80 @@
+{{ $paginator := .Paginator }}
+
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="pagination" role="navigation" aria-label="pagination">
+    <div class="pagination-container">
+        {{/* Previous page link */}}
+        {{ if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}" class="pagination-link pagination-previous" aria-label="Previous page">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="pagination-text">Previous</span>
+            </a>
+        {{ else }}
+            <span class="pagination-link pagination-previous disabled" aria-disabled="true">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="pagination-text">Previous</span>
+            </span>
+        {{ end }}
+
+        {{/* Page numbers */}}
+        <ul class="pagination-list">
+            {{ $currentPage := $paginator.PageNumber }}
+            {{ $totalPages := $paginator.TotalPages }}
+
+            {{/* Always show first page */}}
+            {{ if gt $currentPage 3 }}
+                <li>
+                    <a href="{{ $paginator.First.URL }}" class="pagination-link" aria-label="Go to page 1">1</a>
+                </li>
+                {{ if gt $currentPage 4 }}
+                    <li><span class="pagination-ellipsis">&hellip;</span></li>
+                {{ end }}
+            {{ end }}
+
+            {{/* Show pages around current page */}}
+            {{ range $paginator.Pagers }}
+                {{ $pageNum := .PageNumber }}
+                {{ if and (ge $pageNum (sub $currentPage 2)) (le $pageNum (add $currentPage 2)) }}
+                    <li>
+                        {{ if eq $pageNum $currentPage }}
+                            <span class="pagination-link is-current" aria-label="Current page, page {{ $pageNum }}" aria-current="page">{{ $pageNum }}</span>
+                        {{ else }}
+                            <a href="{{ .URL }}" class="pagination-link" aria-label="Go to page {{ $pageNum }}">{{ $pageNum }}</a>
+                        {{ end }}
+                    </li>
+                {{ end }}
+            {{ end }}
+
+            {{/* Always show last page */}}
+            {{ if lt $currentPage (sub $totalPages 2) }}
+                {{ if lt $currentPage (sub $totalPages 3) }}
+                    <li><span class="pagination-ellipsis">&hellip;</span></li>
+                {{ end }}
+                <li>
+                    <a href="{{ $paginator.Last.URL }}" class="pagination-link" aria-label="Go to page {{ $totalPages }}">{{ $totalPages }}</a>
+                </li>
+            {{ end }}
+        </ul>
+
+        {{/* Next page link */}}
+        {{ if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}" class="pagination-link pagination-next" aria-label="Next page">
+                <span class="pagination-text">Next</span>
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        {{ else }}
+            <span class="pagination-link pagination-next disabled" aria-disabled="true">
+                <span class="pagination-text">Next</span>
+                <span aria-hidden="true">&raquo;</span>
+            </span>
+        {{ end }}
+    </div>
+
+    {{/* Page info */}}
+    <div class="pagination-info">
+        <span>Page {{ $currentPage }} of {{ $totalPages }}</span>
+        <span class="pagination-separator">|</span>
+        <span>{{ $paginator.TotalNumberOfElements }} total posts</span>
+    </div>
+</nav>
+{{ end }}

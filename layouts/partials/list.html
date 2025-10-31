@@ -1,0 +1,18 @@
+<div class="container list-posts">
+
+    <h1 class="list-title">{{ i18n .Name }}</h1>
+
+    {{ $paginator := .Paginate (where .Pages "Params.type" "post").ByDate.Reverse }}
+
+    {{ range $paginator.Pages.GroupByDate "2006" }}
+
+    <h2 class="posts-year">{{ .Key }}</h2>
+
+    {{- range .Pages -}}
+        {{- partial "list-posts.html" . -}}
+    {{ end }}
+    {{ end }}
+
+    {{- partial "pagination.html" . -}}
+
+</div>
