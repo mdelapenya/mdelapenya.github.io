@@ -29,7 +29,7 @@ A modo de resumen, los pasos que vamos a realizar para integrar BIRT con Liferay
 
 Lo primero de todo es descargar el motor de informes. Podemos hacerlo desde la página de Eclipse BIRT (proyecto Phoenix). Allí vamos a "Latest BIRT Runtime Release Build", en este caso la 2.6.2. Y le damos a descargar el Runtime (descarga directa).
 
-![Descarga de Eclipse BIRT](/posts/2011-05-23-integrando-liferay-con-birt/birt-runtime-download.png)
+![Descarga de Eclipse BIRT](/images/posts/2011-05-23-integrando-liferay-con-birt/birt-runtime-download.png)
 
 El lugar donde instalar el runtime debería ser accesible por el contexto de aplicación del portal Liferay (donde queremos instalar el motor de BIRT). En este caso, un buen lugar podría ser el WEB-INF/birt-runtime del portal.
 
@@ -42,7 +42,7 @@ Para ello, podríamos crear un conjunto de objetos Java que encapsulen los datos
 1.  Unificar el modo de presentación de reports, centralizando la gestión de reports en el portal: no desplegamos BIRT en todos y cada uno de los portlets que lo utilicen.
 2.  No utilizar BIRT en la capa de acceso a datos, ya que no utilizamos DataSources JDBC, sino que le pasamos al BIRT objetos Java obtenidos por cada portlet. En el report únicamente utilizaríamos ScriptedDatasources para acceder a esos objetos Java.
 
-![Interfaz de comunicación entre los portlets y BIRT](/posts/2011-05-23-integrando-liferay-con-birt/birt-interfaz-comunicacion.png)
+![Interfaz de comunicación entre los portlets y BIRT](/images/posts/2011-05-23-integrando-liferay-con-birt/birt-interfaz-comunicacion.png)
 
 Para que BIRT, que estará dentro del contexto de Liferay, pueda leer esos datos, los portlets deben dejarlos en el contexto de aplicación (APPLICATION_SCOPE). Para ello es necesario configurar en el fichero liferay-portlet.xml de cada portlet el siguiente elemento:
 
