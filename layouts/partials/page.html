@@ -1,0 +1,25 @@
+<div class="post container">
+
+    <div class="post-header-section">
+        {{/* Add back link for pages in sections (like projects) */}}
+        {{ if .Parent }}
+            {{ if ne .Parent.Kind "home" }}
+                <div class="page-breadcrumb">
+                    <a href="{{ .Parent.RelPermalink }}" class="breadcrumb-link">
+                        <span aria-hidden="true">←</span> Back to {{ .Parent.Title }}
+                    </a>
+                </div>
+            {{ end }}
+        {{ end }}
+
+        <h1>{{ or (.Params.H1 | markdownify) (.Title | markdownify) }}</h1>
+    </div>
+
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+    <!-- Back to top button -->
+    {{ if .Site.Params.ShowBackToTopButton }}
+        {{ partial "back-to-top.html" . }}
+    {{ end }}
+</div>
