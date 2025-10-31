@@ -3,7 +3,7 @@ title: "GopherCon Singapore 2025"
 date: 2025-01-24T09:00:00+08:00
 description: "My experience at the GopherCon Singapore 2025"
 categories: [Community]
-tags: [gophercon, singapore, community, events, go, genai, ollama, llms]
+tags: [gophercon, singapore, community, events, go, genai, ollama, llms, conference]
 type: post
 weight: 25
 showTableOfContents: true
