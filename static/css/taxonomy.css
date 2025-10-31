@@ -1,0 +1,101 @@
+/* Tag Taxonomy Page Styles */
+
+.content-type-header {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.content-type-header:first-of-type {
+    margin-top: 1rem;
+}
+
+.posts-year {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* Project list styles */
+.project-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.project-item {
+    margin-bottom: 1.5rem;
+}
+
+.project-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.75rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.project-link:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.project-description {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Tag info message */
+.tag-info {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.tag-info a {
+    text-decoration: underline;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .project-link:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .tag-info {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .content-type-header {
+        font-size: 1.3rem;
+    }
+
+    .posts-year {
+        font-size: 1.1rem;
+    }
+
+    .project-title {
+        font-size: 1rem;
+    }
+
+    .project-description {
+        font-size: 0.85rem;
+    }
+}

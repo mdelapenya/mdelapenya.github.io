@@ -1,0 +1,50 @@
+{{ define "main" }}
+<div class="container list-posts">
+
+    <h1 class="list-title">{{ i18n "tag" }}: {{ .Title }}</h1>
+
+    {{ if eq (len .Pages) 0 }}
+        {{ i18n "nothing" }}
+    {{ else }}
+
+    {{/* Group pages by type */}}
+    {{ $posts := where .Pages "Params.type" "post" }}
+    {{ $projects := where .Pages "Params.type" "page" }}
+
+    {{/* Display Posts */}}
+    {{ if $posts }}
+    <h2 class="content-type-header">Posts</h2>
+    {{ range $posts.GroupByDate "2006" }}
+        <h3 class="posts-year">{{ .Key }}</h3>
+        {{- range .Pages -}}
+            {{- partial "list-posts.html" . -}}
+        {{ end }}
+    {{ end }}
+    {{ end }}
+
+    {{/* Display Projects */}}
+    {{ if $projects }}
+    <h2 class="content-type-header">Projects</h2>
+    <ul class="project-list">
+    {{ range $projects }}
+        <li class="project-item">
+            <a href="{{ .Permalink }}" class="project-link">
+                <span class="project-title">{{ .Title }}</span>
+                {{ with .Description }}
+                <span class="project-description">{{ . }}</span>
+                {{ end }}
+            </a>
+        </li>
+    {{ end }}
+    </ul>
+    {{ end }}
+
+    {{/* Show message if only projects, no posts */}}
+    {{ if and (not $posts) $projects }}
+    <p class="tag-info">This tag is only used in projects. Check out <a href="/posts/">all posts</a> or <a href="/tags/">browse other tags</a>.</p>
+    {{ end }}
+
+    {{ end }}
+
+</div>
+{{ end }}
