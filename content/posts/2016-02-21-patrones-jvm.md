@@ -34,7 +34,7 @@ JRE 7 por otro lado proporciona las librerías, la Máquina Virtual de Java, o *
 
 El siguiente diagrama conceptual ilustra los componentes de los productos Java SE de Oracle:
 
-![Componentes de Oracle Java SE](../../images/jvm_diagram.png)
+![Componentes de Oracle Java SE](/images/posts/2016-02-21-patrones-jvm/jvm_diagram.png)
 
 El diagrama conceptual categoriza las tecnologías de componentes Java en niveles. La lista siguiente enumera dichos niveles, de arriba a abajo, y las tecnologías que son parte de cada uno. Las tecnologías que forman parte de un nivel inferior sirven como base (*foundation*) para aquéllos que son parte de un nivel superior.
 
