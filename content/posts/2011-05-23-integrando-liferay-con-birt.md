@@ -7,7 +7,7 @@ categories: [Liferay, "Desarrollo Web"]
 tags: ["birt", "eclipse", "java", "liferay", "plugins", "portal", "reports", "servlets"]
 type: post
 weight: 1
-lang: es
+language: es
 showTableOfContents: true
 ---
 

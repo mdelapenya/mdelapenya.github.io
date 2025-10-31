@@ -6,7 +6,7 @@ categories: java
 tags: [design patterns, jdk, jvm, patterns, software patterns]
 type: post
 weight: 25
-lang: es
+language: es
 showTableOfContents: true
 ---
 

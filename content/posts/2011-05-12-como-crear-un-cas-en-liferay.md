@@ -7,7 +7,7 @@ categories: [Liferay]
 tags: ["liferay", "cas", "autenticación", "certificado electrónico", "plugins", "java"]
 type: post
 weight: 1
-lang: es
+language: es
 showTableOfContents: true
 ---
 

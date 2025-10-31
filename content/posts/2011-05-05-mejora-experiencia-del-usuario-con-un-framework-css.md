@@ -7,7 +7,7 @@ categories: [CSS]
 tags: ["css", "framework", "blueprint", "960gs", "cssgrid", "yui"]
 type: post
 weight: 1
-lang: es
+language: es
 showTableOfContents: true
 ---
 

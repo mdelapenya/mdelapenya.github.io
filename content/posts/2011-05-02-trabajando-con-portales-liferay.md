@@ -7,7 +7,7 @@ categories: [Liferay, "Desarrollo Web"]
 tags: ["liferay", "portal", "open-source", "java"]
 type: post
 weight: 1
-lang: es
+language: es
 showTableOfContents: true
 ---
 

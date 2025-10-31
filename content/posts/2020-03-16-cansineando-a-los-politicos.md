@@ -6,7 +6,7 @@ description: "Cansineando a los políticos"
 categories: [Política, Cansino]
 tags: ["open-source", "golang", "observability", "elasticsearch", "kibana", "apm"]
 type: post
-lang: es
+language: es
 weight: 25
 showTableOfContents: true
 ---

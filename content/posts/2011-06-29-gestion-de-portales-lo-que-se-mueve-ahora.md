@@ -7,7 +7,7 @@ categories: [Desarrollo Web, Liferay]
 tags: ["liferay", "oracle", "fatwire", "portal", "oracle-portal", "weblogic", "oas", "java"]
 type: post
 weight: 1
-lang: es
+language: es
 showTableOfContents: true
 ---
 

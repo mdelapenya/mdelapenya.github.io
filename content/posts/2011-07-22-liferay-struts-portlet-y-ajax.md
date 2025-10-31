@@ -7,7 +7,7 @@ categories: [Liferay]
 tags: ["liferay", "struts", "ajax", "jquery", "portlet", "java", "servlets"]
 type: post
 weight: 1
-lang: es
+language: es
 showTableOfContents: true
 ---
 
