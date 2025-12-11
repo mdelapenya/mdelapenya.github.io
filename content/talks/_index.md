@@ -9,7 +9,10 @@ Here are the talks I've given so far.
 
 ### 2026
 
-- ContainerDays 2026: "_Delightful Integration tests in Go_", accepted for the conference.
+- ContainerDays 2026: "_Mastering Containerized Local Development and Integration Testing with Testcontainers for Go_", accepted for the conference.
+    - :link: URL: https://www.containerdays.io/containerdays-london-2026/agenda/
+    - :movie_camera: Video: Pending
+- ContainerDays 2026: "_Choosing the Smallest LLM That Won't Completely Fail You_", accepted for the conference.
     - :link: URL: https://www.containerdays.io/containerdays-london-2026/agenda/
     - :movie_camera: Video: Pending
 
