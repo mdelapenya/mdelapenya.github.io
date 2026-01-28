@@ -58,6 +58,7 @@ Here are the talks I've given so far.
 
 - GoMAD: Madrid, ES - Nov 2024: “_Delightful Integration tests in Go_”
     - :movie_camera: [Video (Spanish)](https://www.youtube.com/watch?v=MdoHkGUA4xI&t=12s&ab_channel=Celonis)
+    - :scroll: [Slides](/slides/2024-11-19-gomad/Delightful_Integration_Tests_in_Go_applications_(GoMAD).pdf)
 - :no_entry_sign: Gophercon US ‘24: Booth work presenting Testcontainers for Go to the attendees.
 - Presented in London Gophers Meetup (March, 20th 2024): “_Delightful Integration tests in Go_”
     - :link: URL: https://www.meetup.com/londongophers/events/298857117/ 
