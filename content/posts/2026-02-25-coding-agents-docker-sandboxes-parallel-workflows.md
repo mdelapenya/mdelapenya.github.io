@@ -41,7 +41,7 @@ Now you have two independent working directories, each on its own branch. Change
 
 ### Step 2: Create a Docker Sandbox
 
-Create a sandbox for your project, pointing it at the repository root. This sets up an isolated microVM with its own private Docker daemon, completely separated from your host.
+Create a sandbox for your project, pointing it at the repository root. This sets up an isolated microVM with its own private Docker daemon, completely separated from your host. The sandbox is a single environment: every `docker sandbox run` lands you in the same container inside that VM, but as a separate Claude process.
 
 ```bash
 docker sandbox create --name my-sandbox claude .
@@ -111,9 +111,9 @@ Sandboxes persist until you explicitly remove them, so installed packages and co
 
 ## Why This Works
 
-**Safety.** The sandbox provides real isolation, not just a promise. The agent runs in a microVM with its own Docker daemon. It can't escape to your host. You can let it run autonomously without worrying about collateral damage.
+**Safety.** The sandbox provides real isolation from your host, not just a promise. All agents share a single microVM with its own Docker daemon. They can't escape to your host. You can let them run autonomously without worrying about collateral damage.
 
-**Parallelism.** Git worktrees give each agent its own branch and working directory. No conflicts, no stepping on each other's toes. You can run as many parallel tasks as your machine can handle.
+**Parallelism.** The agents share the same sandbox container, but git worktrees give each one its own branch and working directory. No file conflicts, no stepping on each other's toes. You can run as many parallel tasks as your machine can handle.
 
 **Agent autonomy.** Because the sandbox is isolated, there's no need to babysit the agent or approve every action. It can install what it needs, run what it needs, break what it needs, all inside its own contained environment. This is where agents are most productive: when they can iterate freely without waiting for human approval at every step.
 
@@ -121,7 +121,7 @@ Sandboxes persist until you explicitly remove them, so installed packages and co
 
 ## Wrapping Up
 
-The combination is simple but effective: git worktrees for parallel branches, Docker Sandboxes for isolated execution. You get agents that can work autonomously and in parallel, without any risk to your host or to each other.
+The combination is simple but effective: git worktrees for parallel branches, a Docker Sandbox for isolated execution. You get agents that can work autonomously and in parallel, without any risk to your host. The worktrees keep their file changes separate; the sandbox keeps everything off your machine.
 
 It's the workflow I reach for whenever I have multiple independent tasks that an agent can handle. Set up the worktrees, launch the sandboxes, and let them work. Review when they're done.
 
