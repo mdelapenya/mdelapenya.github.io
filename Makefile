@@ -1,6 +1,7 @@
 HUGO_VERSION=0.145.0
 PORT=1313
 HUGO_BUILT_IMAGE=hugo-local
+HUGO_CONTAINER=hugo-serve
 
 .PHONY: build serve clean
 
@@ -11,9 +12,10 @@ build:
 		--build-arg HUGO_VERSION=$(HUGO_VERSION) \
 		.
 
-# Serve the site locally
+# Serve the site locally (detached container)
 serve: build
-	docker run --rm -it \
+	docker run --rm -d \
+		--name $(HUGO_CONTAINER) \
 		--platform linux/amd64 \
 		-v ${PWD}:/src \
 		-p $(PORT):1313 \
