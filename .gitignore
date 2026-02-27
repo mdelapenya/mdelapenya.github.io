@@ -4,3 +4,6 @@ public/
 
 .env
 .hugo_build.lock
+
+tests/node_modules
+tests/test-results

@@ -2,8 +2,10 @@ HUGO_VERSION=0.145.0
 PORT=1313
 HUGO_BUILT_IMAGE=hugo-local
 HUGO_CONTAINER=hugo-serve
+BASE_URL ?= http://host.docker.internal:1313
+DOCKER_NETWORK ?=
 
-.PHONY: build serve clean
+.PHONY: build serve clean test
 
 # Build the Docker image
 build:
@@ -24,6 +26,16 @@ serve: build
 		--bind 0.0.0.0 \
 		--buildDrafts \
 		--buildFuture
+
+# Run Playwright E2E tests (requires Hugo dev server running via 'make serve')
+test:
+	docker run --rm \
+		$(if $(DOCKER_NETWORK),--network $(DOCKER_NETWORK),) \
+		-v $$(pwd)/tests:/tests \
+		-w /tests \
+		-e BASE_URL=$(BASE_URL) \
+		mcr.microsoft.com/playwright:v1.50.1-noble \
+		sh -c "npm install && npx playwright test"
 
 # Clean up Docker images
 clean:

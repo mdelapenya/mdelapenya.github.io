@@ -33,6 +33,31 @@ defaults:
     shell: bash
 
 jobs:
+  # E2E test job
+  test:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Madrid
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Start Hugo dev server
+        run: make serve
+
+      - name: Wait for Hugo server
+        run: |
+          for i in $(seq 1 30); do
+            curl -s http://localhost:1313 > /dev/null && exit 0
+            sleep 1
+          done
+          echo "Hugo server failed to start" && exit 1
+
+      - name: Run Playwright E2E tests
+        run: make test BASE_URL=http://localhost:1313 DOCKER_NETWORK=host
+
   # Build job
   build:
     runs-on: ubuntu-latest
@@ -95,7 +120,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs:
+      - build
+      - test
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
