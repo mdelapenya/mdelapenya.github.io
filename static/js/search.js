@@ -15,15 +15,16 @@
       .then(function (data) {
         fuse = new Fuse(data, {
           keys: [
-            { name: "title", weight: 0.4 },
-            { name: "description", weight: 0.3 },
-            { name: "tags", weight: 0.2 },
+            { name: "title", weight: 0.8 },
+            { name: "description", weight: 0.4 },
+            { name: "tags", weight: 0.3 },
             { name: "content", weight: 0.1 },
           ],
           includeScore: true,
-          threshold: 0.4,
+          threshold: 0.2,
           ignoreLocation: true,
           minMatchCharLength: 2,
+          fieldNormWeight: 2,
         });
         indexLoaded = true;
       });
