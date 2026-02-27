@@ -1,0 +1,182 @@
+.search-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.search-modal.active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+}
+
+.search-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Light mode (default) */
+.search-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    max-height: 70vh;
+    background: rgb(var(--light-primary-color));
+    border: 1px solid var(--light-secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.search-modal-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--light-secondary-color);
+    gap: 8px;
+}
+
+#search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    background: transparent;
+    color: var(--light-text-color);
+    font-family: inherit;
+}
+
+#search-input::placeholder {
+    color: var(--light-tertiary-color);
+    opacity: 0.6;
+}
+
+.search-kbd {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    font-family: inherit;
+    border: 1px solid var(--light-secondary-color);
+    border-radius: 4px;
+    color: var(--light-tertiary-color);
+    white-space: nowrap;
+}
+
+.search-results {
+    overflow-y: auto;
+    padding: 8px 0;
+}
+
+.search-result-item {
+    padding: 10px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+.search-result-item:hover,
+.search-result-item:focus {
+    background: var(--light-secondary-color);
+    color: inherit;
+}
+
+.search-result-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+}
+
+.search-result-description {
+    font-size: 0.85rem;
+    margin: 0 0 4px 0;
+    opacity: 0.8;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.search-result-meta {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.search-result-tag {
+    background: var(--light-secondary-color);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+}
+
+.search-no-results {
+    padding: 24px 16px;
+    text-align: center;
+    opacity: 0.6;
+}
+
+.search-hint {
+    padding: 24px 16px;
+    text-align: center;
+    opacity: 0.5;
+    font-size: 0.9rem;
+}
+
+/* Dark mode overrides — JS adds .search-dark class when Gokarna dark theme is active */
+.search-modal.search-dark .search-modal-content {
+    background: rgb(var(--dark-primary-color));
+    border-color: var(--dark-secondary-color);
+}
+
+.search-modal.search-dark .search-modal-header {
+    border-color: var(--dark-secondary-color);
+}
+
+.search-modal.search-dark #search-input {
+    color: var(--dark-text-color);
+}
+
+.search-modal.search-dark #search-input::placeholder {
+    color: var(--dark-tertiary-color);
+}
+
+.search-modal.search-dark .search-kbd {
+    border-color: var(--dark-secondary-color);
+    color: var(--dark-tertiary-color);
+}
+
+.search-modal.search-dark .search-result-item:hover,
+.search-modal.search-dark .search-result-item:focus {
+    background: var(--dark-secondary-color);
+}
+
+.search-modal.search-dark .search-result-tag {
+    background: var(--dark-secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .search-modal.active {
+        padding-top: 5vh;
+    }
+
+    .search-modal-content {
+        width: 95%;
+        max-height: 80vh;
+    }
+}
