@@ -48,7 +48,7 @@ Here are the talks I've given so far.
     - :scroll: [Slides](/slides/2025-01-24-gophercon-singapore/Testing_GenAI_apps_in_Go_Cloud-Native_AI_Day_Singapore.pdf)
 - Gophercon SG ‘25: “_Testing GenAI applications in Go_”, accepted for the conference.
     - :link: URL: https://2025.gophercon.sg/
-    - :movie_camera: Video: Pending
+    - :movie_camera: [Video](https://www.youtube.com/watch?v=cj6vtDG7bWs&t=898s)
     - :scroll: [Slides](/slides/2025-01-24-gophercon-singapore/Testing_GenAI_apps_in_Go_Gophercon_SG.pdf)
 - DevTools Day Bengaluru Jan ‘25: “_Testing GenAI applications in Go_”.
     - :link: URL: https://www.meetup.com/es-ES/collabnix/events/304968647/
