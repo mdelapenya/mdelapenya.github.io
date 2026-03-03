@@ -251,3 +251,10 @@ So I packed my luggage, put it in the front desk of the hotel, and walked to Lit
 >}}
 
 I finally went back to my hotel for the luggage, and took a bus to the airport. There I watched a LaLiga football game that was playing on a big screen while waiting for the flight.
+
+---
+
+_Resources:_
+- _[Testing GenAI applications in Go (Video)](https://www.youtube.com/watch?v=cj6vtDG7bWs): My talk at GopherCon Singapore 2025_
+- _[GopherCon Singapore 2025 slides](/slides/2025-01-24-gophercon-singapore/Testing_GenAI_apps_in_Go_Gophercon_SG.pdf)_
+- _[Cloud-Native AI Day Singapore slides](/slides/2025-01-24-gophercon-singapore/Testing_GenAI_apps_in_Go_Cloud-Native_AI_Day_Singapore.pdf)_
