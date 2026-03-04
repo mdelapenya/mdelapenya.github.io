@@ -83,6 +83,3 @@ _Related:_
 - _[Docker Sandboxes & Parallel Workflows](/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows), The isolation piece: how sandboxes and git worktrees let agents run unsupervised_
 - _[Coding with AI Agents: Like Driving a Tesla on Autopilot](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot), The supervision model for working with agents day-to-day_
 
-_Coming soon:_
-- _Testcontainers as the automated validation layer: the missing leg of the stool_
-- _Agent skills in practice: from Tessl's registry to Claude Code skills, building the context layer_
