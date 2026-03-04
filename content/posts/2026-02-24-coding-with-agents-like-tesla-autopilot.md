@@ -7,7 +7,10 @@ tags: ["artificial-intelligence", "coding-agents", "developer-experience", "auto
 type: post
 weight: 30
 showTableOfContents: true
+image: "/images/posts/2026-02-24-coding-with-agents-like-tesla-autopilot/cover.png"
 ---
+
+![Coding with AI Agents: Like Driving a Tesla on Autopilot](/images/posts/2026-02-24-coding-with-agents-like-tesla-autopilot/cover.png)
 
 I've been coding with AI agents for the past year, and recently something clicked: the experience is remarkably similar to driving my Tesla with Autopilot engaged. Not Full Self-Driving (Supervised), just the basic Autopilot, the Level 2 driver-assistance system that handles steering and adaptive cruise control while you remain fully responsible for the vehicle.
 
