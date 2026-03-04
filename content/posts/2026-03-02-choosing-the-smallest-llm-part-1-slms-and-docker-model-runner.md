@@ -3,12 +3,14 @@ title: "Choosing the Smallest LLM That Won't Completely Fail You (Part I): SLMs 
 date: 2026-03-02 09:00:00 +0100
 description: "Not every task needs a trillion-parameter model. Small Language Models running locally with Docker Model Runner can save you money, time, and API rate limits. Here's how to get started."
 categories: [Technology, AI, Docker]
-image: "/images/posts/2026-03-02-slms-docker-model-runner/mario-coins.gif"
+image: "/images/posts/2026-03-02-slms-docker-model-runner/cover.png"
 tags: ["small-language-models", "docker-model-runner", "quantization", "llms", "open-source"]
 type: post
 weight: 30
 showTableOfContents: true
 ---
+
+![SLMs and Docker Model Runner](/images/posts/2026-03-02-slms-docker-model-runner/cover.png)
 
 I recently gave a talk at [ContainerDays London 2026](https://www.containerdays.io/containerdays-london-2026/agenda/) called "Choosing the Smallest LLM That Won't Completely Fail You." The title was a bit funny, but the question behind it is dead serious: when you're building AI-powered software, do you really need a model with hundreds of billions of parameters for every single task?
 
