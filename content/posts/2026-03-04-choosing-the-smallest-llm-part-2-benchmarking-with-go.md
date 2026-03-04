@@ -148,7 +148,7 @@ The benchmark pulls models automatically on the first run, starts Docker Model R
 
 At this point you have a benchmarking framework that produces raw numbers: latency, token throughput, success rates. But two big questions remain: how do you evaluate the *quality* of 160 responses automatically, and how do you test whether a model can use external tools?
 
-In Part 3, I'll introduce the Evaluator Agent pattern (LLM-as-judge for automated quality scoring) and tool calling benchmarks that test whether SLMs can decompose problems into calculator, code execution, and API calls. That's where the benchmark goes from "how fast" to "how good."
+In [Part 3](/posts/2026-03-06-choosing-the-smallest-llm-part-3-evaluator-agent-and-tool-calling), I'll introduce the Evaluator Agent pattern (LLM-as-judge for automated quality scoring) and tool calling benchmarks that test whether SLMs can decompose problems into calculator, code execution, and API calls. That's where the benchmark goes from "how fast" to "how good."
 
 ---
 
@@ -157,7 +157,7 @@ _This post is based on my talk "[Choosing the Smallest LLM That Won't Completely
 _Part of a 4-post series:_
 - _[Part 1: SLMs and Docker Model Runner](/posts/2026-03-02-choosing-the-smallest-llm-part-1-slms-and-docker-model-runner)_
 - _Part 2: Benchmarking with Go (this post)_
-- _Part 3: Evaluator Agent and Tool Calling (coming soon)_
+- _[Part 3: Evaluator Agent and Tool Calling](/posts/2026-03-06-choosing-the-smallest-llm-part-3-evaluator-agent-and-tool-calling)_
 - _Part 4: Observability with OpenTelemetry and Grafana (coming soon)_
 
 _Resources:_
