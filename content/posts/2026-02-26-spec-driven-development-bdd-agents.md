@@ -7,7 +7,10 @@ tags: ["artificial-intelligence", "bdd", "spec-driven-development", "agents", "s
 type: post
 weight: 30
 showTableOfContents: true
+image: "/images/posts/2026-02-26-spec-driven-development-bdd-agents/cover.png"
 ---
+
+![Spec-Driven Development](/images/posts/2026-02-26-spec-driven-development-bdd-agents/cover.png)
 
 Write specifications first, let something else handle the implementation. We've been chasing this dream for thirty years, UML, CASE tools, Model-Driven Architecture. Now AI agents are making us chase it again.
 
