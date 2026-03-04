@@ -7,7 +7,10 @@ tags: ["docker", "coding-agents", "developer-experience", "claude-code", "git"]
 type: post
 weight: 30
 showTableOfContents: true
+image: "/images/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows/cover.png"
 ---
+
+![Parallel Coding Agents with Docker Sandboxes and Git Worktrees](/images/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows/cover.png)
 
 Coding agents are powerful. They can refactor modules, write tests, fix bugs, and scaffold entire features. But running them directly on your host means giving them access to your system: your files, your packages, your running containers. Now imagine running *multiple* agents in parallel on the same repository checkout. That's a recipe for conflicts, corrupted state, and a bad afternoon.
 
