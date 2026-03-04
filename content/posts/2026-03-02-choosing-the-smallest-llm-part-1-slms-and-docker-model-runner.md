@@ -160,7 +160,7 @@ _This post is based on my talk "[Choosing the Smallest LLM That Won't Completely
 
 _Part of a 4-post series:_
 - _Part 1: SLMs and Docker Model Runner (this post)_
-- _Part 2: Benchmarking with Go (coming soon)_
+- _[Part 2: Benchmarking with Go](/posts/2026-03-04-choosing-the-smallest-llm-part-2-benchmarking-with-go)_
 - _Part 3: Evaluator Agent and Tool Calling (coming soon)_
 - _Part 4: Observability with OpenTelemetry and Grafana (coming soon)_
 
