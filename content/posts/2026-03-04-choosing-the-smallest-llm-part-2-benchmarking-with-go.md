@@ -7,7 +7,10 @@ tags: ["small-language-models", "go-benchmarks", "go", "golang", "docker-model-r
 type: post
 weight: 30
 showTableOfContents: true
+image: "/images/posts/2026-03-04-slms-benchmarking-with-go/cover.png"
 ---
+
+![Benchmarking SLMs with Go](/images/posts/2026-03-04-slms-benchmarking-with-go/cover.png)
 
 In [Part 1](/posts/2026-03-02-choosing-the-smallest-llm-part-1-slms-and-docker-model-runner) I showed how to run Small Language Models locally with Docker Model Runner. You can pull a 727 MB model and chat with it on your laptop. Great. But which model should you actually pick for your project?
 
