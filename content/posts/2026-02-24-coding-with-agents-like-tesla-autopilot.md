@@ -7,6 +7,7 @@ tags: ["artificial-intelligence", "coding-agents", "developer-experience", "auto
 type: post
 weight: 30
 showTableOfContents: true
+ai: true
 image: "/images/posts/2026-02-24-coding-with-agents-like-tesla-autopilot/cover.png"
 ---
 

@@ -1,0 +1,9 @@
+{{ if .Params.ai }}
+<div class="post-authorship post-authorship-ai">
+    <span class="post-authorship-icon">🤖</span> This post has been fully generated with AI.
+</div>
+{{ else }}
+<div class="post-authorship post-authorship-human">
+    <span class="post-authorship-icon">🧑</span> No AI has been harmed in the writing of this post.
+</div>
+{{ end }}

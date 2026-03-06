@@ -7,6 +7,7 @@ tags: ["artificial-intelligence", "bdd", "spec-driven-development", "agents", "s
 type: post
 weight: 30
 showTableOfContents: true
+ai: true
 image: "/images/posts/2026-02-26-spec-driven-development-bdd-agents/cover.png"
 ---
 

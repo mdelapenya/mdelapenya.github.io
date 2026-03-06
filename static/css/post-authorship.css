@@ -1,0 +1,23 @@
+.post-authorship {
+    padding: 0.6rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    border-left: 4px solid;
+}
+
+.post-authorship-icon {
+    margin-right: 0.3rem;
+}
+
+.post-authorship-ai {
+    background-color: rgba(99, 102, 241, 0.1);
+    border-left-color: rgb(99, 102, 241);
+    color: rgb(99, 102, 241);
+}
+
+.post-authorship-human {
+    background-color: rgba(34, 197, 94, 0.1);
+    border-left-color: rgb(34, 197, 94);
+    color: rgb(34, 197, 94);
+}

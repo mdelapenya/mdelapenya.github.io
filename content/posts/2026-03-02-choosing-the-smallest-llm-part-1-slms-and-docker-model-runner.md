@@ -8,6 +8,7 @@ tags: ["small-language-models", "docker-model-runner", "quantization", "llms", "
 type: post
 weight: 30
 showTableOfContents: true
+ai: true
 ---
 
 ![SLMs and Docker Model Runner](/images/posts/2026-03-02-slms-docker-model-runner/cover.png)

@@ -4,7 +4,7 @@
 {{ end }}
 
 <div class="post-title">
-     <a href="{{ .Permalink }}" class="post-link"><span class="post-language">{{ $flag }}</span> {{ .Title | markdownify }}</a>
+     <a href="{{ .Permalink }}" class="post-link">{{ if .Params.ai }}<span class="post-author-type" title="This post has been fully generated with AI">🤖</span>{{ else }}<span class="post-author-type" title="No AI has been harmed in the writing of this post">🧑</span>{{ end }} <span class="post-language">{{ $flag }}</span> {{ .Title | markdownify }}</a>
      {{/* Decide to display the date based on the tags */}}
      {{ $displayDate := true }}
      {{ $tagsHidePostDate := or .Site.Params.Hidden.TagsPostDate slice }}

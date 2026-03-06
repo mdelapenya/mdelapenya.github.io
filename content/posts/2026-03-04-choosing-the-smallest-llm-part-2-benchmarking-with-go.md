@@ -7,6 +7,7 @@ tags: ["small-language-models", "go-benchmarks", "go", "golang", "docker-model-r
 type: post
 weight: 30
 showTableOfContents: true
+ai: true
 image: "/images/posts/2026-03-04-slms-benchmarking-with-go/cover.png"
 ---
 

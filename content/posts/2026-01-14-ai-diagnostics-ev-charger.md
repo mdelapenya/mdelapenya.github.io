@@ -8,6 +8,7 @@ tags: ["artificial-intelligence", "ev", "electric-vehicles", "troubleshooting", 
 type: post
 weight: 14
 showTableOfContents: true
+ai: true
 ---
 
 ![AI vs Traditional Diagnostics](/images/posts/2026-01-14-ai-diagnostics/cover.png)

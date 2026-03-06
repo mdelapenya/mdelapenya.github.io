@@ -7,6 +7,7 @@ tags: ["docker", "coding-agents", "developer-experience", "claude-code", "git"]
 type: post
 weight: 30
 showTableOfContents: true
+ai: true
 image: "/images/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows/cover.png"
 ---
 

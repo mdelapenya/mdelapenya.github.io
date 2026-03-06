@@ -7,6 +7,7 @@ tags: ["small-language-models", "evaluator-agent", "tool-calling", "llm-as-judge
 type: post
 weight: 30
 showTableOfContents: true
+ai: true
 image: "/images/posts/2026-03-06-slms-evaluator-agent-tool-calling/cover.png"
 ---
 
