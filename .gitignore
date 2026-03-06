@@ -5,5 +5,8 @@ public/
 .env
 .hugo_build.lock
 
+blog-config.md
+topic-map.md
+
 tests/node_modules
 tests/test-results
