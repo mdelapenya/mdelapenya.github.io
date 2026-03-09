@@ -159,7 +159,7 @@ _Part of a 4-post series:_
 - _[Part 1: SLMs and Docker Model Runner](/posts/2026-03-02-choosing-the-smallest-llm-part-1-slms-and-docker-model-runner)_
 - _Part 2: Benchmarking with Go (this post)_
 - _[Part 3: Evaluator Agent and Tool Calling](/posts/2026-03-06-choosing-the-smallest-llm-part-3-evaluator-agent-and-tool-calling)_
-- _Part 4: Observability with OpenTelemetry and Grafana (coming soon)_
+- _[Part 4: Observability with OpenTelemetry and Grafana](/posts/2026-03-09-choosing-the-smallest-llm-part-4-observability-with-otel-and-grafana)_
 
 _Resources:_
 - _[Benchmark source code](https://github.com/mdelapenya/generative-ai-with-testcontainers/tree/main/11-benchmarks)_

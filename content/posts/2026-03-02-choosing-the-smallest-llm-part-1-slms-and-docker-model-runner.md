@@ -165,7 +165,7 @@ _Part of a 4-post series:_
 - _Part 1: SLMs and Docker Model Runner (this post)_
 - _[Part 2: Benchmarking with Go](/posts/2026-03-04-choosing-the-smallest-llm-part-2-benchmarking-with-go)_
 - _[Part 3: Evaluator Agent and Tool Calling](/posts/2026-03-06-choosing-the-smallest-llm-part-3-evaluator-agent-and-tool-calling)_
-- _Part 4: Observability with OpenTelemetry and Grafana (coming soon)_
+- _[Part 4: Observability with OpenTelemetry and Grafana](/posts/2026-03-09-choosing-the-smallest-llm-part-4-observability-with-otel-and-grafana)_
 
 _Related posts:_
 - _[Coding with AI Agents: Like Driving a Tesla on Autopilot](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot)_
