@@ -1,0 +1,22 @@
+{
+	"name": "blog-subscribe",
+	"main": "src/index.js",
+	"compatibility_date": "2026-03-13",
+	"vars": {
+		"ALLOWED_ORIGIN": "https://mdelapenya.xyz"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "CACHE",
+			"id": "d0c2201ce2944df1a281d4cd0478658b"
+		}
+	],
+	"routes": [
+		{
+			"pattern": "mdelapenya.xyz/api/*",
+			"zone_name": "mdelapenya.xyz"
+		}
+	]
+	// Secrets (set via CLI, not here):
+	//   npx wrangler secret put RESEND_API_KEY
+}

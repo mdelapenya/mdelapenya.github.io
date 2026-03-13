@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  title: Blog Subscribe API
+  version: "1.0.0"
+  description: API for managing blog subscriptions via Resend
+paths:
+  /api/subscribe:
+    post:
+      operationId: subscribe
+      summary: Subscribe an email to the blog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+              properties:
+                email:
+                  type: string
+                  format: email
+            examples:
+              success:
+                value:
+                  email: "reader@example.com"
+      responses:
+        "200":
+          description: Successfully subscribed
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                    ok: true
+  /api/subscribe/count:
+    get:
+      operationId: getSubscriberCount
+      summary: Get the current subscriber count
+      responses:
+        "200":
+          description: Subscriber count
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    count: 42

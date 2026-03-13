@@ -10,3 +10,7 @@ topic-map.md
 
 tests/node_modules
 tests/test-results
+
+workers/subscribe/node_modules
+workers/subscribe/.dev.vars
+workers/subscribe/.wrangler

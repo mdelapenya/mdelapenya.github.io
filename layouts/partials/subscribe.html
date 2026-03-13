@@ -1,0 +1,28 @@
+<div class="subscribe-box" id="subscribe-box">
+    <div class="subscribe-content" id="subscribe-form-state">
+        <p class="subscribe-heading">Enjoyed this post?</p>
+        <p class="subscribe-text">
+            <span id="subscribe-count-text">Join other subscribers.</span>
+            I'll email you when I publish something new. No spam, no selling your email. Just posts.
+        </p>
+        <form class="subscribe-form" id="subscribe-form">
+            <input type="email" id="subscribe-email" placeholder="you@example.com" required autocomplete="email" />
+            <button type="submit" id="subscribe-button">Subscribe</button>
+        </form>
+        <p class="subscribe-footer">
+            Read my <a href="/subscribe/">subscriber commitment</a>.
+        </p>
+    </div>
+    <div class="subscribe-content subscribe-hidden" id="subscribe-success-state">
+        <p class="subscribe-heading">You're in. Welcome.</p>
+        <p class="subscribe-text">You'll get an email next time I publish. That's it.</p>
+    </div>
+    <div class="subscribe-content subscribe-hidden" id="subscribe-already-state">
+        <p class="subscribe-heading">You're already subscribed.</p>
+        <p class="subscribe-text">Thanks for reading.</p>
+    </div>
+    <div class="subscribe-content subscribe-hidden" id="subscribe-error-state">
+        <p class="subscribe-heading">Something went wrong.</p>
+        <p class="subscribe-text" id="subscribe-error-message">Please try again later.</p>
+    </div>
+</div>
