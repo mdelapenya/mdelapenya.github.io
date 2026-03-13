@@ -107,8 +107,14 @@ Here are the talks I've given so far.
 
 ### 2019
 
+- EURODOG Madrid - Madrid, Spain - Mar 2019: "_Dream QA: Designing the QA Team of Our Dreams_"
+    - :link: URL: https://www.eventbrite.com/e/madrid-devops-y-canas-tickets-55051443349
+    - :scroll: [Slides](/slides/2019-03-07-eurodog-madrid/Dream-QA-EURODOG.pdf)
+- GDG Toledo - Toledo, Spain - Feb 2019: "_Dream QA: diseñando el equipo de QA de nuestros sueños_"
+    - :link: URL: https://gdg.community.dev/events/details/google-gdg-toledo-presents-dream-qa-disenando-el-equipo-de-qa-de-nuestros-suenos/
+    - :scroll: [Slides](/slides/2019-02-28-gdg-toledo-dream-qa/Dream-QA-JCCM.pdf)
 - GDG Toledo - Toledo, Spain - Feb 2019: "_Necesito una CLI, ¿la escribo en Node o en Go?_"
-    - Slides (Spanish): https://www.meetup.com/es-ES/gdgtoledo_es/events/258727635/ 
+    - Slides (Spanish): https://www.meetup.com/es-ES/gdgtoledo_es/events/258727635/
 
 ### 2016
 
