@@ -32,6 +32,7 @@ test:
 	docker run --rm \
 		$(if $(DOCKER_NETWORK),--network $(DOCKER_NETWORK),) \
 		-v $$(pwd)/tests:/tests \
+		-v $$(pwd)/static:/static:ro \
 		-w /tests \
 		-e BASE_URL=$(BASE_URL) \
 		mcr.microsoft.com/playwright:v1.50.1-noble \
