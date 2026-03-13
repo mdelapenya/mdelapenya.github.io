@@ -9,6 +9,8 @@ weight: 30
 showTableOfContents: true
 ai: true
 image: "/images/posts/2026-02-24-coding-with-agents-like-tesla-autopilot/cover.png"
+related:
+  - "/posts/2025-10-10-coding-agents"
 ---
 
 ![Coding with AI Agents: Like Driving a Tesla on Autopilot](/images/posts/2026-02-24-coding-with-agents-like-tesla-autopilot/cover.png)
@@ -113,8 +115,6 @@ The technology is genuinely useful. It makes me more productive on real projects
 Keep your hands on the keyboard, your eyes on the code, and your brain fully engaged. And that's exactly how it should be.
 
 ---
-
-_Related: [Refactoring 60 Go Modules with an AI Coding Agent](/posts/2025-10-10-coding-agents) - My detailed experience using Claude Code to migrate Testcontainers modules, including patterns, pitfalls, and metrics._
 
 _Resources:_
 - _[Testcontainers Claude Skills](https://github.com/testcontainers/claude-skills) - Official Claude Code skills for working with container-based testing infrastructure_

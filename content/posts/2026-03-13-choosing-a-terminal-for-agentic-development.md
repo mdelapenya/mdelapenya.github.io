@@ -9,6 +9,10 @@ weight: 30
 showTableOfContents: true
 ai: true
 image: "/images/posts/2026-03-13-choosing-a-terminal-for-agentic-development/cover.png"
+related:
+  - "/posts/2026-03-11-coding-agents-as-exploratory-testers"
+  - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
+  - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
 ---
 
 ![Choosing a Terminal for Agentic Development](/images/posts/2026-03-13-choosing-a-terminal-for-agentic-development/cover.png)
@@ -81,11 +85,6 @@ The takeaway isn't "use terminal X." It's this: don't pick a terminal based on f
 The best tool is the one you forget you're using.
 
 ---
-
-_Related:_
-- _[Coding Agents as Exploratory Testers](/posts/2026-03-11-coding-agents-as-exploratory-testers): What long-running agent sessions look like_
-- _[Parallel Coding Agents with Docker Sandboxes](/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows): Worktrees and sandboxes for parallel agent work_
-- _[Coding with AI Agents: Like Driving a Tesla on Autopilot](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot): The supervision model_
 
 _Resources:_
 - _[Ink](https://github.com/vadimdemedes/ink): React for interactive CLIs, the framework Claude Code uses_

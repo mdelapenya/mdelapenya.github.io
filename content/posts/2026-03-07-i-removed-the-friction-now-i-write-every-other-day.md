@@ -9,6 +9,9 @@ weight: 30
 showTableOfContents: true
 ai: true
 image: "/images/posts/2026-03-07-i-removed-the-friction/cover.png"
+related:
+  - "/posts/2026-02-26-spec-driven-development-bdd-agents"
+  - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
 ---
 
 ![I Removed the Friction](/images/posts/2026-03-07-i-removed-the-friction/cover.png)
@@ -89,10 +92,6 @@ Five markdown files. No database, no admin panel, no SaaS subscription. Just ski
 I don't find time to write anymore. I make time in 5-minute increments, and the skills handle the rest.
 
 ---
-
-_Related posts:_
-- _[Spec-Driven Development: Is This the New BDD?](/posts/2026-02-26-spec-driven-development-bdd-agents): Skills as the context layer for agents_
-- _[Coding with AI Agents: Like Driving a Tesla on Autopilot](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot): The supervision model_
 
 _Resources:_
 - _[Agent Skills Open Standard](https://agentskills.io)_

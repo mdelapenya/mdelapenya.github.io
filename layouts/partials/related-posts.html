@@ -1,0 +1,28 @@
+{{ with .Params.related }}
+<div class="related-posts">
+    <h3>Related posts</h3>
+    <div class="related-posts-carousel">
+        <button class="related-posts-arrow related-posts-arrow-left" aria-label="Scroll left">&#8249;</button>
+        <div class="related-posts-list">
+            {{ range . }}
+                {{ $post := site.GetPage . }}
+                {{ if $post }}
+                <a class="related-post-card" href="{{ $post.RelPermalink }}">
+                    {{ if $post.Params.image }}
+                    <div class="related-post-image">
+                        <img src="{{ $post.Params.image }}" alt="{{ $post.Title }}" loading="lazy" />
+                    </div>
+                    {{ else }}
+                    <div class="related-post-image related-post-no-image">
+                        <span>{{ dateFormat "Jan 2" $post.Date }}</span>
+                    </div>
+                    {{ end }}
+                    <div class="related-post-title">{{ $post.Title }}</div>
+                </a>
+                {{ end }}
+            {{ end }}
+        </div>
+        <button class="related-posts-arrow related-posts-arrow-right" aria-label="Scroll right">&#8250;</button>
+    </div>
+</div>
+{{ end }}

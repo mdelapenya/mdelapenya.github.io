@@ -9,6 +9,9 @@ weight: 30
 showTableOfContents: true
 ai: true
 image: "/images/posts/2026-02-26-spec-driven-development-bdd-agents/cover.png"
+related:
+  - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
+  - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
 ---
 
 ![Spec-Driven Development](/images/posts/2026-02-26-spec-driven-development-bdd-agents/cover.png)
@@ -80,7 +83,4 @@ Our job is safe. Still. Not because agents can't write code, but because the too
 
 *Thanks to Kevin Wittek for sharing the article that sparked this reflection.*
 
-_Related:_
-- _[Docker Sandboxes & Parallel Workflows](/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows), The isolation piece: how sandboxes and git worktrees let agents run unsupervised_
-- _[Coding with AI Agents: Like Driving a Tesla on Autopilot](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot), The supervision model for working with agents day-to-day_
 

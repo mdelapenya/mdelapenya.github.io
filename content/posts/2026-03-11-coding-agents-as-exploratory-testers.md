@@ -9,6 +9,11 @@ weight: 30
 showTableOfContents: true
 ai: true
 image: "/images/posts/2026-03-11-coding-agents-as-exploratory-testers/cover.png"
+related:
+  - "/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day"
+  - "/posts/2026-02-26-spec-driven-development-bdd-agents"
+  - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
+  - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
 ---
 
 ![Coding Agents as Exploratory Testers](/images/posts/2026-03-11-coding-agents-as-exploratory-testers/cover.png)
@@ -101,12 +106,6 @@ The pattern generalizes beyond CLI tools. Any software with a command-line inter
 The best testers I've worked with don't follow scripts. They learn the system, exercise it creatively, and bring you problems sorted by how much they matter. Now that behavior fits in a few markdown files that compose.
 
 ---
-
-_Related:_
-- _[I Removed the Friction. Now I Write Every Other Day.](/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day): The composable skill pipeline that this testing skill is part of_
-- _[Spec-Driven Development: Is This the New BDD?](/posts/2026-02-26-spec-driven-development-bdd-agents): The context layer for agents, from specs to skills_
-- _[Coding with AI Agents: Like Driving a Tesla on Autopilot](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot): The supervision model, when to watch and when to delegate_
-- _[Parallel Coding Agents with Docker Sandboxes](/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows): The isolation piece, running agents safely and in parallel_
 
 _Resources:_
 - _[Claude Code Skills documentation](https://docs.anthropic.com/en/docs/claude-code/skills): How to create reusable skills for Claude Code_

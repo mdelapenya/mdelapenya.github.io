@@ -9,6 +9,8 @@ type: post
 weight: 30
 showTableOfContents: true
 ai: true
+related:
+  - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
 ---
 
 ![SLMs and Docker Model Runner](/images/posts/2026-03-02-slms-docker-model-runner/cover.png)
@@ -166,9 +168,6 @@ _Part of a 4-post series:_
 - _[Part 2: Benchmarking with Go](/posts/2026-03-04-choosing-the-smallest-llm-part-2-benchmarking-with-go)_
 - _[Part 3: Evaluator Agent and Tool Calling](/posts/2026-03-06-choosing-the-smallest-llm-part-3-evaluator-agent-and-tool-calling)_
 - _[Part 4: Observability with OpenTelemetry and Grafana](/posts/2026-03-09-choosing-the-smallest-llm-part-4-observability-with-otel-and-grafana)_
-
-_Related posts:_
-- _[Coding with AI Agents: Like Driving a Tesla on Autopilot](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot)_
 
 _Resources:_
 - _[Docker Model Runner documentation](https://docs.docker.com/ai/model-runner/)_

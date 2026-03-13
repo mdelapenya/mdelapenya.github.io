@@ -9,6 +9,10 @@ weight: 30
 showTableOfContents: true
 ai: true
 image: "/images/posts/2026-03-16-my-agentic-coding-stack/cover.png"
+related:
+  - "/posts/2026-03-13-choosing-a-terminal-for-agentic-development"
+  - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
+  - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
 ---
 
 ![My Agentic Coding Stack](/images/posts/2026-03-16-my-agentic-coding-stack/cover.png)
@@ -88,11 +92,6 @@ My stack today: VS Code or Cursor (interchangeable), Warp, Go, Claude Code. But 
 If you're choosing a stack for agentic development, start by figuring out your level. Then pick tools that match it. Don't buy a Level 3 IDE for a Level 4 workflow.
 
 ---
-
-_Related posts:_
-- _[Choosing a Terminal for Agentic Development](/posts/2026-03-13-choosing-a-terminal-for-agentic-development): Terminal comparison for agentic workloads_
-- _[Docker Sandboxes & Parallel Workflows](/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows): Worktrees and isolation for parallel agents_
-- _[Coding with AI Agents: Like Driving a Tesla on Autopilot](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot): The supervision model_
 
 _Resources:_
 - _[Claude Code](https://docs.anthropic.com/en/docs/claude-code)_
