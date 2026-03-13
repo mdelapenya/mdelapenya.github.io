@@ -114,7 +114,8 @@ Here are the talks I've given so far.
     - :link: URL: https://gdg.community.dev/events/details/google-gdg-toledo-presents-dream-qa-disenando-el-equipo-de-qa-de-nuestros-suenos/
     - :scroll: [Slides](/slides/2019-02-28-gdg-toledo-dream-qa/Dream-QA-JCCM.pdf)
 - GDG Toledo - Toledo, Spain - Feb 2019: "_Necesito una CLI, ¿la escribo en Node o en Go?_"
-    - Slides (Spanish): https://www.meetup.com/es-ES/gdgtoledo_es/events/258727635/
+    - :link: URL: https://www.meetup.com/es-ES/gdgtoledo_es/events/258727635/
+    - :scroll: [Slides (Spanish)](/slides/2019-02-gdg-toledo-cli/golangVsNode.pdf)
 
 ### 2016
 
