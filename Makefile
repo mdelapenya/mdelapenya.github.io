@@ -31,10 +31,12 @@ serve: build
 test:
 	docker run --rm \
 		$(if $(DOCKER_NETWORK),--network $(DOCKER_NETWORK),) \
+		-v /var/run/docker.sock:/var/run/docker.sock \
 		-v $$(pwd)/tests:/tests \
 		-v $$(pwd)/static:/static:ro \
 		-w /tests \
 		-e BASE_URL=$(BASE_URL) \
+		-e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal \
 		mcr.microsoft.com/playwright:v1.50.1-noble \
 		sh -c "npm install && npx playwright test"
 
