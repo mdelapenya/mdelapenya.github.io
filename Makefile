@@ -36,7 +36,7 @@ test:
 		-v $$(pwd)/static:/static:ro \
 		-w /tests \
 		-e BASE_URL=$(BASE_URL) \
-		-e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal \
+		$(if $(DOCKER_NETWORK),,-e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal) \
 		mcr.microsoft.com/playwright:v1.50.1-noble \
 		sh -c "npm install && npx playwright test"
 
