@@ -24,7 +24,7 @@ function buildHtml(overrideApiBase: string, presetLocalStorage?: boolean): strin
 <body>
 <div class="subscribe-box" id="subscribe-box">
     <div class="subscribe-content" id="subscribe-form-state">
-        <p class="subscribe-heading">Enjoyed this post?</p>
+        <p class="subscribe-heading">Enjoyed this content?</p>
         <p class="subscribe-text">
             <span id="subscribe-count-text">Join other subscribers.</span>
             I'll email you when I publish something new.
