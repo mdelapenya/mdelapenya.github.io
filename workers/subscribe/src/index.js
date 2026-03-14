@@ -75,6 +75,9 @@ async function handleSubscribe(request, env, matchedOrigin) {
     body: JSON.stringify({
       email: email,
       unsubscribed: false,
+      properties: {
+        source: body.source || "",
+      },
     }),
   });
 

@@ -61,7 +61,7 @@
       button.textContent = "Subscribing...";
 
       if (DEV_MODE) {
-        console.log("[subscribe] dev mode: would subscribe", email);
+        console.log("[subscribe] dev mode: would subscribe", email, "from", window.location.pathname);
         localStorage.setItem(STORAGE_KEY, "true");
         showState(successState);
         button.disabled = false;
@@ -72,7 +72,7 @@
       fetch(API_BASE, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email }),
+        body: JSON.stringify({ email: email, source: window.location.pathname }),
       })
         .then(function (r) {
           if (!r.ok) return r.json().then(function (d) { throw new Error(d.error || "Failed"); });

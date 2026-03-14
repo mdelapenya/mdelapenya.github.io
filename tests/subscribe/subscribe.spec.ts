@@ -134,6 +134,23 @@ test.describe("Subscribe form", () => {
     await expect(page.locator("#subscribe-form-state")).toBeHidden();
   });
 
+  test("sends source page path in subscribe request", async ({ page }) => {
+    await page.goto(`http://localhost:${serverPort}/some/post/path`);
+    await page.waitForTimeout(500);
+
+    const requestPromise = page.waitForRequest((req) =>
+      req.url().includes("/api/subscribe") && req.method() === "POST"
+    );
+
+    await page.fill("#subscribe-email", "reader@example.com");
+    await page.click("#subscribe-button");
+
+    const request = await requestPromise;
+    const body = request.postDataJSON();
+    expect(body.source).toBe("/some/post/path");
+    expect(body.email).toBe("reader@example.com");
+  });
+
   test("button re-enables after submission", async ({ page }) => {
     await page.goto(`http://localhost:${serverPort}/`);
     await page.waitForTimeout(500);
