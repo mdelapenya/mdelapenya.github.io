@@ -19,4 +19,5 @@
 	]
 	// Secrets (set via CLI, not here):
 	//   npx wrangler secret put RESEND_API_KEY
+	//   npx wrangler secret put TURNSTILE_SECRET_KEY
 }

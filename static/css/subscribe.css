@@ -21,8 +21,14 @@
 
 .subscribe-form {
     display: flex;
+    flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 0.8rem;
+}
+
+.subscribe-form-row {
+    display: flex;
+    gap: 0.5rem;
 }
 
 .subscribe-form input[type="email"] {
@@ -76,7 +82,7 @@
 }
 
 @media (max-width: 600px) {
-    .subscribe-form {
+    .subscribe-form-row {
         flex-direction: column;
     }
 

@@ -6,8 +6,11 @@
             I'll email you when I publish something new. No spam, no selling your email. Just posts.
         </p>
         <form class="subscribe-form" id="subscribe-form">
-            <input type="email" id="subscribe-email" placeholder="you@example.com" required autocomplete="email" />
-            <button type="submit" id="subscribe-button">Subscribe</button>
+            <div class="subscribe-form-row">
+                <input type="email" id="subscribe-email" placeholder="you@example.com" required autocomplete="email" maxlength="254" />
+                <button type="submit" id="subscribe-button">Subscribe</button>
+            </div>
+            <div class="cf-turnstile" data-sitekey="{{ .Site.Params.turnstileSiteKey }}" data-size="compact" data-theme="auto"></div>
         </form>
         <p class="subscribe-footer">
             Read my <a href="/subscribe/">subscriber commitment</a>.

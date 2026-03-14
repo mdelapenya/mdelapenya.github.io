@@ -1,12 +1,16 @@
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const EMAIL_MAX_LENGTH = 254;
+const SOURCE_MAX_LENGTH = 200;
+const SOURCE_REGEX = /^\/[a-zA-Z0-9\-\/_.]*/;
 const CACHE_TTL = 300; // 5 minutes
+const RATE_LIMIT_PER_IP = 10;
+const RATE_LIMIT_GLOBAL = 100;
+const MAX_BODY_SIZE = 1024; // 1KB
 
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
     const allowedOrigins = [env.ALLOWED_ORIGIN || "https://mdelapenya.xyz"];
-    // In local dev (wrangler dev), allow localhost origins.
-    // Detect via .dev.vars: set DEV_ORIGINS=http://localhost:1313
     if (env.DEV_ORIGINS) {
       allowedOrigins.push(...env.DEV_ORIGINS.split(","));
     }
@@ -35,7 +39,7 @@ export default {
         return await handleCount(env, matchedOrigin);
       }
 
-      return jsonResponse({ error: "Not found" }, 404);
+      return jsonResponse({ error: "Not found" }, 404, matchedOrigin);
     } catch (err) {
       console.error("Worker error:", err);
       return jsonResponse({ error: "Internal error" }, 500, matchedOrigin);
@@ -44,25 +48,61 @@ export default {
 };
 
 async function handleSubscribe(request, env, matchedOrigin) {
+  // Reject oversized request bodies
+  const contentLength = request.headers.get("Content-Length");
+  if (contentLength && parseInt(contentLength) > MAX_BODY_SIZE) {
+    return jsonResponse({ error: "Request too large" }, 413, matchedOrigin);
+  }
+
   const body = await request.json().catch(() => null);
   if (!body || !body.email) {
     return jsonResponse({ error: "Email is required" }, 400, matchedOrigin);
   }
 
   const email = body.email.trim().toLowerCase();
+  if (email.length > EMAIL_MAX_LENGTH) {
+    return jsonResponse({ error: "Invalid email format" }, 400, matchedOrigin);
+  }
   if (!EMAIL_REGEX.test(email)) {
     return jsonResponse({ error: "Invalid email format" }, 400, matchedOrigin);
   }
 
-  // Rate limit: max 10 subscribes per IP per hour (requires KV)
+  // Sanitize source field
+  let source = "";
+  if (body.source && typeof body.source === "string") {
+    const match = body.source.match(SOURCE_REGEX);
+    source = match ? match[0].slice(0, SOURCE_MAX_LENGTH) : "";
+  }
+
+  // Verify Turnstile token
+  if (env.TURNSTILE_SECRET_KEY) {
+    const token = body.token;
+    if (!token) {
+      return jsonResponse({ error: "Verification required" }, 400, matchedOrigin);
+    }
+    const turnstileOk = await verifyTurnstile(token, request.headers.get("CF-Connecting-IP") || "", env.TURNSTILE_SECRET_KEY);
+    if (!turnstileOk) {
+      return jsonResponse({ error: "Verification failed" }, 403, matchedOrigin);
+    }
+  }
+
+  // Rate limit: per-IP and global
   if (env.CACHE) {
     const ip = request.headers.get("CF-Connecting-IP") || "unknown";
     const rateKey = `rate:${ip}`;
     const rateCount = parseInt((await env.CACHE.get(rateKey)) || "0");
-    if (rateCount >= 10) {
+    if (rateCount >= RATE_LIMIT_PER_IP) {
       return jsonResponse({ error: "Too many requests. Try again later." }, 429, matchedOrigin);
     }
     await env.CACHE.put(rateKey, String(rateCount + 1), { expirationTtl: 3600 });
+
+    // Global rate limit
+    const globalKey = "rate:global";
+    const globalCount = parseInt((await env.CACHE.get(globalKey)) || "0");
+    if (globalCount >= RATE_LIMIT_GLOBAL) {
+      return jsonResponse({ error: "Too many requests. Try again later." }, 429, matchedOrigin);
+    }
+    await env.CACHE.put(globalKey, String(globalCount + 1), { expirationTtl: 3600 });
   }
 
   // Create contact in Resend
@@ -76,7 +116,7 @@ async function handleSubscribe(request, env, matchedOrigin) {
       email: email,
       unsubscribed: false,
       properties: {
-        source: body.source || "",
+        source: source,
       },
     }),
   });
@@ -126,11 +166,23 @@ async function handleCount(env, matchedOrigin) {
   return jsonResponse({ count }, 200, matchedOrigin);
 }
 
+async function verifyTurnstile(token, remoteip, secretKey) {
+  const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ secret: secretKey, response: token, remoteip }),
+  });
+  const result = await response.json();
+  return result.success === true;
+}
+
 function jsonResponse(body, status = 200, matchedOrigin = "") {
   return new Response(JSON.stringify(body), {
     status,
     headers: {
       "Content-Type": "application/json",
+      "X-Content-Type-Options": "nosniff",
+      "Cache-Control": "no-store",
       ...corsHeaders(matchedOrigin),
     },
   });

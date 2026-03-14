@@ -69,10 +69,14 @@
         return;
       }
 
+      // Get Turnstile token
+      var turnstileInput = form.querySelector("[name='cf-turnstile-response']");
+      var token = turnstileInput ? turnstileInput.value : "";
+
       fetch(API_BASE, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email, source: window.location.pathname }),
+        body: JSON.stringify({ email: email, source: window.location.pathname, token: token }),
       })
         .then(function (r) {
           if (!r.ok) return r.json().then(function (d) { throw new Error(d.error || "Failed"); });
@@ -89,6 +93,7 @@
         .finally(function () {
           button.disabled = false;
           button.textContent = "Subscribe";
+          if (window.turnstile) { turnstile.reset(); }
         });
     });
   }

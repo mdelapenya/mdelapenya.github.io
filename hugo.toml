@@ -36,6 +36,7 @@ timeout = "120s"
     <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="/css/post-authorship.css">
     <link rel="stylesheet" href="/css/subscribe.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <link rel="stylesheet" href="/css/related-posts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
@@ -63,6 +64,10 @@ timeout = "120s"
     <script src="/js/subscribe.js"></script>
     <script src="/js/related-posts.js"></script>
   """
+
+  # Cloudflare Turnstile site key for subscribe form
+  # Create at: https://dash.cloudflare.com/?to=/:account/turnstile
+  turnstileSiteKey = "0x4AAAAAACqj5xGJtBnVRTvg"
 
   description = "OSS Software Engineer"
   footer = "@mdelapenya"
