@@ -18,6 +18,10 @@
     <div class="post-content">
         {{ .Content }}
     </div>
+
+    {{ if eq .RelPermalink "/subscribe/" }}
+        {{ partial "subscribe.html" . }}
+    {{ end }}
     <!-- Back to top button -->
     {{ if .Site.Params.ShowBackToTopButton }}
         {{ partial "back-to-top.html" . }}
