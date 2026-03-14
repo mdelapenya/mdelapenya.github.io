@@ -1,0 +1,30 @@
+name: Weekly Digest Broadcast
+
+on:
+  schedule:
+    - cron: '0 9 * * 0' # Sunday at 10:00 Madrid time
+
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  broadcast:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Setup Go
+        uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5
+        with:
+          go-version: "1.25"
+
+      - name: Run broadcast tests
+        working-directory: broadcast
+        run: go test -v -count=1 ./...
+
+      - name: Send weekly digest
+        working-directory: broadcast
+        run: go run .
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_SEGMENT_ID: ${{ secrets.RESEND_SEGMENT_ID }}
