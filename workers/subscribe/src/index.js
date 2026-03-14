@@ -5,7 +5,6 @@ const SOURCE_REGEX = /^\/[a-zA-Z0-9\-\/_.]*/;
 const CACHE_TTL = 300; // 5 minutes
 const RATE_LIMIT_PER_IP = 10;
 const RATE_LIMIT_GLOBAL = 100;
-const MAX_BODY_SIZE = 1024; // 1KB
 
 export default {
   async fetch(request, env) {
@@ -48,12 +47,6 @@ export default {
 };
 
 async function handleSubscribe(request, env, matchedOrigin) {
-  // Reject oversized request bodies
-  const contentLength = request.headers.get("Content-Length");
-  if (contentLength && parseInt(contentLength) > MAX_BODY_SIZE) {
-    return jsonResponse({ error: "Request too large" }, 413, matchedOrigin);
-  }
-
   const body = await request.json().catch(() => null);
   if (!body || !body.email) {
     return jsonResponse({ error: "Email is required" }, 400, matchedOrigin);
