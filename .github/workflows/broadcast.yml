@@ -4,7 +4,13 @@ on:
   schedule:
     - cron: '0 9 * * 0' # Sunday at 10:00 Madrid time
 
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Send to test segment only (dry run)'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   broadcast:
@@ -26,4 +32,4 @@ jobs:
         run: go run .
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          RESEND_SEGMENT_ID: ${{ secrets.RESEND_SEGMENT_ID }}
+          RESEND_SEGMENT_ID: ${{ inputs.dry_run == true && secrets.RESEND_SEGMENT_ID_FOR_TESTS || secrets.RESEND_SEGMENT_ID }}
