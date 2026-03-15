@@ -36,12 +36,12 @@ const emailTemplate = `<!DOCTYPE html>
     {{range .Posts}}
     <div style="background-color:#f9fafb;border-radius:8px;overflow:hidden;margin:0 0 16px;border:1px solid #e5e7eb;">
       {{if .Image}}
-      <a href="https://mdelapenya.xyz{{.URL}}" style="display:block;">
+      <a href="{{.URL}}" style="display:block;">
         <img src="https://mdelapenya.xyz{{.Image}}" alt="{{.EscapedTitle}}" style="width:100%;height:auto;display:block;" />
       </a>
       {{end}}
       <div style="padding:16px 20px;">
-        <a href="https://mdelapenya.xyz{{.URL}}" style="color:#3b82f6;font-size:16px;font-weight:600;text-decoration:none;line-height:24px;">
+        <a href="{{.URL}}" style="color:#3b82f6;font-size:16px;font-weight:600;text-decoration:none;line-height:24px;">
           {{.EscapedTitle}}
         </a>
         {{if .Description}}

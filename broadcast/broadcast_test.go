@@ -106,7 +106,7 @@ func TestRenderEmail_SinglePost(t *testing.T) {
 
 	checks := []string{
 		"Test Post",
-		"https://mdelapenya.xyz/posts/2026-03-14-test",
+		"/posts/2026-03-14-test",
 		"A test description",
 		"2026-03-14",
 		"go, testing",
