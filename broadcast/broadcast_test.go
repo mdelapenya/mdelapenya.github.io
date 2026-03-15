@@ -364,6 +364,15 @@ func startResendMock(t *testing.T) (baseURL string, cleanup func()) {
 	}
 }
 
+func TestIntegration_FetchWeekPostsFromLiveSite(t *testing.T) {
+	posts, err := fetchWeekPostsFrom(siteURL + "/index.json")
+	if err != nil {
+		t.Fatalf("fetchWeekPostsFrom live site failed: %v", err)
+	}
+
+	t.Logf("Found %d posts from the live site this week", len(posts))
+}
+
 func TestIntegration_CreateBroadcastDraft(t *testing.T) {
 	mockURL, cleanup := startResendMock(t)
 	defer cleanup()

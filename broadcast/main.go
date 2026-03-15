@@ -119,7 +119,13 @@ func fetchWeekPosts() ([]Post, error) {
 }
 
 func fetchWeekPostsFrom(indexURL string) ([]Post, error) {
-	resp, err := http.Get(indexURL)
+	req, err := http.NewRequest("GET", indexURL, nil)
+	if err != nil {
+		return nil, fmt.Errorf("creating request: %w", err)
+	}
+	req.Header.Set("User-Agent", "mdelapenya-broadcast/1.0")
+
+	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("fetching index: %w", err)
 	}
