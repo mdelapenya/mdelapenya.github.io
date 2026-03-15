@@ -2,7 +2,7 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const EMAIL_MAX_LENGTH = 254;
 const SOURCE_MAX_LENGTH = 200;
 const SOURCE_REGEX = /^\/[a-zA-Z0-9\-\/_.]*/;
-const CACHE_TTL = 300; // 5 minutes
+const CACHE_TTL = 3600; // 1 hour
 const RATE_LIMIT_PER_IP = 10;
 const RATE_LIMIT_GLOBAL = 100;
 
