@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"log"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -342,168 +341,159 @@ func TestSendBroadcast_ServerError(t *testing.T) {
 // Integration tests (use testcontainers-go-resend mock, no real API needed)
 // ---------------------------------------------------------------------------
 
-func startResendMock(t *testing.T) (baseURL string, cleanup func()) {
-	t.Helper()
+func TestIntegration_Broadcast(t *testing.T) {
 	ctx := context.Background()
 
 	ctr, err := resendtc.Run(ctx, resendtc.DefaultImage)
+	testcontainers.CleanupContainer(t, ctr)
 	if err != nil {
 		t.Fatalf("failed to start Resend mock container: %v", err)
 	}
 
-	url, err := ctr.BaseURL(ctx)
+	mockURL, err := ctr.BaseURL(ctx)
 	if err != nil {
-		testcontainers.TerminateContainer(ctr)
 		t.Fatalf("failed to get mock base URL: %v", err)
 	}
 
-	return url, func() {
-		if err := testcontainers.TerminateContainer(ctr); err != nil {
-			log.Printf("failed to terminate container: %s", err)
+	t.Run("fetch from live site", func(t *testing.T) {
+		t.Parallel()
+
+		posts, err := fetchWeekPostsFrom(siteURL + "/index.json")
+		if err != nil {
+			t.Fatalf("fetchWeekPostsFrom live site failed: %v", err)
 		}
-	}
-}
+		t.Logf("Found %d posts from the live site this week", len(posts))
+	})
 
-func TestIntegration_FetchWeekPostsFromLiveSite(t *testing.T) {
-	posts, err := fetchWeekPostsFrom(siteURL + "/index.json")
-	if err != nil {
-		t.Fatalf("fetchWeekPostsFrom live site failed: %v", err)
-	}
+	t.Run("create draft broadcast", func(t *testing.T) {
+		t.Parallel()
 
-	t.Logf("Found %d posts from the live site this week", len(posts))
-}
+		posts := []Post{
+			{
+				Title:       "Integration Test Post",
+				URL:         "/posts/2026-03-14-integration-test",
+				Date:        "2026-03-14",
+				Description: "This is a test broadcast from the Go test suite.",
+				Tags:        []string{"test", "integration"},
+			},
+		}
 
-func TestIntegration_CreateBroadcastDraft(t *testing.T) {
-	mockURL, cleanup := startResendMock(t)
-	defer cleanup()
+		html, err := renderEmail(posts)
+		if err != nil {
+			t.Fatalf("renderEmail failed: %v", err)
+		}
 
-	posts := []Post{
-		{
-			Title:       "Integration Test Post",
-			URL:         "/posts/2026-03-14-integration-test",
-			Date:        "2026-03-14",
-			Description: "This is a test broadcast from the Go test suite.",
-			Tags:        []string{"test", "integration"},
-		},
-	}
+		broadcast := BroadcastRequest{
+			SegmentID: "test-segment-id",
+			From:      "Manuel de la Peña <hello@mdelapenya.xyz>",
+			Subject:   "[TEST] Weekly digest integration test",
+			HTML:      html,
+			Send:      false,
+			Name:      "test-broadcast-" + time.Now().Format("20060102-150405"),
+		}
 
-	html, err := renderEmail(posts)
-	if err != nil {
-		t.Fatalf("renderEmail failed: %v", err)
-	}
+		id, err := sendBroadcastTo(mockURL, "fake-api-key", broadcast)
+		if err != nil {
+			t.Fatalf("sendBroadcast failed: %v", err)
+		}
 
-	broadcast := BroadcastRequest{
-		SegmentID: "test-segment-id",
-		From:      "Manuel de la Peña <hello@mdelapenya.xyz>",
-		Subject:   "[TEST] Weekly digest integration test",
-		HTML:      html,
-		Send:      false,
-		Name:      "test-broadcast-" + time.Now().Format("20060102-150405"),
-	}
+		if id == "" {
+			t.Fatal("expected non-empty broadcast ID")
+		}
 
-	id, err := sendBroadcastTo(mockURL, "fake-api-key", broadcast)
-	if err != nil {
-		t.Fatalf("sendBroadcast failed: %v", err)
-	}
+		t.Logf("Created draft broadcast: %s", id)
+	})
 
-	if id == "" {
-		t.Fatal("expected non-empty broadcast ID")
-	}
+	t.Run("send broadcast", func(t *testing.T) {
+		t.Parallel()
 
-	t.Logf("Created draft broadcast: %s", id)
-}
+		posts := []Post{
+			{
+				Title:       "Integration Test: Sent Broadcast",
+				URL:         "/posts/2026-03-14-integration-test-sent",
+				Date:        "2026-03-14",
+				Description: "This broadcast was sent to the mock Resend API.",
+				Tags:        []string{"test"},
+			},
+		}
 
-func TestIntegration_SendBroadcast(t *testing.T) {
-	mockURL, cleanup := startResendMock(t)
-	defer cleanup()
+		html, err := renderEmail(posts)
+		if err != nil {
+			t.Fatalf("renderEmail failed: %v", err)
+		}
 
-	posts := []Post{
-		{
-			Title:       "Integration Test: Sent Broadcast",
-			URL:         "/posts/2026-03-14-integration-test-sent",
-			Date:        "2026-03-14",
-			Description: "This broadcast was sent to the mock Resend API.",
-			Tags:        []string{"test"},
-		},
-	}
+		broadcast := BroadcastRequest{
+			SegmentID: "test-segment-id",
+			From:      "Manuel de la Peña <hello@mdelapenya.xyz>",
+			Subject:   "[TEST] Sent broadcast " + time.Now().Format("15:04:05"),
+			HTML:      html,
+			Send:      true,
+			Name:      "test-sent-" + time.Now().Format("20060102-150405"),
+		}
 
-	html, err := renderEmail(posts)
-	if err != nil {
-		t.Fatalf("renderEmail failed: %v", err)
-	}
+		id, err := sendBroadcastTo(mockURL, "fake-api-key", broadcast)
+		if err != nil {
+			t.Fatalf("sendBroadcast failed: %v", err)
+		}
 
-	broadcast := BroadcastRequest{
-		SegmentID: "test-segment-id",
-		From:      "Manuel de la Peña <hello@mdelapenya.xyz>",
-		Subject:   "[TEST] Sent broadcast " + time.Now().Format("15:04:05"),
-		HTML:      html,
-		Send:      true,
-		Name:      "test-sent-" + time.Now().Format("20060102-150405"),
-	}
+		if id == "" {
+			t.Fatal("expected non-empty broadcast ID")
+		}
 
-	id, err := sendBroadcastTo(mockURL, "fake-api-key", broadcast)
-	if err != nil {
-		t.Fatalf("sendBroadcast failed: %v", err)
-	}
+		t.Logf("Sent broadcast via mock: %s", id)
+	})
 
-	if id == "" {
-		t.Fatal("expected non-empty broadcast ID")
-	}
+	t.Run("send broadcast with images", func(t *testing.T) {
+		t.Parallel()
 
-	t.Logf("Sent broadcast via mock: %s", id)
-}
+		posts := []Post{
+			{
+				Title:       "Post With Cover Image",
+				URL:         "/posts/2026-03-11-coding-agents-as-exploratory-testers",
+				Date:        "2026-03-11",
+				Description: "How three composing Claude Code skills turn a coding agent into a reusable exploratory tester.",
+				Tags:        []string{"coding-agents", "testing", "claude-code"},
+				Image:       "/images/posts/2026-03-11-coding-agents-as-exploratory-testers/cover.png",
+			},
+			{
+				Title:       "Post Without Cover Image",
+				URL:         "/posts/2026-03-13-choosing-a-terminal-for-agentic-development",
+				Date:        "2026-03-13",
+				Description: "Warp, iTerm2, kitty, Ghostty, the built-in VS Code terminal. Which one works best when the agent is doing most of the typing?",
+				Tags:        []string{"terminal", "developer-experience"},
+			},
+		}
 
-func TestIntegration_SendBroadcastWithImages(t *testing.T) {
-	mockURL, cleanup := startResendMock(t)
-	defer cleanup()
+		html, err := renderEmail(posts)
+		if err != nil {
+			t.Fatalf("renderEmail failed: %v", err)
+		}
 
-	posts := []Post{
-		{
-			Title:       "Post With Cover Image",
-			URL:         "/posts/2026-03-11-coding-agents-as-exploratory-testers",
-			Date:        "2026-03-11",
-			Description: "How three composing Claude Code skills turn a coding agent into a reusable exploratory tester.",
-			Tags:        []string{"coding-agents", "testing", "claude-code"},
-			Image:       "/images/posts/2026-03-11-coding-agents-as-exploratory-testers/cover.png",
-		},
-		{
-			Title:       "Post Without Cover Image",
-			URL:         "/posts/2026-03-13-choosing-a-terminal-for-agentic-development",
-			Date:        "2026-03-13",
-			Description: "Warp, iTerm2, kitty, Ghostty, the built-in VS Code terminal. Which one works best when the agent is doing most of the typing?",
-			Tags:        []string{"terminal", "developer-experience"},
-		},
-	}
+		if !strings.Contains(html, "https://mdelapenya.xyz/images/posts/2026-03-11-coding-agents-as-exploratory-testers/cover.png") {
+			t.Error("expected cover image URL in rendered HTML")
+		}
+		if !strings.Contains(html, "<img") {
+			t.Error("expected img tag for post with image")
+		}
 
-	html, err := renderEmail(posts)
-	if err != nil {
-		t.Fatalf("renderEmail failed: %v", err)
-	}
+		broadcast := BroadcastRequest{
+			SegmentID: "test-segment-id",
+			From:      "Manuel de la Peña <hello@mdelapenya.xyz>",
+			Subject:   "[TEST] Broadcast with images " + time.Now().Format("15:04:05"),
+			HTML:      html,
+			Send:      true,
+			Name:      "test-images-" + time.Now().Format("20060102-150405"),
+		}
 
-	if !strings.Contains(html, "https://mdelapenya.xyz/images/posts/2026-03-11-coding-agents-as-exploratory-testers/cover.png") {
-		t.Error("expected cover image URL in rendered HTML")
-	}
-	if !strings.Contains(html, "<img") {
-		t.Error("expected img tag for post with image")
-	}
+		id, err := sendBroadcastTo(mockURL, "fake-api-key", broadcast)
+		if err != nil {
+			t.Fatalf("sendBroadcast failed: %v", err)
+		}
 
-	broadcast := BroadcastRequest{
-		SegmentID: "test-segment-id",
-		From:      "Manuel de la Peña <hello@mdelapenya.xyz>",
-		Subject:   "[TEST] Broadcast with images " + time.Now().Format("15:04:05"),
-		HTML:      html,
-		Send:      true,
-		Name:      "test-images-" + time.Now().Format("20060102-150405"),
-	}
+		if id == "" {
+			t.Fatal("expected non-empty broadcast ID")
+		}
 
-	id, err := sendBroadcastTo(mockURL, "fake-api-key", broadcast)
-	if err != nil {
-		t.Fatalf("sendBroadcast failed: %v", err)
-	}
-
-	if id == "" {
-		t.Fatal("expected non-empty broadcast ID")
-	}
-
-	t.Logf("Sent broadcast with images via mock: %s", id)
+		t.Logf("Sent broadcast with images via mock: %s", id)
+	})
 }
