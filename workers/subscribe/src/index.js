@@ -108,6 +108,7 @@ async function handleSubscribe(request, env, matchedOrigin) {
     body: JSON.stringify({
       email: email,
       unsubscribed: false,
+      segments: env.RESEND_SEGMENT_ID ? [{ id: env.RESEND_SEGMENT_ID }] : [],
       properties: {
         source: source,
       },
