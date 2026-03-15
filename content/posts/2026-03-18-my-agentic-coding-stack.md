@@ -1,6 +1,6 @@
 ---
 title: "My Agentic Coding Stack: Why the IDE Matters Less Than You Think"
-date: 2026-03-20 09:00:00 +0100
+date: 2026-03-18 09:00:00 +0100
 description: "VS Code, Cursor, Warp, Go, Claude Code. At some point the agent moved to the terminal and the IDE became a review tool. Here's what my stack looks like at Level 4."
 categories: [Technology, AI, Software Development]
 tags: ["coding-agents", "developer-experience", "claude-code", "go", "terminal"]
@@ -8,14 +8,14 @@ type: post
 weight: 30
 showTableOfContents: true
 ai: true
-image: "/images/posts/2026-03-20-my-agentic-coding-stack/cover.png"
+image: "/images/posts/2026-03-18-my-agentic-coding-stack/cover.png"
 related:
   - "/posts/2026-03-13-choosing-a-terminal-for-agentic-development"
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
 ---
 
-![My Agentic Coding Stack](/images/posts/2026-03-20-my-agentic-coding-stack/cover.png)
+![My Agentic Coding Stack](/images/posts/2026-03-18-my-agentic-coding-stack/cover.png)
 
 I moved from VS Code to Cursor for the AI chat. Then I moved the AI chat to the terminal. Now I'm not sure I need Cursor at all.
 
