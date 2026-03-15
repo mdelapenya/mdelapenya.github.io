@@ -46,7 +46,7 @@ function buildHtml(overrideApiBase: string, presetLocalStorage?: boolean): strin
     </div>
 </div>
 <script>
-  ${presetLocalStorage ? 'localStorage.setItem("blog_subscribed", "true");' : 'localStorage.removeItem("blog_subscribed");'}
+  ${presetLocalStorage ? 'localStorage.setItem("blog_subscribed", String(Date.now()));' : 'localStorage.removeItem("blog_subscribed");'}
   window.SUBSCRIBE_API_BASE = "${overrideApiBase}";
 </script>
 <script>${subscribeJs}</script>
@@ -123,7 +123,7 @@ test.describe("Subscribe form", () => {
     const subscribed = await page.evaluate(() =>
       localStorage.getItem("blog_subscribed")
     );
-    expect(subscribed).toBe("true");
+    expect(Number(subscribed)).toBeGreaterThan(0);
   });
 
   test("shows already subscribed state on revisit", async ({ page }) => {

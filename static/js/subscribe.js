@@ -27,9 +27,13 @@
     state.classList.remove("subscribe-hidden");
   }
 
-  // Check if already subscribed
-  if (localStorage.getItem(STORAGE_KEY)) {
+  // Check if already subscribed (expires after 7 days of inactivity)
+  var subscribedAt = parseInt(localStorage.getItem(STORAGE_KEY) || "0");
+  if (subscribedAt && (Date.now() - subscribedAt) < 7 * 24 * 60 * 60 * 1000) {
+    localStorage.setItem(STORAGE_KEY, String(Date.now()));
     showState(alreadyState);
+  } else if (subscribedAt) {
+    localStorage.removeItem(STORAGE_KEY);
   }
 
   // Fetch subscriber count
@@ -62,7 +66,7 @@
 
       if (DEV_MODE) {
         console.log("[subscribe] dev mode: would subscribe", email, "from", window.location.pathname);
-        localStorage.setItem(STORAGE_KEY, "true");
+        localStorage.setItem(STORAGE_KEY, String(Date.now()));
         showState(successState);
         button.disabled = false;
         button.textContent = "Subscribe";
@@ -83,7 +87,7 @@
           return r.json();
         })
         .then(function () {
-          localStorage.setItem(STORAGE_KEY, "true");
+          localStorage.setItem(STORAGE_KEY, String(Date.now()));
           showState(successState);
         })
         .catch(function (err) {
