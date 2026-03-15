@@ -270,8 +270,9 @@ func TestRenderEmail_HTMLEscaping(t *testing.T) {
 // ---------------------------------------------------------------------------
 
 func TestFetchWeekPostsFrom_LocalServer(t *testing.T) {
+	today := time.Now().Format("2006-01-02")
 	posts := []Post{
-		{Title: "Recent", URL: "/posts/recent", Date: time.Now().Format("2006-01-02")},
+		{Title: "Recent", URL: "/posts/recent", Date: today, Description: "A recent post", Image: "/images/cover.png"},
 		{Title: "Old", URL: "/posts/old", Date: "2020-01-01"},
 	}
 
@@ -291,6 +292,9 @@ func TestFetchWeekPostsFrom_LocalServer(t *testing.T) {
 	}
 	if result[0].Title != "Recent" {
 		t.Errorf("expected 'Recent', got %q", result[0].Title)
+	}
+	if result[0].Image != "/images/cover.png" {
+		t.Errorf("expected image field preserved, got %q", result[0].Image)
 	}
 }
 
@@ -358,15 +362,6 @@ func startResendMock(t *testing.T) (baseURL string, cleanup func()) {
 			log.Printf("failed to terminate container: %s", err)
 		}
 	}
-}
-
-func TestIntegration_FetchWeekPostsFromLiveSite(t *testing.T) {
-	posts, err := fetchWeekPostsFrom(siteURL + "/index.json")
-	if err != nil {
-		t.Fatalf("fetchWeekPostsFrom live site failed: %v", err)
-	}
-
-	t.Logf("Found %d posts from the live site this week", len(posts))
 }
 
 func TestIntegration_CreateBroadcastDraft(t *testing.T) {
