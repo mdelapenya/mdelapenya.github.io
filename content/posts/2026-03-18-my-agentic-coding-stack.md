@@ -1,7 +1,7 @@
 ---
 title: "My Agentic Coding Stack: Why the IDE Matters Less Than You Think"
 date: 2026-03-18 09:00:00 +0100
-description: "VS Code, Cursor, Warp, Go, Claude Code. At some point the agent moved to the terminal and the IDE became a review tool. Here's what my stack looks like at Level 4."
+description: "VS Code, Cursor, Warp, Go, Claude Code. At some point the agent moved to the terminal and the IDE became a review tool. Here's what my stack looks like when the terminal runs the show."
 categories: [Technology, AI, Software Development]
 tags: ["coding-agents", "developer-experience", "claude-code", "go", "terminal"]
 type: post
