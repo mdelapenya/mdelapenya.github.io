@@ -33,6 +33,7 @@ Here are the talks I've given so far.
 - Localstack Community Meetup: "_Lambda in a box: Real Integration Tests with Localstack and Go_"
     - :link: URL: https://www.meetup.com/localstack-community/events/307083096/
     - :movie_camera: [Video](https://www.youtube.com/live/qf4JQzqnpmQ?si=6YGZz784uT6OZLPi&t=2678)
+    - :scroll: [Slides](/slides/2025-localstack-community/Lambda-in-a-box-Localstack-Go.pdf)
 - Jornadas de Ciberseguridad 2025: "_OWASP Top 10 para desarrolladores de software_"
     - :link: URL: http://www.ies-azarquiel.es/index.php/al-dia/1119-jornadas-de-ciberseguridad
     - :movie_camera: [Video (Spanish)](https://www.youtube.com/live/FqL5Xicd5fI?si=6U2SFXkUyJgbuE-g&t=4832)
