@@ -9,6 +9,10 @@ Here are the talks I've given so far.
 
 ### 2026
 
+- SpiceDB Community Day 2026 - Mar 2026: "_Permission-Aware RAG: End-to-End Testing with the SpiceDB Testcontainer_"
+    - :link: URL: https://authzed.com/events/spicedb-community-day-2026#permission-aware-rag
+    - :movie_camera: [Video](https://www.youtube.com/watch?v=UpwyIsqWc8Q)
+    - :scroll: [Slides](/slides/2026-03-spicedb-community-day/Permission-Aware-RAG-SpiceDB-Testcontainer.pdf)
 - ContainerDays 2026:
     - "_Mastering Containerized Local Development and Integration Testing with Testcontainers for Go_", accepted for the conference.
         - :link: URL: https://www.containerdays.io/containerdays-london-2026/agenda/
