@@ -37,13 +37,15 @@ Here are the talks I've given so far.
 - Jornadas de Ciberseguridad 2025: "_OWASP Top 10 para desarrolladores de software_"
     - :link: URL: http://www.ies-azarquiel.es/index.php/al-dia/1119-jornadas-de-ciberseguridad
     - :movie_camera: [Video (Spanish)](https://www.youtube.com/live/FqL5Xicd5fI?si=6U2SFXkUyJgbuE-g&t=4832)
+    - :scroll: [Slides (Spanish)](https://docs.google.com/presentation/d/1BGh8-ljQyTAmfje-xsBnKz_rInS-1oHGJMQyN_5muQg/edit?usp=sharing)
 - :no_entry_sign: Presented 2 talks to GoLab ‘25. Both rejected.
 - :no_entry_sign: Presented 1 talk to Gophercon UK ‘25. Rejected.
 - :no_entry_sign: Presented 2 talks to Gophercon EU ‘25. Both rejected.
 - :no_entry_sign: Presented 1 talk to Gophercon US ‘25. Rejected.
 - Conf42 Golang 2025: “_Delightful Integration tests in Go_”
-    - :link: URL: https://www.conf42.com/Golang_2025_Manuel_de_la_Pena_testing_go_integration 
+    - :link: URL: https://www.conf42.com/Golang_2025_Manuel_de_la_Pena_testing_go_integration
     - :movie_camera: [Video](https://www.youtube.com/watch?v=VsiaUdMes3k&t=126s&ab_channel=Conf42)
+    - :scroll: [Slides](/slides/2025-conf42-golang/Delightful-Integration-tests-in-Go.pdf)
 - Cloud-Native AI Day Singapore Jan ‘25: “_Testing GenAI applications in Go_”.
     - :link: URL: https://www.meetup.com/es-ES/collabnix/events/304968647/ 
     - :scroll: [Slides](/slides/2025-01-24-gophercon-singapore/Testing_GenAI_apps_in_Go_Cloud-Native_AI_Day_Singapore.pdf)
@@ -63,7 +65,8 @@ Here are the talks I've given so far.
 - Gophercon US ‘24 (Chicago):
     - :briefcase: Booth work presenting Testcontainers for Go to the attendees.
 - London Gophers Meetup (March, 20th 2024): “_Delightful Integration tests in Go_”
-    - :link: URL: https://www.meetup.com/londongophers/events/298857117/ 
+    - :link: URL: https://www.meetup.com/londongophers/events/298857117/
+    - :scroll: [Slides](/slides/2024-03-london-gophers/Delightful-Integration-Tests-Go.pdf)
 - :no_entry_sign: Presented 2 talks to Gophercon EU ‘24. Both rejected.
 - :no_entry_sign: Presented 1 talk to Gophercon US ‘24. Rejected.
 - :no_entry_sign: Presented 1 talk to Gophercon EU Greece ‘24. Rejected.
@@ -72,6 +75,7 @@ Here are the talks I've given so far.
 
 - GDG Go Berlin’s Devfest - November 2023: "_Testcontainers for Go Workshop_"
     - :movie_camera: [Video](https://www.youtube.com/watch?v=ccK3r0gEZbY&ab_channel=GDGBerlin)
+    - :scroll: [Slides](/slides/2023-11-gdg-berlin-devfest/Testcontainers-Go-Workshop.pdf)
 - Cup o’ Go Interview - November 2023: "_Interview with 📦 testcontainers maintainer Manuel de la Peña_"
     - :studio_microphone: [PodCast](https://cupogo.dev/episodes/be-unique-just-like-everyone-else-interview-with-testcontainers-maintainer-manuel-de-la-pena)
 - Grafana Office Hours #20: "_Realistic Tests with Testcontainers_"
