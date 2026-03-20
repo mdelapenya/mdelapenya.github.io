@@ -51,7 +51,7 @@ Most developers I talk to are somewhere between Level 2 and Level 3. They use co
 
 If you're choosing tools, start by figuring out your level. A Level 3 IDE (Cursor) is excellent at Level 3 but redundant at Level 4. An agent orchestrator is essential at Level 5 but overwhelming at Level 3. Don't buy tools for the level you aspire to. Buy tools for the level you're at, and upgrade when you get there.
 
-In the next post, I'll cover what my stack actually looks like at Level 4: why I left Cursor's chat behind, why Go fits agentic workflows, and why the terminal is the new IDE.
+The next post covers [what my stack actually looks like](/posts/2026-03-20-my-agentic-coding-stack) at Level 4: why I left Cursor's chat behind, why Go fits agentic workflows, and why the terminal is the new IDE.
 
 ---
 
