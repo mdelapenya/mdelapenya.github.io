@@ -67,7 +67,6 @@ timeout = "120s"
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
     <script src="/js/search.js"></script>
     <script src="/js/subscribe.js"></script>
-    <script src="/js/related-posts.js"></script>
   """
 
   # Cloudflare Turnstile site key for subscribe form
