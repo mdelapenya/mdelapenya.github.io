@@ -40,3 +40,7 @@ Every email I send has an unsubscribe link at the bottom. One click, you're out.
 I'm Manuel de la Peña. I write about Go, Testcontainers, AI coding agents, and developer tools. This is a personal blog, not a company publication. No team, no editors (well, an [AI editor](/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day)), no investors.
 
 If you have questions about any of this, find me on [GitHub](https://github.com/mdelapenya), [LinkedIn](https://www.linkedin.com/in/manueldelapenya/), or [Twitter/X](https://x.com/mdelapenya).
+
+## How it's built
+
+Curious about the technical details? I wrote about the full journey: the Cloudflare Worker, the Resend integration, the security hardening, and the Testcontainers module I built to test it all. [Read the full story](/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module).
