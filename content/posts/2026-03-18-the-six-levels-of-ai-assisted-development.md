@@ -10,6 +10,7 @@ showTableOfContents: true
 ai: true
 image: "/images/posts/2026-03-18-the-six-levels-of-ai-assisted-development/cover.png"
 related:
+  - "/posts/2026-03-21-gwaim-the-tool-that-level-5-needed"
   - "/posts/2026-03-20-my-agentic-coding-stack"
 ---
 

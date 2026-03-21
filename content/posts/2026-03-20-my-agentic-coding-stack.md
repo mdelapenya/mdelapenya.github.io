@@ -10,6 +10,7 @@ showTableOfContents: true
 ai: true
 image: "/images/posts/2026-03-20-my-agentic-coding-stack/cover.png"
 related:
+  - "/posts/2026-03-21-gwaim-the-tool-that-level-5-needed"
   - "/posts/2026-03-18-the-six-levels-of-ai-assisted-development"
   - "/posts/2026-03-13-choosing-a-terminal-for-agentic-development"
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"

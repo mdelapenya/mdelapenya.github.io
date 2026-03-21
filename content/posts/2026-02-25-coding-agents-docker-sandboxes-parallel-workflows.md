@@ -9,6 +9,9 @@ weight: 30
 showTableOfContents: true
 ai: true
 image: "/images/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows/cover.png"
+related:
+  - "/posts/2026-03-21-gwaim-the-tool-that-level-5-needed"
+  - "/posts/2026-03-18-the-six-levels-of-ai-assisted-development"
 ---
 
 ![Parallel Coding Agents with Docker Sandboxes and Git Worktrees](/images/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows/cover.png)
