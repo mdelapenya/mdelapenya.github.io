@@ -12,6 +12,7 @@ image: "/images/posts/2026-03-18-the-six-levels-of-ai-assisted-development/cover
 related:
   - "/posts/2026-03-21-gwaim-the-tool-that-level-5-needed"
   - "/posts/2026-03-20-my-agentic-coding-stack"
+  - "/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer"
 ---
 
 ![The Six Levels of AI-Assisted Development](/images/posts/2026-03-18-the-six-levels-of-ai-assisted-development/cover.png)
