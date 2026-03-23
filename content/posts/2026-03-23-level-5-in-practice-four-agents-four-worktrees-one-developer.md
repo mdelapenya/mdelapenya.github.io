@@ -26,7 +26,7 @@ Four Warp panels. Four git worktrees. Four Claude Code sessions. Each one workin
 
 ## The Setup
 
-**Update:** Since writing this post, I built [gwaim](/posts/2026-03-21-gwaim-the-tool-that-level-5-needed), a TUI dashboard that replaces the manual workflow below. One keypress to create a worktree, one glance to see which agents are running. The pain described here is what led to the tool. I'm keeping the original setup description because it explains *why* gwaim exists.
+> **Update:** Since writing this post, I built [gwaim](/posts/2026-03-21-gwaim-the-tool-that-level-5-needed), a TUI dashboard that replaces the manual workflow below. One keypress to create a worktree, one glance to see which agents are running. The pain described here is what led to the tool. I'm keeping the original setup description because it explains *why* gwaim exists.
 
 The physical layout is a Warp window with four panels in a grid. Each panel is a Claude Code session pointed at its own git worktree. Before gwaim, I created the worktrees manually:
 
