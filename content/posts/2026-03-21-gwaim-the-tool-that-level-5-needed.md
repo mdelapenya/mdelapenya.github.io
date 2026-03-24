@@ -19,7 +19,7 @@ related:
 
 ## The Manual Pain
 
-The Level 5 workflow described in an upcoming post was a workflow that worked. Four git worktrees, four Warp panels, four Claude Code sessions. Each one on its own branch, its own task, its own `/loop`. The throughput was real. Three merged PRs by lunch instead of one.
+The [Level 5 workflow](/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer) was a workflow that worked. Four git worktrees, four Warp panels, four Claude Code sessions. Each one on its own branch, its own task, its own `/loop`. The throughput was real. Three merged PRs by lunch instead of one.
 
 But the setup was all manual. `git worktree add ../sandbox-fix-auth fix/auth-bypass`. Repeat four times. Open four terminals. Navigate to each directory. Start Claude Code in each one. Check which branches are ahead or behind. Switch between panels to see which agent finished. Open a browser to check PR status. Run `gh pr view` in each worktree to see CI results.
 
