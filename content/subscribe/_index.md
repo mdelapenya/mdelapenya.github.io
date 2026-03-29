@@ -13,7 +13,7 @@ That's it. That's the pitch.
 
 ## What you get
 
-When I publish a new post, you get an email with a link to it. One email per post, no batching, no "weekly digest," no "exclusive subscriber content." Just a heads-up that there's something new to read.
+One weekly digest per week, with the posts I wrote during the week. No "exclusive subscriber content." Just a heads-up that there's something new to read.
 
 ## What I do with your email
 
