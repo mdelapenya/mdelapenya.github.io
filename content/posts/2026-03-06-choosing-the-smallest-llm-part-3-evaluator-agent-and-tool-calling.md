@@ -9,6 +9,10 @@ weight: 30
 showTableOfContents: true
 ai: true
 image: "/images/posts/2026-03-06-slms-evaluator-agent-tool-calling/cover.png"
+related:
+  - "/posts/2026-03-02-choosing-the-smallest-llm-part-1-slms-and-docker-model-runner"
+  - "/posts/2026-03-04-choosing-the-smallest-llm-part-2-benchmarking-with-go"
+  - "/posts/2026-03-09-choosing-the-smallest-llm-part-4-observability-with-otel-and-grafana"
 ---
 
 ![Evaluator Agent and Tool Calling](/images/posts/2026-03-06-slms-evaluator-agent-tool-calling/cover.png)

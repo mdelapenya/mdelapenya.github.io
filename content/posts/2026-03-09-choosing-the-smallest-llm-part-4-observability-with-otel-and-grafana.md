@@ -9,6 +9,10 @@ weight: 30
 showTableOfContents: true
 ai: true
 image: "/images/posts/2026-03-09-slms-observability-otel-grafana/cover.png"
+related:
+  - "/posts/2026-03-02-choosing-the-smallest-llm-part-1-slms-and-docker-model-runner"
+  - "/posts/2026-03-04-choosing-the-smallest-llm-part-2-benchmarking-with-go"
+  - "/posts/2026-03-06-choosing-the-smallest-llm-part-3-evaluator-agent-and-tool-calling"
 ---
 
 ![Observability with OpenTelemetry and Grafana](/images/posts/2026-03-09-slms-observability-otel-grafana/cover.png)

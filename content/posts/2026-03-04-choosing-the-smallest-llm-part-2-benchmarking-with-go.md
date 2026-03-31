@@ -9,6 +9,10 @@ weight: 30
 showTableOfContents: true
 ai: true
 image: "/images/posts/2026-03-04-slms-benchmarking-with-go/cover.png"
+related:
+  - "/posts/2026-03-02-choosing-the-smallest-llm-part-1-slms-and-docker-model-runner"
+  - "/posts/2026-03-06-choosing-the-smallest-llm-part-3-evaluator-agent-and-tool-calling"
+  - "/posts/2026-03-09-choosing-the-smallest-llm-part-4-observability-with-otel-and-grafana"
 ---
 
 ![Benchmarking SLMs with Go](/images/posts/2026-03-04-slms-benchmarking-with-go/cover.png)
