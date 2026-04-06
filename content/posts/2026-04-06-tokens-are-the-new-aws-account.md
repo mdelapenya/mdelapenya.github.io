@@ -1,6 +1,6 @@
 ---
 title: "Tokens Are the New AWS Account"
-date: 2026-04-06 09:00:00 +0100
+date: 2026-04-06 09:00:00 +0200
 description: "Ten years ago, companies that didn't give you an AWS account were outdated. Today, it's AI tokens. A thank-you to Docker for getting this right, and a warning about measuring productivity by consumption."
 categories: [Technology, AI, Software Development]
 tags: ["ai", "tokens", "developer-experience", "docker", "productivity"]
