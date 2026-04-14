@@ -85,5 +85,6 @@ Give your engineers tokens. Trust them to use them well. But please, don't turn 
 
 ---
 
-*[Jensen Huang on tokens as a perk (CNBC)](https://www.cnbc.com/2026/03/20/nvidia-ai-agents-tokens-human-workers-engineer-jobs-unemployment-jensen-huang.html)*
-*[The full story on Huang's 250K token target (Business Insider)](https://www.businessinsider.com/jensen-huang-500k-engineers-250k-ai-tokens-nvidia-compute-2026-3)*
+_Resources:_
+- _[Jensen Huang on tokens as a perk (CNBC)](https://www.cnbc.com/2026/03/20/nvidia-ai-agents-tokens-human-workers-engineer-jobs-unemployment-jensen-huang.html)_
+- _[The full story on Huang's 250K token target (Business Insider)](https://www.businessinsider.com/jensen-huang-500k-engineers-250k-ai-tokens-nvidia-compute-2026-3)_
