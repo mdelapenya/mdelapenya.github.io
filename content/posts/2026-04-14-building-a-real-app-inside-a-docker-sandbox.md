@@ -13,6 +13,7 @@ related:
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
   - "/posts/2026-03-25-skills-are-roles-not-commands"
+  - "/posts/2026-04-22-por-que-construi-un-visor-de-trenes-en-tiempo-real"
 ---
 
 ![Building a Real App Inside a Docker Sandbox](/images/posts/2026-04-14-building-a-real-app-inside-a-docker-sandbox/cover.png)
