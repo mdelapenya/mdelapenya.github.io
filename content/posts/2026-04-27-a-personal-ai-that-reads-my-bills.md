@@ -1,6 +1,6 @@
 ---
 title: "A Personal AI That Reads My Bills"
-date: 2026-04-28 09:00:00 +0200
+date: 2026-04-27 09:00:00 +0200
 description: "I built a personal AI assistant on my Synology NAS that parses my electricity bills, grocery receipts, bank statements, and parking tickets. It runs on Telegram, answers in natural language, and crashed on week 8 because I forgot to watch the disk."
 categories: [AI, Self-Hosting, Automation]
 tags: ["nanoclaw", "synology", "telegram", "home-assistant", "gmail", "personal-finance", "docker"]
@@ -8,13 +8,13 @@ type: post
 weight: 30
 showTableOfContents: true
 ai: true
-image: "/images/posts/2026-04-28-a-personal-ai-that-reads-my-bills/cover.png"
+image: "/images/posts/2026-04-27-a-personal-ai-that-reads-my-bills/cover.png"
 related:
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
   - "/posts/2026-04-14-building-a-real-app-inside-a-docker-sandbox"
 ---
 
-![A Personal AI That Reads My Bills](/images/posts/2026-04-28-a-personal-ai-that-reads-my-bills/cover.png)
+![A Personal AI That Reads My Bills](/images/posts/2026-04-27-a-personal-ai-that-reads-my-bills/cover.png)
 
 There is a Synology NAS in my home office that already runs Plex, holds photo backups, and hosts a handful of Docker containers. Adding "personal AI assistant" to the workload was, in cost terms, free. The real question was: what would I use it for? The answer turned out to be my bills. Mercadona grocery receipts, Iberdrola electricity invoices, BBVA bank statements, Amazon orders. All arriving as emails with PDFs, all going straight to the trash. None of it queryable. I wanted to ask "how much did I spend on groceries last winter" and get an answer from my phone. Four weeks later, the system runs, answers, and has already crashed once. This is the story.
 
