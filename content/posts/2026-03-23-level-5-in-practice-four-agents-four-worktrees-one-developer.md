@@ -16,6 +16,7 @@ related:
   - "/posts/2026-03-13-choosing-a-terminal-for-agentic-development"
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
+  - "/posts/2026-04-30-my-pr-has-a-lawyer-a-nurse-a-detective-and-a-scribe"
 ---
 
 ![Level 5 in Practice: Four Agents, Four Worktrees, One Developer](/images/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer/cover.png)
@@ -74,7 +75,7 @@ Every five minutes, the agent checks CI. If builds fail, it diagnoses the cause.
 
 This is the multiplier. Without `/loop`, I'd be the one checking CI for each of four branches, diagnosing failures, deciding whether to merge or fix, and pushing. With `/loop`, each agent handles its own CI feedback loop. I only get involved when an agent is stuck on something it can't resolve.
 
-That inline prompt eventually evolved into a proper [Claude Code skill](https://github.com/mdelapenya/coding-skills/blob/main/skills/babysit-pr/SKILL.md): `babysit-pr`. The skill adds what the raw prompt lacks: it checks mergeable status via `gh pr view`, has conflict resolution guidelines (preserve intent, ask when ambiguous), enforces a "never force push" safety rule, and provides a summary after each cycle. If [skills are roles, not commands](/posts/2026-03-25-skills-are-roles-not-commands), `babysit-pr` is the formalized role for the job the inline prompt was doing ad hoc. I'm building a collection of these practical skills at [coding-skills](https://github.com/mdelapenya/coding-skills), similar to how the [blog skills](/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day) handle the content pipeline.
+That inline prompt eventually evolved into a proper [Claude Code skill](https://github.com/mdelapenya/coding-skills/blob/main/skills/pr-nurse/SKILL.md): `pr-nurse`. The skill adds what the raw prompt lacks: it checks mergeable status via `gh pr view`, has conflict resolution guidelines (preserve intent, ask when ambiguous), enforces a "never force push" safety rule, and provides a summary after each cycle. If [skills are roles, not commands](/posts/2026-03-25-skills-are-roles-not-commands), `pr-nurse` is the formalized role for the job the inline prompt was doing ad hoc. It is one of [four PR skills](/posts/2026-04-30-my-pr-has-a-lawyer-a-nurse-a-detective-and-a-scribe) I use on every pull request, all collected at [coding-skills](https://github.com/mdelapenya/coding-skills).
 
 The `/loop` is session-scoped: it dies when you exit Claude Code. Tasks auto-expire after three days. The default interval is 10 minutes if you don't specify one. For CI iteration, 5 minutes feels right. Fast enough to catch failures quickly, slow enough to not burn tokens checking builds that haven't started yet.
 
