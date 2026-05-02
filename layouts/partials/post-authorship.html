@@ -1,9 +1,20 @@
+{{ $lang := .Params.language | default "en" }}
 {{ if .Params.ai }}
 <div class="post-authorship post-authorship-ai">
-    <span class="post-authorship-icon">🤖</span> This post has been fully generated with AI.
+    <span class="post-authorship-icon">🤖</span>
+    {{ if eq $lang "es" }}
+        Este post ha sido redactado con ayuda de un agente de IA, a partir de ideas, referencias y refinamiento aportados por el autor. El agente no me reemplaza, me amplifica y acelera.
+    {{ else }}
+        This post was written with the help of an AI agent, from ideas, references, and refinement provided by the author. The agent doesn't replace me, it amplifies and accelerates me.
+    {{ end }}
 </div>
 {{ else }}
 <div class="post-authorship post-authorship-human">
-    <span class="post-authorship-icon">🧑</span> No AI has been harmed in the writing of this post.
+    <span class="post-authorship-icon">🧑</span>
+    {{ if eq $lang "es" }}
+        Ninguna IA ha sido maltratada en la escritura de este post.
+    {{ else }}
+        No AI has been harmed in the writing of this post.
+    {{ end }}
 </div>
 {{ end }}
