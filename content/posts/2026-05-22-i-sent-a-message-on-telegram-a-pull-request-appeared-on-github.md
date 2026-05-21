@@ -15,6 +15,8 @@ related:
   - "/posts/2026-03-25-skills-are-roles-not-commands"
 ---
 
+![I Sent a Message on Telegram](/images/posts/2026-05-22-i-sent-a-message-on-telegram-a-pull-request-appeared-on-github/cover.png)
+
 I typed a message in Telegram. Something like: "I want to write a post about the setup we just built for writing blogs from Telegram." I sent it to TheBlog, one of the topics in my personal AI group. Twenty minutes later, the agent sent me a link. A pull request existed on GitHub with a draft of this post, a branch, a conventional commit, and a structured PR description. I had not opened a terminal. I had not run git. I had not touched my laptop.
 
 That is not a demo. It is the same assistant that already reads my electricity bills, summarizes my emails, and answers questions about my bank account. The system I described in [A Personal AI That Reads My Bills](/posts/2026-04-27-a-personal-ai-that-reads-my-bills) just grew a new capability. The infrastructure was already there. I wired a new topic to it.
