@@ -12,6 +12,7 @@ ai: true
 image: "/images/posts/2026-04-22-por-que-construi-un-visor-de-trenes-en-tiempo-real/cover.png"
 related:
   - "/posts/2026-04-14-building-a-real-app-inside-a-docker-sandbox"
+  - "/posts/2026-05-21-haciendo-webs-ultraligeras"
 ---
 
 ![Por qué construí un visor de trenes en tiempo real](/images/posts/2026-04-22-por-que-construi-un-visor-de-trenes-en-tiempo-real/cover.png)
