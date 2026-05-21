@@ -69,7 +69,7 @@ That line is gone now.
 
 The phone did not change. The agent absorbed the toolchain. Every step that required a terminal, a file system, or a git command happens inside a container the agent controls. I contribute the ideas and the decisions. The agent handles everything else.
 
-What actually changes when that friction disappears: I no longer defer writing to "when I'm at my desk." A thought on the bus becomes a draft. A conversation becomes a skeleton. The blog post that would have waited until the weekend ships on Tuesday, started from a message I sent while making coffee.
+What actually changes when that friction disappears: I no longer defer writing to "when I'm at my desk." A thought while waiting somewhere becomes a draft. A conversation becomes a skeleton. The blog post that would have waited until the weekend ships on Tuesday, started from a message I sent away from the computer.
 
 The phone is not a degraded version of the computer for this workflow. It is the right tool. Text input, fast, always with me. The agent does the rest.
 
