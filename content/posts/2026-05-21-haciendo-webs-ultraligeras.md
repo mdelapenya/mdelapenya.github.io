@@ -5,6 +5,7 @@ description: "En el año 2000 hice un curso de 300 horas para aprender a crear p
 categories: [Technology, Software Development, AI]
 tags: ["web-development", "historia", "coding-agents", "docker-sandboxes", "ia", "html", "jquery"]
 type: post
+language: es
 weight: 30
 showTableOfContents: true
 ai: true
