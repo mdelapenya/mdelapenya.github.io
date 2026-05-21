@@ -143,6 +143,8 @@ jobs:
     needs:
       - build
       - test
+    # Only deploy on push to main (not on schedule or manual runs without code changes)
+    if: github.event_name == 'push'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
