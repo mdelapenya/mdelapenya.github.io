@@ -25,7 +25,7 @@ Two pieces make this work.
 
 The first is [NanoClaw](https://github.com/nanocoai/nanoclaw): an open-source AI orchestrator that runs on my home NAS, inside a VM. When a message arrives on Telegram, NanoClaw spins up a container for that topic, loads its configuration, and runs Claude Code inside it. Each topic is an isolated agent with its own workspace, its own personality, and its own tools. TheBlog is one of those topics. Its entire job is to manage the blog.
 
-The second is [blog-skills](https://github.com/mdelapenya/blog-skills): five `SKILL.md` files that cover every friction point in the blog pipeline. `/blog-planner` discovers and plans topics. `/blog-writer` drafts through a section-by-section interview. `/blog-editor` reviews the draft against a checklist. `/blog-keeper` validates all internal links and cross-references. `/blog-marketer` writes the social copy. Each one is a [role, not a command](/posts/2026-03-25-skills-are-roles-not-commands): it makes decisions, not just executes steps. I wrote about how [removing those friction points changed my publishing frequency](/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day). TheBlog is those same five skills, now reachable from my phone.
+The second is [blog-skills](https://github.com/mdelapenya/blog-skills): five `SKILL.md` files, one per step of the pipeline. I already [wrote about how they removed the friction from writing](/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day). What is different here is where they run. Every skill is invoked from Telegram. Every question the skill asks comes back to Telegram. I answer from my phone. The agent writes.
 
 ## What the TheBlog topic knows
 
