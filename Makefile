@@ -1,4 +1,5 @@
 HUGO_VERSION=0.145.0
+PLAYWRIGHT_VERSION=1.60.0
 PORT=1313
 HUGO_BUILT_IMAGE=hugo-local
 HUGO_CONTAINER=hugo-serve
@@ -40,7 +41,7 @@ test-playwright:
 		-w /tests \
 		-e BASE_URL=$(BASE_URL) \
 		$(if $(DOCKER_NETWORK),,-e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal) \
-		mcr.microsoft.com/playwright:v1.50.1-noble \
+		mcr.microsoft.com/playwright:v$(PLAYWRIGHT_VERSION)-noble \
 		sh -c "npm install && npx playwright test"
 
 # Run broadcast Go tests
