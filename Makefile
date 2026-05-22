@@ -4,6 +4,7 @@ HUGO_BUILT_IMAGE=hugo-local
 HUGO_CONTAINER=hugo-serve
 BASE_URL ?= http://host.docker.internal:1313
 DOCKER_NETWORK ?=
+PLAYWRIGHT_VERSION=1.60.0
 
 .PHONY: build serve clean test test-playwright test-broadcast
 
@@ -40,7 +41,7 @@ test-playwright:
 		-w /tests \
 		-e BASE_URL=$(BASE_URL) \
 		$(if $(DOCKER_NETWORK),,-e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal) \
-		mcr.microsoft.com/playwright:v1.50.1-noble \
+		mcr.microsoft.com/playwright:v$(PLAYWRIGHT_VERSION)-noble \
 		sh -c "npm install && npx playwright test"
 
 # Run broadcast Go tests
