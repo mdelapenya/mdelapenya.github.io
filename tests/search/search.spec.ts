@@ -10,8 +10,6 @@ async function openSearch(page: Page) {
 async function searchFor(page: Page, query: string) {
   await openSearch(page);
   await page.locator("#search-input").fill(query);
-  // wait past the 300ms debounce + index load
-  await page.waitForTimeout(500);
 }
 
 // ---------------------------------------------------------------------------
@@ -226,13 +224,17 @@ test.describe("Search results", () => {
   });
 
   test("clicking a result navigates to the post", async ({ page }) => {
-    await searchFor(page, "docker");
+    await searchFor(page, "the");
 
     const firstResult = page.locator(".search-result-item").first();
     await expect(firstResult).toBeVisible({ timeout: 5000 });
 
+    const href = await firstResult.getAttribute("href");
+    expect(href).toBeTruthy();
+    expect(href).toContain("/posts/");
+
     await firstResult.click();
-    await expect(page).not.toHaveURL("/");
+    await expect(page).toHaveURL(new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   });
 });
 
