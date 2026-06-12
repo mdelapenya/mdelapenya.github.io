@@ -59,7 +59,7 @@ jobs:
           echo "Hugo server failed to start" && exit 1
 
       - name: Run Playwright E2E tests
-        run: make test BASE_URL=http://localhost:1313 DOCKER_NETWORK=host
+        run: make test-playwright BASE_URL=http://localhost:1313 DOCKER_NETWORK=host
 
   # Broadcast tests
   test-broadcast:
