@@ -1,0 +1,202 @@
+/* Talks page: git-log / conventional-commits aesthetic.
+   Monospace block on top of the default prose. No card chrome. */
+
+.talks-legend {
+    font-family: ui-monospace, SFMono-Regular, "Menlo", "Monaco", "Consolas", "Liberation Mono", monospace;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin: 1.25rem 0 1.5rem;
+    color: rgba(127, 127, 127, 0.95);
+}
+
+.talks-legend .legend-chip {
+    /* Button reset, then grid layout matching the entries. */
+    appearance: none;
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0.15rem 0.5rem;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 5em 1fr;
+    column-gap: 1.1rem;
+    width: 100%;
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.talks-legend .legend-chip:hover {
+    background: rgba(127, 127, 127, 0.1);
+}
+
+.talks-legend .legend-chip:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 1px;
+}
+
+.talks-legend .legend-chip:not(.is-active) {
+    opacity: 0.45;
+}
+
+.talks-legend .legend-chip:not(.is-active) .legend-type {
+    text-decoration: line-through;
+}
+
+.talks-legend .legend-type {
+    font-weight: 600;
+}
+
+.talks-legend .legend-type-talk {
+    color: #1f7a4d;
+}
+
+.talks-legend .legend-type-booth {
+    color: #a86a00;
+}
+
+.talks-legend .legend-type-podcast {
+    color: #6a4caf;
+}
+
+.talks-legend .legend-type-reject {
+    color: rgba(127, 127, 127, 0.85);
+}
+
+@media (prefers-color-scheme: dark) {
+    .talks-legend .legend-type-talk {
+        color: #4ec48a;
+    }
+
+    .talks-legend .legend-type-booth {
+        color: #e0b070;
+    }
+
+    .talks-legend .legend-type-podcast {
+        color: #b394e8;
+    }
+}
+
+.talks-section-label {
+    margin: 2rem 0 0.6rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.talks-year-label {
+    margin: 1.4rem 0 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(127, 127, 127, 0.85);
+}
+
+.talks-log {
+    font-family: ui-monospace, SFMono-Regular, "Menlo", "Monaco", "Consolas", "Liberation Mono", monospace;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin: 0 0 1rem;
+}
+
+.commit-entry {
+    display: grid;
+    grid-template-columns: 5em 1fr;
+    column-gap: 1.1rem;
+    margin: 0 0 0.7rem;
+}
+
+.commit-entry[hidden] {
+    display: none;
+}
+
+.commit-date {
+    color: rgba(127, 127, 127, 0.85);
+    white-space: nowrap;
+}
+
+.commit-content {
+    min-width: 0;
+}
+
+.commit-subject {
+    /* Allow long titles to wrap, but keep the type(scope): prefix together. */
+    overflow-wrap: anywhere;
+}
+
+.commit-type {
+    font-weight: 600;
+}
+
+.commit-entry-talk .commit-type {
+    color: #1f7a4d;
+}
+
+.commit-entry-booth .commit-type {
+    color: #a86a00;
+}
+
+.commit-entry-podcast .commit-type {
+    color: #6a4caf;
+}
+
+.commit-entry-reject .commit-type {
+    color: rgba(127, 127, 127, 0.85);
+}
+
+.commit-scope {
+    color: rgba(127, 127, 127, 0.95);
+}
+
+.commit-title {
+    font-style: italic;
+}
+
+.commit-note {
+    color: rgba(127, 127, 127, 0.85);
+}
+
+.commit-body {
+    margin-top: 0.1rem;
+    color: rgba(127, 127, 127, 0.95);
+    overflow-wrap: anywhere;
+}
+
+.commit-body a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(127, 127, 127, 0.4);
+}
+
+.commit-body a:hover {
+    text-decoration-color: currentColor;
+    color: var(--md-default-fg-color, inherit);
+}
+
+.commit-entry-reject {
+    opacity: 0.7;
+}
+
+/* On narrow screens, stack the date above the content so titles get the full width. */
+@media (max-width: 540px) {
+    .commit-entry {
+        grid-template-columns: 1fr;
+        row-gap: 0.1rem;
+    }
+}
+
+/* Dark theme: keep the type colors readable. */
+@media (prefers-color-scheme: dark) {
+    .commit-entry-talk .commit-type {
+        color: #4ec48a;
+    }
+
+    .commit-entry-booth .commit-type {
+        color: #e0b070;
+    }
+
+    .commit-entry-podcast .commit-type {
+        color: #b394e8;
+    }
+}

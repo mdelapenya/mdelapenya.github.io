@@ -1,0 +1,65 @@
+{{/*
+    Renders one conventional-commit-style entry per item.
+    Multi-item conferences (e.g. a single ContainerDays date with two talks)
+    produce multiple entries with the same date+scope.
+
+    Input: a YAML object from data/talks.yaml (passed as dot).
+*/}}
+
+{{ $entry := . }}
+{{ $date := time $entry.date }}
+{{ $dateLabel := $date.Format "2006-01" }}
+{{ $scope := $entry.conference }}
+
+{{ range $entry.items }}
+    {{ $item := . }}
+    {{ if or (eq $item.type "talk") (eq $item.type "podcast") }}
+        <article class="commit-entry commit-entry-{{ $item.type }}">
+            <span class="commit-date">{{ $dateLabel }}</span>
+            <div class="commit-content">
+                <div class="commit-subject"><span class="commit-type">{{ $item.type }}</span>(<span class="commit-scope">{{ $scope }}</span>): <em class="commit-title">"{{ $item.title }}"</em></div>
+                {{ if or $entry.location $item.url $item.video $item.slides $item.podcast }}
+                    <div class="commit-body">
+                        {{ $parts := slice }}
+                        {{ with $entry.location }}{{ $parts = $parts | append (printf `📍 %s` .) }}{{ end }}
+                        {{ with $item.url }}{{ $parts = $parts | append (printf `<a href="%s" target="_blank" rel="noopener">🔗 conference page</a>` .) }}{{ end }}
+                        {{ with $item.video }}
+                            {{ $label := "🎥 video" }}
+                            {{ with $item.video_language }}{{ $label = printf "🎥 video (%s)" . }}{{ end }}
+                            {{ $parts = $parts | append (printf `<a href="%s" target="_blank" rel="noopener">%s</a>` . $label) }}
+                        {{ end }}
+                        {{ with $item.slides }}
+                            {{ $label := "📜 slides" }}
+                            {{ with $item.slides_language }}{{ $label = printf "📜 slides (%s)" . }}{{ end }}
+                            {{ $parts = $parts | append (printf `<a href="%s" target="_blank" rel="noopener">%s</a>` . $label) }}
+                        {{ end }}
+                        {{ with $item.podcast }}{{ $parts = $parts | append (printf `<a href="%s" target="_blank" rel="noopener">🎙️ podcast</a>` .) }}{{ end }}
+                        {{ delimit $parts " · " | safeHTML }}
+                    </div>
+                {{ end }}
+            </div>
+        </article>
+    {{ else if eq $item.type "booth" }}
+        <article class="commit-entry commit-entry-booth">
+            <span class="commit-date">{{ $dateLabel }}</span>
+            <div class="commit-content">
+                <div class="commit-subject"><span class="commit-type">booth</span>(<span class="commit-scope">{{ $scope }}</span>): {{ $item.description }}</div>
+                {{ if or $entry.location $item.url }}
+                    <div class="commit-body">
+                        {{ $parts := slice }}
+                        {{ with $entry.location }}{{ $parts = $parts | append (printf `📍 %s` .) }}{{ end }}
+                        {{ with $item.url }}{{ $parts = $parts | append (printf `<a href="%s" target="_blank" rel="noopener">🔗 conference page</a>` .) }}{{ end }}
+                        {{ delimit $parts " · " | safeHTML }}
+                    </div>
+                {{ end }}
+            </div>
+        </article>
+    {{ else if eq $item.type "rejected" }}
+        <article class="commit-entry commit-entry-reject">
+            <span class="commit-date">{{ $dateLabel }}</span>
+            <div class="commit-content">
+                <div class="commit-subject">🚫 <span class="commit-type">reject</span>(<span class="commit-scope">{{ $scope }}</span>): {{ $item.note }}</div>
+            </div>
+        </article>
+    {{ end }}
+{{ end }}

@@ -1,0 +1,79 @@
+{{ define "main" }}
+<div class="post container">
+
+    <div class="post-header-section">
+        <h1>{{ .Title | markdownify }}</h1>
+    </div>
+
+    <div class="post-content">
+        {{ .Content }}
+
+        <aside class="talks-legend" aria-label="Prefix legend. Click a chip to filter that type in or out.">
+            <button type="button" class="legend-chip is-active" data-filter-type="talk" aria-pressed="true"><span class="legend-type legend-type-talk">talk</span><span class="legend-desc">a talk I gave</span></button>
+            <button type="button" class="legend-chip is-active" data-filter-type="booth" aria-pressed="true"><span class="legend-type legend-type-booth">booth</span><span class="legend-desc">booth duty at a sponsor event</span></button>
+            <button type="button" class="legend-chip is-active" data-filter-type="podcast" aria-pressed="true"><span class="legend-type legend-type-podcast">podcast</span><span class="legend-desc">podcast or audio interview</span></button>
+            <button type="button" class="legend-chip is-active" data-filter-type="reject" aria-pressed="true"><span class="legend-type legend-type-reject">reject</span><span class="legend-desc">submission that didn't make the cut</span></button>
+        </aside>
+
+        {{/* Split entries into upcoming and past based on the date field. */}}
+        {{ $now := now }}
+        {{ $upcoming := slice }}
+        {{ $past := slice }}
+        {{ range .Site.Data.talks }}
+            {{ $date := time .date }}
+            {{ if $date.After $now }}
+                {{ $upcoming = $upcoming | append . }}
+            {{ else }}
+                {{ $past = $past | append . }}
+            {{ end }}
+        {{ end }}
+
+        {{ $upcoming = sort $upcoming "date" "asc" }}
+
+        {{ if $upcoming }}
+            <h3 class="talks-section-label">Roadmap</h3>
+            <div class="talks-log">
+                {{ range $upcoming }}
+                    {{ partial "talk-card.html" . }}
+                {{ end }}
+            </div>
+        {{ end }}
+
+        {{/* Past: group by year (desc), entries within a year sorted by date desc. */}}
+        {{ $past = sort $past "date" "desc" }}
+        {{ $byYear := dict }}
+        {{ range $past }}
+            {{ $date := time .date }}
+            {{ $year := printf "%d" $date.Year }}
+            {{ $existing := index $byYear $year | default slice }}
+            {{ $existing = $existing | append . }}
+            {{ $byYear = merge $byYear (dict $year $existing) }}
+        {{ end }}
+
+        {{ $years := slice }}
+        {{ range $year, $_ := $byYear }}
+            {{ $years = $years | append $year }}
+        {{ end }}
+        {{ $years = sort $years "value" "desc" }}
+
+        {{ if $past }}
+            <h3 class="talks-section-label">Released</h3>
+            {{ range $years }}
+                {{ $year := . }}
+                {{ $entries := index $byYear $year }}
+                <h4 class="talks-year-label">{{ $year }}</h4>
+                <div class="talks-log">
+                    {{ range $entries }}
+                        {{ partial "talk-card.html" . }}
+                    {{ end }}
+                </div>
+            {{ end }}
+        {{ end }}
+    </div>
+
+    {{ if .Site.Params.ShowBackToTopButton }}
+        {{ partial "back-to-top.html" . }}
+    {{ end }}
+</div>
+<script src="/js/talks-filter.js" defer></script>
+{{ end }}
