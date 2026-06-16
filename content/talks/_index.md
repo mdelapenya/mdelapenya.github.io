@@ -9,11 +9,18 @@ Here are the talks I've given so far.
 
 ### 2026
 
+- ContainerDays Hamburg 2026 - Sep 2026: "_YOLO Developer Workflows with a Coding Agent in a Box_", accepted for the conference.
+    - :link: URL: https://www.containerdays.io/containerdays-hamburg-2026/
+- WeAreDevelopers World Congress - Berlin, Jul 2026: "_YOLO Developer Workflows with a Coding Agent in a Box_", accepted for the conference.
+    - :link: URL: https://www.wearedevelopers.com/world-congress
+- LeadDev London 2026 - May 2026:
+    - :link: URL: https://leaddev.com/leaddev-london/
+    - :briefcase: Booth work presenting Docker Sandboxes to the attendees.
 - SpiceDB Community Day 2026 - Mar 2026: "_Permission-Aware RAG: End-to-End Testing with the SpiceDB Testcontainer_"
     - :link: URL: https://authzed.com/events/spicedb-community-day-2026#permission-aware-rag
     - :movie_camera: [Video](https://www.youtube.com/watch?v=UpwyIsqWc8Q)
     - :scroll: [Slides](/slides/2026-03-spicedb-community-day/Permission-Aware-RAG-SpiceDB-Testcontainer.pdf)
-- ContainerDays 2026:
+- ContainerDays London 2026:
     - "_Mastering Containerized Local Development and Integration Testing with Testcontainers for Go_", accepted for the conference.
         - :link: URL: https://www.containerdays.io/containerdays-london-2026/agenda/
         - :scroll: [Slides](/slides/2026-02-containerdays-london/ContainerDays-London-Testcontainers-Go-Deep-Dive.pdf)
@@ -23,7 +30,7 @@ Here are the talks I've given so far.
 
 ### 2025
 
-- ContainerDays 2025: “_Delightful Integration tests in Go_”
+- ContainerDays Hamburg 2025: “_Delightful Integration tests in Go_”
     - :link: URL: https://www.containerdays.io/containerdays-conference-2025/
     - :movie_camera: Video: https://www.youtube.com/watch?v=wfX4EFlADrs
     - :scroll: [Slides](/slides/2025-09-17-containerdays/Delightful-Integration-tests-in-Go.pdf)
