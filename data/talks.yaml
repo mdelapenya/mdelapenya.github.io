@@ -30,13 +30,12 @@
       note: accepted for the conference
       url: https://www.containerdays.io/containerdays-hamburg-2026/
 
-- conference: WeAreDevelopers World Congress
-  date: 2026-07-01
+- conference: WeAreDevelopers World Congress Europe
+  date: 2026-07-10
   location: Berlin, Germany
   items:
     - type: talk
       title: YOLO Developer Workflows with a Coding Agent in a Box
-      note: accepted for the conference
       url: https://www.wearedevelopers.com/world-congress
 
 - conference: LeadDev London 2026
