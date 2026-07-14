@@ -189,6 +189,14 @@
       video_language: Spanish
       slides: /slides/2024-11-19-gomad/Delightful_Integration_Tests_in_Go_applications_(GoMAD).pdf
 
+- conference: Devoxx Belgium 2024
+  date: 2024-10-07
+  location: Antwerp, Belgium
+  items:
+    - type: booth
+      description: Presented Testcontainers to the attendees.
+      url: https://devoxx.be/
+
 - conference: Gophercon US '24
   date: 2024-09-01
   location: Chicago, USA
