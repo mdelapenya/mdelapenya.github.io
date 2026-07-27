@@ -8,7 +8,7 @@ type: post
 weight: 30
 showTableOfContents: true
 ai: true
-image: "/images/posts/2026-07-27-understanding-testcontainers-testing-network-resilience-with-toxiproxy/cover.png"
+image: "/images/posts/2026-07-27-understanding-testcontainers-testing-network-resilience-with-toxiproxy/cover.jpg"
 related:
   - "/posts/2026-07-15-understanding-testcontainers-testing-lambdas-with-localstack"
   - "/posts/2026-07-07-understanding-testcontainers-networks"
@@ -16,7 +16,7 @@ related:
   - "/posts/2026-06-19-understanding-testcontainers-lifecycle-hooks"
 ---
 
-![Understanding Testcontainers: Testing Network Resilience with Toxiproxy](/images/posts/2026-07-27-understanding-testcontainers-testing-network-resilience-with-toxiproxy/cover.png)
+![Understanding Testcontainers: Testing Network Resilience with Toxiproxy](/images/posts/2026-07-27-understanding-testcontainers-testing-network-resilience-with-toxiproxy/cover.jpg)
 
 I am a core maintainer of [testcontainers-go](https://github.com/testcontainers/testcontainers-go). This is the seventh post in a series on the library. The previous six covered the core from the inside: the API shape, wait strategies, lifecycle hooks, the module system, networks, and then an applied module post that used LocalStack to test a Lambda. This one goes somewhere different. Instead of testing that a feature works, we test that the application holds together when a backing service fails.
 
