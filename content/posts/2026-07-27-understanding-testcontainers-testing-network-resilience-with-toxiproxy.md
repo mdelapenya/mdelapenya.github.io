@@ -30,7 +30,7 @@ Toxiproxy was built at Shopify to solve a specific problem: they needed to prove
 
 The model is simple: each proxy has a name, a listen address, and an upstream address. Traffic to the listen address is forwarded to the upstream. Between them you add "toxics", named objects that modify the traffic stream. The proxy and its toxics are managed through an HTTP API. Toxiproxy ships toxics for latency, bandwidth throttling, slow close, connection resets, data slicing, timeouts, and complete outages.
 
-The testcontainers-go module wraps that into the same `Run`/options pattern the rest of the library uses. The container image is `ghcr.io/shopify/toxiproxy`.
+The testcontainers-go module wraps that into the same `Run` / options pattern the rest of the library uses. The container image is `ghcr.io/shopify/toxiproxy`.
 
 ## The thing we are testing
 
