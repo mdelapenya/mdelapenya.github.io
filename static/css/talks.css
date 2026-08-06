@@ -65,6 +65,10 @@
     color: rgba(127, 127, 127, 0.85);
 }
 
+.talks-legend .legend-type-declined {
+    color: #1a7a8a;
+}
+
 @media (prefers-color-scheme: dark) {
     .talks-legend .legend-type-talk {
         color: #4ec48a;
@@ -76,6 +80,10 @@
 
     .talks-legend .legend-type-podcast {
         color: #b394e8;
+    }
+
+    .talks-legend .legend-type-declined {
+        color: #40c8d8;
     }
 }
 
@@ -144,6 +152,10 @@
     color: rgba(127, 127, 127, 0.85);
 }
 
+.commit-entry-declined .commit-type {
+    color: #1a7a8a;
+}
+
 .commit-scope {
     color: rgba(127, 127, 127, 0.95);
 }
@@ -178,6 +190,10 @@
     opacity: 0.7;
 }
 
+.commit-entry-declined {
+    opacity: 0.75;
+}
+
 /* On narrow screens, stack the date above the content so titles get the full width. */
 @media (max-width: 540px) {
     .commit-entry {
@@ -198,5 +214,9 @@
 
     .commit-entry-podcast .commit-type {
         color: #b394e8;
+    }
+
+    .commit-entry-declined .commit-type {
+        color: #40c8d8;
     }
 }
