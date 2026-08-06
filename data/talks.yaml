@@ -9,7 +9,7 @@
 #   status:     <string, optional>   Free-form status note for the whole entry. Currently unused;
 #                                      the layout shows an Upcoming badge based on `date`.
 #   items:      <array, required, at least 1>   List of items within this conference appearance.
-#     - type:   <"talk" | "booth" | "rejected">
+#     - type:   <"talk" | "booth" | "rejected" | "declined">
 #       title:  <string>             For talk: the talk title.
 #       description: <string>        For booth: short description of the booth activity.
 #       note:   <string>             For rejected: short note. Also used on talks for free-form
@@ -47,6 +47,15 @@
     - type: booth
       description: Presented Docker Sandboxes to the attendees.
       url: https://leaddev.com/leaddev-london/
+
+- conference: Gophercon SG '26
+  date: 2026-05-22
+  location: Singapore
+  items:
+    - type: declined
+      title: Choosing the Smallest LLM That Won't Completely Fail You
+      url: https://2026.gophercon.sg/
+      note: Accepted, had to decline for personal reasons.
 
 - conference: SpiceDB Community Day 2026
   date: 2026-03-01
