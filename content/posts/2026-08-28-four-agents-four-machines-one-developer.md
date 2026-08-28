@@ -42,7 +42,7 @@ The design decision that makes a fleet possible is stated plainly in the maintai
 
 That sentence is worth more than any feature list. There is no "local mode" and "remote mode" with different capabilities. There is one server, and four ways a client might reach it: the platform-managed local backend, a manually paired endpoint, a managed T3 Connect relay tunnel, and desktop-managed SSH.
 
-My devices are meshed through **T3 Connect**, the managed relay. The reachability problem gets solved once, at the connection layer, and everything above it stays identical no matter which of my machines I am talking to.
+Three of my machines are meshed through **T3 Connect**, the managed relay. Three is not an arbitrary number: it is where the free tier draws its line.[^1] The reachability problem gets solved once, at the connection layer, and everything above it stays identical no matter which machine I am talking to.
 
 The elegance shows in what did *not* become a concept. Tailscale is supported, and it is not a fifth kind of connection. The docs are explicit that it is an endpoint provider and a transport, paired through the ordinary bearer path. Endpoints themselves are advertised as hints rather than promises:
 
@@ -54,7 +54,7 @@ Four servers, and a client in my pocket:
 
 - **The M4 Mac** I work on at Docker.
 - **A Windows machine** and **a Linux machine**, also work machines.
-- **My personal x86 Mac.**
+- **My personal x86 Mac**, which runs a server too, and is the one sitting outside the relay.
 - **My Android phone**, which runs no server at all. Phones are clients. That asymmetry is the design working as intended.
 
 Each machine running a server is one *execution environment* in T3's vocabulary, with a stable `environmentId` the server generates on first start and persists on disk. From any client I pick the environment I want and I am there.
@@ -145,3 +145,5 @@ _Resources:_
 - _[T3 Code: organizing threads](https://github.com/pingdotgg/t3code/blob/main/docs/user/thread-sidebar.md)_
 - _[Docker Sandboxes documentation](https://docs.docker.com/ai/sandboxes/)_
 - _[Discussion #7841: one-click Docker Sandbox environments](https://github.com/pingdotgg/t3code/discussions/7841)_
+
+[^1]: The cap belongs to T3 Connect, the managed relay, not to T3 Code itself, which is MIT licensed and limits nothing. I had the fleet running on four machines before I knew about it, and took the personal Mac off the relay to stay inside the free tier. It still runs a server, and the other access methods listed above are still open to it, so what the limit actually cost me was a transport, not a machine.

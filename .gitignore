@@ -15,3 +15,8 @@ tests/test-results
 workers/subscribe/node_modules
 workers/subscribe/.dev.vars
 workers/subscribe/.wrangler
+
+# never publish: private drafts and local agent config
+drafts/
+.claude/
+.social/
