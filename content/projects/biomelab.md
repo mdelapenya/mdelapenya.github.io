@@ -2,6 +2,8 @@
 title: biomelab
 type: page
 tags: [terminal, tui, git-worktrees, docker-sandboxes, coding-agents]
+description: "Terminal dashboard for managing git worktrees, Docker Sandboxes, and AI coding agents across all your repositories."
+image: /images/projects/biomelab.png
 ---
 
 ## biomelab

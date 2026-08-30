@@ -2,6 +2,8 @@
 title: gitropolis
 type: page
 tags: [git-visualization, 3d, webgl, open-source]
+description: "Your git history, replayed as a 3D city. Files become buildings, folders become districts, PRs light up the skyline by commit type."
+image: /images/projects/gitropolis.png
 ---
 
 ## gitropolis

@@ -2,6 +2,8 @@
 title: las porritas
 type: page
 tags: [nextjs, typescript, football, google-auth, i18n]
+description: "Football pool app for predicting matchdays and final tables across Europe's top five leagues and the Champions League."
+image: /images/projects/lasporritas.png
 ---
 
 ## las porritas
