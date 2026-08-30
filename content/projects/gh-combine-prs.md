@@ -3,6 +3,7 @@ title: gh combine-prs
 type: page
 tags: [github, cli, automation, pull-requests]
 description: "GitHub CLI extension that combines multiple PRs into one — handy for batching trivial Dependabot bumps."
+image: /images/projects/gh-combine-prs.png
 ---
 
 ## Github CLI Combine PRs

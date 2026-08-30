@@ -3,6 +3,7 @@ title: Testcontainers for Go
 type: page
 tags: [testcontainers, go]
 description: "Go library for creating and managing containers in tests. I've been the primary maintainer since 2020."
+image: /images/projects/testcontainers-go.png
 weight: 1
 ---
 
