@@ -2,6 +2,7 @@
 title: LinkedIn Learning
 type: page
 tags: [linkedin, learning, courses, go, golang]
+description: "Official LinkedIn Learning instructor. Six Go courses in Spanish covering idioms, testing, packaging, web services, and secure programming."
 ---
 
 ## LinkedIn Learning

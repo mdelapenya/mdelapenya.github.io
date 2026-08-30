@@ -2,6 +2,8 @@
 title: ultraligera
 type: page
 tags: [nextjs, typescript, docker-sandboxes, fan-site, music]
+description: "Unofficial fan site for the Spanish rock band Ultraligera — tour dates, discography, and links to official channels, kept fresh by scheduled jobs."
+image: /images/projects/ultraligera.png
 ---
 
 ## ultraligera

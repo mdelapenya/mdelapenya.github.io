@@ -2,6 +2,8 @@
 title: renfe-maps
 type: page
 tags: [nextjs, typescript, docker-sandboxes, renfe, real-time]
+description: "Real-time train tracker for Spanish railways (Renfe). Live positions on Google Maps, delay indicators, and SSE streaming."
+image: /images/projects/renfe-maps.png
 ---
 
 ## renfe-maps

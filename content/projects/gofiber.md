@@ -2,6 +2,7 @@
 title: GoFiber
 type: page
 tags: [gofiber, go, web, framework]
+description: "Express-inspired web framework for Go. I contributed the Testcontainers integration for storage and community modules."
 ---
 
 ## GoFiber

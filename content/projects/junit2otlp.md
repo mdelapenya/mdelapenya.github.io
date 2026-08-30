@@ -2,6 +2,7 @@
 title: jUnit2OTLP
 type: page
 tags: [junit, otlp, testing, observability]
+description: "Exports jUnit XML test results as OpenTelemetry traces and spans, so your test runs are first-class observability data."
 ---
 
 ## jUnit2OTLP

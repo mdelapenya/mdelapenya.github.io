@@ -1,0 +1,45 @@
+{{ define "main" }}
+<div class="post container">
+
+    <div class="post-header-section">
+        <h1>{{ .Title | markdownify }}</h1>
+    </div>
+
+    <div class="post-content">
+        {{ .Content }}
+
+        <div class="project-grid">
+            {{ range .Pages.ByWeight }}
+                <a class="project-card" href="{{ .RelPermalink }}">
+                    <div class="project-card-image">
+                        {{ if .Params.image }}
+                            <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                        {{ else }}
+                            <div class="project-card-placeholder">
+                                <span class="project-card-initial">{{ substr .Title 0 1 | upper }}</span>
+                            </div>
+                        {{ end }}
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">{{ .Title }}</h3>
+                        {{ if .Params.description }}
+                            <p class="project-card-desc">{{ .Params.description }}</p>
+                        {{ end }}
+                        {{ if .Params.tags }}
+                            <div class="project-card-tags">
+                                {{ range .Params.tags }}
+                                    <span class="project-card-tag">{{ . }}</span>
+                                {{ end }}
+                            </div>
+                        {{ end }}
+                    </div>
+                </a>
+            {{ end }}
+        </div>
+    </div>
+
+    {{ if .Site.Params.ShowBackToTopButton }}
+        {{ partial "back-to-top.html" . }}
+    {{ end }}
+</div>
+{{ end }}
