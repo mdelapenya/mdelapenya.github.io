@@ -247,7 +247,7 @@
   date: 2023-11-01
   location: Berlin, Germany
   items:
-    - type: talk
+    - type: workshop
       title: Testcontainers for Go Workshop
       video: https://www.youtube.com/watch?v=ccK3r0gEZbY&ab_channel=GDGBerlin
       slides: /slides/2023-11-gdg-berlin-devfest/Testcontainers-Go-Workshop.pdf
