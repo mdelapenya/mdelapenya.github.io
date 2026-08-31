@@ -13,7 +13,7 @@
 
 {{ range $entry.items }}
     {{ $item := . }}
-    {{ if or (eq $item.type "talk") (eq $item.type "podcast") }}
+    {{ if or (eq $item.type "talk") (eq $item.type "podcast") (eq $item.type "workshop") }}
         <article class="commit-entry commit-entry-{{ $item.type }}">
             <span class="commit-date">{{ $dateLabel }}</span>
             <div class="commit-content">

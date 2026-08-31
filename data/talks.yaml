@@ -9,7 +9,7 @@
 #   status:     <string, optional>   Free-form status note for the whole entry. Currently unused;
 #                                      the layout shows an Upcoming badge based on `date`.
 #   items:      <array, required, at least 1>   List of items within this conference appearance.
-#     - type:   <"talk" | "booth" | "rejected" | "declined">
+#     - type:   <"talk" | "workshop" | "booth" | "rejected" | "declined">
 #       title:  <string>             For talk: the talk title.
 #       description: <string>        For booth: short description of the booth activity.
 #       note:   <string>             For rejected: short note. Also used on talks for free-form
@@ -22,13 +22,15 @@
 #       podcast: <link, optional>    Podcast episode link.
 
 - conference: ContainerDays Hamburg 2026
-  date: 2026-09-01
+  date: 2026-09-02
   location: Hamburg, Germany
   items:
     - type: talk
       title: YOLO Developer Workflows with a Coding Agent in a Box
-      note: accepted for the conference
-      url: https://www.containerdays.io/containerdays-hamburg-2026/
+      url: https://www.containerdays.io/containerdays-hamburg-2026/agenda/
+    - type: workshop
+      title: Building Real Apps Inside a Docker Sandbox
+      url: https://www.containerdays.io/containerdays-hamburg-2026/agenda/
 
 - conference: WeAreDevelopers World Congress Europe
   date: 2026-07-10
