@@ -69,6 +69,10 @@
     color: #1a7a8a;
 }
 
+.talks-legend .legend-type-workshop {
+    color: #c05a00;
+}
+
 @media (prefers-color-scheme: dark) {
     .talks-legend .legend-type-talk {
         color: #4ec48a;
@@ -84,6 +88,10 @@
 
     .talks-legend .legend-type-declined {
         color: #40c8d8;
+    }
+
+    .talks-legend .legend-type-workshop {
+        color: #f0924a;
     }
 }
 
@@ -156,6 +164,10 @@
     color: #1a7a8a;
 }
 
+.commit-entry-workshop .commit-type {
+    color: #c05a00;
+}
+
 .commit-scope {
     color: rgba(127, 127, 127, 0.95);
 }
@@ -218,5 +230,9 @@
 
     .commit-entry-declined .commit-type {
         color: #40c8d8;
+    }
+
+    .commit-entry-workshop .commit-type {
+        color: #f0924a;
     }
 }
