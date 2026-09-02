@@ -28,6 +28,7 @@
     - type: talk
       title: YOLO Developer Workflows with a Coding Agent in a Box
       url: https://www.containerdays.io/containerdays-hamburg-2026/agenda/
+      slides: /slides/2026-09-containerdays-hamburg/ContainerDays-Hamburg-YOLO-Developer-Workflows.pdf
     - type: workshop
       title: Building Real Apps Inside a Docker Sandbox
       url: https://www.containerdays.io/containerdays-hamburg-2026/agenda/
