@@ -15,6 +15,7 @@
 #       note:   <string>             For rejected: short note. Also used on talks for free-form
 #                                      annotations like "accepted for the conference".
 #       url:    <link, optional>     Event/agenda page.
+#       repo:   <link, optional>     Source repo with the materials (workshop exercises, demo code).
 #       video:  <link, optional>     Video link (typically YouTube).
 #       video_language: <string>     Optional language hint, e.g. "Spanish".
 #       slides: <link, optional>     Slides PDF.
@@ -32,6 +33,7 @@
     - type: workshop
       title: Building Real Apps Inside a Docker Sandbox
       url: https://www.containerdays.io/containerdays-hamburg-2026/agenda/
+      repo: https://github.com/mdelapenya/sbx-workshop
 
 - conference: WeAreDevelopers World Congress Europe
   date: 2026-07-10

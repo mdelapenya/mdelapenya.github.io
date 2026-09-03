@@ -18,11 +18,12 @@
             <span class="commit-date">{{ $dateLabel }}</span>
             <div class="commit-content">
                 <div class="commit-subject"><span class="commit-type">{{ $item.type }}</span>(<span class="commit-scope">{{ $scope }}</span>): <em class="commit-title">"{{ $item.title }}"</em></div>
-                {{ if or $entry.location $item.url $item.video $item.slides $item.podcast }}
+                {{ if or $entry.location $item.url $item.repo $item.video $item.slides $item.podcast }}
                     <div class="commit-body">
                         {{ $parts := slice }}
                         {{ with $entry.location }}{{ $parts = $parts | append (printf `📍 %s` .) }}{{ end }}
                         {{ with $item.url }}{{ $parts = $parts | append (printf `<a href="%s" target="_blank" rel="noopener">🔗 conference page</a>` .) }}{{ end }}
+                        {{ with $item.repo }}{{ $parts = $parts | append (printf `<a href="%s" target="_blank" rel="noopener">💻 repo</a>` .) }}{{ end }}
                         {{ with $item.video }}
                             {{ $label := "🎥 video" }}
                             {{ with $item.video_language }}{{ $label = printf "🎥 video (%s)" . }}{{ end }}
