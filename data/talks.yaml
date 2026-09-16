@@ -22,6 +22,15 @@
 #       slides_language: <string>    Optional language hint.
 #       podcast: <link, optional>    Podcast episode link.
 
+- conference: ContainerDays Singapore 2026
+  date: 2026-10-27
+  location: Singapore
+  items:
+    - type: declined
+      title: YOLO Developer Workflows with a Coding Agent in a Box
+      url: https://www.containerdays.io/containerdays-singapore-2026/
+      note: Accepted, had to decline for personal reasons.
+
 - conference: GopherCon Africa 2026
   date: 2026-10-15
   location: Nairobi, Kenya
