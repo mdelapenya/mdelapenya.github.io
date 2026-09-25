@@ -77,6 +77,12 @@
     color: rgb(59, 130, 246);
 }
 
+.subscribe-sponsors {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
 .subscribe-hidden {
     display: none;
 }

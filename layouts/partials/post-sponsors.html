@@ -1,0 +1,9 @@
+{{ $lang := .Params.language | default "en" }}
+<p class="subscribe-text subscribe-sponsors">
+    <span aria-hidden="true">☕</span>
+    {{ if eq $lang "es" }}
+        Si te apetece ayudarme a seguir escribiendo, puedes <a href="https://github.com/sponsors/mdelapenya">invitarme a un café en GitHub Sponsors</a>. ¡Gracias por leerme!
+    {{ else }}
+        If you'd like to help me keep writing, you can <a href="https://github.com/sponsors/mdelapenya">buy me a coffee on GitHub Sponsors</a>. Thanks for reading!
+    {{ end }}
+</p>

@@ -1,6 +1,9 @@
 <div class="subscribe-box" id="subscribe-box">
+    <h2 class="subscribe-heading">Enjoyed this content?</h2>
+    {{ if eq .Type "post" }}
+        {{ partial "post-sponsors.html" . }}
+    {{ end }}
     <div class="subscribe-content" id="subscribe-form-state">
-        <p class="subscribe-heading">Enjoyed this content?</p>
         <p class="subscribe-text">
             <span id="subscribe-count-text">Join other subscribers.</span>
             I'll email you when I publish something new. No spam, no selling your email. Just posts.
