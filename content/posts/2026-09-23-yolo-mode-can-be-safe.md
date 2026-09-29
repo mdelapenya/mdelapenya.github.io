@@ -1,5 +1,5 @@
 ---
-title: "YOLO Mode Can Be Safe"
+title: "Understanding Docker Sandboxes: YOLO Mode Can Be Safe"
 date: 2026-09-23 18:00:00 +0200
 description: "The argument I gave at ContainerDays Hamburg: the thing that makes a coding agent productive is the same thing that makes it dangerous, and you do not fix that by asking it to be careful."
 categories: [Technology, AI, Software Development]
@@ -16,7 +16,7 @@ related:
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
 ---
 
-![YOLO Mode Can Be Safe](/images/posts/2026-09-23-yolo-mode-can-be-safe/cover.png)
+![Understanding Docker Sandboxes: YOLO Mode Can Be Safe](/images/posts/2026-09-23-yolo-mode-can-be-safe/cover.png)
 
 This is the first in a series on Docker Sandboxes, which is what I spend my days building. That's the disclosure up front: I'm not reviewing this product, I'm making the case for something I help make.
 

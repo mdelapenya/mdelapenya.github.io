@@ -1,5 +1,5 @@
 ---
-title: "Containers Made Software Portable. Kits Make Authority Portable."
+title: "Understanding Docker Sandboxes: Containers Made Software Portable. Kits Make Authority Portable."
 date: 2026-09-25 09:00:00 +0200
 description: "A Dockerfile answers everything about the inside of an image and nothing about what it is allowed to reach. For an application that was fine. For an agent it is the interesting half, and it is the half kits are for."
 categories: [Technology, AI, Software Development]
@@ -15,7 +15,7 @@ related:
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
 ---
 
-![Containers Made Software Portable. Kits Make Authority Portable.](/images/posts/2026-09-25-kits-make-authority-portable/cover.png)
+![Understanding Docker Sandboxes: Containers Made Software Portable. Kits Make Authority Portable.](/images/posts/2026-09-25-kits-make-authority-portable/cover.png)
 
 [In the first post of this series](/posts/2026-09-23-yolo-mode-can-be-safe) I argued that the only boundary an agent cannot argue with is one it cannot reach, and that a microVM is that boundary. That post ends where this one starts, because an empty box is not an environment.
 
