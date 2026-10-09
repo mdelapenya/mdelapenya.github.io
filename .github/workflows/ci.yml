@@ -142,9 +142,9 @@ jobs:
     needs:
       - build
       - test
-    # Deploy on push to main and on the scheduled weekday build (which auto-publishes future-dated posts).
-    # Pull requests run tests but don't deploy.
-    if: github.event_name == 'push' || github.event_name == 'schedule'
+    # Deploy on push to main, on the scheduled weekday build (which auto-publishes future-dated posts),
+    # and on manual workflow_dispatch runs. Pull requests run tests but don't deploy.
+    if: github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
