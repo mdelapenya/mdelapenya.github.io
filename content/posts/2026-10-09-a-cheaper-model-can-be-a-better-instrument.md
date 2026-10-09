@@ -31,7 +31,7 @@ Both wants have the same shape: one agent that reads the whole forest and never 
 
 The obvious fix is to send the knife work to a knife. The obvious way to do it is to take the prompt that worked on the capable model and send it, unchanged, to a cheaper one. That is where the cheaper model fails, on tasks you would have sworn were simple, and the conclusion writes itself: the cheap model is not good enough. Back to the axe.
 
-The conclusion is wrong, and the reason is in the first half of the experiment, not the second. A capable model is very good at papering over a bad prompt. It infers what you probably meant, picks a sensible default where you left a hole, and hands you something that works. You never learn that your instruction had a hole in it, because the output looks like the output of a good instruction. Every prompt I had been writing for months was a prompt with holes in it that a very capable model had been quietly filling.
+The conclusion is wrong, and the reason is in the first half of the experiment, not the second. A capable model is very good at papering over a bad prompt. It infers what you probably meant, picks a sensible default where you left a hole, and hands you something that works. You never learn that your instruction had a hole in it, because the output looks like the output of a good instruction. The prompts I had been writing for months had holes in them that a very capable model had been quietly filling.
 
 A less capable model is a much better instrument. It fails where your order was ambiguous instead of guessing, and it fails there every time, so the failure points at the sentence that is missing. The cheap model was not telling me it could not do the job. It was telling me where my instruction stopped.
 
