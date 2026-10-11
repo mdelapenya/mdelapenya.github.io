@@ -72,7 +72,7 @@ Three dispatches per node, then it stops. And the levers are always the order, t
 
 ## Who Does What
 
-The skill that runs all this is [The Mister](https://github.com/mdelapenya/coding-skills/tree/main/skills/the-mister), the sixth one in [mdelapenya/coding-skills](https://github.com/mdelapenya/coding-skills). In April I wrote about [the lawyer, the nurse, the detective and the scribe](/posts/2026-04-30-my-pr-has-a-lawyer-a-nurse-a-detective-and-a-scribe), four roles that each do a job on a pull request. This one doesn't do a job. It assigns them. The skill itself was built by two agents, one in Claude Code and one in Codex, reviewing each other's work with me holding the approvals; that is a story for another post.
+The skill that runs all this is [The Mister](https://github.com/mdelapenya/coding-skills/tree/main/skills/the-mister), the sixth one in [mdelapenya/coding-skills](https://github.com/mdelapenya/coding-skills). In April I wrote about [the lawyer, the nurse, the detective and the scribe](/posts/2026-04-30-my-pr-has-a-lawyer-a-nurse-a-detective-and-a-scribe), four roles that each do a job on a pull request. This one doesn't do a job. It assigns them. The skill itself was built by two agents, one in Claude Code and one in Codex, reviewing each other's work with me holding the approvals; that is [a story for another post](/posts/2026-10-12-i-was-the-message-bus).
 
 A football coach sees all twenty-two players at once: the shape, the gap opening up on the left wing, the striker who stopped pressing ten minutes ago. Step onto the pitch and you see what everyone else on it sees, the three metres in front of you. In Spain the manager is *el míster*, and the name is the whole design: it picks the eleven and reads the match from outside it.
 
