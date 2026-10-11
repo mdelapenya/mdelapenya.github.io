@@ -12,9 +12,9 @@ A browser game about the things that break test suites, one per level. *Wait str
 
 Canvas and plain JavaScript modules, no game framework. Progress and sound settings live in `localStorage`. Unit tests run on Node's own test runner and check the generated boards over repeatable seeds; Playwright drives the production build in desktop and mobile Chromium. Both gate the deploy.
 
-A fan game about [Testcontainers](https://testcontainers.com), not an official project.
+An official [Testcontainers](https://testcontainers.com) project.
 
-- Live app: [testcontainers-game.vercel.app](https://testcontainers-game.vercel.app)
-- Github: [mdelapenya/testcontainers-game](https://github.com/mdelapenya/testcontainers-game)
+- Live app: [game.testcontainers.org](https://game.testcontainers.org)
+- Github: [testcontainers/testcontainers-game](https://github.com/testcontainers/testcontainers-game)
 
 ![testcontainers-game](/images/projects/testcontainers-game.jpg)
