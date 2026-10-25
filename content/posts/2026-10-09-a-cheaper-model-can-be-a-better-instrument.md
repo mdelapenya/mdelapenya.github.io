@@ -10,6 +10,8 @@ showTableOfContents: true
 ai: true
 image: "/images/posts/2026-10-09-a-cheaper-model-can-be-a-better-instrument/cover.png"
 related:
+  - "/posts/2026-10-12-i-was-the-message-bus"
+  - "/posts/2026-10-25-the-mister-file-by-file"
   - "/posts/2026-03-02-choosing-the-smallest-llm-part-1-slms-and-docker-model-runner"
   - "/posts/2026-04-30-my-pr-has-a-lawyer-a-nurse-a-detective-and-a-scribe"
   - "/posts/2026-03-25-skills-are-roles-not-commands"

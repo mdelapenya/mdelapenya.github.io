@@ -11,6 +11,7 @@ ai: true
 image: "/images/posts/2026-10-12-i-was-the-message-bus/cover.png"
 related:
   - "/posts/2026-10-09-a-cheaper-model-can-be-a-better-instrument"
+  - "/posts/2026-10-25-the-mister-file-by-file"
   - "/posts/2026-08-28-four-agents-four-machines-one-developer"
   - "/posts/2026-03-25-skills-are-roles-not-commands"
 ---
@@ -23,7 +24,7 @@ Two agents that read and write in seconds were waiting on a human to click betwe
 
 ## Seven Reviews, Zero Runs
 
-The skill is [The Mister](https://github.com/mdelapenya/coding-skills/tree/main/skills/the-mister), the orchestrator I wrote about [last week](/posts/2026-10-09-a-cheaper-model-can-be-a-better-instrument): it splits a task into a graph of nodes, writes an order per node, hands each one to the cheapest model that can execute it, and never touches the code itself. I am not going to repeat how it works, and the file-by-file walkthrough is a post of its own. This one is about how it got built.
+The skill is [The Mister](https://github.com/mdelapenya/coding-skills/tree/main/skills/the-mister), the orchestrator I wrote about [last week](/posts/2026-10-09-a-cheaper-model-can-be-a-better-instrument): it splits a task into a graph of nodes, writes an order per node, hands each one to the cheapest model that can execute it, and never touches the code itself. I am not going to repeat how it works, and the [file-by-file walkthrough](/posts/2026-10-25-the-mister-file-by-file) is a post of its own. This one is about how it got built.
 
 By September 18 the first version had been through seven rounds of review and zero executions. The reviews were static: a model reading the skill's text and finding it consistent with itself. The warning came from another Fable session, in Spanish: *the first execution will teach you more than the seven reviews together.* A set of instructions can agree with itself perfectly and still produce the wrong behaviour the moment a model follows it.
 
