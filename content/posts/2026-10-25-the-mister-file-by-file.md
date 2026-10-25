@@ -1,6 +1,6 @@
 ---
 title: "The Mister, File by File"
-date: 2026-10-25 09:00:00 +0100
+date: 2026-10-25 07:00:00 +0100
 description: "Eight files, 460 lines. What each part of the-mister does: the squad and the tiering questions, the plan and work orders it keeps under .git, the eight-step workflow, the three shipped agents, and how one skill dispatches on Claude Code, Codex and anything else. Then what twenty real plans say about it."
 categories: [Technology, AI, Software Development]
 tags: ["coding-agents", "claude-code", "codex", "skills", "orchestration", "subagents"]
