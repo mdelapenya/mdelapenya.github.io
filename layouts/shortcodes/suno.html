@@ -1,0 +1,4 @@
+{{- /* Usage: {{< suno "<song-uuid>" "Optional title" >}} */ -}}
+{{- $id := .Get 0 -}}
+{{- $title := .Get 1 | default "Suno song" -}}
+<iframe src="https://suno.com/embed/{{ $id }}" title="{{ $title }}" width="100%" height="240" style="max-width:760px;border:0;" allow="autoplay; encrypted-media; fullscreen" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"><a href="https://suno.com/song/{{ $id }}">Listen on Suno</a></iframe>
