@@ -1,0 +1,79 @@
+{{ define "main"}}
+
+<div class="text-404">
+  <h1 class="error-emoji"></h1>
+  <h2>
+      404 ... {{ i18n "error404" . }} <a href="{{ .Site.Home.Permalink }}">{{ i18n "home" }}</a>
+  </h2>
+</div>
+<script>
+  const errorEmojiContainer = document.getElementsByClassName('error-emoji')[0];
+  const emojiArray = [
+    '\\(o_o)/', '(o^^)o', '(˚Δ˚)b', '(^-^*)', '(≥o≤)', '(^_^)b', '(·_·)',
+    '(=\'X\'=)', '(>_<)', '(;-;)', '\\(^Д^)/',
+  ];
+  const errorEmoji = emojiArray[Math.floor(Math.random() * emojiArray.length)];
+  errorEmojiContainer.appendChild(document.createTextNode(errorEmoji));
+</script>
+{{- if hugo.IsMultilingual }}
+<script>
+// Safety net for links to a post under the wrong language, e.g. a Spanish slug
+// requested without /es/. GitHub Pages serves this page with a 404 status, so
+// this is a soft redirect, not a substitute for real URLs.
+(function () {
+  var SUPPORTED = [{{ range $i, $s := hugo.Sites }}{{ if $i }}, {{ end }}"{{ $s.Language.Lang }}"{{ end }}];
+  var DEFAULT = "{{ hugo.Sites.Default.Language.Lang }}";
+
+  function lastSegment(path) {
+    var parts = path.split("/").filter(Boolean);
+    return parts.length ? parts[parts.length - 1] : "";
+  }
+
+  function preferred() {
+    try {
+      var v = localStorage.getItem("lang");
+      if (SUPPORTED.indexOf(v) > -1) return v;
+    } catch (e) {}
+    var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+    for (var i = 0; i < langs.length; i++) {
+      var code = String(langs[i] || "").toLowerCase().split("-")[0];
+      if (SUPPORTED.indexOf(code) > -1) return code;
+    }
+    return DEFAULT;
+  }
+
+  function go(path) {
+    if (path && path !== location.pathname) {
+      location.replace(path + location.search + location.hash);
+      return true;
+    }
+    return false;
+  }
+
+  var path = location.pathname;
+  var slug = lastSegment(path);
+  if (!slug) return;
+
+  fetch("{{ "langmap.json" | absURL }}")
+    .then(function (r) { return r.ok ? r.json() : {}; })
+    .catch(function () { return {}; })
+    .then(function (map) {
+      var want = preferred();
+      for (var key in map) {
+        var urls = map[key];
+        var match = Object.keys(urls).some(function (l) { return lastSegment(urls[l]) === slug; });
+        if (!match) continue;
+        if (urls[want] && go(urls[want])) return;
+        for (var l in urls) { if (go(urls[l])) return; }
+      }
+      var swapped = path.indexOf("/es/") === 0 ? path.slice(3) : "/es" + path;
+      return fetch(swapped, { method: "HEAD" }).then(function (r) {
+        if (r.ok) go(swapped);
+      });
+    })
+    .catch(function () {});
+})();
+</script>
+{{- end }}
+
+{{ end }}

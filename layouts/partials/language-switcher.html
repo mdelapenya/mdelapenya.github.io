@@ -1,0 +1,25 @@
+{{- if hugo.IsMultilingual -}}
+{{- $page := .page -}}
+{{- $mobile := .mobile -}}
+{{- $label := i18n "languageSwitcher" -}}
+{{- $translations := dict -}}
+{{- range cond (eq $page.Kind "404") (slice) $page.AllTranslations -}}
+    {{- $translations = merge $translations (dict .Language.Lang .RelPermalink) -}}
+{{- end -}}
+{{- if $mobile }}
+<li class="nav-item language-switcher" role="group" aria-label="{{ $label }}">
+{{- else }}
+<div class="nav-link language-switcher" role="group" aria-label="{{ $label }}">
+{{- end }}
+    {{- range hugo.Sites }}
+    {{- $lang := .Language.Lang }}
+    {{- $href := index $translations $lang | default .Home.RelPermalink }}
+    {{- $current := eq $lang $page.Language.Lang }}
+    <a href="{{ $href }}" lang="{{ $lang }}" hreflang="{{ $lang }}" data-lang="{{ $lang }}" title="{{ .Language.Label }}" aria-label="{{ .Language.Label }}"{{ if $current }} aria-current="true" class="is-current"{{ end }}>{{ upper $lang }}</a>
+    {{- end }}
+{{- if $mobile }}
+</li>
+{{- else }}
+</div>
+{{- end }}
+{{- end -}}

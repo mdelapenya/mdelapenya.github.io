@@ -1,0 +1,64 @@
+{{- if hugo.IsMultilingual -}}
+<script>
+(function () {
+  var SUPPORTED = [{{ range $i, $s := hugo.Sites }}{{ if $i }}, {{ end }}"{{ $s.Language.Lang }}"{{ end }}];
+  var DEFAULT = "{{ hugo.Sites.Default.Language.Lang }}";
+  var KEY = "lang";
+
+  function stored() {
+    try {
+      var v = localStorage.getItem(KEY);
+      return SUPPORTED.indexOf(v) > -1 ? v : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function fromBrowser() {
+    var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+    for (var i = 0; i < langs.length; i++) {
+      var code = String(langs[i] || "").toLowerCase().split("-")[0];
+      if (SUPPORTED.indexOf(code) > -1) return code;
+    }
+    return null;
+  }
+
+  // The selector wins over the browser; the browser wins over the default.
+  var wanted = stored() || fromBrowser() || DEFAULT;
+  var here = document.documentElement.lang;
+
+  // Only the alternates that Hugo emitted for this page are valid targets, so a
+  // page with no translation is never redirected. The redirect is also
+  // loop-free by construction: the target page already is in `wanted`.
+  var alternates = {};
+  var links = document.querySelectorAll('link[rel="alternate"][hreflang]');
+  for (var i = 0; i < links.length; i++) {
+    if (links[i].hreflang !== "x-default") {
+      alternates[links[i].hreflang] = new URL(links[i].href).pathname;
+    }
+  }
+
+  if (wanted !== here) {
+    if (alternates[wanted]) {
+      // replace(), not assign(), so Back does not bounce the reader forward again.
+      location.replace(alternates[wanted] + location.search + location.hash);
+    } else {
+      document.addEventListener("DOMContentLoaded", function () {
+        var notice = document.querySelector('[data-notice-for="' + wanted + '"]');
+        if (notice) notice.hidden = false;
+      });
+    }
+  }
+
+  function remember(e) {
+    var a = e.target.closest && e.target.closest("a[data-lang]");
+    if (!a) return;
+    try {
+      localStorage.setItem(KEY, a.getAttribute("data-lang"));
+    } catch (err) {}
+  }
+  document.addEventListener("click", remember);
+  document.addEventListener("auxclick", remember);
+})();
+</script>
+{{- end -}}
