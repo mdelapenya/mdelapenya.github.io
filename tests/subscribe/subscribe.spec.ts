@@ -22,7 +22,13 @@ function buildHtml(overrideApiBase: string, presetLocalStorage?: boolean): strin
 <style>.subscribe-hidden { display: none !important; }</style>
 </head>
 <body>
-<div class="subscribe-box" id="subscribe-box">
+<div class="subscribe-box" id="subscribe-box"
+     data-count-dev="Join 42 other subscribers. (dev mode)"
+     data-count-one="Join {n} other subscriber."
+     data-count-many="Join {n} other subscribers."
+     data-subscribing="Subscribing..."
+     data-subscribe="Subscribe"
+     data-error-default="Please try again later.">
     <div class="subscribe-content" id="subscribe-form-state">
         <p class="subscribe-heading">Enjoyed this content?</p>
         <p class="subscribe-text">

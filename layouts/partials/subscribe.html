@@ -1,34 +1,40 @@
-<div class="subscribe-box" id="subscribe-box">
-    <h2 class="subscribe-heading">Enjoyed this content?</h2>
+<div class="subscribe-box" id="subscribe-box"
+     data-count-dev="{{ i18n "subscribeCountDev" }}"
+     data-count-one="{{ i18n "subscribeCountOne" }}"
+     data-count-many="{{ i18n "subscribeCountMany" }}"
+     data-subscribing="{{ i18n "subscribeSubscribing" }}"
+     data-subscribe="{{ i18n "subscribeButton" }}"
+     data-error-default="{{ i18n "subscribeErrorDefault" }}">
+    <h2 class="subscribe-heading">{{ i18n "subscribeHeading" }}</h2>
     {{ if eq .Type "post" }}
         {{ partial "post-sponsors.html" . }}
     {{ end }}
     <div class="subscribe-content" id="subscribe-form-state">
         <p class="subscribe-text">
-            <span id="subscribe-count-text">Join other subscribers.</span>
-            I'll email you when I publish something new. No spam, no selling your email. Just posts.
+            <span id="subscribe-count-text">{{ i18n "subscribeCountDefault" }}</span>
+            {{ i18n "subscribePitch" }}
         </p>
         <form class="subscribe-form" id="subscribe-form">
             <div class="subscribe-form-row">
-                <input type="email" id="subscribe-email" placeholder="you@example.com" required autocomplete="email" maxlength="254" />
-                <button type="submit" id="subscribe-button">Subscribe</button>
+                <input type="email" id="subscribe-email" placeholder="{{ i18n "subscribeEmailPlaceholder" }}" required autocomplete="email" maxlength="254" />
+                <button type="submit" id="subscribe-button">{{ i18n "subscribeButton" }}</button>
             </div>
             <div class="cf-turnstile" data-sitekey="{{ .Site.Params.turnstileSiteKey }}" data-size="compact" data-theme="auto"></div>
         </form>
         <p class="subscribe-footer">
-            Read my <a href="/subscribe/">subscriber commitment</a>.
+            {{ i18n "subscribeCommitment" (dict "URL" "/subscribe/") | safeHTML }}
         </p>
     </div>
     <div class="subscribe-content subscribe-hidden" id="subscribe-success-state">
-        <p class="subscribe-heading">You're in. Welcome.</p>
-        <p class="subscribe-text">You'll get an email next time I publish. That's it.</p>
+        <p class="subscribe-heading">{{ i18n "subscribedTitle" }}</p>
+        <p class="subscribe-text">{{ i18n "subscribedText" }}</p>
     </div>
     <div class="subscribe-content subscribe-hidden" id="subscribe-already-state">
-        <p class="subscribe-heading">You're already subscribed.</p>
-        <p class="subscribe-text">Thanks for reading.</p>
+        <p class="subscribe-heading">{{ i18n "alreadySubscribedTitle" }}</p>
+        <p class="subscribe-text">{{ i18n "alreadySubscribedText" }}</p>
     </div>
     <div class="subscribe-content subscribe-hidden" id="subscribe-error-state">
-        <p class="subscribe-heading">Something went wrong.</p>
-        <p class="subscribe-text" id="subscribe-error-message">Please try again later.</p>
+        <p class="subscribe-heading">{{ i18n "subscribeErrorTitle" }}</p>
+        <p class="subscribe-text" id="subscribe-error-message">{{ i18n "subscribeErrorDefault" }}</p>
     </div>
 </div>

@@ -26,13 +26,13 @@
 	{{ if $displayDate }}
           <p class="post-date">
               {{ if (eq .Site.Params.DisplayReadingTime true) }}
-                  {{ .ReadingTime }} min read |
+                  {{ .ReadingTime }} {{ i18n "minRead" }} |
               {{ end }}
 
               {{ dateFormat (or .Site.Params.dateFormat "January 2, 2006") .Date }}
 
               {{ if lt .Date .Lastmod }}
-                  | Updated {{ dateFormat (or .Site.Params.dateFormat "January 2, 2006") .Lastmod }}
+                  | {{ i18n "updated" }} {{ dateFormat (or .Site.Params.dateFormat "January 2, 2006") .Lastmod }}
               {{ end }}
           </p>
 	{{ end }}
@@ -45,6 +45,12 @@
          {{ end }}
         </ul>
     </div>
+
+    {{ if and hugo.IsMultilingual (not .IsTranslated) (not .Params.language) }}
+        {{ range $reader, $text := index (index site.Params "untranslated") .Language.Lang }}
+        <p class="post-not-translated" lang="{{ $reader }}" data-notice-for="{{ $reader }}" hidden>{{ $text }}</p>
+        {{ end }}
+    {{ end }}
 
     {{ partial "post-authorship.html" . }}
 

@@ -7,10 +7,11 @@
   var input = document.getElementById("search-input");
   var resultsContainer = document.getElementById("search-results");
   var debounceTimer = null;
+  var hint = '<div class="search-hint">' + escapeHtml(modal.dataset.hint) + "</div>";
 
   function loadIndex() {
     if (indexLoaded) return Promise.resolve();
-    return fetch("/index.json")
+    return fetch(modal.dataset.index)
       .then(function (res) { return res.json(); })
       .then(function (data) {
         fuse = new Fuse(data, {
@@ -46,7 +47,7 @@
     document.body.style.overflow = "hidden";
     input.value = "";
     resultsContainer.innerHTML =
-      '<div class="search-hint">Type to search posts...</div>';
+      hint;
     input.focus();
     loadIndex();
   }
@@ -62,7 +63,7 @@
   function renderResults(query) {
     if (!fuse || !query || query.length < 2) {
       resultsContainer.innerHTML =
-        '<div class="search-hint">Type to search posts...</div>';
+        hint;
       return;
     }
 
@@ -70,7 +71,7 @@
 
     if (results.length === 0) {
       resultsContainer.innerHTML =
-        '<div class="search-no-results">No results found for "' +
+        '<div class="search-no-results">' + escapeHtml(modal.dataset.noResults) + ' "' +
         escapeHtml(query) +
         '"</div>';
       return;

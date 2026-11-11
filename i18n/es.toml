@@ -1,0 +1,85 @@
+# The Gokarna theme ships `Posts` as "Entradas"; the blog says "posts".
+[Posts]
+  other = "Posts"
+
+[searchPlaceholder]
+  other = "Buscar posts..."
+[searchLabel]
+  other = "Buscar posts"
+[search]
+  other = "Buscar"
+[themeToggle]
+  other = "tema"
+[menuToggle]
+  other = "menú"
+[languageSwitcher]
+  other = "Idioma"
+
+[aiAuthored]
+  other = "Este post ha sido generado íntegramente con IA"
+[humanAuthored]
+  other = "Ninguna IA ha sido maltratada en la escritura de este post"
+[alsoAvailableIn]
+  other = "También disponible en"
+[minRead]
+  other = "min de lectura"
+[updated]
+  other = "Actualizado"
+[relatedPosts]
+  other = "Posts relacionados"
+[backTo]
+  other = "Volver a {{ .Title }}"
+
+[previousPage]
+  other = "Página anterior"
+[nextPage]
+  other = "Página siguiente"
+[goToPage]
+  other = "Ir a la página {{ .Page }}"
+[currentPage]
+  other = "Página actual, página {{ .Page }}"
+[pageOf]
+  other = "Página {{ .Current }} de {{ .Total }}"
+[totalPosts]
+  other = "{{ .Count }} posts en total"
+
+[madeWith]
+  other = "Hecho con &#10084;&#65039; usando"
+
+[subscribeHeading]
+  other = "¿Te ha gustado?"
+[subscribeCountDefault]
+  other = "Únete a otros suscriptores."
+[subscribePitch]
+  other = "Te escribiré cuando publique algo nuevo. Sin spam, sin vender tu correo. Solo posts."
+[subscribeEmailPlaceholder]
+  other = "tu@ejemplo.com"
+[subscribeButton]
+  other = "Suscribirme"
+[subscribeCommitment]
+  other = 'Lee mi <a href="{{ .URL }}">compromiso con los suscriptores</a>.'
+[subscribeSubscribing]
+  other = "Suscribiendo..."
+[subscribeCountOne]
+  other = "Únete a otro suscriptor."
+[subscribeCountMany]
+  other = "Únete a otros {n} suscriptores."
+[subscribeCountDev]
+  other = "Únete a otros 42 suscriptores. (modo dev)"
+[subscribedTitle]
+  other = "Ya estás dentro. Te doy la bienvenida."
+[subscribedText]
+  other = "Recibirás un correo la próxima vez que publique. Nada más."
+[alreadySubscribedTitle]
+  other = "Ya estás suscrito."
+[alreadySubscribedText]
+  other = "Gracias por leerme."
+[subscribeErrorTitle]
+  other = "Algo ha ido mal."
+[subscribeErrorDefault]
+  other = "Inténtalo de nuevo más tarde."
+
+[searchHint]
+  other = "Escribe para buscar posts..."
+[searchNoResults]
+  other = "No hay resultados para"

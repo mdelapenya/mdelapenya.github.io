@@ -1,14 +1,19 @@
-{{ with .Params.related }}
+{{ $page := . }}
+{{ with partial "source-param.html" (dict "page" . "key" "related") }}
 <div class="related-posts">
-    <h3>Related posts</h3>
+    <h3>{{ i18n "relatedPosts" }}</h3>
     <div class="related-posts-grid">
         {{ range . }}
-            {{ $post := site.GetPage . }}
+            {{ $path := . }}
+            {{ $post := site.GetPage $path }}
+            {{ if not $post }}{{ range hugo.Sites }}{{ if not $post }}{{ $post = .GetPage $path }}{{ end }}{{ end }}{{ end }}
             {{ if $post }}
+            {{ range $post.AllTranslations }}{{ if eq .Language.Lang $page.Language.Lang }}{{ $post = . }}{{ end }}{{ end }}
             <a class="related-post-card" href="{{ $post.RelPermalink }}">
-                {{ if $post.Params.image }}
+                {{ $image := partial "source-param.html" (dict "page" $post "key" "image") }}
+                {{ if $image }}
                 <div class="related-post-image">
-                    <img src="{{ $post.Params.image }}" alt="{{ $post.Title }}" loading="lazy" />
+                    <img src="{{ $image }}" alt="{{ $post.Title }}" loading="lazy" />
                 </div>
                 {{ else }}
                 <div class="related-post-image related-post-no-image">

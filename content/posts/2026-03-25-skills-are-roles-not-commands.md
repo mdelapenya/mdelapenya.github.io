@@ -9,6 +9,7 @@ weight: 30
 showTableOfContents: true
 ai: true
 image: "/images/posts/2026-03-25-skills-are-roles-not-commands/cover.png"
+translationKey: skills-are-roles-not-commands
 related:
   - "/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day"
   - "/posts/2026-03-11-coding-agents-as-exploratory-testers"

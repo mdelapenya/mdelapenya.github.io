@@ -46,6 +46,23 @@ image: "/images/posts/..."  # optional cover image
 ---
 ```
 
+### Translations (i18n)
+
+English is the default language and lives at the root; Spanish lives under `/es/`. A post and its translation are paired by a shared `translationKey` in the front matter. The translation is a sibling file `<slug-in-target-language>.es.md` in `content/posts/`, so its URL comes from its own filename.
+
+```yaml
+translationKey: skills-are-roles-not-commands   # same value in both files
+translatedFrom: f4d2f0c                         # short SHA of the source at translation time (translation only)
+```
+
+- Front matter of a translation: translated `title` and `description`, `translationKey`, `translatedFrom`, plus `date`, `categories`, `tags`, `type` and `weight` **identical to the original** (Hugo reads them per file). `image`, `related`, `ai` and `showTableOfContents` are inherited from the original by the layouts; add them to a translation only to override (e.g. a localised cover).
+- Tags and categories are never translated.
+- Drift check: `make i18n-check` (exit 1 and a console report on drift; unit tests in `scripts/translation-sync.test.mjs`, run with `make i18n-test`). `make i18n-sync` copies the five synced fields from each original into its translations. The `translation-sync` skill in `.claude/skills/` wraps both (committed with `git add -f`, since `.claude/` is gitignored).
+- Pages without a translation in the reader's language show a notice (`[params.untranslated]` in `hugo.toml`); UI strings live in `i18n/*.toml`.
+- Language is chosen client-side: `localStorage.lang` (set by the EN/ES selector) beats the browser language. See `layouts/partials/language-detect.html`.
+- `/langmap.json` lets `layouts/404.html` redirect a request for a slug in the other language.
+- Tests: `tests/i18n/`.
+
 ### Talks (`content/talks/_index.md`)
 
 Single `_index.md` file with all talks listed by year. Each entry includes conference name, title, URL, video link, and slides link. Slides PDFs live in `static/slides/`.

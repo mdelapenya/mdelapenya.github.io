@@ -6,7 +6,7 @@
             {{ if ne .Parent.Kind "home" }}
                 <div class="page-breadcrumb">
                     <a href="{{ .Parent.RelPermalink }}" class="breadcrumb-link">
-                        <span aria-hidden="true">←</span> Back to {{ .Parent.Title }}
+                        <span aria-hidden="true">←</span> {{ i18n "backTo" (dict "Title" .Parent.Title) }}
                     </a>
                 </div>
             {{ end }}
@@ -19,7 +19,7 @@
         {{ .Content }}
     </div>
 
-    {{ if eq .RelPermalink "/subscribe/" }}
+    {{ if hasSuffix .RelPermalink "/subscribe/" }}
         {{ partial "subscribe.html" . }}
     {{ end }}
     <!-- Back to top button -->

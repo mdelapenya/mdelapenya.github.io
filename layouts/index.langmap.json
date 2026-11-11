@@ -1,0 +1,13 @@
+{{- $map := dict -}}
+{{- range hugo.Sites -}}
+  {{- range .RegularPages -}}
+    {{- if .IsTranslated -}}
+      {{- $urls := dict -}}
+      {{- range .AllTranslations -}}
+        {{- $urls = merge $urls (dict .Language.Lang .RelPermalink) -}}
+      {{- end -}}
+      {{- $map = merge $map (dict .TranslationKey $urls) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $map | jsonify -}}

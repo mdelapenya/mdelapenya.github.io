@@ -1,0 +1,7 @@
+{{ if partial "source-param.html" (dict "page" . "key" "showTableOfContents") }}
+<aside class="post-toc">
+    <nav id="toc">
+        {{ .TableOfContents }}
+    </nav>
+</aside>
+{{ end }}

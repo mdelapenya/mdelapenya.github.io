@@ -1,0 +1,14 @@
+{{- /* Returns a front matter param of .page, falling back to the original post (the one in the translation group without `translatedFrom`). Pass (dict "page" . "key" "image"). */ -}}
+{{- $page := .page -}}
+{{- $key := lower .key -}}
+{{- $val := "" -}}
+{{- if isset $page.Params $key -}}
+    {{- $val = index $page.Params $key -}}
+{{- else -}}
+    {{- range $page.AllTranslations -}}
+        {{- if and (not (isset .Params "translatedfrom")) (isset .Params $key) -}}
+            {{- $val = index .Params $key -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- return $val -}}

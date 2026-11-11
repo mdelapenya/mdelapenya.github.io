@@ -6,7 +6,7 @@ BASE_URL ?= http://host.docker.internal:1313
 DOCKER_NETWORK ?=
 PLAYWRIGHT_VERSION=1.60.0
 
-.PHONY: build serve clean test test-playwright test-broadcast
+.PHONY: build serve clean test test-playwright test-broadcast i18n-test i18n-check i18n-sync
 
 # Build the Docker image
 build:
@@ -29,7 +29,7 @@ serve: build
 		--buildFuture
 
 # Run all tests
-test: test-playwright test-broadcast
+test: test-playwright test-broadcast i18n-test i18n-check
 
 # Run Playwright E2E tests (requires Hugo dev server running via 'make serve')
 test-playwright:
@@ -47,6 +47,18 @@ test-playwright:
 # Run broadcast Go tests
 test-broadcast:
 	cd broadcast && go test -v -count=1 ./...
+
+# Unit tests for the translation sync script (needs Node 20+)
+i18n-test:
+	node --test scripts/translation-sync.test.mjs
+
+# Report front matter drift between posts and their translations (needs Node)
+i18n-check:
+	node scripts/translation-sync.mjs
+
+# Copy the synced front matter fields from each original into its translations
+i18n-sync:
+	node scripts/translation-sync.mjs --fix
 
 # Clean up Docker images
 clean:

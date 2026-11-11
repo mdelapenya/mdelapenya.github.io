@@ -5,14 +5,14 @@
     <div class="pagination-container">
         {{/* Previous page link */}}
         {{ if $paginator.HasPrev }}
-            <a href="{{ $paginator.Prev.URL }}" class="pagination-link pagination-previous" aria-label="Previous page">
+            <a href="{{ $paginator.Prev.URL }}" class="pagination-link pagination-previous" aria-label="{{ i18n "previousPage" }}">
                 <span aria-hidden="true">&laquo;</span>
-                <span class="pagination-text">Previous</span>
+                <span class="pagination-text">{{ i18n "previous" }}</span>
             </a>
         {{ else }}
             <span class="pagination-link pagination-previous disabled" aria-disabled="true">
                 <span aria-hidden="true">&laquo;</span>
-                <span class="pagination-text">Previous</span>
+                <span class="pagination-text">{{ i18n "previous" }}</span>
             </span>
         {{ end }}
 
@@ -24,7 +24,7 @@
             {{/* Always show first page */}}
             {{ if gt $currentPage 3 }}
                 <li>
-                    <a href="{{ $paginator.First.URL }}" class="pagination-link" aria-label="Go to page 1">1</a>
+                    <a href="{{ $paginator.First.URL }}" class="pagination-link" aria-label="{{ i18n "goToPage" (dict "Page" 1) }}">1</a>
                 </li>
                 {{ if gt $currentPage 4 }}
                     <li><span class="pagination-ellipsis">&hellip;</span></li>
@@ -37,9 +37,9 @@
                 {{ if and (ge $pageNum (sub $currentPage 2)) (le $pageNum (add $currentPage 2)) }}
                     <li>
                         {{ if eq $pageNum $currentPage }}
-                            <span class="pagination-link is-current" aria-label="Current page, page {{ $pageNum }}" aria-current="page">{{ $pageNum }}</span>
+                            <span class="pagination-link is-current" aria-label="{{ i18n "currentPage" (dict "Page" $pageNum) }}" aria-current="page">{{ $pageNum }}</span>
                         {{ else }}
-                            <a href="{{ .URL }}" class="pagination-link" aria-label="Go to page {{ $pageNum }}">{{ $pageNum }}</a>
+                            <a href="{{ .URL }}" class="pagination-link" aria-label="{{ i18n "goToPage" (dict "Page" $pageNum) }}">{{ $pageNum }}</a>
                         {{ end }}
                     </li>
                 {{ end }}
@@ -51,20 +51,20 @@
                     <li><span class="pagination-ellipsis">&hellip;</span></li>
                 {{ end }}
                 <li>
-                    <a href="{{ $paginator.Last.URL }}" class="pagination-link" aria-label="Go to page {{ $totalPages }}">{{ $totalPages }}</a>
+                    <a href="{{ $paginator.Last.URL }}" class="pagination-link" aria-label="{{ i18n "goToPage" (dict "Page" $totalPages) }}">{{ $totalPages }}</a>
                 </li>
             {{ end }}
         </ul>
 
         {{/* Next page link */}}
         {{ if $paginator.HasNext }}
-            <a href="{{ $paginator.Next.URL }}" class="pagination-link pagination-next" aria-label="Next page">
-                <span class="pagination-text">Next</span>
+            <a href="{{ $paginator.Next.URL }}" class="pagination-link pagination-next" aria-label="{{ i18n "nextPage" }}">
+                <span class="pagination-text">{{ i18n "next" }}</span>
                 <span aria-hidden="true">&raquo;</span>
             </a>
         {{ else }}
             <span class="pagination-link pagination-next disabled" aria-disabled="true">
-                <span class="pagination-text">Next</span>
+                <span class="pagination-text">{{ i18n "next" }}</span>
                 <span aria-hidden="true">&raquo;</span>
             </span>
         {{ end }}
@@ -72,9 +72,9 @@
 
     {{/* Page info */}}
     <div class="pagination-info">
-        <span>Page {{ $currentPage }} of {{ $totalPages }}</span>
+        <span>{{ i18n "pageOf" (dict "Current" $currentPage "Total" $totalPages) }}</span>
         <span class="pagination-separator">|</span>
-        <span>{{ $paginator.TotalNumberOfElements }} total posts</span>
+        <span>{{ i18n "totalPosts" (dict "Count" $paginator.TotalNumberOfElements) }}</span>
     </div>
 </nav>
 {{ end }}

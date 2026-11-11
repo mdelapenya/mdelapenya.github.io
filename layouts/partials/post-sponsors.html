@@ -1,4 +1,4 @@
-{{ $lang := .Params.language | default "en" }}
+{{ $lang := .Params.language | default .Language.Lang }}
 <p class="subscribe-text subscribe-sponsors">
     <span aria-hidden="true">☕</span>
     {{ if eq $lang "es" }}

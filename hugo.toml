@@ -10,7 +10,7 @@ title = "Manuel de la Peña"
 timeout = "120s"
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON", "LangMap"]
 
 [pagination]
   pagerSize = 15
@@ -44,6 +44,7 @@ timeout = "120s"
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <link rel="stylesheet" href="/css/related-posts.css">
     <link rel="stylesheet" href="/css/talks.css">
+    <link rel="stylesheet" href="/css/i18n.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
@@ -89,60 +90,154 @@ timeout = "120s"
     {name = "instagram", url = "https://instagram.com/mdelapenya"},
   ]
 
-[menu]
-  [[menu.main]]
-    name = "Home"
-    pre = "<span data-feather='home'></span>"
-    url = "/"
+# Notice shown when a page has no translation in the reader's language.
+# Keyed by the language the page is written in, then by the reader's language.
+[params.untranslated]
+  [params.untranslated.en]
+    es = "Este post solo está disponible en inglés."
+  [params.untranslated.es]
+    en = "This post is only available in Spanish."
+
+[outputFormats]
+  [outputFormats.LangMap]
+    mediaType = "application/json"
+    baseName = "langmap"
+    isPlainText = true
+    notAlternative = true
+
+# English is the default language and stays at the root, so no existing URL
+# changes. Spanish lives under /es/. Posts are paired across languages with
+# a shared `translationKey` in their front matter.
+[languages]
+  [languages.en]
     weight = 1
+    label = "English"
+    locale = "en"
+    title = "Manuel de la Peña"
 
-  [[menu.main]]
-    name = "Posts"
-    pre = "<span data-feather='book'></span>"
-    url = "/posts/"
+    [languages.en.params]
+      description = "OSS Software Engineer"
+      dateFormat = "January 2, 2006"
+
+    [[languages.en.menus.main]]
+      name = "Home"
+      pre = "<span data-feather='home'></span>"
+      url = "/"
+      weight = 1
+
+    [[languages.en.menus.main]]
+      name = "Posts"
+      pre = "<span data-feather='book'></span>"
+      url = "/posts/"
+      weight = 2
+
+    [[languages.en.menus.main]]
+      name = "Projects"
+      pre = "<span data-feather='code'></span>"
+      url = "/projects/"
+      weight = 3
+
+    [[languages.en.menus.main]]
+      name = "Public Speaking"
+      pre = "<span data-feather='mic'></span>"
+      url = "/talks/"
+      weight = 4
+
+    [[languages.en.menus.main]]
+      name = "Tags"
+      pre = "<span data-feather='tag'></span>"
+      url = "/tags/"
+      weight = 5
+
+    [[languages.en.menus.main]]
+      identifier = "github"
+      pre = "<span data-feather='github'></span>"
+      url = "https://github.com/mdelapenya/mdelapenya.github.io"
+      weight = 6
+
+    [[languages.en.menus.main]]
+      identifier = "sponsors"
+      pre = "<span data-feather='heart'></span>"
+      url = "https://github.com/sponsors/mdelapenya"
+      weight = 7
+
+    [[languages.en.menus.main]]
+      identifier = "subscribe"
+      pre = "<span data-feather='mail'></span>"
+      url = "/subscribe/"
+      weight = 8
+
+    [[languages.en.menus.main]]
+      identifier = "rss"
+      pre = "<span data-feather='rss'></span>"
+      url = "/index.xml"
+      weight = 9
+
+  [languages.es]
     weight = 2
+    label = "Español"
+    locale = "es"
+    title = "Manuel de la Peña"
 
-  [[menu.main]]
-    name = "Projects"
-    pre = "<span data-feather='code'></span>"
-    url = "/projects/"
-    weight = 3
+    [languages.es.params]
+      description = "Ingeniero de software OSS"
+      dateFormat = ":date_long"
 
-  [[menu.main]]
-    name = "Public Speaking"
-    pre = "<span data-feather='mic'></span>"
-    url = "/talks/"
-    weight = 4
+    [[languages.es.menus.main]]
+      name = "Inicio"
+      pre = "<span data-feather='home'></span>"
+      url = "/es/"
+      weight = 1
 
-  [[menu.main]]
-    name = "Tags"
-    pre = "<span data-feather='tag'></span>"
-    url = "/tags/"
-    weight = 5
+    [[languages.es.menus.main]]
+      name = "Posts"
+      pre = "<span data-feather='book'></span>"
+      url = "/es/posts/"
+      weight = 2
 
-  [[menu.main]]
-    identifier = "github"
-    pre = "<span data-feather='github'></span>"
-    url = "https://github.com/mdelapenya/mdelapenya.github.io"
-    weight = 6
+    # Projects, talks and the subscribe page are not translated yet, so these
+    # point at the English pages.
+    [[languages.es.menus.main]]
+      name = "Proyectos"
+      pre = "<span data-feather='code'></span>"
+      url = "/projects/"
+      weight = 3
 
-  [[menu.main]]
-    identifier = "sponsors"
-    pre = "<span data-feather='heart'></span>"
-    url = "https://github.com/sponsors/mdelapenya"
-    weight = 7
+    [[languages.es.menus.main]]
+      name = "Charlas"
+      pre = "<span data-feather='mic'></span>"
+      url = "/talks/"
+      weight = 4
 
-  [[menu.main]]
-    identifier = "subscribe"
-    pre = "<span data-feather='mail'></span>"
-    url = "/subscribe/"
-    weight = 8
+    [[languages.es.menus.main]]
+      name = "Etiquetas"
+      pre = "<span data-feather='tag'></span>"
+      url = "/es/tags/"
+      weight = 5
 
-  [[menu.main]]
-    identifier = "rss"
-    pre = "<span data-feather='rss'></span>"
-    url = "/index.xml"
-    weight = 9
+    [[languages.es.menus.main]]
+      identifier = "github"
+      pre = "<span data-feather='github'></span>"
+      url = "https://github.com/mdelapenya/mdelapenya.github.io"
+      weight = 6
+
+    [[languages.es.menus.main]]
+      identifier = "sponsors"
+      pre = "<span data-feather='heart'></span>"
+      url = "https://github.com/sponsors/mdelapenya"
+      weight = 7
+
+    [[languages.es.menus.main]]
+      identifier = "subscribe"
+      pre = "<span data-feather='mail'></span>"
+      url = "/subscribe/"
+      weight = 8
+
+    [[languages.es.menus.main]]
+      identifier = "rss"
+      pre = "<span data-feather='rss'></span>"
+      url = "/es/index.xml"
+      weight = 9
 
 [markup]
   [markup.goldmark]
