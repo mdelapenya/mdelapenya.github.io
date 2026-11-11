@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Hugo static site for mdelapenya.xyz — a personal blog, project portfolio, and public speaking directory. Uses the **Gokarna** theme (git submodule in `themes/gokarna`).
 
-- **Hugo version:** 0.145.0 (extended edition required)
+- **Hugo version:** 0.169.0 (extended edition required)
 - **Deployed to:** GitHub Pages via GitHub Actions on push to `main`
 - **Configuration:** `hugo.toml`
 - **Gokarna theme docs**: https://themes.gohugo.io/themes/gokarna/ 
