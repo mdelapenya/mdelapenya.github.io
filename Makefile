@@ -6,7 +6,7 @@ BASE_URL ?= http://host.docker.internal:1313
 DOCKER_NETWORK ?=
 PLAYWRIGHT_VERSION=1.60.0
 
-.PHONY: build serve clean test test-playwright test-broadcast
+.PHONY: build serve clean test test-playwright test-broadcast i18n-check i18n-sync
 
 # Build the Docker image
 build:
@@ -38,6 +38,8 @@ test-playwright:
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		-v $$(pwd)/tests:/tests \
 		-v $$(pwd)/static:/static:ro \
+		-v $$(pwd)/content:/content:ro \
+		-v $$(pwd)/scripts:/scripts:ro \
 		-w /tests \
 		-e BASE_URL=$(BASE_URL) \
 		$(if $(DOCKER_NETWORK),,-e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal) \
@@ -47,6 +49,14 @@ test-playwright:
 # Run broadcast Go tests
 test-broadcast:
 	cd broadcast && go test -v -count=1 ./...
+
+# Report front matter drift between posts and their translations (needs Node)
+i18n-check:
+	node scripts/translation-sync.mjs
+
+# Copy the synced front matter fields from each original into its translations
+i18n-sync:
+	node scripts/translation-sync.mjs --fix
 
 # Clean up Docker images
 clean:
