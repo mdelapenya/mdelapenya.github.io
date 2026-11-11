@@ -1,0 +1,65 @@
+.language-switcher {
+    display: inline-flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.language-switcher a {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+.language-switcher a:hover,
+.language-switcher a.is-current {
+    opacity: 1;
+}
+
+.language-switcher a.is-current {
+    color: var(--accent-color);
+}
+
+.post-translation,
+.post-language {
+    display: inline-block;
+    margin-left: 0.4rem;
+    padding: 0 0.35rem;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    vertical-align: middle;
+    opacity: 0.6;
+}
+
+.post-not-translated {
+    padding: 0.6rem 1rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid rgb(234, 179, 8);
+    border-radius: 6px;
+    background-color: rgba(234, 179, 8, 0.1);
+    font-size: 0.9rem;
+}
+
+.post-not-translated[hidden] {
+    display: none;
+}
+
+@media only screen and (min-width: 820px) {
+    .nav-links .nav-link.language-switcher {
+        display: inline-flex;
+    }
+}
+
+.nav-links .nav-link.language-switcher a {
+    display: inline;
+    padding: 0 4px;
+}
+
+.nav-item.language-switcher a {
+    padding: 0 6px;
+}

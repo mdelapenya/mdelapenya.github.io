@@ -1,0 +1,81 @@
+[searchPlaceholder]
+  other = "Search posts..."
+[searchLabel]
+  other = "Search posts"
+[search]
+  other = "Search"
+[themeToggle]
+  other = "theme"
+[menuToggle]
+  other = "menu"
+[languageSwitcher]
+  other = "Language"
+
+[aiAuthored]
+  other = "This post has been fully generated with AI"
+[humanAuthored]
+  other = "No AI has been harmed in the writing of this post"
+[alsoAvailableIn]
+  other = "Also available in"
+[minRead]
+  other = "min read"
+[updated]
+  other = "Updated"
+[relatedPosts]
+  other = "Related posts"
+[backTo]
+  other = "Back to {{ .Title }}"
+
+[previousPage]
+  other = "Previous page"
+[nextPage]
+  other = "Next page"
+[goToPage]
+  other = "Go to page {{ .Page }}"
+[currentPage]
+  other = "Current page, page {{ .Page }}"
+[pageOf]
+  other = "Page {{ .Current }} of {{ .Total }}"
+[totalPosts]
+  other = "{{ .Count }} total posts"
+
+[madeWith]
+  other = "Made with &#10084;&#65039; using"
+
+[subscribeHeading]
+  other = "Enjoyed this content?"
+[subscribeCountDefault]
+  other = "Join other subscribers."
+[subscribePitch]
+  other = "I'll email you when I publish something new. No spam, no selling your email. Just posts."
+[subscribeEmailPlaceholder]
+  other = "you@example.com"
+[subscribeButton]
+  other = "Subscribe"
+[subscribeCommitment]
+  other = 'Read my <a href="{{ .URL }}">subscriber commitment</a>.'
+[subscribeSubscribing]
+  other = "Subscribing..."
+[subscribeCountOne]
+  other = "Join {n} other subscriber."
+[subscribeCountMany]
+  other = "Join {n} other subscribers."
+[subscribeCountDev]
+  other = "Join 42 other subscribers. (dev mode)"
+[subscribedTitle]
+  other = "You're in. Welcome."
+[subscribedText]
+  other = "You'll get an email next time I publish. That's it."
+[alreadySubscribedTitle]
+  other = "You're already subscribed."
+[alreadySubscribedText]
+  other = "Thanks for reading."
+[subscribeErrorTitle]
+  other = "Something went wrong."
+[subscribeErrorDefault]
+  other = "Please try again later."
+
+[searchHint]
+  other = "Type to search posts..."
+[searchNoResults]
+  other = "No results found for"
