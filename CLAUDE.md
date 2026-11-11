@@ -55,8 +55,9 @@ translationKey: skills-are-roles-not-commands   # same value in both files
 translatedFrom: f4d2f0c                         # short SHA of the source at translation time (translation only)
 ```
 
-- `tags` and `categories` are never translated; `date` is identical in both files.
-- Pages without a translation in the reader's language show a notice (`[params.untranslated]` in `hugo.toml`); UI strings live in `i18n/*.toml`.
+- Front matter of a translation: translated `title` and `description`, `translationKey`, `translatedFrom`, plus `date`, `categories`, `tags`, `type` and `weight` **identical to the original** (Hugo reads them per file). `image`, `related`, `ai` and `showTableOfContents` are inherited from the original by the layouts; add them to a translation only to override (e.g. a localised cover).
+- Tags and categories are never translated.
+- Drift check: `make i18n-check` (also a Playwright spec, `tests/i18n/translation-sync.spec.ts`, so CI fails on it). `make i18n-sync` copies the five synced fields from each original into its translations.- Pages without a translation in the reader's language show a notice (`[params.untranslated]` in `hugo.toml`); UI strings live in `i18n/*.toml`.
 - Language is chosen client-side: `localStorage.lang` (set by the EN/ES selector) beats the browser language. See `layouts/partials/language-detect.html`.
 - `/langmap.json` lets `layouts/404.html` redirect a request for a slug in the other language.
 - Tests: `tests/i18n/`.
