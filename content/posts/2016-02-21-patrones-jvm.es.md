@@ -6,8 +6,8 @@ categories: java
 tags: [design patterns, jdk, jvm, patterns, software patterns]
 type: post
 weight: 25
-language: es
 showTableOfContents: true
+translationKey: design-patterns-in-the-jdk
 ---
 
 # Introducción

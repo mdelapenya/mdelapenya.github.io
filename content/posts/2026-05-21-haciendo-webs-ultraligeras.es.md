@@ -5,7 +5,6 @@ description: "En el año 2000 hice un curso de 300 horas para aprender a crear p
 categories: [Technology, Software Development, AI]
 tags: ["web-development", "historia", "coding-agents", "docker-sandboxes", "ia", "html", "jquery"]
 type: post
-language: es
 weight: 30
 showTableOfContents: true
 ai: true
@@ -14,6 +13,7 @@ related:
   - "/posts/2026-04-22-por-que-construi-un-visor-de-trenes-en-tiempo-real"
   - "/posts/2026-04-14-building-a-real-app-inside-a-docker-sandbox"
   - "/posts/2026-04-06-tokens-are-the-new-aws-account"
+translationKey: building-ultralight-websites
 ---
 
 ![Haciendo webs ultraligeras](/images/posts/2026-05-21-haciendo-webs-ultraligeras/cover.png)

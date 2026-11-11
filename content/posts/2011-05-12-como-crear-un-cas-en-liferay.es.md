@@ -7,8 +7,8 @@ categories: [Liferay]
 tags: ["liferay", "cas", "autenticación", "certificado electrónico", "plugins", "java"]
 type: post
 weight: 1
-language: es
 showTableOfContents: true
+translationKey: build-liferay-cas-with-digital-signature
 ---
 
 En este artículo vamos a definir la arquitectura para construir un CAS en Liferay, validando nuestros usuarios contra una entidad certificadora de certificados digitales.

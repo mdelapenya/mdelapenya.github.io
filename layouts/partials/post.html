@@ -46,7 +46,7 @@
         </ul>
     </div>
 
-    {{ if and hugo.IsMultilingual (not .IsTranslated) (not .Params.language) }}
+    {{ if and hugo.IsMultilingual (not .IsTranslated) }}
         {{ range $reader, $text := index (index site.Params "untranslated") .Language.Lang }}
         <p class="post-not-translated" lang="{{ $reader }}" data-notice-for="{{ $reader }}" hidden>{{ $text }}</p>
         {{ end }}

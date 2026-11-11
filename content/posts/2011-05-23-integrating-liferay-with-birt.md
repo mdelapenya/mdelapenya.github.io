@@ -1,61 +1,61 @@
 ---
-title: "Integrando Liferay con BIRT"
+title: "Integrating Liferay with BIRT"
 date: 2011-05-23 08:00:00 +0200
-image: ""
-description: "Una de las principales funcionalidades en las aplicaciones de gestión es la de presentación de información en un formato imprimible, ya sea PDF, Excel, Word, etc. Por ello hoy voy a contar cómo integrar un motor de informes como es Eclipse BIRT con Liferay."
+description: "Business applications almost always need to produce printable output: PDF, Excel, Word. Here is how I integrate a reporting engine, Eclipse BIRT, with Liferay, so every portlet can generate its reports through the portal."
 categories: [Liferay, "Desarrollo Web"]
 tags: ["birt", "eclipse", "java", "liferay", "plugins", "portal", "reports", "servlets"]
 type: post
 weight: 1
-language: es
-showTableOfContents: true
+translationKey: integrating-liferay-with-birt
+translatedFrom: 76c0fc6
+aliases: ["/posts/2011-05-23-integrando-liferay-con-birt/"]
 ---
 
-Una de las principales funcionalidades en las aplicaciones de gestión es la de presentación de información en un formato imprimible, ya sea PDF, Excel, Word, etc. Por ello hoy voy a contar cómo integrar un motor de informes como es Eclipse BIRT con Liferay.
+One of the main features of any business application is showing information in a printable format: PDF, Excel, Word, and so on. So today I'm going to show you how to integrate a reporting engine, Eclipse BIRT, with Liferay.
 
-Para el seguimiento del post es necesario tener instalado Eclipse Helios y el plugin de BIRT descargado desde la opción "Install New Software" del Eclipse, en el repositorio "http://download.eclipse.org/releases/helios"
+To follow this post you need Eclipse Helios and the BIRT plugin, installed from the "Install New Software" option in Eclipse, using the repository "http://download.eclipse.org/releases/helios"
 
-La estrategia a seguir es la de independizar los portlets de BIRT, delegando en Liferay la gestión de éste. Para ello levantaremos en Liferay el motor de BIRT, y los portlets consumiran ese servicio para generar sus reports.
+The strategy is to keep BIRT out of the portlets and let Liferay manage it. We will start the BIRT engine inside Liferay, and the portlets will consume that service to generate their reports.
 
-A modo de resumen, los pasos que vamos a realizar para integrar BIRT con Liferay son los siguientes:
+In short, these are the steps to integrate BIRT with Liferay:
 
-1.  Descargar el runtime de BIRT
-2.  Definir la interfaz de paso de información desde un portlet a BIRT
-3.  Crear un servlet para el motor dentro de Liferay
-4.  Llamar desde un portlet cualquiera
-5.  Presentar los datos
+1.  Download the BIRT runtime
+2.  Define the interface used to pass information from a portlet to BIRT
+3.  Create a servlet for the engine inside Liferay
+4.  Call it from any portlet
+5.  Display the data
 
-## DESCARGA DEL RUNTIME DE BIRT
+## Downloading the BIRT runtime
 
-Lo primero de todo es descargar el motor de informes. Podemos hacerlo desde la página de Eclipse BIRT (proyecto Phoenix). Allí vamos a "Latest BIRT Runtime Release Build", en este caso la 2.6.2. Y le damos a descargar el Runtime (descarga directa).
+First of all, we need the reporting engine. We can get it from the Eclipse BIRT site (the Phoenix project). There, go to "Latest BIRT Runtime Release Build", which in this case is 2.6.2, and download the Runtime (direct download).
 
-![Descarga de Eclipse BIRT](/images/posts/2011-05-23-integrando-liferay-con-birt/birt-runtime-download.png)
+![Downloading Eclipse BIRT](/images/posts/2011-05-23-integrando-liferay-con-birt/birt-runtime-download.png)
 
-El lugar donde instalar el runtime debería ser accesible por el contexto de aplicación del portal Liferay (donde queremos instalar el motor de BIRT). En este caso, un buen lugar podría ser el WEB-INF/birt-runtime del portal.
+The runtime has to be installed somewhere the Liferay portal's application context can reach, since that is where we want the BIRT engine to live. A good place for it is the portal's WEB-INF/birt-runtime.
 
-## INTERFAZ ENTRE BIRT Y LOS PORTLETS
+## The interface between BIRT and the portlets
 
-Pensando en la arquitectura, estamos creando un sistema por el cual el portal Liferay sea capaz de escuchar solicitudes de presentación de informes asociados a cualquiera de los portlets desplegados en el portal, siendo este último el responsable único de tratar dichas solicitudes. Parece conveniente el definir una interfaz de comunicaciones entre el motor de BIRT y los portlets.
+Thinking about the architecture, we are building a system in which the Liferay portal listens for report requests coming from any portlet deployed in it, and the portal alone is responsible for handling them. So it makes sense to define a communication interface between the BIRT engine and the portlets.
 
-Para ello, podríamos crear un conjunto de objetos Java que encapsulen los datos a pasar al informe, de tal modo que siempre se asocien los datos a la petición a BIRT de la misma manera, consiguiendo dos cosas:
+To do that, we can create a set of Java objects that wrap the data we pass to the report, so the data always travels with the BIRT request in the same way. That gives us two things:
 
-1.  Unificar el modo de presentación de reports, centralizando la gestión de reports en el portal: no desplegamos BIRT en todos y cada uno de los portlets que lo utilicen.
-2.  No utilizar BIRT en la capa de acceso a datos, ya que no utilizamos DataSources JDBC, sino que le pasamos al BIRT objetos Java obtenidos por cada portlet. En el report únicamente utilizaríamos ScriptedDatasources para acceder a esos objetos Java.
+1.  One way of producing reports, with report management centralized in the portal: we don't deploy BIRT inside every single portlet that uses it.
+2.  No BIRT in the data access layer. We don't use JDBC DataSources: each portlet gets its own Java objects and hands them to BIRT. In the report we only use ScriptedDatasources to reach those Java objects.
 
-![Interfaz de comunicación entre los portlets y BIRT](/images/posts/2011-05-23-integrando-liferay-con-birt/birt-interfaz-comunicacion.png)
+![Communication interface between the portlets and BIRT](/images/posts/2011-05-23-integrando-liferay-con-birt/birt-interfaz-comunicacion.png)
 
-Para que BIRT, que estará dentro del contexto de Liferay, pueda leer esos datos, los portlets deben dejarlos en el contexto de aplicación (APPLICATION_SCOPE). Para ello es necesario configurar en el fichero liferay-portlet.xml de cada portlet el siguiente elemento:
+BIRT lives inside the Liferay context, so for it to read that data the portlets must leave it in the application context (APPLICATION_SCOPE). To get that, add the following element to the liferay-portlet.xml file of each portlet:
 
 ```xml
 <private-session-attributes>false</private-session-attributes>
 ```
 
-De esta forma los portlets podrán compartir datos con la sesión del portal.
+This way the portlets can share data with the portal session.
 
-## BIRT ENGINE Y SERVLET DE ESCUCHA DE PETICIONES
+## The BIRT engine and the servlet that listens for requests
 
-Ya tenemos la interfaz, ahora queda codificar un servlet que levante el motor de BIRT. Pero antes es necesario crear la clase que represente a nuestro BIRTEngine.
-Como veréis, existe un fichero de propiedades como atributo de la clase, en la que irá definida la ruta al runtime, que dejamos en `WEB-INF/birt-runtime`.
+We have the interface. Now we need a servlet that starts the BIRT engine, but first we need the class that represents our BIRTEngine.
+As you will see, the class has a properties file as an attribute. That is where the path to the runtime goes, which we left in `WEB-INF/birt-runtime`.
 
 ```java
 /**
@@ -223,15 +223,15 @@ public class BirtServlet extends HttpServlet {
 }
 ```
 
-Ahora ya tenemos un BIRTEngine y un servlet que acepta peticiones de BIRT, el cual las redirige al engine y procesa para obtener un PDF.
+Now we have a BIRTEngine and a servlet that accepts BIRT requests, forwards them to the engine and processes them to produce a PDF.
 
-Para que el servlet esté contenido en Liferay, será necesario que lo añadamos al web.xml del portal Liferay (`<servlet>` y `<servlet-mapping>`), donde definiremos la URL de escucha de peticiones del servlet, por ejemplo /birt
+For the servlet to live inside Liferay, we have to add it to the portal's web.xml (`<servlet>` and `<servlet-mapping>`), where we define the URL the servlet listens on, for example /birt
 
-## CREACIÓN DE LA PETICIÓN
+## Creating the request
 
-Tenemos el servlet iniciado dentro del contexto del portal, y tenemos el runtime preparado igualmente. Hemos definido además la interfaz de comunicación entr los portlets y BIRT (a través de un conjunto de clases Java que encapsulan los datos).
+The servlet is running inside the portal's context, and the runtime is ready too. We have also defined the communication interface between the portlets and BIRT (a set of Java classes that wrap the data).
 
-En un portlet, pasaremos los datos de la siguiente manera:
+In a portlet, we pass the data like this:
 
 ```java
 //le pasamos los datos al servlet del BIRT
@@ -248,19 +248,19 @@ parametros.setFicheroSalida( ""+( new Date().getTime() ) );
 request.getSession().setAttribute(ConstantesBIRT.PARAMETROS_BIRT, parametros);
 ```
 
-Ahora acabamos de pasar a la sesión de usuario los datos para que el servlet de BIRT pueda leerlos. Si os habéis dado cuenta, no aparece nada del APPLICATION_SCOPE. Eso es porque este ejemplo de código es para un portlet de Struts y por tanto trabajamos directamente con la HttpSession (obtenida de una HttpServletRequest), en lugar de las PortletSession y PortletRequest, respectivamente.
+We have just put the data in the user session so the BIRT servlet can read it. If you noticed, there is no APPLICATION_SCOPE anywhere. That is because this code example is for a Struts portlet, so we work directly with the HttpSession (obtained from an HttpServletRequest) instead of the PortletSession and PortletRequest.
 
-Independientemente del tipo de portlet, la "vista" a utilizar será un JSP que presente el report. En este JSP podemos incluir un IFRAME que haga la petición al servlet de BIRT, que inmediatamente leerá los datos de la sesión de usuario, presentando el report.
+Whatever the portlet type, the "view" will be a JSP that displays the report. In that JSP we can include an IFRAME that makes the request to the BIRT servlet, which immediately reads the data from the user session and renders the report.
 
-Para hacer la petición en el JSP:
+To make the request in the JSP:
 
 ```html
 <iframe title="Impresión en PDF" style="height:500px;width:98%" src="<%=themeDisplay.getURLPortal() %>/birt"/>
 ```
 
-## PRESENTACIÓN DEL REPORT
+## Displaying the report
 
-Para que el report sepa interpretar los datos que le llegan por sesión, es necesario codificar el ScriptedDatasource. Esto se realiza en los diferentes eventos del DataSet (open, fetch,...):
+For the report to understand the data it receives through the session, we have to write the ScriptedDatasource. This is done in the different events of the DataSet (open, fetch, ...):
 
 ```javascript
 importPackage(Packages.java.lang);
@@ -271,10 +271,10 @@ importPackage(Packages.es.un.paquete.common.birt);
 objeto = contexto.get("MIS_DATOS_A_BIRT_KEY");
 ```
 
-Ahora ya sólo queda construir el DataSet en función de los atributos del objeto Java que recibe el report y, por código, enlazar cada columna del dataset con los valores del atributo, en el evento fetch del dataset:
+All that is left is to build the DataSet from the attributes of the Java object the report receives and, in code, bind each column of the dataset to the attribute values, in the dataset's fetch event:
 
 ```javascript
 row["MI_ATRIBUTO"] = objeto.getMiAtributo();
 ```
 
-El report debería recibir la información correctamente, asociar los valores al dataset y, por tanto, visualizar todo en un PDF.
+The report should receive the information correctly, bind the values to the dataset and, as a result, show everything in a PDF.

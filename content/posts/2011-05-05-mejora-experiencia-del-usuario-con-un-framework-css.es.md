@@ -7,8 +7,8 @@ categories: [CSS]
 tags: ["css", "framework", "blueprint", "960gs", "cssgrid", "yui"]
 type: post
 weight: 1
-language: es
 showTableOfContents: true
+translationKey: improve-user-experience-with-a-css-framework
 ---
 
 Particularmente soy de la opinión de que una muy buena aplicación puede caer en el olvido si su aspecto es «feo»: puede utilizar los recursos de una manera extra óptima, o los algoritmos utilizados en sus tripas pueden tener un diseño magistral, pero si la interfaz del usuario deja que desear, es muy posible que un usuario no lo valore tanto.Es por ello que voy a hablaros hoy de jQuery y de las ventajas de utilizar un framework frente a no usarlo.

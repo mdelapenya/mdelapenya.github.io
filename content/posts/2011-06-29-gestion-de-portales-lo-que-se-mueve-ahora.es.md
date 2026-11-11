@@ -7,8 +7,8 @@ categories: [Desarrollo Web, Liferay]
 tags: ["liferay", "oracle", "fatwire", "portal", "oracle-portal", "weblogic", "oas", "java"]
 type: post
 weight: 1
-language: es
 showTableOfContents: true
+translationKey: portal-management-what-is-moving-now
 ---
 
 Comentando con mi compañero, amigo y experto en Oracle Moisés Espinosa ([https://moisesespinosa.wordpress.com](https://moisesespinosa.wordpress.com), [@moikmeg](http://twitter.com/#!/moikmeg)) sobre la [adquisición de Fatwire por Oracle](http://www.oracle.com/us/corporate/press/418753), nos surgieron varias conversaciones sobre el tema.
