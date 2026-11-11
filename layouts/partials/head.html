@@ -14,7 +14,7 @@
 
     {{ $title := .Title | markdownify | default .Site.Title }}
     {{ $description := ((.Description | default (.Summary | default .Content) | default .Site.Params.Description) | plainify | truncate 160) }}
-    {{ $image := .Params.image | default (.Scratch.Get "avatarImgSrc") }}
+    {{ $image := (partial "source-param.html" (dict "page" . "key" "image")) | default (.Scratch.Get "avatarImgSrc") }}
     {{ $siteKeywords := .Site.Params.MetaKeywords | default (slice) }}
     {{ $postKeywords := .Params.tags | default (slice) }}
     {{ $keywords := union $siteKeywords $postKeywords }}

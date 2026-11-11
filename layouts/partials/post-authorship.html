@@ -1,5 +1,5 @@
 {{ $lang := .Params.language | default .Language.Lang }}
-{{ if .Params.ai }}
+{{ if (partial "source-param.html" (dict "page" . "key" "ai")) }}
 <div class="post-authorship post-authorship-ai">
     <span class="post-authorship-icon">🤖</span>
     {{ if eq $lang "es" }}
