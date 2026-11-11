@@ -14,6 +14,7 @@ related:
   - "/posts/2026-09-29-isolate-the-agent-keep-your-tools"
   - "/posts/2026-09-23-yolo-mode-can-be-safe"
   - "/posts/2026-09-25-kits-make-authority-portable"
+translationKey: run-your-testcontainers-in-a-docker-sandbox
 ---
 
 ![Run Your Testcontainers in a Docker Sandbox](/images/posts/2026-10-29-run-your-testcontainers-in-a-docker-sandbox/cover.png)

@@ -12,6 +12,7 @@ image: "/images/posts/2026-09-02-three-repos-one-sandbox-two-files/cover.png"
 related:
   - "/posts/2026-04-14-building-a-real-app-inside-a-docker-sandbox"
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
+translationKey: three-repos-one-sandbox-two-files
 ---
 
 ![Three Repos, One Sandbox, Two Files](/images/posts/2026-09-02-three-repos-one-sandbox-two-files/cover.png)

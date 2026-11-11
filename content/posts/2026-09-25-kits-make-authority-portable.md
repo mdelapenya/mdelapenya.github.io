@@ -13,6 +13,7 @@ related:
   - "/posts/2026-09-23-yolo-mode-can-be-safe"
   - "/posts/2026-09-02-three-repos-one-sandbox-two-files"
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
+translationKey: kits-make-authority-portable
 ---
 
 ![Understanding Docker Sandboxes: Containers Made Software Portable. Kits Make Authority Portable.](/images/posts/2026-09-25-kits-make-authority-portable/cover.png)
