@@ -5,7 +5,6 @@ description: "Renfe tardó años y 164 millones de euros en renovar su web. Yo c
 categories: [Technology, AI, Software Development]
 tags: ["renfe", "docker-sandboxes", "open-data", "coding-agents", "spain"]
 type: post
-language: es
 weight: 30
 showTableOfContents: true
 ai: true
@@ -13,6 +12,7 @@ image: "/images/posts/2026-04-22-por-que-construi-un-visor-de-trenes-en-tiempo-r
 related:
   - "/posts/2026-04-14-building-a-real-app-inside-a-docker-sandbox"
   - "/posts/2026-05-21-haciendo-webs-ultraligeras"
+translationKey: why-i-built-a-real-time-train-viewer
 ---
 
 ![Por qué construí un visor de trenes en tiempo real](/images/posts/2026-04-22-por-que-construi-un-visor-de-trenes-en-tiempo-real/cover.png)

@@ -7,8 +7,8 @@ categories: [Liferay, "Desarrollo Web"]
 tags: ["birt", "eclipse", "java", "liferay", "plugins", "portal", "reports", "servlets"]
 type: post
 weight: 1
-language: es
 showTableOfContents: true
+translationKey: integrating-liferay-with-birt
 ---
 
 Una de las principales funcionalidades en las aplicaciones de gestión es la de presentación de información en un formato imprimible, ya sea PDF, Excel, Word, etc. Por ello hoy voy a contar cómo integrar un motor de informes como es Eclipse BIRT con Liferay.

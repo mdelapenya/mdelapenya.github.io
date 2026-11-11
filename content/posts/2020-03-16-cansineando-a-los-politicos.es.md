@@ -6,9 +6,9 @@ description: "Cansineando a los políticos"
 categories: [Política, Cansino]
 tags: ["open-source", "golang", "observability", "elasticsearch", "kibana", "apm"]
 type: post
-language: es
 weight: 25
 showTableOfContents: true
+translationKey: cansino-chasing-politicians-through-their-agendas
 ---
 
 A veces los políticos y las políticas de turno hablan mucho sobre lo que ellos dicen que es importante para la ciudadanía, y a su vez, muchas otras veces encontramos que no hacen lo que dicen.

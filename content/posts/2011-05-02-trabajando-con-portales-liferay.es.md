@@ -7,8 +7,8 @@ categories: [Liferay, "Desarrollo Web"]
 tags: ["liferay", "portal", "open-source", "java"]
 type: post
 weight: 1
-language: es
 showTableOfContents: true
+translationKey: working-with-liferay-portals
 ---
 
 En este post querría mostrar brevemente las ventajas de utilizar un producto Open Source como Liferay Portal como gestor de portales.

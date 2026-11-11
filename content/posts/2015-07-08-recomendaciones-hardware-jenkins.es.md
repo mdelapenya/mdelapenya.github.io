@@ -6,8 +6,8 @@ categories: jenkins
 tags: [jenkins, hardware]
 type: post
 weight: 25
-language: es
 showTableOfContents: true
+translationKey: hardware-recommendations-for-jenkins
 ---
 
 *Toda esta información ha sido obtenida del paper técnico 'Jenkins Continuous Integration Cookbook' de CloudBees, el cual traduzco al castellano.*

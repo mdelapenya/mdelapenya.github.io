@@ -7,8 +7,8 @@ categories: [Liferay]
 tags: ["liferay", "struts", "ajax", "jquery", "portlet", "java", "servlets"]
 type: post
 weight: 1
-language: es
 showTableOfContents: true
+translationKey: ajax-in-a-struts-portlet-on-liferay
 ---
 
 En esta entrada me gustaría enseñar cómo realizar un uso específico de Ajax para presentar datos dentro de un portlet de Struts, lo cual considero bastante habitual en las aplicaciones de gestión.
