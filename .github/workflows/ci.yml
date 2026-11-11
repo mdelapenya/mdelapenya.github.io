@@ -47,6 +47,9 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Check translation front matter
+        run: make i18n-test i18n-check
+
       - name: Start Hugo dev server
         run: make serve
 
