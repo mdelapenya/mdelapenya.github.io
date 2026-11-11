@@ -14,6 +14,7 @@ related:
   - "/posts/2026-10-25-the-mister-file-by-file"
   - "/posts/2026-08-28-four-agents-four-machines-one-developer"
   - "/posts/2026-03-25-skills-are-roles-not-commands"
+translationKey: i-was-the-message-bus
 ---
 
 ![I Was the Message Bus](/images/posts/2026-10-12-i-was-the-message-bus/cover.png)

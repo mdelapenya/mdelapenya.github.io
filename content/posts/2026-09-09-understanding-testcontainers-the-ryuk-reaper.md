@@ -14,6 +14,7 @@ related:
   - "/posts/2026-07-07-understanding-testcontainers-networks"
   - "/posts/2026-06-25-understanding-testcontainers-the-module-layer"
   - "/posts/2026-07-15-understanding-testcontainers-testing-lambdas-with-localstack"
+translationKey: understanding-testcontainers-the-ryuk-reaper
 ---
 
 ![Understanding Testcontainers: The Ryuk Reaper](/images/posts/2026-09-09-understanding-testcontainers-the-ryuk-reaper/cover.png)

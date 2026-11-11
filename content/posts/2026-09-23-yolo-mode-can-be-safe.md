@@ -14,6 +14,7 @@ related:
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
   - "/posts/2026-03-18-the-six-levels-of-ai-assisted-development"
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
+translationKey: yolo-mode-can-be-safe
 ---
 
 ![Understanding Docker Sandboxes: YOLO Mode Can Be Safe](/images/posts/2026-09-23-yolo-mode-can-be-safe/cover.png)

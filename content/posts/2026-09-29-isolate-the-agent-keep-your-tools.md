@@ -15,6 +15,7 @@ related:
   - "/posts/2026-08-28-four-agents-four-machines-one-developer"
   - "/posts/2026-03-13-choosing-a-terminal-for-agentic-development"
   - "/posts/2026-09-02-three-repos-one-sandbox-two-files"
+translationKey: isolate-the-agent-keep-your-tools
 ---
 
 ![Understanding Docker Sandboxes: Isolate the Agent, Keep Your Tools](/images/posts/2026-09-29-isolate-the-agent-keep-your-tools/cover.png)

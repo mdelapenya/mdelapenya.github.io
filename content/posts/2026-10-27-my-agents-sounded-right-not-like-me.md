@@ -12,6 +12,7 @@ image: "/images/posts/2026-10-27-my-agents-sounded-right-not-like-me/cover.png"
 related:
   - "/posts/2026-03-25-skills-are-roles-not-commands"
   - "/posts/2026-04-30-my-pr-has-a-lawyer-a-nurse-a-detective-and-a-scribe"
+translationKey: my-agents-sounded-right-not-like-me
 ---
 
 ![My Agents Sounded Right. Not Like Me.](/images/posts/2026-10-27-my-agents-sounded-right-not-like-me/cover.png)

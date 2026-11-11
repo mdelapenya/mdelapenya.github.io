@@ -13,6 +13,7 @@ related:
   - "/posts/2026-10-09-a-cheaper-model-can-be-a-better-instrument"
   - "/posts/2026-10-12-i-was-the-message-bus"
   - "/posts/2026-03-25-skills-are-roles-not-commands"
+translationKey: the-mister-file-by-file
 ---
 
 ![The Mister, File by File](/images/posts/2026-10-25-the-mister-file-by-file/cover.png)
