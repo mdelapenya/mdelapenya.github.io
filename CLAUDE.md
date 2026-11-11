@@ -46,6 +46,21 @@ image: "/images/posts/..."  # optional cover image
 ---
 ```
 
+### Translations (i18n)
+
+English is the default language and lives at the root; Spanish lives under `/es/`. A post and its translation are paired by a shared `translationKey` in the front matter. The translation is a sibling file `<slug-in-target-language>.es.md` in `content/posts/`, so its URL comes from its own filename.
+
+```yaml
+translationKey: skills-are-roles-not-commands   # same value in both files
+translatedFrom: f4d2f0c                         # short SHA of the source at translation time (translation only)
+```
+
+- `tags` and `categories` are never translated; `date` is identical in both files.
+- Pages without a translation in the reader's language show a notice (`[params.untranslated]` in `hugo.toml`); UI strings live in `i18n/*.toml`.
+- Language is chosen client-side: `localStorage.lang` (set by the EN/ES selector) beats the browser language. See `layouts/partials/language-detect.html`.
+- `/langmap.json` lets `layouts/404.html` redirect a request for a slug in the other language.
+- Tests: `tests/i18n/`.
+
 ### Talks (`content/talks/_index.md`)
 
 Single `_index.md` file with all talks listed by year. Each entry includes conference name, title, URL, video link, and slides link. Slides PDFs live in `static/slides/`.
