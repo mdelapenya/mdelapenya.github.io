@@ -1,4 +1,4 @@
-{{ $lang := .Params.language | default "en" }}
+{{ $lang := .Params.language | default .Language.Lang }}
 {{ if .Params.ai }}
 <div class="post-authorship post-authorship-ai">
     <span class="post-authorship-icon">🤖</span>

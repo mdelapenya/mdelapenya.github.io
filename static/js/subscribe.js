@@ -19,6 +19,7 @@
   var button = document.getElementById("subscribe-button");
   var countText = document.getElementById("subscribe-count-text");
   var errorMessage = document.getElementById("subscribe-error-message");
+  var t = box.dataset;
 
   function showState(state) {
     [formState, successState, alreadyState, errorState].forEach(function (el) {
@@ -39,13 +40,13 @@
   // Fetch subscriber count
   if (DEV_MODE) {
     console.log("[subscribe] dev mode: skipping count fetch");
-    countText.textContent = "Join 42 other subscribers. (dev mode)";
+    countText.textContent = t.countDev;
   } else {
     fetch(API_BASE + "/count")
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (data.count && data.count > 0) {
-          countText.textContent = "Join " + data.count + " other subscriber" + (data.count !== 1 ? "s" : "") + ".";
+          countText.textContent = (data.count === 1 ? t.countOne : t.countMany).replace("{n}", data.count);
         }
       })
       .catch(function () {
@@ -62,14 +63,14 @@
       if (!email) return;
 
       button.disabled = true;
-      button.textContent = "Subscribing...";
+      button.textContent = t.subscribing;
 
       if (DEV_MODE) {
         console.log("[subscribe] dev mode: would subscribe", email, "from", window.location.pathname);
         localStorage.setItem(STORAGE_KEY, String(Date.now()));
         showState(successState);
         button.disabled = false;
-        button.textContent = "Subscribe";
+        button.textContent = t.subscribe;
         return;
       }
 
@@ -91,12 +92,12 @@
           showState(successState);
         })
         .catch(function (err) {
-          errorMessage.textContent = err.message || "Please try again later.";
+          errorMessage.textContent = err.message || t.errorDefault;
           showState(errorState);
         })
         .finally(function () {
           button.disabled = false;
-          button.textContent = "Subscribe";
+          button.textContent = t.subscribe;
           if (window.turnstile) { turnstile.reset(); }
         });
     });

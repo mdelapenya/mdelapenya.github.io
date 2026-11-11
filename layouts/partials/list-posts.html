@@ -1,10 +1,7 @@
-{{ $flag := "🇺🇸" }}
-{{ if eq .Params.language "es" }}
-  {{ $flag = "🇪🇸" }}
-{{ end }}
-
+{{ $page := . }}
 <div class="post-title">
-     <a href="{{ .Permalink }}" class="post-link">{{ if .Params.ai }}<span class="post-author-type" title="This post has been fully generated with AI">🤖</span>{{ else }}<span class="post-author-type" title="No AI has been harmed in the writing of this post">🧑</span>{{ end }} <span class="post-language">{{ $flag }}</span> {{ .Title | markdownify }}</a>
+     <a href="{{ .Permalink }}" class="post-link">{{ if .Params.ai }}<span class="post-author-type" title="{{ i18n "aiAuthored" }}">🤖</span>{{ else }}<span class="post-author-type" title="{{ i18n "humanAuthored" }}">🧑</span>{{ end }}{{ with .Params.language }}{{ if ne . $page.Language.Lang }} <span class="post-language">{{ upper . }}</span>{{ end }}{{ end }} {{ .Title | markdownify }}</a>
+     {{ range .Translations }}<span class="post-translation" lang="{{ .Language.Lang }}" title="{{ i18n "alsoAvailableIn" }} {{ .Language.Label }}">{{ upper .Language.Lang }}</span>{{ end }}
      {{/* Decide to display the date based on the tags */}}
      {{ $displayDate := true }}
      {{ $tagsHidePostDate := or .Site.Params.Hidden.TagsPostDate slice }}

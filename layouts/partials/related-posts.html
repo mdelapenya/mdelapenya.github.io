@@ -1,9 +1,11 @@
 {{ with .Params.related }}
 <div class="related-posts">
-    <h3>Related posts</h3>
+    <h3>{{ i18n "relatedPosts" }}</h3>
     <div class="related-posts-grid">
         {{ range . }}
-            {{ $post := site.GetPage . }}
+            {{ $path := . }}
+            {{ $post := site.GetPage $path }}
+            {{ if not $post }}{{ range hugo.Sites }}{{ if not $post }}{{ $post = .GetPage $path }}{{ end }}{{ end }}{{ end }}
             {{ if $post }}
             <a class="related-post-card" href="{{ $post.RelPermalink }}">
                 {{ if $post.Params.image }}
