@@ -26,7 +26,7 @@ Conducir con Autopilot por una autopista despejada impresiona de verdad. El coch
 
 Con los agentes pasa lo mismo en las tareas sencillas. ¿Escribir tests de integración siguiendo un patrón ya establecido? ¿Migrar módulos a una API nueva? El agente lo resuelve rápido y bien, sobre todo si has fijado tú el patrón antes.
 
-Lo viví en primera persona [refactorizando 60 módulos Go en Testcontainers](/posts/2025-10-10-coding-agents). Después de migrar a mano 19 módulos para aprender el patrón, usé Claude Code para migrar los 41 restantes en solo 3 días: una mejora de **5x**. Una vez confirmado que el patrón funcionaba, el agente lo aplicó en todos los módulos que quedaban sin variaciones, sin errores de copiar y pegar y sin olvidarse de ningún paso.
+Lo viví en primera persona [refactorizando 60 módulos Go en Testcontainers](/es/posts/2025-10-10-refactorizando-60-modulos-de-go-con-un-agente/). Después de migrar a mano 19 módulos para aprender el patrón, usé Claude Code para migrar los 41 restantes en solo 3 días: una mejora de **5x**. Una vez confirmado que el patrón funcionaba, el agente lo aplicó en todos los módulos que quedaban sin variaciones, sin errores de copiar y pegar y sin olvidarse de ningún paso.
 
 ## La ciudad: cuando importa el criterio
 

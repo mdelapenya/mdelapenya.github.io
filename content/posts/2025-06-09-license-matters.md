@@ -8,6 +8,7 @@ tags: ["open-source", "license", "oss", "mit", "apache", "codebase", "merge", "r
 type: post
 weight: 25
 showTableOfContents: true
+translationKey: license-matters
 ---
 
 ![Illustration representing OSS license merging](/images/posts/2025-06-09-license-matters/cover.png)

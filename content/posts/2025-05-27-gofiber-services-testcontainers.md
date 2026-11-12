@@ -8,6 +8,7 @@ tags: ["go", "gofiber", "testcontainers", "air", "local-development", "gorm", "p
 type: post
 weight: 25
 showTableOfContents: true
+translationKey: gofiber-services-testcontainers
 ---
 
 ![Fiber v3 + Testcontainers](/images/posts/2025-05-27-gofiber-services-testcontainers/cover.png)

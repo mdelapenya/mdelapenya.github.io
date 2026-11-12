@@ -8,6 +8,7 @@ tags: ["go", "containers", "docker", "containerdays", "conference"]
 type: post
 weight: 26
 showTableOfContents: true
+translationKey: containerdays
 ---
 
 ![A puzzle representing Hamburg's port](/images/posts/2025-09-17-containerdays/cover.jpg)

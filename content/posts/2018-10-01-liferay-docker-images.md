@@ -7,6 +7,7 @@ tags: [liferay, docker]
 type: post
 weight: 25
 showTableOfContents: true
+translationKey: liferay-docker-images
 ---
 
 Hi Liferayers! We'd like to share with you that we have created non-official, public Docker images from our master branch! And we are releasing them every day.

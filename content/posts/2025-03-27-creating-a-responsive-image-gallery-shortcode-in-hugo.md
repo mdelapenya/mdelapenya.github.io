@@ -7,6 +7,7 @@ tags: ["hugo", "shortcode", "gallery", "tutorial"]
 type: post
 weight: 25
 showTableOfContents: true
+translationKey: creating-a-responsive-image-gallery-shortcode-in-hugo
 ---
 
 In this tutorial, I'll walk you through creating a responsive image gallery shortcode for Hugo that includes a modal view for full-size images. This solution provides a clean, grid-based layout with thumbnail images that expand to full size when clicked.

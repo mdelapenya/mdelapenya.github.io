@@ -98,7 +98,7 @@ Tres pasos. Primero, recoger los ajustes locales del módulo a partir de las opc
 
 El orden "opciones base primero, opciones del usuario al final" es deliberado. Permite al usuario sobrescribir cualquier cosa que el módulo fije por defecto: si pasas `testcontainers.WithEnv(map[string]string{"POSTGRES_USER": "alice"})`, tu entrada de entorno se ejecuta después de la del módulo y gana.
 
-Que esta forma sea tan consistente en los 65 módulos es el resultado de una migración deliberada. La forma antigua, `RunContainer` (de la que hablo más abajo), no recibía la imagen como argumento y los cuerpos de los módulos eran menos uniformes. Migré a mano los primeros diecinueve módulos a la forma actual `Run(ctx, img, opts...)` para fijar el patrón, y después usé un agente de IA para programar los cuarenta y uno restantes. El antes y el después, y lo que aprendí trabajando en pareja con el agente en un refactor repetitivo a esa escala, está en [Refactorizando 60 módulos de Go con un agente de IA](/posts/2025-10-10-coding-agents).
+Que esta forma sea tan consistente en los 65 módulos es el resultado de una migración deliberada. La forma antigua, `RunContainer` (de la que hablo más abajo), no recibía la imagen como argumento y los cuerpos de los módulos eran menos uniformes. Migré a mano los primeros diecinueve módulos a la forma actual `Run(ctx, img, opts...)` para fijar el patrón, y después usé un agente de IA para programar los cuarenta y uno restantes. El antes y el después, y lo que aprendí trabajando en pareja con el agente en un refactor repetitivo a esa escala, está en [Refactorizando 60 módulos de Go con un agente de IA](/es/posts/2025-10-10-refactorizando-60-modulos-de-go-con-un-agente/).
 
 ## Opciones base que aplican todos los módulos
 
