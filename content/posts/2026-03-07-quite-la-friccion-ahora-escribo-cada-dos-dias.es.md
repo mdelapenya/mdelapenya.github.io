@@ -18,7 +18,7 @@ La fricción nunca fue una sola cosa. Era tener que mantener todo el proceso en 
 
 Ahora escribo a ratos de 5-10 minutos. Cambio a una tarea del blog, la avanzo un paso y vuelvo a lo que estuviera haciendo. El proceso ya no vive en mi cabeza. Vive en cinco archivos `SKILL.md` que recuerdan dónde lo dejé y qué viene después.
 
-Si te das una vuelta por la [lista de posts](/posts/), verás dos iconos junto a cada uno: 🤖 para los generados con IA, 🧑 para los escritos por una persona. Cada post lleva además un banner arriba que indica cuál es. Es un campo del front matter (`ai: true`) que las skills rellenan solas al redactar el borrador. A partir de ahora, todos los posts irán etiquetados. La transparencia es el punto de partida, no un añadido de última hora.
+Si te das una vuelta por la [lista de posts](/es/posts/), verás dos iconos junto a cada uno: 🤖 para los generados con IA, 🧑 para los escritos por una persona. Cada post lleva además un banner arriba que indica cuál es. Es un campo del front matter (`ai: true`) que las skills rellenan solas al redactar el borrador. A partir de ahora, todos los posts irán etiquetados. La transparencia es el punto de partida, no un añadido de última hora.
 
 ## Los cinco puntos de fricción
 
