@@ -12,6 +12,7 @@ image: "/images/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-modul
 related:
   - "/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day"
   - "/posts/2025-05-27-gofiber-services-testcontainers"
+translationKey: subscriptions-from-idea-to-testcontainers-module
 ---
 
 ![Subscriptions: From Idea to Testcontainers Module](/images/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module/cover.png)

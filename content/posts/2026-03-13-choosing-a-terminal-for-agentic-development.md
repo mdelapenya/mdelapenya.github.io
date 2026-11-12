@@ -13,6 +13,7 @@ related:
   - "/posts/2026-03-11-coding-agents-as-exploratory-testers"
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
+translationKey: choosing-a-terminal-for-agentic-development
 ---
 
 ![Choosing a Terminal for Agentic Development](/images/posts/2026-03-13-choosing-a-terminal-for-agentic-development/cover.png)

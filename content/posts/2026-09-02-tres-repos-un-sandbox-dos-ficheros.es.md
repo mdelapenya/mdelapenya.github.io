@@ -24,7 +24,7 @@ Este es el problema. La especificación del kit gana un campo. El motor tiene qu
 
 Un agente limitado a un repo no puede ver una costura. Solo ve uno de sus lados.
 
-Ya escribí sobre [ejecutar varios agentes en paralelo con sandboxes y git worktrees](/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows), y sobre [construir una app real dentro de un único sandbox](/posts/2026-04-14-building-a-real-app-inside-a-docker-sandbox). Los dos parten de la misma unidad: un agente, un repositorio, una rama. Esa suposición está bien cuando el trabajo cabe en un repo. Este trabajo no cabe.
+Ya escribí sobre [ejecutar varios agentes en paralelo con sandboxes y git worktrees](/es/posts/2026-02-25-agentes-de-codigo-en-paralelo-con-docker-sandboxes/), y sobre [construir una app real dentro de un único sandbox](/es/posts/2026-04-14-construir-una-app-real-dentro-de-docker-sandbox/). Los dos parten de la misma unidad: un agente, un repositorio, una rama. Esa suposición está bien cuando el trabajo cabe en un repo. Este trabajo no cabe.
 
 Así que la unidad tenía que cambiar. No un sandbox por repo, sino un sandbox con los tres dentro y el agente libre para moverse entre ellos.
 
@@ -87,7 +87,7 @@ Campo a campo, lo que aporta cada uno:
 
 **`workspace`** es el repo sobre el que se crea el sandbox. **`additionalWorkspaces`** son los demás. La distinción importa menos que el hecho de que los tres llegan en el momento de la creación, ya declarados.
 
-**`kits`** son capacidades que se añaden al sandbox. Uno me da firma de commits por SSH dentro del sandbox, el otro instala la superficie de control de agentes de la que [escribí la semana pasada](/posts/2026-08-28-four-agents-four-machines-one-developer). Son artefactos OCI, así que se versionan como cualquier cosa que te descargas de un registry, y si estás consumiendo un kit en lugar de desarrollarlo, te conviene un digest en vez de un tag:
+**`kits`** son capacidades que se añaden al sandbox. Uno me da firma de commits por SSH dentro del sandbox, el otro instala la superficie de control de agentes de la que [escribí la semana pasada](/es/posts/2026-08-28-cuatro-agentes-cuatro-maquinas-un-desarrollador/). Son artefactos OCI, así que se versionan como cualquier cosa que te descargas de un registry, y si estás consumiendo un kit en lugar de desarrollarlo, te conviene un digest en vez de un tag:
 
 ```bash
 docker buildx imagetools inspect docker.io/sbx/git-ssh-sign-kit:latest
@@ -149,7 +149,7 @@ Nada de esto valdría mucho si las reglas solo existieran en mi portátil, así 
 
 Las reglas, junto con una [skill de rol](/es/posts/2026-03-25-las-skills-son-roles-no-comandos/) para el triaje de issues, vienen de un kit. Es interno, así que no puedes descargarlo, pero el mecanismo es el de siempre: un kit añade capacidad a un sandbox, y "cómo trabajamos aquí" resulta ser una capacidad como cualquier otra.
 
-Las [skills que guardo en el host](/posts/2026-04-30-my-pr-has-a-lawyer-a-nurse-a-detective-and-a-scribe) llegan de otra forma:
+Las [skills que guardo en el host](/es/posts/2026-04-30-mi-pr-tiene-abogado-enfermera-detective-y-escriba/) llegan de otra forma:
 
 ```bash
 sbx skills import --dry-run
@@ -172,7 +172,7 @@ El fichero del entorno solo te da tres repos en un sistema de ficheros compartid
 
 Las reglas solas te dan reglas sin un sitio donde aplicarlas. Cada sesión empieza reconstruyendo el entorno que las reglas dan por supuesto, y describir una configuración con precisión no es lo mismo que poder reproducirla.
 
-Juntos hacen el entorno reproducible en los dos sentidos que importan: los mismos ficheros y el mismo comportamiento encima. Eso es lo que de verdad quiero de "como código" y lo que declarar solo la máquina nunca me dio. Es también la misma lección que aprendimos a escala de equipo, donde [la forma de trabajar de una flota de agentes](/posts/2026-05-04-a-virtual-agent-team-at-docker) tuvo que escribirse antes de poder compartirse.
+Juntos hacen el entorno reproducible en los dos sentidos que importan: los mismos ficheros y el mismo comportamiento encima. Eso es lo que de verdad quiero de "como código" y lo que declarar solo la máquina nunca me dio. Es también la misma lección que aprendimos a escala de equipo, donde [la forma de trabajar de una flota de agentes](/es/posts/2026-05-04-un-equipo-virtual-de-agentes-en-docker/) tuvo que escribirse antes de poder compartirse.
 
 No voy a fingir que el fichero de reglas se diseñó. Creció, y la forma honesta de leerlo es como una lista de cosas que salieron mal una vez, cada una anotada en el momento en que anotarla se volvió más barato que ser cuidadoso. Las dos reglas que encabezan el fichero son las dos que se han roto.
 

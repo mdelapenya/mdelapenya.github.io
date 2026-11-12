@@ -13,6 +13,7 @@ related:
   - "/posts/2026-03-18-the-six-levels-of-ai-assisted-development"
   - "/posts/2026-03-25-skills-are-roles-not-commands"
   - "/posts/2026-04-01-quality-assurance-vs-quality-assistance"
+translationKey: code-is-a-cache
 ---
 
 ![Code Is a Cache](/images/posts/2026-08-05-code-is-a-cache/cover.png)

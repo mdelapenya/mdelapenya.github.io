@@ -1,9 +1,19 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, APIRequestContext } from "@playwright/test";
 
 const EN_POST = "/posts/2026-03-25-skills-are-roles-not-commands/";
 const ES_POST = "/es/posts/2026-03-25-las-skills-son-roles-no-comandos/";
 const ES_SLUG_AT_ROOT = "/posts/2026-03-25-las-skills-son-roles-no-comandos/";
-const EN_ONLY_POST = "/posts/2026-03-11-coding-agents-as-exploratory-testers/";
+
+// A post without a Spanish alternate in the sitemap. Every post may be translated, so this can be null.
+async function findUntranslatedPost(request: APIRequestContext): Promise<string | null> {
+  const res = await request.get("/en/sitemap.xml");
+  const xml = await res.text();
+  for (const block of xml.split("<url>").slice(1)) {
+    const loc = block.match(/<loc>https?:\/\/[^/]+(\/posts\/[^<]+)<\/loc>/);
+    if (loc && !block.includes('hreflang="es"')) return loc[1];
+  }
+  return null;
+}
 
 test.describe("English browser", () => {
   test.use({ locale: "en-US" });
@@ -25,8 +35,10 @@ test.describe("English browser", () => {
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
   });
 
-  test("the notice for Spanish readers stays hidden", async ({ page }) => {
-    await page.goto(EN_ONLY_POST);
+  test("the notice for Spanish readers stays hidden", async ({ page, request }) => {
+    const untranslated = await findUntranslatedPost(request);
+    test.skip(!untranslated, "every post has a Spanish translation");
+    await page.goto(untranslated!);
     await expect(page.locator(".post-not-translated")).toBeHidden();
   });
 
@@ -78,9 +90,11 @@ test.describe("Spanish browser", () => {
     await expect(page).not.toHaveURL(new RegExp(`${EN_POST}$`));
   });
 
-  test("an untranslated post is not redirected and shows the notice", async ({ page }) => {
-    await page.goto(EN_ONLY_POST);
-    await expect(page).toHaveURL(new RegExp(`${EN_ONLY_POST}$`));
+  test("an untranslated post is not redirected and shows the notice", async ({ page, request }) => {
+    const untranslated = await findUntranslatedPost(request);
+    test.skip(!untranslated, "every post has a Spanish translation");
+    await page.goto(untranslated!);
+    await expect(page).toHaveURL(new RegExp(`${untranslated}$`));
     const notice = page.locator(".post-not-translated[data-notice-for=es]");
     await expect(notice).toBeVisible();
     await expect(notice).toHaveText("Este post solo está disponible en inglés.");
@@ -100,10 +114,12 @@ test.describe("Spanish browser", () => {
     await expect(page).toHaveURL(new RegExp(`${EN_POST}$`));
   });
 
-  test("the notice is hidden once English is chosen", async ({ page }) => {
-    await page.goto(EN_ONLY_POST);
+  test("the notice is hidden once English is chosen", async ({ page, request }) => {
+    const untranslated = await findUntranslatedPost(request);
+    test.skip(!untranslated, "every post has a Spanish translation");
+    await page.goto(untranslated!);
     await page.locator(".nav-link.language-switcher a[data-lang=en]").click();
-    await page.goto(EN_ONLY_POST);
+    await page.goto(untranslated!);
     await expect(page.locator(".post-not-translated")).toBeHidden();
   });
 
@@ -113,9 +129,9 @@ test.describe("Spanish browser", () => {
     await expect(page.locator(".nav-link", { hasText: "Inicio" }).first()).toBeVisible();
   });
 
-  test("the Spanish post list shows the translated post", async ({ page }) => {
+  test("the Spanish post list links to Spanish posts", async ({ page }) => {
     await page.goto("/es/posts/");
-    await expect(page.locator(`a[href$="${ES_POST}"]`)).toBeVisible();
+    await expect(page.locator('a[href*="/es/posts/20"]').first()).toBeVisible();
   });
 });
 

@@ -9,6 +9,7 @@ type: post
 weight: 14
 showTableOfContents: true
 ai: true
+translationKey: ai-diagnostics-ev-charger
 ---
 
 ![AI vs Traditional Diagnostics](/images/posts/2026-01-14-ai-diagnostics/cover.png)

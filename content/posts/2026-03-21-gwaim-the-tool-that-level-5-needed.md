@@ -13,6 +13,7 @@ related:
   - "/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer"
   - "/posts/2026-03-18-the-six-levels-of-ai-assisted-development"
   - "/posts/2026-03-13-choosing-a-terminal-for-agentic-development"
+translationKey: gwaim-the-tool-that-level-5-needed
 ---
 
 ![gwaim: The Tool That Level 5 Needed](/images/posts/2026-03-21-gwaim-the-tool-that-level-5-needed/cover.png)

@@ -30,7 +30,7 @@ La conclusión es errónea, y el motivo está en la primera mitad del experiment
 
 Un modelo menos capaz es un instrumento mucho mejor. Falla donde tu orden era ambigua en lugar de adivinar, y falla ahí siempre, así que el fallo señala la frase que falta. El modelo barato no me estaba diciendo que no pudiera con el trabajo. Me estaba diciendo dónde se acababa mi instrucción.
 
-Es el mismo instinto que perseguía en la [serie sobre cómo elegir el LLM más pequeño](/posts/2026-03-02-choosing-the-smallest-llm-part-1-slms-and-docker-model-runner), un nivel más arriba. Allí la pregunta era qué tamaño de modelo basta para atender una petición, y la respuesta era una propiedad de la petición. Aquí la pregunta es qué tamaño de modelo basta para ejecutar una instrucción, y la respuesta es una propiedad de la instrucción, lo que significa que puedes cambiarla escribiendo una mejor.
+Es el mismo instinto que perseguía en la [serie sobre cómo elegir el LLM más pequeño](/es/posts/2026-03-02-elegir-el-llm-mas-pequeno-parte-1/), un nivel más arriba. Allí la pregunta era qué tamaño de modelo basta para atender una petición, y la respuesta era una propiedad de la petición. Aquí la pregunta es qué tamaño de modelo basta para ejecutar una instrucción, y la respuesta es una propiedad de la instrucción, lo que significa que puedes cambiarla escribiendo una mejor.
 
 ## La pregunta de bajar de nivel
 
@@ -67,7 +67,7 @@ Tres envíos por nodo, y se acabó. Las palancas son siempre la orden, el nivel 
 
 ## Quién hace qué
 
-La skill que ejecuta todo esto es [The Mister](https://github.com/mdelapenya/coding-skills/tree/main/skills/the-mister), la sexta de [mdelapenya/coding-skills](https://github.com/mdelapenya/coding-skills). En abril escribí sobre [el abogado, la enfermera, el detective y el escriba](/posts/2026-04-30-my-pr-has-a-lawyer-a-nurse-a-detective-and-a-scribe), cuatro roles que hacen cada uno un trabajo sobre una pull request. Esta no hace ningún trabajo. Los reparte. La propia skill la construyeron dos agentes, uno en Claude Code y otro en Codex, revisándose el trabajo entre sí y conmigo dando las aprobaciones; esa es [una historia para otro post](/es/posts/2026-10-12-yo-era-el-bus-de-mensajes/).
+La skill que ejecuta todo esto es [The Mister](https://github.com/mdelapenya/coding-skills/tree/main/skills/the-mister), la sexta de [mdelapenya/coding-skills](https://github.com/mdelapenya/coding-skills). En abril escribí sobre [el abogado, la enfermera, el detective y el escriba](/es/posts/2026-04-30-mi-pr-tiene-abogado-enfermera-detective-y-escriba/), cuatro roles que hacen cada uno un trabajo sobre una pull request. Esta no hace ningún trabajo. Los reparte. La propia skill la construyeron dos agentes, uno en Claude Code y otro en Codex, revisándose el trabajo entre sí y conmigo dando las aprobaciones; esa es [una historia para otro post](/es/posts/2026-10-12-yo-era-el-bus-de-mensajes/).
 
 Un entrenador de fútbol ve a los veintidós jugadores a la vez: la forma del equipo, el hueco que se abre en la banda izquierda, el delantero que dejó de presionar hace diez minutos. Salta al campo y verás lo que ve todo el que está en él: los tres metros que tienes delante. En España al entrenador se le llama el míster, y el nombre es todo el diseño: elige a los once y lee el partido desde fuera.
 

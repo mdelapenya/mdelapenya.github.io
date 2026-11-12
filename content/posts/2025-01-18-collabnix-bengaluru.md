@@ -7,6 +7,7 @@ tags: [docker, devtools-day, bengaluru, india, community, events, testing, testc
 type: post
 weight: 25
 showTableOfContents: true
+translationKey: collabnix-bengaluru
 ---
 
 ## 5th DevTools Day Bengaluru (Collabnix Docker Community)

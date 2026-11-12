@@ -7,6 +7,7 @@ tags: [development, liferay, arquillian]
 type: post
 weight: 25
 showTableOfContents: false
+translationKey: the-plugin-worked-on-my-computer
 ---
 
 Hello my lovely Liferay developers!

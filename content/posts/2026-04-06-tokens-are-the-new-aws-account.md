@@ -15,6 +15,7 @@ related:
   - "/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day"
   - "/posts/2026-03-18-the-six-levels-of-ai-assisted-development"
   - "/posts/2026-03-25-skills-are-roles-not-commands"
+translationKey: tokens-are-the-new-aws-account
 ---
 
 ![Tokens Are the New AWS Account](/images/posts/2026-04-06-tokens-are-the-new-aws-account/cover.png)

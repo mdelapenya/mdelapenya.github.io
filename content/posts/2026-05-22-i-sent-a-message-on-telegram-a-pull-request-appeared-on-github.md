@@ -13,6 +13,7 @@ related:
   - "/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day"
   - "/posts/2026-04-27-a-personal-ai-that-reads-my-bills"
   - "/posts/2026-03-25-skills-are-roles-not-commands"
+translationKey: i-sent-a-message-on-telegram-a-pull-request-appeared-on-github
 ---
 
 ![I Sent a Message on Telegram](/images/posts/2026-05-22-i-sent-a-message-on-telegram-a-pull-request-appeared-on-github/cover.png)

@@ -8,6 +8,7 @@ tags: ["go", "ai", "coding-agents", "refactoring", "testcontainers", "claude", "
 type: post
 weight: 27
 showTableOfContents: true
+translationKey: coding-agents
 ---
 
 ![Claude, I need you!](/images/posts/2025-10-10-coding-agents/cover.png)

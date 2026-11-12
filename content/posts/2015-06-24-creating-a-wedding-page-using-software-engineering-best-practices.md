@@ -7,6 +7,7 @@ tags: [software engineering, heroku, git, instagram]
 type: post
 weight: 25
 showTableOfContents: true
+translationKey: creating-a-wedding-page-using-software-engineering-best-practices
 ---
 
 Imagine you get married next summer and you decide to have a nice website for the wedding, with some cool pictures and good information for your guests.

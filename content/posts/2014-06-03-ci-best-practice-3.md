@@ -7,6 +7,7 @@ tags: [continuous integration, ci]
 type: post
 weight: 25
 showTableOfContents: false
+translationKey: ci-best-practice-3
 ---
 
 Hi all!

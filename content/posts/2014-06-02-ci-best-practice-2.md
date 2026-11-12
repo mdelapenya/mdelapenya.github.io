@@ -7,6 +7,7 @@ tags: [continuous integration, ci]
 type: post
 weight: 25
 showTableOfContents: false
+translationKey: ci-best-practice-2
 ---
 
 Following with these blog posts series about good practices in Continuous Integration, I want to talk about the benefits of running tests.

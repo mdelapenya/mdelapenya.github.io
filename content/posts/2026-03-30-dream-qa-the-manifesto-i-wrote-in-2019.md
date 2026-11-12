@@ -13,6 +13,7 @@ related:
   - "/posts/2026-04-01-quality-assurance-vs-quality-assistance"
   - "/posts/2026-02-26-spec-driven-development-bdd-agents"
   - "/posts/2026-03-11-coding-agents-as-exploratory-testers"
+translationKey: dream-qa-the-manifesto-i-wrote-in-2019
 ---
 
 ![Dream QA: The Manifesto I Wrote in 2019](/images/posts/2026-03-30-dream-qa-the-manifesto-i-wrote-in-2019/cover.png)

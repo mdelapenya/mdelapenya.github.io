@@ -13,6 +13,7 @@ related:
   - "/posts/2026-06-10-understanding-testcontainers-from-genericcontainer-to-functional-options"
   - "/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module"
   - "/posts/2025-05-27-gofiber-services-testcontainers"
+translationKey: understanding-testcontainers-wait-strategies
 ---
 
 ![Understanding Testcontainers: The Wait Strategy Taxonomy](/images/posts/2026-06-15-understanding-testcontainers-wait-strategies/cover.png)

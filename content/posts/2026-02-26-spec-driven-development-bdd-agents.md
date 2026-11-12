@@ -12,6 +12,7 @@ image: "/images/posts/2026-02-26-spec-driven-development-bdd-agents/cover.png"
 related:
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
+translationKey: spec-driven-development-bdd-agents
 ---
 
 ![Spec-Driven Development](/images/posts/2026-02-26-spec-driven-development-bdd-agents/cover.png)

@@ -15,6 +15,7 @@ related:
   - "/posts/2026-06-10-understanding-testcontainers-from-genericcontainer-to-functional-options"
   - "/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module"
   - "/posts/2025-10-10-coding-agents"
+translationKey: understanding-testcontainers-the-module-layer
 ---
 
 ![Understanding Testcontainers: The Module Layer](/images/posts/2026-06-25-understanding-testcontainers-the-module-layer/cover.png)

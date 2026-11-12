@@ -7,6 +7,7 @@ tags: [continuous integration, ci]
 type: post
 weight: 25
 showTableOfContents: false
+translationKey: ci-best-practice-4
 ---
 
 {{< figure src="/images/after_deployment_en.jpg" alt="It's not my problem what happens after the deployment" >}}

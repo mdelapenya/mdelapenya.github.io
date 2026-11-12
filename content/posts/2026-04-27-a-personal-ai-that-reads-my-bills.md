@@ -12,6 +12,7 @@ image: "/images/posts/2026-04-27-a-personal-ai-that-reads-my-bills/cover.png"
 related:
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
   - "/posts/2026-04-14-building-a-real-app-inside-a-docker-sandbox"
+translationKey: a-personal-ai-that-reads-my-bills
 ---
 
 ![A Personal AI That Reads My Bills](/images/posts/2026-04-27-a-personal-ai-that-reads-my-bills/cover.png)

@@ -16,7 +16,7 @@ El [primer post](/es/posts/2026-09-23-entendiendo-docker-sandboxes-modo-yolo-seg
 
 Ese peaje es real en casi todas las cajas. Metes un agente en un contenedor o en una VM y tu editor no ve lo que hay dentro sin fontanería extra, tu terminal necesita un wrapper de exec y a tu harness hay que explicarle que la caja existe. O abres el puerto 22 y repartes una clave, y ahora la caja tiene una puerta. Lo habitual acaba siendo lo del primer post: el aislamiento se apaga la primera vez que estorba.
 
-`sbx run claude` te deja dentro de Claude Code en tu terminal, y `sbx run <agent>` hace lo mismo con el que prefieras. Es el valor por defecto correcto para casi todo. Pero [hace un mes saqué mis agentes de la terminal por completo](/posts/2026-08-28-four-agents-four-machines-one-developer), a una superficie de control a la que accedo desde el móvil. Después de eso, volver a "el agente vive en la pestaña de terminal donde lo lancé" no es algo que esté dispuesto a hacer solo porque ahora el agente esté en una VM.
+`sbx run claude` te deja dentro de Claude Code en tu terminal, y `sbx run <agent>` hace lo mismo con el que prefieras. Es el valor por defecto correcto para casi todo. Pero [hace un mes saqué mis agentes de la terminal por completo](/es/posts/2026-08-28-cuatro-agentes-cuatro-maquinas-un-desarrollador/), a una superficie de control a la que accedo desde el móvil. Después de eso, volver a "el agente vive en la pestaña de terminal donde lo lancé" no es algo que esté dispuesto a hacer solo porque ahora el agente esté en una VM.
 
 Así que el requisito es tajante: el sandbox es el runtime, y el harness es mío. Veamos cómo se conectan las dos cosas, y por qué no cuesta nada.
 

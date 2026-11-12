@@ -12,6 +12,7 @@ image: "/images/posts/2026-03-07-i-removed-the-friction/cover.png"
 related:
   - "/posts/2026-02-26-spec-driven-development-bdd-agents"
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
+translationKey: i-removed-the-friction-now-i-write-every-other-day
 ---
 
 ![I Removed the Friction](/images/posts/2026-03-07-i-removed-the-friction/cover.png)

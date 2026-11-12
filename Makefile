@@ -50,11 +50,12 @@ test-broadcast:
 
 # Unit tests for the translation sync script (needs Node 20+)
 i18n-test:
-	node --test scripts/translation-sync.test.mjs
+	node --test scripts/translation-sync.test.mjs scripts/translation-content.test.mjs
 
-# Report front matter drift between posts and their translations (needs Node)
+# Report front matter drift and body problems (code, URLs, typography, links) in translations (needs Node)
 i18n-check:
 	node scripts/translation-sync.mjs
+	node scripts/translation-content.mjs
 
 # Copy the synced front matter fields from each original into its translations
 i18n-sync:

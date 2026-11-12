@@ -14,6 +14,7 @@ related:
   - "/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer"
   - "/posts/2026-04-14-building-a-real-app-inside-a-docker-sandbox"
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
+translationKey: my-daily-workflow-with-biomelab
 ---
 
 ![My Daily Workflow with biomelab](/images/posts/2026-04-24-my-daily-workflow-with-biomelab/cover.png)

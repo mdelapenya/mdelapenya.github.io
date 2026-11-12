@@ -7,6 +7,7 @@ tags: [gophercon, singapore, community, events, go, genai, ollama, llms, confere
 type: post
 weight: 25
 showTableOfContents: true
+translationKey: gophercon-singapore
 ---
 
 ## GopherCon Singapore 2025

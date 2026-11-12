@@ -74,7 +74,7 @@ Hoy ha desaparecido de la mayoría de proyectos nuevos. Los navegadores modernos
 
 Después de jQuery vino la gran explosión. React, Vue, Angular. npm, webpack, Babel. El frontend se convirtió en una disciplina con su propio ecosistema, sus propias convenciones y su propia curva de aprendizaje, independiente del backend.
 
-Yo soy backend, principalmente [Go](/posts/2025-10-10-coding-agents). Ese mundo siempre fue territorio ajeno para mí. Podía construir una API robusta, diseñar un sistema de tests de integración con Testcontainers, razonar sobre concurrencia. Pero montar un proyecto de React desde cero, configurar webpack, entender el ciclo de vida de los componentes: eso requería un tiempo de inversión que no siempre tenía.
+Yo soy backend, principalmente [Go](/es/posts/2025-10-10-refactorizando-60-modulos-de-go-con-un-agente/). Ese mundo siempre fue territorio ajeno para mí. Podía construir una API robusta, diseñar un sistema de tests de integración con Testcontainers, razonar sobre concurrencia. Pero montar un proyecto de React desde cero, configurar webpack, entender el ciclo de vida de los componentes: eso requería un tiempo de inversión que no siempre tenía.
 
 Durante años esa barrera fue real. Si querías construir algo con frontend, o lo hacías tú a medias o buscabas a alguien que supiera. No había término medio.
 
@@ -84,11 +84,11 @@ El 8 de mayo estuve en el Toledo Beat Festival. Vi actuar a Ultraligera y me que
 
 Hay un [sitio oficial](https://www.ultraligera.com/), pero es un poco flojo. Así que construí el que me hubiera gustado encontrar.
 
-Lo hice dentro de un [Docker Sandbox](/posts/2026-04-14-building-a-real-app-inside-a-docker-sandbox) con Claude como agente, desplegado en Vercel. Un fan site no oficial con discografía, fechas y enlaces a Spotify y YouTube. El resultado está en [ultraligera.vercel.app](https://ultraligera.vercel.app); la [ficha del proyecto](/projects/ultraligera/) detalla las automatizaciones que mantienen los datos al día.
+Lo hice dentro de un [Docker Sandbox](/es/posts/2026-04-14-construir-una-app-real-dentro-de-docker-sandbox/) con Claude como agente, desplegado en Vercel. Un fan site no oficial con discografía, fechas y enlaces a Spotify y YouTube. El resultado está en [ultraligera.vercel.app](https://ultraligera.vercel.app); la [ficha del proyecto](/projects/ultraligera/) detalla las automatizaciones que mantienen los datos al día.
 
-Tardé un par de días. Y la clave no es que fuera rápido: es que yo, un desarrollador backend que no domina el frontend, lo construí sin bloquearme. Describí lo que quería, el agente generó el código, yo revisé y ajusté la dirección. El IDE dejó de ser el lugar donde escribes y se convirtió en el lugar donde [supervisas](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot).
+Tardé un par de días. Y la clave no es que fuera rápido: es que yo, un desarrollador backend que no domina el frontend, lo construí sin bloquearme. Describí lo que quería, el agente generó el código, yo revisé y ajusté la dirección. El IDE dejó de ser el lugar donde escribes y se convirtió en el lugar donde [supervisas](/es/posts/2026-02-24-programar-con-agentes-como-conducir-tesla-autopilot/).
 
-Eso es lo que los agentes cambian para los que no son especialistas en un área: eliminan la [barrera entre tener una idea y poder ejecutarla](/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day).
+Eso es lo que los agentes cambian para los que no son especialistas en un área: eliminan la [barrera entre tener una idea y poder ejecutarla](/es/posts/2026-03-07-quite-la-friccion-ahora-escribo-cada-dos-dias/).
 
 ## El arco se cierra
 
@@ -98,7 +98,7 @@ Mi última web es una fan page de Ultraligera, construida con Next.js y un agent
 
 El instinto es el mismo. La fricción no tiene nada que ver.
 
-No hace falta hacer un curso de 300 horas para construir tu primera web. Las herramientas de hoy hace cinco años eran ciencia ficción, y los [tokens de IA](/posts/2026-04-06-tokens-are-the-new-aws-account) comprimen años de aprendizaje en meses. Eso no significa que el conocimiento no importe. Significa que la barrera de entrada ha desaparecido, y lo que queda es la idea.
+No hace falta hacer un curso de 300 horas para construir tu primera web. Las herramientas de hoy hace cinco años eran ciencia ficción, y los [tokens de IA](/es/posts/2026-04-06-los-tokens-son-la-nueva-cuenta-de-aws/) comprimen años de aprendizaje en meses. Eso no significa que el conocimiento no importe. Significa que la barrera de entrada ha desaparecido, y lo que queda es la idea.
 
 _Recursos:_
 - _[Web en Lycos, rescatada de Web Archive](https://web.archive.org/web/20031017204440/http://usuarios.lycos.es/dorian_themight/)_
