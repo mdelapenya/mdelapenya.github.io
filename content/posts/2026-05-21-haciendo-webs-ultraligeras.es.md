@@ -84,7 +84,7 @@ El 8 de mayo estuve en el Toledo Beat Festival. Vi actuar a Ultraligera y me que
 
 Hay un [sitio oficial](https://www.ultraligera.com/), pero es un poco flojo. Así que construí el que me hubiera gustado encontrar.
 
-Lo hice dentro de un [Docker Sandbox](/es/posts/2026-04-14-construir-una-app-real-dentro-de-docker-sandbox/) con Claude como agente, desplegado en Vercel. Un fan site no oficial con discografía, fechas y enlaces a Spotify y YouTube. El resultado está en [ultraligera.vercel.app](https://ultraligera.vercel.app); la [ficha del proyecto](/projects/ultraligera/) detalla las automatizaciones que mantienen los datos al día.
+Lo hice dentro de un [Docker Sandbox](/es/posts/2026-04-14-construir-una-app-real-dentro-de-docker-sandbox/) con Claude como agente, desplegado en Vercel. Un fan site no oficial con discografía, fechas y enlaces a Spotify y YouTube. El resultado está en [ultraligera.vercel.app](https://ultraligera.vercel.app); la [ficha del proyecto](/es/projects/ultraligera/) detalla las automatizaciones que mantienen los datos al día.
 
 Tardé un par de días. Y la clave no es que fuera rápido: es que yo, un desarrollador backend que no domina el frontend, lo construí sin bloquearme. Describí lo que quería, el agente generó el código, yo revisé y ajusté la dirección. El IDE dejó de ser el lugar donde escribes y se convirtió en el lugar donde [supervisas](/es/posts/2026-02-24-programar-con-agentes-como-conducir-tesla-autopilot/).
 

@@ -9,6 +9,9 @@ import { loadGroups, langOf, POSTS_DIR } from "./translation-sync.mjs";
 // Layouts inherit these from the original, so a translation must not repeat them.
 export const INHERITED_KEYS = ["image", "related", "ai", "showTableOfContents", "language"];
 
+// Links that must carry the /es prefix in a Spanish page.
+const ENGLISH_SECTION = /^\/(projects|talks|subscribe)(\/|#|\?|$)/;
+
 const FENCE = /^\s*(```+|~~~+)/;
 
 function bodyOf(post) {
@@ -162,15 +165,55 @@ export function checkContent(dir = POSTS_DIR) {
       if (en && (spanishKeys.has(en[1]) || spanish.has(en[1]))) {
         errors.push(`${relFile}: link "${href}" points to the English URL of a post that has a Spanish version; use /es/posts/...`);
       }
+      if (ENGLISH_SECTION.test(href)) {
+        errors.push(`${relFile}: link "${href}" points to an English page that has a Spanish version; use /es${href}`);
+      }
     }
   }
 
+  return { errors, spanish, spanishKeys };
+}
+
+// Spanish pages of the sections that are translated alongside the posts (projects, talks, subscribe).
+export const PAGE_SECTIONS = ["projects", "talks", "subscribe"];
+
+export function checkPageLinks(contentDir) {
+  const errors = [];
+  const { spanish, spanishKeys } = checkContent(path.join(contentDir, "posts"));
+  for (const section of PAGE_SECTIONS) {
+    const sectionDir = path.join(contentDir, section);
+    if (!fs.existsSync(sectionDir)) continue;
+    for (const name of fs.readdirSync(sectionDir).filter((n) => langOf(n) === "es").sort()) {
+      const file = path.join(sectionDir, name);
+      const relFile = path.relative(process.cwd(), file);
+      const text = fs.readFileSync(file, "utf8");
+      for (const key of INHERITED_KEYS) {
+        if (new RegExp(`^${key}:`, "m").test(text.split(/^---\s*$/m)[1] || "")) {
+          errors.push(`${relFile}: front matter repeats "${key}", which is inherited from the English page`);
+        }
+      }
+      const { prose } = splitBody(text);
+      for (const m of proseWithoutCodeSpans(prose).matchAll(/\]\(([^)\s]+)\)/g)) {
+        const href = m[1];
+        if (/^\.{1,2}\//.test(href)) errors.push(`${relFile}: relative link "${href}" breaks under /es/; use an absolute path`);
+        else if (ENGLISH_SECTION.test(href)) errors.push(`${relFile}: link "${href}" points to an English page that has a Spanish version; use /es${href}`);
+        else {
+          const en = /^\/posts\/([^/#?]+)\/?(#.*)?$/.exec(href);
+          const es = /^\/es\/posts\/([^/#?]+)\/?(#.*)?$/.exec(href);
+          if (en && (spanishKeys.has(en[1]) || spanish.has(en[1]))) errors.push(`${relFile}: link "${href}" points to the English URL of a post that has a Spanish version; use /es/posts/...`);
+          if (es && !spanish.has(es[1])) errors.push(`${relFile}: link "${href}" points to a Spanish post that does not exist`);
+        }
+      }
+    }
+  }
   return { errors };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const dir = process.argv.find((a) => a.startsWith("--dir="))?.slice(6) || POSTS_DIR;
-  const { errors } = checkContent(dir);
+  const checks = [checkContent(dir)];
+  if (!process.argv.some((a) => a.startsWith("--dir="))) checks.push(checkPageLinks(path.resolve(dir, "..")));
+  const errors = checks.flatMap((c) => c.errors);
   if (errors.length) {
     console.error(`Translation content problems (${errors.length}):\n`);
     for (const e of errors) console.error(`  - ${e}`);

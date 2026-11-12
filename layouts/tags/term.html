@@ -24,7 +24,7 @@
 
     {{/* Display Projects */}}
     {{ if $projects }}
-    <h2 class="content-type-header">Projects</h2>
+    <h2 class="content-type-header">{{ i18n "projectsHeading" }}</h2>
     <ul class="project-list">
     {{ range $projects }}
         <li class="project-item">
@@ -41,7 +41,7 @@
 
     {{/* Show message if only projects, no posts */}}
     {{ if and (not $posts) $projects }}
-    <p class="tag-info">This tag is only used in projects. Check out <a href="/posts/">all posts</a> or <a href="/tags/">browse other tags</a>.</p>
+    <p class="tag-info">{{ i18n "tagOnlyInProjects" (dict "PostsURL" ("posts/" | relLangURL) "TagsURL" ("tags/" | relLangURL)) | safeHTML }}</p>
     {{ end }}
 
     {{ end }}

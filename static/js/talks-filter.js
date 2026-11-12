@@ -54,7 +54,9 @@
         // Update live status text.
         if (statusEl) {
             statusEl.textContent = anyInactive
-                ? `showing ${visible} of ${total} entries`
+                ? statusEl.dataset.template
+                    .replace("{visible}", visible)
+                    .replace("{total}", total)
                 : "";
         }
     }

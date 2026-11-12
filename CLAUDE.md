@@ -62,14 +62,16 @@ translatedFrom: f4d2f0c                         # short SHA of the source at tra
 - Language is chosen client-side: `localStorage.lang` (set by the EN/ES selector) beats the browser language. See `layouts/partials/language-detect.html`.
 - `/langmap.json` lets `layouts/404.html` redirect a request for a slug in the other language.
 - Tests: `tests/i18n/`.
+- Projects, talks and the subscribe page are translated too, but they are not posts: the Spanish file sits beside the English one (`content/projects/<name>.es.md`, `content/talks/_index.es.md`, `content/subscribe/_index.es.md`) and Hugo pairs them by file name, so **do not set `translationKey` on them** (an unpaired key breaks the pairing in one direction). They carry no `translatedFrom`. Inline links must be `/es/...`; `make i18n-check` fails on links to the English `/projects/`, `/talks/`, `/subscribe/`.
+- The Spanish menu in `hugo.toml` must point at `/es/...` for every internal link. Layouts and partials must build internal links with `relLangURL` (never a bare `/path/`), and any user-visible string goes through `i18n` (`i18n/en.toml` and `i18n/es.toml`).
 
-### Talks (`content/talks/_index.md`)
+### Talks (`data/talks.yaml`, `content/talks/_index.md`)
 
-Single `_index.md` file with all talks listed by year. Each entry includes conference name, title, URL, video link, and slides link. Slides PDFs live in `static/slides/`.
+`data/talks.yaml` holds every entry (conference, date, location, items) and `layouts/talks/list.html` renders it by year; the `_index.md` only has the intro. Slides PDFs live in `static/slides/`. Free text in the data (`note`, `description`) has an optional Spanish twin (`note_es`, `description_es`) that the `/es/` page prefers; the commit-type words (talk, workshop, booth...) stay in English on purpose. Other UI strings of the page are in `i18n/*.toml` (`talks*` keys).
 
 ### Projects (`content/projects/`)
 
-Individual markdown files per project with: title, type, tags, description.
+Individual markdown files per project with: title, type, tags, description. `_index.md` must keep `type: projects` (and the talks one `type: talks`), otherwise Hugo >= 0.146 does not pick `layouts/projects/list.html` / `layouts/talks/list.html`. Likewise the tag page template is `layouts/tags/term.html` and the tag index `layouts/tags/terms.html`.
 
 ## Custom Shortcodes
 
@@ -104,3 +106,4 @@ deps: bump <package>          # dependency updates
 - The Gokarna theme is a git submodule — clone with `--recursive` or run `git submodule update --init`
 - Image processing: Lanczos filter, 75% quality, smart anchor (`hugo.toml` `[imaging]`)
 - Minification is enabled in production builds
+- Fuse.js (search) is vendored at `static/js/fuse.min.js` (v7.0.0) so the search does not wait on a CDN; the Playwright config makes the KaTeX and Turnstile CDNs fail fast for the same reason
