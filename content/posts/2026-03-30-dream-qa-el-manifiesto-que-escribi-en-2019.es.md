@@ -48,7 +48,7 @@ Los tests de UI son extremadamente lentos y difíciles de mantener. Y suele mant
 
 ### 2. Escribir tests en estilo BDD antes que documentación interna
 
-Gherkin es un lenguaje de alto nivel para describir cómo debe funcionar el software. Given/When/Then. Tiende un puente entre lo que espera el product manager y lo que implementa el desarrollador. Implica a los product managers en la escritura de escenarios de test usando lenguaje natural. Cuando los escenarios son ejecutables, la documentación está siempre al día. La documentación interna se pudre. Las [especificaciones ejecutables](/posts/2026-02-26-spec-driven-development-bdd-agents) no.
+Gherkin es un lenguaje de alto nivel para describir cómo debe funcionar el software. Given/When/Then. Tiende un puente entre lo que espera el product manager y lo que implementa el desarrollador. Implica a los product managers en la escritura de escenarios de test usando lenguaje natural. Cuando los escenarios son ejecutables, la documentación está siempre al día. La documentación interna se pudre. Las [especificaciones ejecutables](/es/posts/2026-02-26-spec-driven-development-es-el-nuevo-bdd/) no.
 
 ### 3. Desarrolladores que escriben tests antes que testers tradicionales que testean
 

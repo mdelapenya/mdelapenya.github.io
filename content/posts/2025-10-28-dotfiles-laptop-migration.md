@@ -8,6 +8,7 @@ tags: ["dotfiles", "automation", "macos", "productivity", "devops", "shell", "ho
 type: post
 weight: 28
 showTableOfContents: true
+translationKey: dotfiles-laptop-migration
 ---
 
 ![Laptop migration with dotfiles automation](/images/posts/2025-10-28-dotfiles/cover.png)

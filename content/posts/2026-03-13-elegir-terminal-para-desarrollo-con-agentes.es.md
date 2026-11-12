@@ -26,7 +26,7 @@ ChatGPT lo llamó "gestión del flujo de trabajo cognitivo". Creo que es el enfo
 
 ## Lo que de verdad necesitas
 
-Cuando pasas el día [supervisando agentes de código](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot), la lista de funcionalidades que importan es más corta de lo que parece:
+Cuando pasas el día [supervisando agentes de código](/es/posts/2026-02-24-programar-con-agentes-como-conducir-tesla-autopilot/), la lista de funcionalidades que importan es más corta de lo que parece:
 
 - **Varias sesiones simultáneas**, claramente separadas a la vista
 - **Salida masiva en streaming** sin lag ni artefactos de renderizado
@@ -37,7 +37,7 @@ Cuando pasas el día [supervisando agentes de código](/posts/2026-02-24-coding-
 
 Fíjate en lo que no aparece: temas, sugerencias de comandos con IA, autocompletado sofisticado, gestores de archivos integrados. Está bien tenerlos. Para supervisar agentes, son irrelevantes.
 
-Hay una cosa que *sí* es importante y que ninguna terminal te resuelve: el **aislamiento de contexto**. Sigues necesitando directorios separados, [ramas de git por agente](/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows), límites de estado limpios y convenciones de nombres claras. Si no, los agentes en paralelo se pisan entre ellos. Eso es arquitectura, no terminal.
+Hay una cosa que *sí* es importante y que ninguna terminal te resuelve: el **aislamiento de contexto**. Sigues necesitando directorios separados, [ramas de git por agente](/es/posts/2026-02-25-agentes-de-codigo-en-paralelo-con-docker-sandboxes/), límites de estado limpios y convenciones de nombres claras. Si no, los agentes en paralelo se pisan entre ellos. Eso es arquitectura, no terminal.
 
 ## Un detalle de arquitectura que importa
 

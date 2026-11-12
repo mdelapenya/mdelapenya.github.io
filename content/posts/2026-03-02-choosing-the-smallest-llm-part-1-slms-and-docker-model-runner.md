@@ -14,6 +14,7 @@ related:
   - "/posts/2026-03-06-choosing-the-smallest-llm-part-3-evaluator-agent-and-tool-calling"
   - "/posts/2026-03-09-choosing-the-smallest-llm-part-4-observability-with-otel-and-grafana"
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
+translationKey: choosing-the-smallest-llm-part-1-slms-and-docker-model-runner
 ---
 
 ![SLMs and Docker Model Runner](/images/posts/2026-03-02-slms-docker-model-runner/cover.png)

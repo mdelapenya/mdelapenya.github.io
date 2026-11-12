@@ -54,9 +54,9 @@ Por eso ahora mismo estoy entre VS Code y Cursor. Me cambié *a* Cursor por el c
 
 ## Cómo es el nivel 5
 
-En los días buenos, ejecuto dos o tres sesiones de Claude Code en pestañas distintas de Warp. Cada sesión trabaja en su propio [git worktree](/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows) para que los agentes no se pisen los ficheros. El IDE tiene varias ventanas abiertas, una por worktree, para revisar los cambios de cada agente.
+En los días buenos, ejecuto dos o tres sesiones de Claude Code en pestañas distintas de Warp. Cada sesión trabaja en su propio [git worktree](/es/posts/2026-02-25-agentes-de-codigo-en-paralelo-con-docker-sandboxes/) para que los agentes no se pisen los ficheros. El IDE tiene varias ventanas abiertas, una por worktree, para revisar los cambios de cada agente.
 
-El flujo es así: arranco al agente A en una rama de feature, paso al agente B para arreglar un bug, miro cómo va el A, reviso y mergeo el trabajo del B, y le doy feedback al A. Es [supervisar, no programar](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot).
+El flujo es así: arranco al agente A en una rama de feature, paso al agente B para arreglar un bug, miro cómo va el A, reviso y mergeo el trabajo del B, y le doy feedback al A. Es [supervisar, no programar](/es/posts/2026-02-24-programar-con-agentes-como-conducir-tesla-autopilot/).
 
 El nivel 5 es donde el papel del IDE pasa a ser puramente pasivo. No editas en él. No chateas en él. Lees diffs y haces clic en "aprobar". En este nivel, el mejor IDE es el que tiene el mejor visor de diffs y el cambio de fichero más rápido.
 

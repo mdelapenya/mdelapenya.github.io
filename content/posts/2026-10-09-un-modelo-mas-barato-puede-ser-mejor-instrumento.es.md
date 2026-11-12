@@ -30,7 +30,7 @@ La conclusión es errónea, y el motivo está en la primera mitad del experiment
 
 Un modelo menos capaz es un instrumento mucho mejor. Falla donde tu orden era ambigua en lugar de adivinar, y falla ahí siempre, así que el fallo señala la frase que falta. El modelo barato no me estaba diciendo que no pudiera con el trabajo. Me estaba diciendo dónde se acababa mi instrucción.
 
-Es el mismo instinto que perseguía en la [serie sobre cómo elegir el LLM más pequeño](/posts/2026-03-02-choosing-the-smallest-llm-part-1-slms-and-docker-model-runner), un nivel más arriba. Allí la pregunta era qué tamaño de modelo basta para atender una petición, y la respuesta era una propiedad de la petición. Aquí la pregunta es qué tamaño de modelo basta para ejecutar una instrucción, y la respuesta es una propiedad de la instrucción, lo que significa que puedes cambiarla escribiendo una mejor.
+Es el mismo instinto que perseguía en la [serie sobre cómo elegir el LLM más pequeño](/es/posts/2026-03-02-elegir-el-llm-mas-pequeno-parte-1/), un nivel más arriba. Allí la pregunta era qué tamaño de modelo basta para atender una petición, y la respuesta era una propiedad de la petición. Aquí la pregunta es qué tamaño de modelo basta para ejecutar una instrucción, y la respuesta es una propiedad de la instrucción, lo que significa que puedes cambiarla escribiendo una mejor.
 
 ## La pregunta de bajar de nivel
 

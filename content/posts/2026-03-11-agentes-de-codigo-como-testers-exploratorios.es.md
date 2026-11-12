@@ -26,7 +26,7 @@ Los agentes de código tienen esa misma capacidad de adaptación. Cuando un coma
 
 Un ejemplo concreto. La [CLI de Docker Sandbox](https://docs.docker.com/ai/sandboxes/) crea microVMs ligeras para ejecutar agentes de código aislados. En macOS, las rutas de directorios temporales muy profundas (como las que genera `mktemp -d` bajo `/var/folders/...`) superan el límite de 104 bytes que tiene la ruta de un socket Unix. Un script de bash que ejecutara `docker sandbox create --name test-sbox claude $(mktemp -d)` fallaría con un críptico `krun_start_enter failed: -1` y se pararía ahí.
 
-¿Y el agente? Se topó con el mismo error, leyó la sección de resolución de problemas de su skill, entendió la causa de fondo (la ruta del socket era demasiado larga), reintentó con una ruta más corta y lo marcó como un comportamiento conocido de esa plataforma. Después pasó a la siguiente prueba. Esa es la diferencia entre un script que se detiene y un tester que [se adapta](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot).
+¿Y el agente? Se topó con el mismo error, leyó la sección de resolución de problemas de su skill, entendió la causa de fondo (la ruta del socket era demasiado larga), reintentó con una ruta más corta y lo marcó como un comportamiento conocido de esa plataforma. Después pasó a la siguiente prueba. Esa es la diferencia entre un script que se detiene y un tester que [se adapta](/es/posts/2026-02-24-programar-con-agentes-como-conducir-tesla-autopilot/).
 
 ## Una skill es un plan de pruebas con criterio
 
@@ -87,7 +87,7 @@ La skill base del tester se queda como está. El conocimiento de cada plataforma
 
 ## Lo que esto no es
 
-Este enfoque no va, expresamente, de generar tests unitarios ni de integración. Ese es otro caso de uso, en el que el agente [escribe código de test](/posts/2026-02-26-spec-driven-development-bdd-agents) que pasa a formar parte de tu código y se ejecuta en tu pipeline de CI.
+Este enfoque no va, expresamente, de generar tests unitarios ni de integración. Ese es otro caso de uso, en el que el agente [escribe código de test](/es/posts/2026-02-26-spec-driven-development-es-el-nuevo-bdd/) que pasa a formar parte de tu código y se ejecuta en tu pipeline de CI.
 
 Aquí el agente *es* el tester. No hay artefactos de test que mantener, ni librerías de aserciones, ni frameworks de testing. El valor está en el propio proceso de exploración: el agente usa el software, encuentra problemas y te ayuda a decidir qué hacer con ellos. Cuando la sesión termina, tienes issues en GitHub, arreglos o decisiones informadas de descartar. Ficheros de test, no.
 

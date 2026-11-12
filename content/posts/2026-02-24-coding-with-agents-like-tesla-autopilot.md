@@ -11,6 +11,7 @@ ai: true
 image: "/images/posts/2026-02-24-coding-with-agents-like-tesla-autopilot/cover.png"
 related:
   - "/posts/2025-10-10-coding-agents"
+translationKey: coding-with-agents-like-tesla-autopilot
 ---
 
 ![Coding with AI Agents: Like Driving a Tesla on Autopilot](/images/posts/2026-02-24-coding-with-agents-like-tesla-autopilot/cover.png)

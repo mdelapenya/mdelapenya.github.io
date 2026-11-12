@@ -28,7 +28,7 @@ Así veo yo las etapas del desarrollo asistido por IA:
 
 **Nivel 4: un agente de código en la terminal.** [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Codex CLI o similares. El agente corre en una sesión de terminal con acceso completo al repositorio. Lee archivos, escribe código, ejecuta tests e itera. El IDE pasa a ser el sitio donde revisas: lees diffs, compruebas la salida, apruebas o rechazas. La interfaz de la IA es la terminal, no el editor.
 
-**Nivel 5: varios agentes en paralelo.** Varias sesiones de terminal, cada una en su propio [git worktree](/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows), cada una con una tarea distinta. El IDE tiene varias ventanas abiertas para revisar el trabajo de cada agente. Supervisas, no programas.
+**Nivel 5: varios agentes en paralelo.** Varias sesiones de terminal, cada una en su propio [git worktree](/es/posts/2026-02-25-agentes-de-codigo-en-paralelo-con-docker-sandboxes/), cada una con una tarea distinta. El IDE tiene varias ventanas abiertas para revisar el trabajo de cada agente. Supervisas, no programas.
 
 **Nivel 6: agentes que funcionan de forma autónoma.** Los agentes no necesitan tu portátil para nada. Se ejecutan en CI, en la nube, de forma programada. Tú revisas pull requests. El IDE es una herramienta para revisar PRs. Todavía no estamos ahí en la mayoría de los flujos de trabajo, pero la trayectoria está clara.
 

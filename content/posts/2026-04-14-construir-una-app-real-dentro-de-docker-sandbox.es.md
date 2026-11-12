@@ -26,7 +26,7 @@ Pero este post no va de cómo construir un visor de trenes. Va de cómo construi
 
 **Seguridad.** En mi host no quiero que el agente haga lo que le dé la gana. En un sandbox quiero que haga lo que necesita. Ese es todo el modelo mental. El sandbox es una microVM con su propio daemon de Docker, su propio sistema de ficheros y su propia red. El agente puede instalar paquetes, levantar servidores, hacer `rm -rf node_modules` y empezar de cero. Dentro del sandbox eso no es una imprudencia. Es el agente haciendo su trabajo. Mi host ni se entera.
 
-**Practicidad.** Tienes un entorno de desarrollo reproducible que sobrevive a los reinicios, con gobierno de red y reenvío de puertos incluidos. Sin Dockerfile. Sin configuración de devcontainer. Solo `sbx create` y ya estás trabajando. Ya escribí sobre el [modelo conceptual de los sandboxes y los flujos paralelos](/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows). Este post es su complemento práctico.
+**Practicidad.** Tienes un entorno de desarrollo reproducible que sobrevive a los reinicios, con gobierno de red y reenvío de puertos incluidos. Sin Dockerfile. Sin configuración de devcontainer. Solo `sbx create` y ya estás trabajando. Ya escribí sobre el [modelo conceptual de los sandboxes y los flujos paralelos](/es/posts/2026-02-25-agentes-de-codigo-en-paralelo-con-docker-sandboxes/). Este post es su complemento práctico.
 
 ## Paso 1: instala y haz login
 
@@ -141,7 +141,7 @@ Esto crea un git worktree aislado dentro del sandbox. El agente trabaja en su pr
 
 El directorio del workspace está montado con bind mount. Cada cambio que el agente hace dentro del sandbox ya está en el sistema de ficheros de mi host. No hago push desde dentro del sandbox. Lo hago desde mi máquina.
 
-¿Por qué? Porque [el conductor soy yo](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot). Superviso el trabajo, reviso el diff y decido cuándo hacer commit y push. El agente propone. Yo dispongo.
+¿Por qué? Porque [el conductor soy yo](/es/posts/2026-02-24-programar-con-agentes-como-conducir-tesla-autopilot/). Superviso el trabajo, reviso el diff y decido cuándo hacer commit y push. El agente propone. Yo dispongo.
 
 ```bash
 git add -A

@@ -24,7 +24,7 @@ Este es el problema. La especificación del kit gana un campo. El motor tiene qu
 
 Un agente limitado a un repo no puede ver una costura. Solo ve uno de sus lados.
 
-Ya escribí sobre [ejecutar varios agentes en paralelo con sandboxes y git worktrees](/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows), y sobre [construir una app real dentro de un único sandbox](/es/posts/2026-04-14-construir-una-app-real-dentro-de-docker-sandbox/). Los dos parten de la misma unidad: un agente, un repositorio, una rama. Esa suposición está bien cuando el trabajo cabe en un repo. Este trabajo no cabe.
+Ya escribí sobre [ejecutar varios agentes en paralelo con sandboxes y git worktrees](/es/posts/2026-02-25-agentes-de-codigo-en-paralelo-con-docker-sandboxes/), y sobre [construir una app real dentro de un único sandbox](/es/posts/2026-04-14-construir-una-app-real-dentro-de-docker-sandbox/). Los dos parten de la misma unidad: un agente, un repositorio, una rama. Esa suposición está bien cuando el trabajo cabe en un repo. Este trabajo no cabe.
 
 Así que la unidad tenía que cambiar. No un sandbox por repo, sino un sandbox con los tres dentro y el agente libre para moverse entre ellos.
 

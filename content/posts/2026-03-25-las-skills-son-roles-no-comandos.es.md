@@ -42,7 +42,7 @@ Cada elemento de un fichero [SKILL.md](https://code.claude.com/docs/en/skills) s
 
 ## Tres roles que uso a diario
 
-**El editor** (`blog-editor`) revisa mis posts: tono, estructura, concisión. Pasa una [lista de comprobación](/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day): cumplimiento del front matter, densidad de las secciones, redundancias, uso de rayas largas, referencias cruzadas. Cuando termina, llama al guardián para validar los enlaces. El editor no se limita a marcar casillas. Propone arreglos. Me pregunta cuando una reestructuración necesita mi criterio. Es un revisor con opiniones.
+**El editor** (`blog-editor`) revisa mis posts: tono, estructura, concisión. Pasa una [lista de comprobación](/es/posts/2026-03-07-quite-la-friccion-ahora-escribo-cada-dos-dias/): cumplimiento del front matter, densidad de las secciones, redundancias, uso de rayas largas, referencias cruzadas. Cuando termina, llama al guardián para validar los enlaces. El editor no se limita a marcar casillas. Propone arreglos. Me pregunta cuando una reestructuración necesita mi criterio. Es un revisor con opiniones.
 
 **El especialista en builds** (`build-engineer`) sabe compilar binarios, configurar el PATH, saltarse la autenticación y hacer cross-build para distintas plataformas. El [tester exploratorio](/es/posts/2026-03-11-agentes-de-codigo-como-testers-exploratorios/) no lleva instrucciones de build. Se las pide al especialista. "Necesito un binario con la autenticación desactivada para hacer pruebas". El especialista se encarga del resto. Eso no es llamar a un comando. Es consultar a un compañero.
 

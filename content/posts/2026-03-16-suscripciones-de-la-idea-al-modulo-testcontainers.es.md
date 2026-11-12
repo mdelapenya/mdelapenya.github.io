@@ -12,7 +12,7 @@ translatedFrom: edf8fb5
 
 ![Suscripciones: de la idea al módulo de Testcontainers](/images/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module/cover.png)
 
-Pasé de publicar un post al mes a publicar cada dos días. El [post sobre la fricción](/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day) explica cómo. El problema de escribir estaba resuelto. Pero apareció otro: no tenía ni idea de si alguien me leía.
+Pasé de publicar un post al mes a publicar cada dos días. El [post sobre la fricción](/es/posts/2026-03-07-quite-la-friccion-ahora-escribo-cada-dos-dias/) explica cómo. El problema de escribir estaba resuelto. Pero apareció otro: no tenía ni idea de si alguien me leía.
 
 Este post cuenta la historia entera: por qué añadí suscripciones, cómo las construí sobre un sitio estático sin backend, y cómo el camino de las pruebas me llevó a crear un módulo open source de Testcontainers para Resend.
 

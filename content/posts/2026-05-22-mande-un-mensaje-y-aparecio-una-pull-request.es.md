@@ -22,7 +22,7 @@ Esto funciona gracias a dos piezas.
 
 La primera es [NanoClaw](https://github.com/nanocoai/nanoclaw): un orquestador de IA de código abierto que corre en el NAS de mi casa, dentro de una VM. Cuando llega un mensaje a Telegram, NanoClaw levanta un contenedor para ese topic, carga su configuración y ejecuta Claude Code dentro. Cada topic es un agente aislado, con su propio espacio de trabajo, su propia personalidad y sus propias herramientas. TheBlog es uno de ellos. Su único trabajo es gestionar el blog.
 
-La segunda es [blog-skills](https://github.com/mdelapenya/blog-skills): cinco ficheros `SKILL.md`, uno por cada paso del proceso. Ya [conté cómo quitaron la fricción de escribir](/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day). Lo que cambia aquí es dónde se ejecutan. Cada skill se invoca desde Telegram. Cada pregunta que hace la skill vuelve a Telegram. Yo contesto desde el móvil. El agente escribe.
+La segunda es [blog-skills](https://github.com/mdelapenya/blog-skills): cinco ficheros `SKILL.md`, uno por cada paso del proceso. Ya [conté cómo quitaron la fricción de escribir](/es/posts/2026-03-07-quite-la-friccion-ahora-escribo-cada-dos-dias/). Lo que cambia aquí es dónde se ejecutan. Cada skill se invoca desde Telegram. Cada pregunta que hace la skill vuelve a Telegram. Yo contesto desde el móvil. El agente escribe.
 
 ## Lo que sabe el topic de TheBlog
 

@@ -82,7 +82,7 @@ Con cuatro agentes en marcha, mi trabajo cambia por completo. Ya no escribo cód
 
 **Decidir el orden de merge.** Cuando varios agentes tienen PRs en verde, decido cuál se integra primero. El orden importa porque integrar una PR puede crear conflictos en la rama de otro agente. Integro primero la más pequeña y aislada, y luego les digo a los demás que hagan merge de main. Con [gwaim](/es/posts/2026-03-21-gwaim-la-herramienta-que-necesitaba-el-nivel-5/), el estado de la PR y los resultados del CI se ven en la tarjeta de cada worktree, así que esta decisión lleva segundos en vez de una ronda de comandos `gh pr view`.
 
-Esto es [supervisar, no programar](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot). El mismo salto del Nivel 3 al 4 que conté en el [post sobre mi stack](/es/posts/2026-03-20-mi-stack-de-programacion-con-agentes/), pero multiplicado.
+Esto es [supervisar, no programar](/es/posts/2026-02-24-programar-con-agentes-como-conducir-tesla-autopilot/). El mismo salto del Nivel 3 al 4 que conté en el [post sobre mi stack](/es/posts/2026-03-20-mi-stack-de-programacion-con-agentes/), pero multiplicado.
 
 ## Cuando se rompe
 

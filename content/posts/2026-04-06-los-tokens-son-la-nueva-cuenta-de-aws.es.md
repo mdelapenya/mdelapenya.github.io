@@ -40,11 +40,11 @@ Lo concreto con mi día a día.
 
 **Aprender.** Cuando necesito entender una API, una librería o un patrón de diseño, abro una conversación con el modelo. No para que me dé la respuesta, sino para acelerar el proceso de encontrarla. Sigo leyendo el código fuente. Sigo ejecutando los tests. Pero el modelo me ayuda a construir un mapa mental más rápido, y así sé dónde mirar.
 
-**Prototipar.** Uso [Claude Code como mi agente de programación principal](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot). Cuando quiero probar un enfoque nuevo, lo describo, obtengo un borrador e itero. La mayoría de los prototipos no sobreviven. Ese es el objetivo. Los tokens me dejan fallar más rápido y más barato.
+**Prototipar.** Uso [Claude Code como mi agente de programación principal](/es/posts/2026-02-24-programar-con-agentes-como-conducir-tesla-autopilot/). Cuando quiero probar un enfoque nuevo, lo describo, obtengo un borrador e itero. La mayoría de los prototipos no sobreviven. Ese es el objetivo. Los tokens me dejan fallar más rápido y más barato.
 
 **Flujos con agentes.** Ejecuto [cuatro agentes en paralelo sobre git worktrees separados](/es/posts/2026-03-23-nivel-5-en-la-practica-cuatro-agentes-cuatro-worktrees/), cada uno con una tarea autocontenida. Cada agente consume tokens. Cada uno me ahorra horas. El coste en tokens de cada worktree es una fracción del tiempo de ingeniería que sustituye.
 
-**Pipeline de contenido.** [Eliminé toda la fricción de mi pipeline del blog](/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day) construyendo skills específicas para planificar, escribir, editar y promocionar posts. Cada skill gasta tokens. El resultado: pasé de publicar una vez al mes a publicar cada dos días.
+**Pipeline de contenido.** [Eliminé toda la fricción de mi pipeline del blog](/es/posts/2026-03-07-quite-la-friccion-ahora-escribo-cada-dos-dias/) construyendo skills específicas para planificar, escribir, editar y promocionar posts. Cada skill gasta tokens. El resultado: pasé de publicar una vez al mes a publicar cada dos días.
 
 Nada de esto va de generar volumen. Va de acelerar el feedback. Los tokens son el combustible del ciclo de aprendizaje, no un sustituto de él.
 

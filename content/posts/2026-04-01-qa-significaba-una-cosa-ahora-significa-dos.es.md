@@ -76,7 +76,7 @@ El [manifiesto de Dream QA](/es/posts/2026-03-30-dream-qa-el-manifiesto-que-escr
 
 La era de la IA añade una capa: testers que supervisan agentes por encima de testers que ejecutan scripts.
 
-Es el mismo cambio que describí en el [post del Autopilot de Tesla](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot), pero aplicado a la calidad. El trabajo del desarrollador pasó de escribir código a supervisar agentes que escriben código. El del profesional de QA pasa de ejecutar tests a supervisar agentes que hacen testing.
+Es el mismo cambio que describí en el [post del Autopilot de Tesla](/es/posts/2026-02-24-programar-con-agentes-como-conducir-tesla-autopilot/), pero aplicado a la calidad. El trabajo del desarrollador pasó de escribir código a supervisar agentes que escriben código. El del profesional de QA pasa de ejecutar tests a supervisar agentes que hacen testing.
 
 Los profesionales de QA pasan a ser quienes definen qué explora el agente. Escriben las [skills](/es/posts/2026-03-25-las-skills-son-roles-no-comandos/), los planes de pruebas, las guías de resolución de problemas. Hacen el triaje de lo que encuentra el agente. Deciden qué se convierte en un test automatizado y qué se registra como issue. El rol sigue siendo criterio. Quien ejecuta ahora es un agente.
 
