@@ -245,7 +245,7 @@ Hay dos controles de timeout:
 
 Hay una protección contra nil pequeña pero importante: cualquier hijo nil en el slice `Strategies` se ignora en silencio. Gracias a eso, un módulo puede construir una estrategia por piezas, dejando posiblemente huecos vacíos hasta que opciones posteriores de personalización del contenedor los rellenen, sin preocuparse de un panic por `nil` en el bucle de poda.
 
-El uso canónico es "puerto abierto y línea de log aparecida". El módulo de Postgres es el ejemplo de manual: compone `ForListeningPort` con `ForLog("database system is ready to accept connections")` y los ejecuta en ese orden. Encontrarás formas parecidas por todo el directorio de módulos. El mismo patrón aparece en el [post de GoFiber](/posts/2025-05-27-gofiber-services-testcontainers) y en el caso práctico de módulo de [Subscriptions: From Idea to Testcontainers Module](/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module).
+El uso canónico es "puerto abierto y línea de log aparecida". El módulo de Postgres es el ejemplo de manual: compone `ForListeningPort` con `ForLog("database system is ready to accept connections")` y los ejecuta en ese orden. Encontrarás formas parecidas por todo el directorio de módulos. El mismo patrón aparece en el [post de GoFiber](/posts/2025-05-27-gofiber-services-testcontainers) y en el caso práctico de módulo de [Subscriptions: From Idea to Testcontainers Module](/es/posts/2026-03-16-suscripciones-de-la-idea-al-modulo-testcontainers/).
 
 ## Estrategias en carrera: `ForAny` y `AnyMultiStrategy`
 

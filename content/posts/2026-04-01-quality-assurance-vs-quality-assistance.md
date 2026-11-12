@@ -15,6 +15,7 @@ related:
   - "/posts/2026-03-25-skills-are-roles-not-commands"
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
   - "/posts/2026-02-26-spec-driven-development-bdd-agents"
+translationKey: quality-assurance-vs-quality-assistance
 ---
 
 ![Quality Assurance vs Quality Assistance](/images/posts/2026-04-01-quality-assurance-vs-quality-assistance/cover.png)

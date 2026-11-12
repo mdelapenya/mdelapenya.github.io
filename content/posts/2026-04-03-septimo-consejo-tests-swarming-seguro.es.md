@@ -35,7 +35,7 @@ Todos aciertan. Así encaja cada uno con el trabajo que he hecho en este blog. D
 
 Lo que dice Yegge: el software tiene una vida útil de menos de un año. Reescribir gana a arreglar. El coste de empezar de cero cayó casi a cero cuando los agentes aprendieron a escribir código, así que la cuenta cambió. Aférrate poco al software.
 
-Yo lo he vivido. Cuando construí la [función de suscripción](/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module), fusioné sin dudar tres posts distintos sobre el recorrido en uno solo. Reescribí desde cero el Cloudflare Worker, la plantilla de Hugo y los tests de Playwright. Construí [testcontainers-go-resend](https://github.com/mdelapenya/testcontainers-go-resend/) en una sola sesión. Todo es desechable. El valor está en las decisiones de diseño y en los tests que las codifican, no en las líneas de código.
+Yo lo he vivido. Cuando construí la [función de suscripción](/es/posts/2026-03-16-suscripciones-de-la-idea-al-modulo-testcontainers/), fusioné sin dudar tres posts distintos sobre el recorrido en uno solo. Reescribí desde cero el Cloudflare Worker, la plantilla de Hugo y los tests de Playwright. Construí [testcontainers-go-resend](https://github.com/mdelapenya/testcontainers-go-resend/) en una sola sesión. Todo es desechable. El valor está en las decisiones de diseño y en los tests que las codifican, no en las líneas de código.
 
 ## Consejo 2: la UX para agentes importa
 
@@ -53,7 +53,7 @@ Yo hice una auditoría de seguridad completa del Worker de suscripción a mitad 
 
 Lo que dice Yegge: la cognición de la IA se degrada en los límites. Algunos proyectos necesitan modelos más inteligentes que los de hoy. Mantén un backlog de "demasiado difícil" y espera unas cuantas versiones.
 
-En el [post sobre el stack de programación con agentes](/posts/2026-03-20-my-agentic-coding-stack), describí el nivel 6 como "todavía no está aquí". Después [construí Ralph](/posts/2026-03-27-from-loop-to-ci-ralph-and-the-level-6-pattern), que es el nivel 6. Los modelos se volvieron más listos entre que escribí el post del stack y construí Ralph. El elemento del backlog se graduó. Yegge tiene razón en que el momento importa. El truco es planificar esa graduación, no limitarse a aceptar la espera.
+En el [post sobre el stack de programación con agentes](/es/posts/2026-03-20-mi-stack-de-programacion-con-agentes/), describí el nivel 6 como "todavía no está aquí". Después [construí Ralph](/es/posts/2026-03-27-de-loop-a-ci-ralph-patron-nivel-6/), que es el nivel 6. Los modelos se volvieron más listos entre que escribí el post del stack y construí Ralph. El elemento del backlog se graduó. Yegge tiene razón en que el momento importa. El truco es planificar esa graduación, no limitarse a aceptar la espera.
 
 ## Consejo 5: la Regla de los Cinco
 
@@ -65,7 +65,7 @@ El bucle central de Ralph es literalmente esto. El worker escribe, el reviewer e
 
 Lo que dice Yegge: el swarming es potente, pero el merge es una pesadilla. Los workers chocan. Dos funcionalidades que modifican el mismo fichero de configuración no pueden ir en paralelo. Hace falta serializar, y el paso de reduce en la analogía con MapReduce es arbitrariamente complejo.
 
-El [post del nivel 5](/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer) es un informe de campo sobre este mismo problema. Cuatro agentes, cuatro worktrees, decisiones sobre el orden de los merges. Los mismos modos de fallo que describe Yegge: tareas interdependientes que debieron ejecutarse en secuencia, agentes que dan vueltas en círculos cuando los merges crean conflictos inesperados, el esfuerzo de decidir qué PR aterriza primero. "Dos funcionalidades que modifican el mismo fichero de configuración no pueden ejecutarse en paralelo." Escribí esa frase semanas antes de leer el post de Yegge. El problema es universal.
+El [post del nivel 5](/es/posts/2026-03-23-nivel-5-en-la-practica-cuatro-agentes-cuatro-worktrees/) es un informe de campo sobre este mismo problema. Cuatro agentes, cuatro worktrees, decisiones sobre el orden de los merges. Los mismos modos de fallo que describe Yegge: tareas interdependientes que debieron ejecutarse en secuencia, agentes que dan vueltas en círculos cuando los merges crean conflictos inesperados, el esfuerzo de decidir qué PR aterriza primero. "Dos funcionalidades que modifican el mismo fichero de configuración no pueden ejecutarse en paralelo." Escribí esa frase semanas antes de leer el post de Yegge. El problema es universal.
 
 ## El consejo que falta: testing
 
@@ -85,7 +85,7 @@ La Regla de los Cinco aquí no te ayudará. Un agente puede revisar el mock cinc
 
 El contract testing contra especificaciones reales de API lo resuelve. [Microcks](https://microcks.io/) lee una especificación OpenAPI y sirve una API simulada que devuelve las respuestas de ejemplo de esa especificación. Cuando la especificación cambia, el mock cambia. Cuando el mock cambia, tus tests detectan la diferencia.
 
-Construí [testcontainers-go-resend](https://github.com/mdelapenya/testcontainers-go-resend/) porque quería probar la integración real con Resend, no mis suposiciones sobre ella. El módulo descarga la última especificación OpenAPI de Resend, la enriquece con ejemplos compatibles con Microcks y la carga en un contenedor de [Testcontainers](https://golang.testcontainers.org/). Dos líneas para arrancar. Una línea para obtener la URL base. Cada endpoint de la API de Resend tiene un mock que se mantiene sincronizado con la especificación. El [post sobre las suscripciones](/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module) cuenta la historia completa.
+Construí [testcontainers-go-resend](https://github.com/mdelapenya/testcontainers-go-resend/) porque quería probar la integración real con Resend, no mis suposiciones sobre ella. El módulo descarga la última especificación OpenAPI de Resend, la enriquece con ejemplos compatibles con Microcks y la carga en un contenedor de [Testcontainers](https://golang.testcontainers.org/). Dos líneas para arrancar. Una línea para obtener la URL base. Cada endpoint de la API de Resend tiene un mock que se mantiene sincronizado con la especificación. El [post sobre las suscripciones](/es/posts/2026-03-16-suscripciones-de-la-idea-al-modulo-testcontainers/) cuenta la historia completa.
 
 El patrón se generaliza. Cualquier API con una especificación OpenAPI pública se puede probar así. Stripe, SendGrid, Twilio. La especificación es el contrato. El mock hace cumplir el contrato. Tus tests verifican tu código contra el contrato. Sin desviaciones. Sin sorpresas un domingo por la tarde, cuando el cron job del broadcast falla porque Resend cambió la forma de una respuesta.
 
@@ -93,13 +93,13 @@ El patrón se generaliza. Cualquier API con una especificación OpenAPI pública
 
 Los contract tests cubren interfaces conocidas. Pero ¿y los comportamientos que a nadie se le ocurrió especificar?
 
-La skill de [tester exploratorio](/posts/2026-03-11-coding-agents-as-exploratory-testers) convierte a un agente en algo que no se limita a ejecutar scripts, sino que se adapta, investiga y clasifica. Ejercita el software, se topa con un error inesperado, lee el mensaje, prueba una alternativa, se forma una opinión sobre la gravedad y sigue adelante. Cuando termina, una skill de project manager recopila los hallazgos en una tabla de triaje ordenada por gravedad.
+La skill de [tester exploratorio](/es/posts/2026-03-11-agentes-de-codigo-como-testers-exploratorios/) convierte a un agente en algo que no se limita a ejecutar scripts, sino que se adapta, investiga y clasifica. Ejercita el software, se topa con un error inesperado, lee el mensaje, prueba una alternativa, se forma una opinión sobre la gravedad y sigue adelante. Cuando termina, una skill de project manager recopila los hallazgos en una tabla de triaje ordenada por gravedad.
 
-Este es el principio número cinco del [manifiesto Dream QA que escribí en 2019](/posts/2026-03-30-dream-qa-the-manifesto-i-wrote-in-2019): "Testing exploratorio antes que automatizar todos los escenarios posibles." Los escenarios son infinitos. Automatiza los caminos críticos y explora el resto. Lo escribí porque creía que no se llega a una cobertura completa solo automatizando. Algunos bugs solo aparecen cuando un tester se sale del guion.
+Este es el principio número cinco del [manifiesto Dream QA que escribí en 2019](/es/posts/2026-03-30-dream-qa-el-manifiesto-que-escribi-en-2019/): "Testing exploratorio antes que automatizar todos los escenarios posibles." Los escenarios son infinitos. Automatiza los caminos críticos y explora el resto. Lo escribí porque creía que no se llega a una cobertura completa solo automatizando. Algunos bugs solo aparecen cuando un tester se sale del guion.
 
 En 2019, ese principio requería testers humanos. Gente con oficio que entendía el producto lo bastante a fondo como para saber dónde estaban los límites interesantes. Los agentes son la primera tecnología que cumple esa visión a escala. Un agente con un plan de pruebas, una guía de resolución de problemas y ficheros de temas específicos de cada plataforma puede explorar una herramienta de CLI en tres sistemas operativos en una sola ejecución de CI. No se limita a encontrar bugs. Los clasifica, los deduplica frente a las issues existentes y presenta los hallazgos ordenados por lo mucho que importan.
 
-El [post sobre Quality Assistance](/posts/2026-04-01-quality-assurance-vs-quality-assistance) traza la línea entre los dos significados de QA. Quality Assurance es la puerta: los tests pasan o fallan. Quality Assistance es la guía: el agente explora, saca a la luz hallazgos y te deja decidir a ti. El tester no hace de barrera. Guía. Destapa problemas, los ordena por gravedad y te pasa la decisión. Esa es la segunda capa de testing que le hace falta al marco de Yegge.
+El [post sobre Quality Assistance](/es/posts/2026-04-01-qa-significaba-una-cosa-ahora-significa-dos/) traza la línea entre los dos significados de QA. Quality Assurance es la puerta: los tests pasan o fallan. Quality Assistance es la guía: el agente explora, saca a la luz hallazgos y te deja decidir a ti. El tester no hace de barrera. Guía. Destapa problemas, los ordena por gravedad y te pasa la decisión. Esa es la segunda capa de testing que le hace falta al marco de Yegge.
 
 ## Los tests hacen que el swarming sea seguro
 

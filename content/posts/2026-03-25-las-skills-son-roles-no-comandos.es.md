@@ -44,7 +44,7 @@ Cada elemento de un fichero [SKILL.md](https://code.claude.com/docs/en/skills) s
 
 **El editor** (`blog-editor`) revisa mis posts: tono, estructura, concisión. Pasa una [lista de comprobación](/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day): cumplimiento del front matter, densidad de las secciones, redundancias, uso de rayas largas, referencias cruzadas. Cuando termina, llama al guardián para validar los enlaces. El editor no se limita a marcar casillas. Propone arreglos. Me pregunta cuando una reestructuración necesita mi criterio. Es un revisor con opiniones.
 
-**El especialista en builds** (`build-engineer`) sabe compilar binarios, configurar el PATH, saltarse la autenticación y hacer cross-build para distintas plataformas. El [tester exploratorio](/posts/2026-03-11-coding-agents-as-exploratory-testers) no lleva instrucciones de build. Se las pide al especialista. "Necesito un binario con la autenticación desactivada para hacer pruebas". El especialista se encarga del resto. Eso no es llamar a un comando. Es consultar a un compañero.
+**El especialista en builds** (`build-engineer`) sabe compilar binarios, configurar el PATH, saltarse la autenticación y hacer cross-build para distintas plataformas. El [tester exploratorio](/es/posts/2026-03-11-agentes-de-codigo-como-testers-exploratorios/) no lleva instrucciones de build. Se las pide al especialista. "Necesito un binario con la autenticación desactivada para hacer pruebas". El especialista se encarga del resto. Eso no es llamar a un comando. Es consultar a un compañero.
 
 **El project manager** (`project-manager`) clasifica los hallazgos de las pruebas. Prepara una tabla resumen, elimina duplicados contra las issues que ya existen en GitHub, asigna severidad y me va guiando por cada issue, de una en una. No arregla nada. Arreglar es trabajo de otro rol. El project manager coordina.
 
@@ -54,7 +54,7 @@ Cada uno es un personaje con un ámbito de responsabilidad, unas herramientas y 
 
 Cuando piensas en "comando", la skill se lee como una receta. Cuando piensas en "rol", se lee como el documento de bienvenida de alguien que se incorpora al equipo: qué sabes, qué puedes hacer, cómo manejas la ambigüedad, cuándo toca pedir ayuda.
 
-La diferencia práctica aparece en los bordes. El [tester exploratorio](/posts/2026-03-11-coding-agents-as-exploratory-testers) se topa en macOS con el límite de longitud de la ruta de un socket. Una skill escrita como comando fallaría. La skill escrita como rol lee su guía de resolución de problemas, entiende la causa de fondo, reintenta con una ruta más corta y sigue adelante. Eso no es seguir instrucciones. Es habitar un rol.
+La diferencia práctica aparece en los bordes. El [tester exploratorio](/es/posts/2026-03-11-agentes-de-codigo-como-testers-exploratorios/) se topa en macOS con el límite de longitud de la ruta de un socket. Una skill escrita como comando fallaría. La skill escrita como rol lee su guía de resolución de problemas, entiende la causa de fondo, reintenta con una ruta más corta y sigue adelante. Eso no es seguir instrucciones. Es habitar un rol.
 
 La próxima vez que escribas una skill, no te preguntes "¿qué tiene que hacer este comando?". Pregúntate "¿quién es esta persona y cómo trabaja?".
 

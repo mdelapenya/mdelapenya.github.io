@@ -42,7 +42,7 @@ Lo concreto con mi día a día.
 
 **Prototipar.** Uso [Claude Code como mi agente de programación principal](/posts/2026-02-24-coding-with-agents-like-tesla-autopilot). Cuando quiero probar un enfoque nuevo, lo describo, obtengo un borrador e itero. La mayoría de los prototipos no sobreviven. Ese es el objetivo. Los tokens me dejan fallar más rápido y más barato.
 
-**Flujos con agentes.** Ejecuto [cuatro agentes en paralelo sobre git worktrees separados](/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer), cada uno con una tarea autocontenida. Cada agente consume tokens. Cada uno me ahorra horas. El coste en tokens de cada worktree es una fracción del tiempo de ingeniería que sustituye.
+**Flujos con agentes.** Ejecuto [cuatro agentes en paralelo sobre git worktrees separados](/es/posts/2026-03-23-nivel-5-en-la-practica-cuatro-agentes-cuatro-worktrees/), cada uno con una tarea autocontenida. Cada agente consume tokens. Cada uno me ahorra horas. El coste en tokens de cada worktree es una fracción del tiempo de ingeniería que sustituye.
 
 **Pipeline de contenido.** [Eliminé toda la fricción de mi pipeline del blog](/posts/2026-03-07-i-removed-the-friction-now-i-write-every-other-day) construyendo skills específicas para planificar, escribir, editar y promocionar posts. Cada skill gasta tokens. El resultado: pasé de publicar una vez al mes a publicar cada dos días.
 
@@ -54,7 +54,7 @@ Quiero tomarme un momento para dar las gracias en público a mi empresa, [Docker
 
 Docker da presupuestos de tokens a sus ingenieros. No como experimento. No como programa piloto para unos pocos elegidos. Como parte normal de nuestra forma de trabajar. El mensaje es claro: confiamos en que uses estas herramientas, e invertimos en tu capacidad de aprender y de entregar.
 
-Esto pesa más que casi cualquier beneficio. Cada prototipo que construyo, como el [gestor de git worktrees (gwaim)](/posts/2026-03-21-gwaim-the-tool-that-level-5-needed), cada librería que exploro, cada flujo que optimizo con tokens de IA me hace más eficaz en mi trabajo de verdad.
+Esto pesa más que casi cualquier beneficio. Cada prototipo que construyo, como el [gestor de git worktrees (gwaim)](/es/posts/2026-03-21-gwaim-la-herramienta-que-necesitaba-el-nivel-5/), cada librería que exploro, cada flujo que optimizo con tokens de IA me hace más eficaz en mi trabajo de verdad.
 
 Eso es "invertir en tus ingenieros" en 2026. No mesas de ping-pong. No neveras con cerveza. Cómputo.
 
@@ -72,7 +72,7 @@ En cuanto mides la productividad de un ingeniero por los tokens que consume, has
 
 Un ingeniero que gasta 10.000 tokens en entender a fondo un problema y escribe una solución limpia y mínima puede ser más productivo que otro que quema 500.000 tokens generando código de relleno que apenas revisa. El consumo de tokens mide actividad, no impacto.
 
-Ya he escrito sobre los [seis niveles del desarrollo asistido por IA](/posts/2026-03-18-the-six-levels-of-ai-assisted-development). En todos ellos, el valor sale del criterio del ingeniero: saber qué pedir, qué conservar y qué tirar. Los tokens amplifican el criterio. No lo sustituyen. Y el criterio no se mide contando tokens.
+Ya he escrito sobre los [seis niveles del desarrollo asistido por IA](/es/posts/2026-03-18-los-seis-niveles-del-desarrollo-asistido-por-ia/). En todos ellos, el valor sale del criterio del ingeniero: saber qué pedir, qué conservar y qué tirar. Los tokens amplifican el criterio. No lo sustituyen. Y el criterio no se mide contando tokens.
 
 Da tokens a tus ingenieros. Confía en que los usarán bien. Pero, por favor, no conviertas el recibo en un KPI.
 

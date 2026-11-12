@@ -189,7 +189,7 @@ El patrón es consistente en todos los módulos. Dex usa `WithLifecycleHooks` en
 
 Una salvedad para quien escriba módulos. El `WithLifecycleHooks` de la configuración base de Kafka tiene una fragilidad sutil: si un usuario pasa `testcontainers.WithLifecycleHooks(...)` como opción a `kafka.Run`, esa llamada (que se ejecuta después de la configuración base de Kafka) sobrescribe el hook del módulo. Usar `WithAdditional` en la configuración base del módulo lo evitaría. Los módulos que prefieren ir a lo seguro usan `WithAdditional` en todas partes. Los que prefieren la concisión, como Kafka y Dex, entienden que el reemplazo desde el lado del usuario es una decisión explícita suya.
 
-Si quieres ver un recorrido completo de cómo se escribe un módulo, el [post del módulo de Subscriptions](/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module) cuenta el patrón desde la idea hasta la entrega.
+Si quieres ver un recorrido completo de cómo se escribe un módulo, el [post del módulo de Subscriptions](/es/posts/2026-03-16-suscripciones-de-la-idea-al-modulo-testcontainers/) cuenta el patrón desde la idea hasta la entrega.
 
 ## Hook por defecto 1: DefaultLoggingHook
 

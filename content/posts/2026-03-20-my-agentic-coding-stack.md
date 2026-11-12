@@ -15,6 +15,7 @@ related:
   - "/posts/2026-03-13-choosing-a-terminal-for-agentic-development"
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
+translationKey: my-agentic-coding-stack
 ---
 
 ![My Agentic Coding Stack](/images/posts/2026-03-20-my-agentic-coding-stack/cover.png)

@@ -17,6 +17,7 @@ related:
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
   - "/posts/2026-04-30-my-pr-has-a-lawyer-a-nurse-a-detective-and-a-scribe"
+translationKey: level-5-in-practice-four-agents-four-worktrees-one-developer
 ---
 
 ![Level 5 in Practice: Four Agents, Four Worktrees, One Developer](/images/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer/cover.png)

@@ -40,7 +40,7 @@ Este es el espectro que usé en la charla, y es la razón por la que nadie va a 
 | Ejecutor de tareas | Le pasas una tarea y te vas | Terminal, fuera del flujo |
 | Compañero de equipo autónomo | Coge el trabajo y lo ejecuta | CI/CD, fuera del flujo |
 
-Léela de arriba abajo y hay algo que crece sin parar: cuánto puede hacer el agente sin que tú estés en medio. La productividad sigue ese mismo camino. Ya troceé este territorio de otra forma en [los seis niveles del desarrollo asistido por IA](/posts/2026-03-18-the-six-levels-of-ai-assisted-development).
+Léela de arriba abajo y hay algo que crece sin parar: cuánto puede hacer el agente sin que tú estés en medio. La productividad sigue ese mismo camino. Ya troceé este territorio de otra forma en [los seis niveles del desarrollo asistido por IA](/es/posts/2026-03-18-los-seis-niveles-del-desarrollo-asistido-por-ia/).
 
 Ahora léela otra vez y verás que crece algo más al mismo ritmo: el radio de impacto (blast radius). Un asistente de búsqueda no puede borrar tu `~/.aws`. Un compañero autónomo sin duda puede, y lo que lo hace valioso es precisamente que tú no estás mirando cuando lo hace.
 

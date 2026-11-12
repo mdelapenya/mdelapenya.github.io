@@ -24,7 +24,7 @@ T3 Code es una interfaz gráfica para agentes de programación, con licencia MIT
 
 Codex, Claude Code, Cursor, Grok Build y OpenCode. Si la CLI está instalada y autenticada en la máquina, T3 Code puede manejarla, con la suscripción que ya estás pagando. Lo que añade es un servidor en esa máquina y un conjunto de clientes que hablan con él: una app de escritorio en Electron, una app web alojada en `app.t3.codes` y apps nativas para iOS y Android.
 
-Encaja justo donde yo tenía un hueco. Ya había llevado mis agentes [a la terminal y después a trabajar en paralelo](/posts/2026-03-18-the-six-levels-of-ai-assisted-development). Lo que no tenía era una forma de llegar a ellos que no fuera una terminal en la máquina donde estaban corriendo.
+Encaja justo donde yo tenía un hueco. Ya había llevado mis agentes [a la terminal y después a trabajar en paralelo](/es/posts/2026-03-18-los-seis-niveles-del-desarrollo-asistido-por-ia/). Lo que no tenía era una forma de llegar a ellos que no fuera una terminal en la máquina donde estaban corriendo.
 
 ## Lo remoto vive en la conexión, no en el runtime
 
@@ -63,7 +63,7 @@ Cuatro servidores, cada uno con sus CLI autenticadas, son cuatro trabajadores. C
 
 ## De los worktrees a las máquinas
 
-En marzo, el [nivel 5](/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer) era así: cuatro paneles de Warp, cuatro git worktrees, cuatro sesiones de Claude Code y un desarrollador supervisando una cuadrícula en una sola pantalla.
+En marzo, el [nivel 5](/es/posts/2026-03-23-nivel-5-en-la-practica-cuatro-agentes-cuatro-worktrees/) era así: cuatro paneles de Warp, cuatro git worktrees, cuatro sesiones de Claude Code y un desarrollador supervisando una cuadrícula en una sola pantalla.
 
 El número no ha cambiado. Lo que ha subido de capa es la frontera de aislamiento. Un worktree aísla un directorio; una máquina aísla un sistema operativo, una toolchain, un daemon de Docker y un conjunto de comportamientos de la plataforma que no se pueden falsear desde otro sitio.
 
@@ -83,7 +83,7 @@ La frase que hace el trabajo de verdad está en la documentación de atajos de t
 
 "Nunca trabajes sobre `main`" era una regla que escribía en las instrucciones de un agente, y el fallo típico de una regla así es que el agente dé la rama por supuesta en lugar de comprobarla. Aquí un thread nuevo no puede heredar una rama obsoleta por accidente, porque no hereda ninguna. Lee el valor por defecto. La regla dejó de ser algo que recordar a mitad de tarea y pasó a ser estructural.
 
-Por eso, el dolor que me hizo construir [biomelab](/es/posts/2026-04-24-mi-flujo-de-trabajo-diario-con-biomelab/), antes [gwaim](/posts/2026-03-21-gwaim-the-tool-that-level-5-needed), ahora lo resuelven un desplegable y un prompt de proyecto. Era una TUI cuya única razón de existir era que crear worktrees a mano y seguir qué agente corría dónde dolía lo bastante como para automatizarlo. Estoy pensando en retirarla.
+Por eso, el dolor que me hizo construir [biomelab](/es/posts/2026-04-24-mi-flujo-de-trabajo-diario-con-biomelab/), antes [gwaim](/es/posts/2026-03-21-gwaim-la-herramienta-que-necesitaba-el-nivel-5/), ahora lo resuelven un desplegable y un prompt de proyecto. Era una TUI cuya única razón de existir era que crear worktrees a mano y seguir qué agente corría dónde dolía lo bastante como para automatizarlo. Estoy pensando en retirarla.
 
 Los threads también tienen un ciclo de vida que ya no gestiono yo. Se dan por cerrados cuando quedan inactivos, y cuando se hace merge de la pull request vinculada. Los threads fijados quedan por encima de la lista activa y aparecen con independencia de su proyecto, también entre entornos, de modo que una sola barra lateral cubre las cuatro máquinas.
 
@@ -91,7 +91,7 @@ Ese último detalle es lo que jubiló la cuadrícula. Ya no cambio de máquina. 
 
 Mis skills también vinieron conmigo. El compositor las lista por origen, incluidas las de nivel de proyecto, así que los [roles que escribí como skills](/es/posts/2026-03-25-las-skills-son-roles-no-comandos/) están a una pulsación de tecla en cualquier entorno.
 
-Y eso me deja en una posición incómoda con dos posts míos. Escribí [un post entero sobre cómo elegir una terminal para el desarrollo con agentes](/posts/2026-03-13-choosing-a-terminal-for-agentic-development), y en [el post de mi stack](/posts/2026-03-20-my-agentic-coding-stack) dije que la terminal es el nuevo IDE y el centro del trabajo.
+Y eso me deja en una posición incómoda con dos posts míos. Escribí [un post entero sobre cómo elegir una terminal para el desarrollo con agentes](/es/posts/2026-03-13-elegir-terminal-para-desarrollo-con-agentes/), y en [el post de mi stack](/es/posts/2026-03-20-mi-stack-de-programacion-con-agentes/) dije que la terminal es el nuevo IDE y el centro del trabajo.
 
 Más que una rectificación, lo veo como el argumento llegando a su final. Aquel post concluía que la terminal que gana para el desarrollo con agentes es la que se queda invisible, la que no desvía tu atención de lo que produce el agente a cómo se comporta la terminal. Lo invisible tiene un punto final, y así es como se ve.
 
@@ -105,7 +105,7 @@ Lo segundo es la supervisión sin presencia. El trabajo largo de un agente ya no
 
 Las máquinas Windows y Linux se ganan el sitio con una tarea en concreto, y es la razón por la que una flota gana a un portátil más rápido.
 
-Ejecutan pruebas guiadas por agentes, sin supervisión, de forma nativa en cada plataforma, y yo las observo y las corrijo desde el móvil. Ya escribí sobre cómo convertir [un agente de programación en un tester exploratorio](/posts/2026-03-11-coding-agents-as-exploratory-testers): una skill que ejercita el software e investiga lo que encuentra, en lugar de un script que afirma una línea y se para. Ese trabajo corría en tres plataformas, y la pieza que faltaba era que yo tenía que estar delante de cada máquina para dirigirlo y hacer el triaje. Esa pieza ya no está.
+Ejecutan pruebas guiadas por agentes, sin supervisión, de forma nativa en cada plataforma, y yo las observo y las corrijo desde el móvil. Ya escribí sobre cómo convertir [un agente de programación en un tester exploratorio](/es/posts/2026-03-11-agentes-de-codigo-como-testers-exploratorios/): una skill que ejercita el software e investiga lo que encuentra, en lugar de un script que afirma una línea y se para. Ese trabajo corría en tres plataformas, y la pieza que faltaba era que yo tenía que estar delante de cada máquina para dirigirlo y hacer el triaje. Esa pieza ya no está.
 
 Una máquina Windows de verdad probando comportamiento de Windows no es algo que se resuelva con emulación. Con Linux pasa lo mismo. Lo que cambia T3 Code es que la máquina sigue teniendo que existir, pero yo no tengo que estar delante.
 

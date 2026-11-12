@@ -38,7 +38,7 @@ Si solo necesito comprobar algo, creo un worktree igualmente. El coste es cero (
 
 Como cada tarjeta indica si está al día con la rama upstream, sé de un vistazo si tengo que refrescar main. Pulso `p` para hacer pull, y como nunca toco main, sé que no habrá conflictos. Nunca.
 
-Este hábito empezó con [gwaim](/posts/2026-03-21-gwaim-the-tool-that-level-5-needed), la herramienta TUI que precedió a biomelab. El [flujo de nivel 5](/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer) (cuatro agentes, cuatro worktrees, un desarrollador) fue lo que convirtió el worktree por tarea en algo innegociable. biomelab simplemente lo dejó sin fricción.
+Este hábito empezó con [gwaim](/es/posts/2026-03-21-gwaim-la-herramienta-que-necesitaba-el-nivel-5/), la herramienta TUI que precedió a biomelab. El [flujo de nivel 5](/es/posts/2026-03-23-nivel-5-en-la-practica-cuatro-agentes-cuatro-worktrees/) (cuatro agentes, cuatro worktrees, un desarrollador) fue lo que convirtió el worktree por tarea en algo innegociable. biomelab simplemente lo dejó sin fricción.
 
 Otras operaciones con worktrees que uso a diario: `d` borra un worktree (con un diálogo de confirmación, para evitar accidentes). `f` trae una PR a un worktree nuevo, que es como empiezo las revisiones de código: escribo el número de la PR, biomelab crea el worktree y estoy leyendo el código en su contexto, en vez de en un diff web. `p` hace pull del remoto en cualquier tarjeta. `r` fuerza un refresco si quiero el estado al momento.
 

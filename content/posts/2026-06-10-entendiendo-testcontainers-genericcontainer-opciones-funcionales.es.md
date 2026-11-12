@@ -188,7 +188,7 @@ Para las opciones sin pareja, la decisión sigue la estructura de datos. Los map
 
 La superficie todavía no es del todo consistente. El prefijo `Additional` es donde queremos acabar con todas las parejas de reemplazar o añadir. El sufijo `Args` antiguo y las excepciones de slice que reemplazan son trabajo que todavía tenemos pendiente.
 
-Para ver un ejemplo completo de cómo un módulo propio conecta sus opciones sobre este mismo patrón, mira [Suscripciones: de la idea a un módulo de Testcontainers](/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module).
+Para ver un ejemplo completo de cómo un módulo propio conecta sus opciones sobre este mismo patrón, mira [Suscripciones: de la idea a un módulo de Testcontainers](/es/posts/2026-03-16-suscripciones-de-la-idea-al-modulo-testcontainers/).
 
 ## Los dos caminos, un ejemplo
 

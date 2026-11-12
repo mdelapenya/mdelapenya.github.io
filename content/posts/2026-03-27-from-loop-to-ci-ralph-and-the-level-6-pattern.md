@@ -15,6 +15,7 @@ related:
   - "/posts/2026-02-24-coding-with-agents-like-tesla-autopilot"
   - "/posts/2026-03-25-skills-are-roles-not-commands"
   - "/posts/2026-03-11-coding-agents-as-exploratory-testers"
+translationKey: from-loop-to-ci-ralph-and-the-level-6-pattern
 ---
 
 ![From /loop to CI: Ralph and the Level 6 Pattern](/images/posts/2026-03-27-from-loop-to-ci-ralph-and-the-level-6-pattern/cover.png)

@@ -258,7 +258,7 @@ Una guía corta y con opinión, si vas a escribir un módulo nuevo:
 - Pon en el wrapper los helpers de resolución de direcciones (`ConnectionString` y su primo `Must*`). Pon ahí también los helpers operativos.
 - Usa `WithAdditionalLifecycleHooks` siempre que una opción condicional necesite preparación posterior al arranque. Evita `WithLifecycleHooks` fuera de la configuración base: la regla posicional del [post de lifecycle hooks](/es/posts/2026-06-19-entendiendo-testcontainers-sistema-lifecycle-hooks/) explica por qué.
 
-Si quieres un recorrido completo desde la "idea" hasta el "módulo publicado", el [post del módulo de Subscriptions](/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module) cubre la mirada de autor que este post deja fuera a propósito.
+Si quieres un recorrido completo desde la "idea" hasta el "módulo publicado", el [post del módulo de Subscriptions](/es/posts/2026-03-16-suscripciones-de-la-idea-al-modulo-testcontainers/) cubre la mirada de autor que este post deja fuera a propósito.
 
 ## Cierre
 
