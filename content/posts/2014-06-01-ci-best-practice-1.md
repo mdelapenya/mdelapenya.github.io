@@ -7,6 +7,7 @@ tags: [continuous integration, ci]
 type: post
 weight: 25
 showTableOfContents: false
+translationKey: ci-best-practice-1
 ---
 
 Hi all! I'm writing this blog entry as the first post of a continuous integration blog serie, sharing our knowledge and usage of this technique.

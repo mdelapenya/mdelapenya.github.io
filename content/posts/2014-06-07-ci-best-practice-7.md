@@ -7,6 +7,7 @@ tags: [continuous integration, ci]
 type: post
 weight: 25
 showTableOfContents: false
+translationKey: ci-best-practice-7
 ---
 
 {{< figure src="/images/sweep-carpet.png" alt="We are going to need a bigger rung or we're sunk" >}}

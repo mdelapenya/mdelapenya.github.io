@@ -7,6 +7,7 @@ tags: [continuous integration, ci]
 type: post
 weight: 25
 showTableOfContents: false
+translationKey: ci-best-practice-5
 ---
 
 {{< figure src="/images/ready-set.jpg" alt="Ready, set, go!" >}}
