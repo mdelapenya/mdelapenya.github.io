@@ -106,3 +106,4 @@ deps: bump <package>          # dependency updates
 - The Gokarna theme is a git submodule — clone with `--recursive` or run `git submodule update --init`
 - Image processing: Lanczos filter, 75% quality, smart anchor (`hugo.toml` `[imaging]`)
 - Minification is enabled in production builds
+- Fuse.js (search) is vendored at `static/js/fuse.min.js` (v7.0.0) so the search does not wait on a CDN; the Playwright config makes the KaTeX and Turnstile CDNs fail fast for the same reason
