@@ -56,7 +56,9 @@ test.describe("Spanish pages", () => {
     const paths = await page.locator(".header-nav .nav-link:not(.language-switcher) a").evaluateAll((els) => {
       const origin = new URL((document.querySelector(".nav-brand") as HTMLAnchorElement).href).origin;
       return els
-        .map((el) => new URL((el as HTMLAnchorElement).href))
+        .map((el) => el.getAttribute("href"))
+        .filter((h): h is string => !!h)
+        .map((h) => new URL(h, location.href))
         .filter((u) => u.origin === origin)
         .map((u) => u.pathname);
     });
