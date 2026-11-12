@@ -54,7 +54,7 @@ Testcontainers es aseguramiento puro. Levantas un contenedor de Postgres real, e
 
 El [tester exploratorio](/es/posts/2026-03-11-agentes-de-codigo-como-testers-exploratorios/) es asistencia pura. Pone a prueba el software, se adapta cuando pasa algo inesperado, se forma una opinión sobre la severidad y me entrega una tabla de triaje. Adaptativo. Basado en el criterio. Ordenado por severidad. Sin el binario pasa/falla.
 
-Construí los dos. Y el puente entre ambos siempre estuvo ahí, en el [principio número cinco del manifiesto](/es/posts/2026-03-30-dream-qa-el-manifiesto-que-escribi-en-2019/#5-exploratory-testing-over-automating-all-possible-scenarios): "Testing exploratorio por encima de automatizar todos los escenarios posibles." Lo escribí en 2019 porque creía que no se llega a una cobertura completa solo automatizando. Hay bugs que únicamente aparecen cuando alguien se sale del guion, prueba la entrada rara, hace clic dos veces en el botón, ejecuta el comando en un orden para el que nadie diseñó nada.
+Construí los dos. Y el puente entre ambos siempre estuvo ahí, en el [principio número cinco del manifiesto](/es/posts/2026-03-30-dream-qa-el-manifiesto-que-escribi-en-2019/#5-testing-exploratorio-antes-que-automatizar-todos-los-escenarios-posibles): "Testing exploratorio por encima de automatizar todos los escenarios posibles." Lo escribí en 2019 porque creía que no se llega a una cobertura completa solo automatizando. Hay bugs que únicamente aparecen cuando alguien se sale del guion, prueba la entrada rara, hace clic dos veces en el botón, ejecuta el comando en un orden para el que nadie diseñó nada.
 
 Siempre creí en la exploración. Ahora la hace un agente.
 
@@ -80,7 +80,7 @@ Es el mismo cambio que describí en el [post del Autopilot de Tesla](/es/posts/2
 
 Los profesionales de QA pasan a ser quienes definen qué explora el agente. Escriben las [skills](/es/posts/2026-03-25-las-skills-son-roles-no-comandos/), los planes de pruebas, las guías de resolución de problemas. Hacen el triaje de lo que encuentra el agente. Deciden qué se convierte en un test automatizado y qué se registra como issue. El rol sigue siendo criterio. Quien ejecuta ahora es un agente.
 
-El [principio tres del manifiesto](/es/posts/2026-03-30-dream-qa-el-manifiesto-que-escribi-en-2019/#3-developers-who-write-tests-over-traditional-testers-who-test) decía: "Desarrolladores que escriben tests por encima de testers tradicionales que hacen testing." La actualización: desarrolladores que definen roles de testing para agentes, por encima de desarrolladores que escriben casos de test sueltos. El caso de test sigue teniendo valor. Pero la definición de un rol escala más lejos.
+El [principio tres del manifiesto](/es/posts/2026-03-30-dream-qa-el-manifiesto-que-escribi-en-2019/#3-desarrolladores-que-escriben-tests-antes-que-testers-tradicionales-que-testean) decía: "Desarrolladores que escriben tests por encima de testers tradicionales que hacen testing." La actualización: desarrolladores que definen roles de testing para agentes, por encima de desarrolladores que escriben casos de test sueltos. El caso de test sigue teniendo valor. Pero la definición de un rol escala más lejos.
 
 ## Los dos significados, juntos
 

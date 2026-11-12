@@ -20,7 +20,7 @@ translatedFrom: 3eaa239
 
 Por supuesto, lo correcto es elegir la 1 o la 2, nunca la 3. En la imagen, Iron Man ha decidido que le da igual lo que pase después de esa "bomba". Pero ¿por qué es una bomba dejar el build roto?
 
-Es una bomba porque cualquier compañero que haga pull de tu rama master se llevará código roto. ¿Y qué pasa entonces? Échale un vistazo a [mi primer post](../2014-06-01-ci-best-practice-1) sobre no hacer check-in con el build roto.
+Es una bomba porque cualquier compañero que haga pull de tu rama master se llevará código roto. ¿Y qué pasa entonces? Échale un vistazo a [mi primer post](/es/posts/2014-06-01-no-hagas-commit-sobre-una-build-rota/) sobre no hacer check-in con el build roto.
 
 En cambio, si intentas arreglarlo, o incluso revertir tus cambios, antes de irte, el build seguirá en verde y los demás desarrolladores podrán hacer pull del repositorio SCM con total tranquilidad.
 

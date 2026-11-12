@@ -16,7 +16,7 @@ Este es mi tercer post sobre buenas prácticas de integración continua, y hoy q
 
 Como desarrolladores, estamos acostumbrados a trabajar en una funcionalidad, terminarla y saltar a la siguiente. Enviamos nuestro trabajo a un revisor y seguimos con otras tareas. Seguro que lo has notado: en ese momento la cabeza se vuelca por completo en lo nuevo para hacerlo lo mejor posible, y casi nos olvidamos de lo anterior.
 
-¿Recuerdas [mi post anterior, sobre ejecutar los tests](../2014-06-02-ci-best-practice-2) (a mano en local, o automáticamente en Jenkins mediante una pull request)? Pues piensa ahora en no conocer el resultado de esa ejecución. ¿Estás seguro de que tu trabajo funciona como esperas? ¿Han encontrado los tests algún posible bug?
+¿Recuerdas [mi post anterior, sobre ejecutar los tests](/es/posts/2014-06-02-buenas-practicas-integracion-continua-ejecuta-siempre-tests/) (a mano en local, o automáticamente en Jenkins mediante una pull request)? Pues piensa ahora en no conocer el resultado de esa ejecución. ¿Estás seguro de que tu trabajo funciona como esperas? ¿Han encontrado los tests algún posible bug?
 
 Si no vigilas el build que ejecuta los tests de tus cambios, esas preguntas no tendrán respuesta hasta que sea muy tarde: cuando tu código llegue a la rama master, donde otros desarrolladores pueden hacer pull y encontrarse con un comportamiento inesperado.
 
