@@ -23,7 +23,7 @@ El motivo de publicarlas en un repositorio público no oficial es sencillo. Cual
 Si quieres usar esta imagen, utiliza este repositorio de Docker: [mdelapenya/liferay-portal-nightlies](https://hub.docker.com/r/mdelapenya/liferay-portal-nightlies/). Los tags siguen esta convención:
 
 - `latest`, que se sobrescribe cada día.
-- La fecha, en formato **yyyymmdd**, por ejemplo `20170901`. Se crea una versión nueva cada día.
+- `date`, en formato **yyyymmdd**, por ejemplo `20170901`. Se crea una versión nueva cada día.
 
 ## ¿Cómo es la estructura de la imagen?
 

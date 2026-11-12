@@ -18,7 +18,7 @@ Este post es el recorrido completo. Dos tipos de función hook, once etapas, el 
 
 ## Dos tipos de función hook
 
-Ambos tipos están definidos en `lifecycle.go`, junto a la struct que los agrupa. El primero es `ContainerRequestHook`:
+Ambos tipos están definidos en `lifecycle.go`, junto al struct que los agrupa. El primero es `ContainerRequestHook`:
 
 ```go
 type ContainerRequestHook func(ctx context.Context, req ContainerRequest) error
@@ -36,9 +36,9 @@ Este se ejecuta después de que `Docker.ContainerCreate` haya devuelto un ID de 
 
 La separación existe porque el input es distinto a cada lado de `Create`. Antes de crear, tienes una request que puedes cambiar. Después, la request queda congelada y lo que tienes es un handle al contenedor.
 
-## La struct ContainerLifecycleHooks
+## El struct ContainerLifecycleHooks
 
-Once slices con nombre en una sola struct:
+Once slices con nombre en un solo struct:
 
 ```go
 type ContainerLifecycleHooks struct {
@@ -95,15 +95,15 @@ La variante de contenedor recibe un booleano `logError`. Cuando el punto de llam
 
 `req.LifecycleHooks` es una slice, y es deliberado. Los hooks del usuario entran con `WithLifecycleHooks` (reemplaza la slice) o con `WithAdditionalLifecycleHooks` (añade al final). Las dos opciones siguen la convención del prefijo `Additional` que conté en el [post #1](/es/posts/2026-06-10-entendiendo-testcontainers-genericcontainer-opciones-funcionales/).
 
-Los hooks por defecto del motor (los cinco que vamos a ver enseguida) no se añaden directamente a esa slice. Durante `CreateContainer`, el motor monta sus defaults y luego llama a `combineContainerHooks(defaultHooks, userDefinedHooks)` para fusionarlos en una única struct `ContainerLifecycleHooks`, que se convierte en la lista `lifecycleHooks` del contenedor.
+Los hooks por defecto del motor (los cinco que vamos a ver enseguida) no se añaden directamente a esa slice. Durante `CreateContainer`, el motor monta sus defaults y luego llama a `combineContainerHooks(defaultHooks, userDefinedHooks)` para fusionarlos en un único struct `ContainerLifecycleHooks`, que se convierte en la lista `lifecycleHooks` del contenedor.
 
-La fusión usa reflection sobre los campos de la struct. El comentario del código explica bien por qué:
+La fusión usa reflection sobre los campos del struct. El comentario del código explica bien por qué:
 
 > We use reflection here to ensure that any new hooks are handled.
 >
 > (Usamos reflection aquí para asegurarnos de que cualquier hook nuevo quede cubierto.)
 
-Así que cuando se añade un campo de ciclo de vida nuevo a la struct, la lógica de fusión no necesita cambios.
+Así que cuando se añade un campo de ciclo de vida nuevo al struct, la lógica de fusión no necesita cambios.
 
 Lo que sí cambia es el orden. La fusión es asimétrica, y el comentario del código lo dice con todas las letras:
 
@@ -193,7 +193,7 @@ Si quieres ver un recorrido completo de cómo se escribe un módulo, el [post de
 
 ## Hook por defecto 1: DefaultLoggingHook
 
-`DefaultLoggingHook` es el más fácil de leer para empezar porque toca todas las etapas. Recibe un logger y devuelve una struct `ContainerLifecycleHooks` totalmente rellena, donde cada slice tiene exactamente una entrada: un `logger.Printf` decorado con emojis. Este es un extracto:
+`DefaultLoggingHook` es el más fácil de leer para empezar porque toca todas las etapas. Recibe un logger y devuelve un struct `ContainerLifecycleHooks` totalmente relleno, donde cada slice tiene exactamente una entrada: un `logger.Printf` decorado con emojis. Este es un extracto:
 
 ```go
 var DefaultLoggingHook = func(logger log.Logger) ContainerLifecycleHooks {
