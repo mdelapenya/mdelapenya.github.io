@@ -31,7 +31,7 @@
         {{ $now := now }}
         {{ $upcoming := slice }}
         {{ $past := slice }}
-        {{ range .Site.Data.talks }}
+        {{ range hugo.Data.talks }}
             {{ $date := time .date }}
             {{ if $date.After $now }}
                 {{ $upcoming = $upcoming | append . }}
