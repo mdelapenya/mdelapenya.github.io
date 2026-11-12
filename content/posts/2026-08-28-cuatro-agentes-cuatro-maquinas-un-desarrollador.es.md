@@ -83,7 +83,7 @@ La frase que hace el trabajo de verdad está en la documentación de atajos de t
 
 "Nunca trabajes sobre `main`" era una regla que escribía en las instrucciones de un agente, y el fallo típico de una regla así es que el agente dé la rama por supuesta en lugar de comprobarla. Aquí un thread nuevo no puede heredar una rama obsoleta por accidente, porque no hereda ninguna. Lee el valor por defecto. La regla dejó de ser algo que recordar a mitad de tarea y pasó a ser estructural.
 
-Por eso, el dolor que me hizo construir [biomelab](/posts/2026-04-24-my-daily-workflow-with-biomelab), antes [gwaim](/posts/2026-03-21-gwaim-the-tool-that-level-5-needed), ahora lo resuelven un desplegable y un prompt de proyecto. Era una TUI cuya única razón de existir era que crear worktrees a mano y seguir qué agente corría dónde dolía lo bastante como para automatizarlo. Estoy pensando en retirarla.
+Por eso, el dolor que me hizo construir [biomelab](/es/posts/2026-04-24-mi-flujo-de-trabajo-diario-con-biomelab/), antes [gwaim](/posts/2026-03-21-gwaim-the-tool-that-level-5-needed), ahora lo resuelven un desplegable y un prompt de proyecto. Era una TUI cuya única razón de existir era que crear worktrees a mano y seguir qué agente corría dónde dolía lo bastante como para automatizarlo. Estoy pensando en retirarla.
 
 Los threads también tienen un ciclo de vida que ya no gestiono yo. Se dan por cerrados cuando quedan inactivos, y cuando se hace merge de la pull request vinculada. Los threads fijados quedan por encima de la lista activa y aparecen con independencia de su proyecto, también entre entornos, de modo que una sola barra lateral cubre las cuatro máquinas.
 

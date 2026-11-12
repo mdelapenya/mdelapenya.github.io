@@ -9,6 +9,7 @@ weight: 30
 ai: true
 showTableOfContents: true
 image: "/images/posts/2026-06-12-testing-helm-charts-with-sk8s-and-tc-go/cover.png"
+translationKey: testing-helm-charts-with-sk8s-and-tc-go
 ---
 
 ![Testing Helm charts with sk8s and testcontainers-go](/images/posts/2026-06-12-testing-helm-charts-with-sk8s-and-tc-go/cover.png)

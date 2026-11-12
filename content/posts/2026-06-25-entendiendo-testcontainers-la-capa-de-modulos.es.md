@@ -63,7 +63,7 @@ El punto de entrada. Todos los módulos exportan una función `Run` con la misma
 func Run(ctx context.Context, img string, opts ...testcontainers.ContainerCustomizer) (*PostgresContainer, error)
 ```
 
-Entran tres cosas: un contexto, la imagen y una lista variádica de customizers. Sale una: el tipo wrapper del módulo (o un error). Coincide con la firma del `testcontainers.Run` base que cubrió el [post 1](/posts/2026-06-10-understanding-testcontainers-from-genericcontainer-to-functional-options), con el tipo de retorno cambiado por el wrapper específico del módulo.
+Entran tres cosas: un contexto, la imagen y una lista variádica de customizers. Sale una: el tipo wrapper del módulo (o un error). Coincide con la firma del `testcontainers.Run` base que cubrió el [post 1](/es/posts/2026-06-10-entendiendo-testcontainers-genericcontainer-opciones-funcionales/), con el tipo de retorno cambiado por el wrapper específico del módulo.
 
 El cuerpo también sigue una forma consistente. De Postgres, algo recortado:
 

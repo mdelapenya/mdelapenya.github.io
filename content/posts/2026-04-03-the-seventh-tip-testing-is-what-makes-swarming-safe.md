@@ -14,6 +14,7 @@ related:
   - "/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer"
   - "/posts/2026-04-01-quality-assurance-vs-quality-assistance"
   - "/posts/2026-03-25-skills-are-roles-not-commands"
+translationKey: the-seventh-tip-testing-is-what-makes-swarming-safe
 ---
 
 ![The Seventh Tip: Testing Is What Makes Swarming Safe](/images/posts/2026-04-03-the-seventh-tip-testing-is-what-makes-swarming-safe/cover.png)

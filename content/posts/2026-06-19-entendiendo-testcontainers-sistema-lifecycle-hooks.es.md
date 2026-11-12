@@ -93,7 +93,7 @@ La variante de contenedor recibe un booleano `logError`. Cuando el punto de llam
 
 ## Cómo se combinan los hooks de usuario con los defaults
 
-`req.LifecycleHooks` es una slice, y es deliberado. Los hooks del usuario entran con `WithLifecycleHooks` (reemplaza la slice) o con `WithAdditionalLifecycleHooks` (añade al final). Las dos opciones siguen la convención del prefijo `Additional` que conté en el [post #1](/posts/2026-06-10-understanding-testcontainers-from-genericcontainer-to-functional-options).
+`req.LifecycleHooks` es una slice, y es deliberado. Los hooks del usuario entran con `WithLifecycleHooks` (reemplaza la slice) o con `WithAdditionalLifecycleHooks` (añade al final). Las dos opciones siguen la convención del prefijo `Additional` que conté en el [post #1](/es/posts/2026-06-10-entendiendo-testcontainers-genericcontainer-opciones-funcionales/).
 
 Los hooks por defecto del motor (los cinco que vamos a ver enseguida) no se añaden directamente a esa slice. Durante `CreateContainer`, el motor monta sus defaults y luego llama a `combineContainerHooks(defaultHooks, userDefinedHooks)` para fusionarlos en una única struct `ContainerLifecycleHooks`, que se convierte en la lista `lifecycleHooks` del contenedor.
 

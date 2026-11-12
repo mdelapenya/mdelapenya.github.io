@@ -13,6 +13,7 @@ related:
   - "/posts/2026-03-25-skills-are-roles-not-commands"
   - "/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer"
   - "/posts/2026-04-24-my-daily-workflow-with-biomelab"
+translationKey: my-pr-has-a-lawyer-a-nurse-a-detective-and-a-scribe
 ---
 
 ![My PR Has a Lawyer, a Nurse, a Detective, and a Scribe](/images/posts/2026-04-30-my-pr-has-a-lawyer-a-nurse-a-detective-and-a-scribe/cover.png)

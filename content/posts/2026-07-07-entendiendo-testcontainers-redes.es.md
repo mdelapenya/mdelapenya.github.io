@@ -80,7 +80,7 @@ Destacan tres valores por defecto:
 - **Labels: `GenericLabels()`.** Es el mismo etiquetado que se usa al crear contenedores. Las labels incluyen el ID de sesión del proceso de test en ejecución, para que Ryuk pueda asociar la red a esa sesión y borrarla cuando termine.
 - **Name: un UUID aleatorio.** Sin colisiones entre tests en paralelo sobre el mismo daemon. La contrapartida es que el nombre de la red es opaco, así que si más adelante necesitas conectarle un contenedor hermano, tienes que conservar la referencia al `*DockerNetwork`.
 
-El tipo de retorno es un puntero a un struct concreto, no la interfaz `Network`. El idioma de Go "accept interface, return struct" aparece aquí igual que con `Run` devolviendo `*DockerContainer` en la [Parte 1](/posts/2026-06-10-understanding-testcontainers-from-genericcontainer-to-functional-options).
+El tipo de retorno es un puntero a un struct concreto, no la interfaz `Network`. El idioma de Go "accept interface, return struct" aparece aquí igual que con `Run` devolviendo `*DockerContainer` en la [Parte 1](/es/posts/2026-06-10-entendiendo-testcontainers-genericcontainer-opciones-funcionales/).
 
 ## La interfaz de personalización (customizer)
 
@@ -277,7 +277,7 @@ Y `DockerProvider.CreateNetwork`, en `docker.go`:
 
 Así que tenemos `network.New` (moderno) llamando a `GenericNetwork` (deprecado), que llama a `CreateNetwork` (deprecado). Los dos comentarios `//nolint:staticcheck` dentro de `network.New` son la señal visible de que los maintainers sabemos que esto es incómodo. El plan que declara el docstring es "implementar las nuevas APIs de red cuando estén disponibles", un trabajo que todavía tenemos pendiente. Hasta que llegue, `network.New` es lo correcto para los usuarios, aunque su cuerpo use la maquinaria antigua.
 
-Es una forma que se repite en la librería: una superficie moderna y limpia, un sustrato más antiguo y discreto que sigue haciendo el trabajo, y una intención documentada de converger. Vimos el mismo patrón en la [Parte 1](/posts/2026-06-10-understanding-testcontainers-from-genericcontainer-to-functional-options) con `GenericContainer` y `Run`.
+Es una forma que se repite en la librería: una superficie moderna y limpia, un sustrato más antiguo y discreto que sigue haciendo el trabajo, y una intención documentada de converger. Vimos el mismo patrón en la [Parte 1](/es/posts/2026-06-10-entendiendo-testcontainers-genericcontainer-opciones-funcionales/) con `GenericContainer` y `Run`.
 
 ## Cierre
 

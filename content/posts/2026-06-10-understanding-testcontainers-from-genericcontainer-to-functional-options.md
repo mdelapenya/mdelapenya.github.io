@@ -12,6 +12,7 @@ image: "/images/posts/2026-06-10-understanding-testcontainers-from-genericcontai
 related:
   - "/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module"
   - "/posts/2025-05-27-gofiber-services-testcontainers"
+translationKey: understanding-testcontainers-from-genericcontainer-to-functional-options
 ---
 
 ![Understanding Testcontainers: From GenericContainer to Functional Options](/images/posts/2026-06-10-understanding-testcontainers-from-genericcontainer-to-functional-options/cover.png)

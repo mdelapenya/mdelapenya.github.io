@@ -14,6 +14,7 @@ related:
   - "/posts/2026-03-25-skills-are-roles-not-commands"
   - "/posts/2026-03-11-coding-agents-as-exploratory-testers"
   - "/posts/2026-03-23-level-5-in-practice-four-agents-four-worktrees-one-developer"
+translationKey: a-virtual-agent-team-at-docker
 ---
 
 ![A Virtual Agent Team at Docker](/images/posts/2026-05-04-a-virtual-agent-team-at-docker/cover.png)
