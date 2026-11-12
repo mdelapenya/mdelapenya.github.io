@@ -14,6 +14,7 @@ related:
   - "/posts/2026-06-19-understanding-testcontainers-lifecycle-hooks"
   - "/posts/2026-06-25-understanding-testcontainers-the-module-layer"
   - "/posts/2026-06-15-understanding-testcontainers-wait-strategies"
+translationKey: understanding-testcontainers-testing-lambdas-with-localstack
 ---
 
 ![Understanding Testcontainers: Testing AWS Lambdas Locally with LocalStack](/images/posts/2026-07-15-understanding-testcontainers-testing-lambdas-with-localstack/cover.png)

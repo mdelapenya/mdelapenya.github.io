@@ -87,7 +87,7 @@ Campo a campo, lo que aporta cada uno:
 
 **`workspace`** es el repo sobre el que se crea el sandbox. **`additionalWorkspaces`** son los demás. La distinción importa menos que el hecho de que los tres llegan en el momento de la creación, ya declarados.
 
-**`kits`** son capacidades que se añaden al sandbox. Uno me da firma de commits por SSH dentro del sandbox, el otro instala la superficie de control de agentes de la que [escribí la semana pasada](/posts/2026-08-28-four-agents-four-machines-one-developer). Son artefactos OCI, así que se versionan como cualquier cosa que te descargas de un registry, y si estás consumiendo un kit en lugar de desarrollarlo, te conviene un digest en vez de un tag:
+**`kits`** son capacidades que se añaden al sandbox. Uno me da firma de commits por SSH dentro del sandbox, el otro instala la superficie de control de agentes de la que [escribí la semana pasada](/es/posts/2026-08-28-cuatro-agentes-cuatro-maquinas-un-desarrollador/). Son artefactos OCI, así que se versionan como cualquier cosa que te descargas de un registry, y si estás consumiendo un kit en lugar de desarrollarlo, te conviene un digest en vez de un tag:
 
 ```bash
 docker buildx imagetools inspect docker.io/sbx/git-ssh-sign-kit:latest

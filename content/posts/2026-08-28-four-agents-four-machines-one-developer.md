@@ -16,6 +16,7 @@ related:
   - "/posts/2026-03-21-gwaim-the-tool-that-level-5-needed"
   - "/posts/2026-03-11-coding-agents-as-exploratory-testers"
   - "/posts/2026-02-25-coding-agents-docker-sandboxes-parallel-workflows"
+translationKey: four-agents-four-machines-one-developer
 ---
 
 ![Four Agents, Four Machines, One Developer](/images/posts/2026-08-28-four-agents-four-machines-one-developer/cover.png)

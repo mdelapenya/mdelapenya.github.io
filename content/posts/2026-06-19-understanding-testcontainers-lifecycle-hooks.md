@@ -13,6 +13,7 @@ related:
   - "/posts/2026-06-15-understanding-testcontainers-wait-strategies"
   - "/posts/2026-06-10-understanding-testcontainers-from-genericcontainer-to-functional-options"
   - "/posts/2026-03-16-subscriptions-from-idea-to-testcontainers-module"
+translationKey: understanding-testcontainers-lifecycle-hooks
 ---
 
 ![Understanding Testcontainers: The Lifecycle Hook System](/images/posts/2026-06-19-understanding-testcontainers-lifecycle-hooks/cover.png)

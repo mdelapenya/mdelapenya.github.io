@@ -14,6 +14,7 @@ related:
   - "/posts/2026-07-07-understanding-testcontainers-networks"
   - "/posts/2026-06-25-understanding-testcontainers-the-module-layer"
   - "/posts/2026-06-19-understanding-testcontainers-lifecycle-hooks"
+translationKey: understanding-testcontainers-testing-network-resilience-with-toxiproxy
 ---
 
 ![Understanding Testcontainers: Testing Network Resilience with Toxiproxy](/images/posts/2026-07-27-understanding-testcontainers-testing-network-resilience-with-toxiproxy/cover.png)

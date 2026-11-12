@@ -14,6 +14,7 @@ related:
   - "/posts/2026-07-15-understanding-testcontainers-testing-lambdas-with-localstack"
   - "/posts/2026-07-07-understanding-testcontainers-networks"
   - "/posts/2026-06-25-understanding-testcontainers-the-module-layer"
+translationKey: understanding-testcontainers-session-ids
 ---
 
 ![Understanding Testcontainers: Session IDs](/images/posts/2026-08-15-understanding-testcontainers-session-ids/cover.png)

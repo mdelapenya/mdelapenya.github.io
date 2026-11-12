@@ -62,7 +62,7 @@ org.testcontainers.sessionId    = <random session ID, one per test run>
 org.testcontainers.reap         = "true"
 ```
 
-El [`sessionId`](/posts/2026-08-15-understanding-testcontainers-session-ids) es la más distintiva. Se genera cuando arranca tu suite de tests, y todo contenedor, red, volumen e imagen creado durante esa ejecución recibe el mismo valor de `sessionId`. La label `reap` es la marca explícita de opt-in para la limpieza: cuando la biblioteca está configurada para usar Ryuk, todo recurso recibe `reap=true`; cuando está configurada sin Ryuk, esa label se omite. Volveremos sobre esto en la sección sobre desactivar Ryuk.
+El [`sessionId`](/es/posts/2026-08-15-entendiendo-testcontainers-ids-de-sesion/) es la más distintiva. Se genera cuando arranca tu suite de tests, y todo contenedor, red, volumen e imagen creado durante esa ejecución recibe el mismo valor de `sessionId`. La label `reap` es la marca explícita de opt-in para la limpieza: cuando la biblioteca está configurada para usar Ryuk, todo recurso recibe `reap=true`; cuando está configurada sin Ryuk, esa label se omite. Volveremos sobre esto en la sección sobre desactivar Ryuk.
 
 Si quieres verlo tú mismo, ejecuta un test con Testcontainers y, mientras corre, en otra terminal:
 

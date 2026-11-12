@@ -14,6 +14,7 @@ related:
   - "/posts/2026-06-19-understanding-testcontainers-lifecycle-hooks"
   - "/posts/2026-06-15-understanding-testcontainers-wait-strategies"
   - "/posts/2026-06-10-understanding-testcontainers-from-genericcontainer-to-functional-options"
+translationKey: a-year-of-testcontainers-go-on-docker-hub
 ---
 
 ![A Year of testcontainers-go on Docker Hub](/images/posts/2026-06-26-a-year-of-testcontainers-go-on-docker-hub/cover.png)
