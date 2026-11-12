@@ -36,7 +36,7 @@ Yo quería lo contrario. Sin popups. Sin muros. Sin seguimiento. Sin venta. Solo
 
 Así que hice visibles todas las decisiones. El número de suscriptores es público. Ahí, en la página. Ni escondido, ni inflado, ni redondeado al millar más cercano. El número real.
 
-El compromiso de privacidad no es un enlace en el pie de página. Es la propia [página de suscripción](/subscribe/). Qué recibes, qué hago con tu correo, dónde viven tus datos, cómo darte de baja, quién soy. Todo, en frases claras, antes de que escribas un solo carácter en el campo del email.
+El compromiso de privacidad no es un enlace en el pie de página. Es la propia [página de suscripción](/es/subscribe/). Qué recibes, qué hago con tu correo, dónde viven tus datos, cómo darte de baja, quién soy. Todo, en frases claras, antes de que escribas un solo carácter en el campo del email.
 
 Nada de seguimiento de aperturas. Resend lo ofrece. Yo no lo uso. No sé si abriste el correo. No sé si pulsaste el enlace. Sé que lo envié y que te suscribiste. Con eso me basta.
 
@@ -179,7 +179,7 @@ Esto sirve para Stripe, SendGrid, Twilio o cualquier otro servicio con una spec 
 ---
 
 _Recursos:_
-- _[Página del compromiso con los suscriptores](/subscribe/)_
+- _[Página del compromiso con los suscriptores](/es/subscribe/)_
 - _[Resend](https://resend.com)_
 - _[testcontainers-go-resend en GitHub](https://github.com/mdelapenya/testcontainers-go-resend/)_
 - _[Spec OpenAPI de Resend](https://github.com/resend/resend-openapi)_

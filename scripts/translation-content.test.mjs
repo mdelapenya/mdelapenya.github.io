@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { checkContent, headingId } from "./translation-content.mjs";
+import { checkContent, checkPageLinks, headingId } from "./translation-content.mjs";
 
 const FM = (extra = "") => `---
 title: "T"
@@ -94,4 +94,37 @@ test("English URLs of posts that have a Spanish version are reported", () => {
 
 test("heading ids follow the rendered text", () => {
   assert.equal(headingId("5. Testing exploratorio: ¿qué `hace`?"), "5-testing-exploratorio-qué-hace");
+});
+
+test("links to English projects, talks or subscribe in a Spanish post are reported", () => {
+  assert.match(errorsOf(TRANSLATION.replace("/es/posts/2026-01-02-otro/#primer-paso", "/projects/ultraligera/")), /use \/es\/projects\/ultraligera\//);
+  assert.match(errorsOf(TRANSLATION.replace("/es/posts/2026-01-02-otro/#primer-paso", "/subscribe/")), /use \/es\/subscribe\//);
+  assert.equal(errorsOf(TRANSLATION.replace("/es/posts/2026-01-02-otro/#primer-paso", "/es/talks/")), "");
+});
+
+function pagesFixture(name, text, section = "projects") {
+  const content = fs.mkdtempSync(path.join(os.tmpdir(), "translation-pages-"));
+  fs.mkdirSync(path.join(content, "posts"));
+  fs.copyFileSync(path.join(fixture(TRANSLATION), "2026-01-01-hello.md"), path.join(content, "posts", "2026-01-01-hello.md"));
+  fs.writeFileSync(path.join(content, "posts", "2026-01-01-hola.es.md"), TRANSLATION);
+  fs.writeFileSync(path.join(content, "posts", "2026-01-02-otro.es.md"), OTHER);
+  fs.mkdirSync(path.join(content, section));
+  fs.writeFileSync(path.join(content, section, name), text);
+  return content;
+}
+
+const PAGE = (body, extra = "") => `---\ntitle: "P"\ntype: page\n${extra}---\n\n${body}\n`;
+
+test("Spanish pages of projects, talks and subscribe are checked for links", () => {
+  const ok = pagesFixture("x.es.md", PAGE("Mira [el post](/es/posts/2026-01-02-otro/) y [charlas](/es/talks/)."));
+  assert.deepEqual(checkPageLinks(ok).errors, []);
+
+  const english = pagesFixture("x.es.md", PAGE("Mira [las charlas](/talks/)."), "subscribe");
+  assert.match(checkPageLinks(english).errors.join("\n"), /use \/es\/talks\//);
+
+  const post = pagesFixture("x.es.md", PAGE("Mira [el post](/posts/2026-01-01-hello/)."));
+  assert.match(checkPageLinks(post).errors.join("\n"), /use \/es\/posts/);
+
+  const image = pagesFixture("x.es.md", PAGE("Hola.", "image: /images/x.png\n"));
+  assert.match(checkPageLinks(image).errors.join("\n"), /repeats "image"/);
 });

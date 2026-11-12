@@ -83,3 +83,56 @@
   other = "Escribe para buscar posts..."
 [searchNoResults]
   other = "No hay resultados para"
+
+[tag]
+  other = "Etiqueta"
+[projectsHeading]
+  other = "Proyectos"
+[tagOnlyInProjects]
+  other = 'Esta etiqueta solo se usa en proyectos. Mira <a href="{{ .PostsURL }}">todos los posts</a> o <a href="{{ .TagsURL }}">explora otras etiquetas</a>.'
+
+[talkConferencePage]
+  other = "página de la conferencia"
+[talkRepo]
+  other = "repo"
+[talkVideo]
+  other = "vídeo"
+[talkSlides]
+  other = "diapositivas"
+[talkPodcast]
+  other = "podcast"
+[langSpanish]
+  other = "español"
+[langEnglish]
+  other = "inglés"
+
+[talksLegendAria]
+  other = "Leyenda de tipos de entrada. Pulsa un chip para mostrar u ocultar ese tipo."
+[talksLegendLabel]
+  other = "leyenda de tipos"
+[talksLegendHint]
+  other = "para mostrar/ocultar"
+[talksLegendClick]
+  other = "clic"
+[talksLegendReset]
+  other = "restablecer"
+[talksLegendResetAria]
+  other = "Mostrar todos los tipos de entrada"
+[talksDescTalk]
+  other = "una charla que di"
+[talksDescWorkshop]
+  other = "un taller práctico que impartí"
+[talksDescBooth]
+  other = "guardia en el stand de un evento de patrocinadores"
+[talksDescPodcast]
+  other = "podcast o entrevista de audio"
+[talksDescReject]
+  other = "propuesta que no pasó el corte"
+[talksDescDeclined]
+  other = "aceptada, pero tuve que rechazarla por motivos personales"
+[talksRoadmap]
+  other = "Próximamente"
+[talksReleased]
+  other = "Publicadas"
+[talksShowing]
+  other = "mostrando {{ .Visible }} de {{ .Total }} entradas"

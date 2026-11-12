@@ -14,6 +14,8 @@
 #       description: <string>        For booth: short description of the booth activity.
 #       note:   <string>             For rejected: short note. Also used on talks for free-form
 #                                      annotations like "accepted for the conference".
+#       note_es / description_es: <string, optional>   Spanish text for `note` / `description`;
+#                                      the /es/ page falls back to the English one when absent.
 #       url:    <link, optional>     Event/agenda page.
 #       repo:   <link, optional>     Source repo with the materials (workshop exercises, demo code).
 #       video:  <link, optional>     Video link (typically YouTube).
@@ -30,6 +32,7 @@
       title: YOLO Developer Workflows with a Coding Agent in a Box
       url: https://www.containerdays.io/containerdays-singapore-2026/
       note: Accepted, had to decline for personal reasons.
+      note_es: Aceptada, pero tuve que rechazarla por motivos personales.
 
 - conference: GopherCon Africa 2026
   date: 2026-10-15
@@ -69,6 +72,7 @@
   items:
     - type: booth
       description: Presented Docker Sandboxes to the attendees.
+      description_es: Presenté Docker Sandboxes a los asistentes.
       url: https://leaddev.com/leaddev-london/
 
 - conference: Gophercon SG '26
@@ -79,6 +83,7 @@
       title: Choosing the Smallest LLM That Won't Completely Fail You
       url: https://2026.gophercon.sg/
       note: Accepted, had to decline for personal reasons.
+      note_es: Aceptada, pero tuve que rechazarla por motivos personales.
 
 - conference: SpiceDB Community Day 2026
   date: 2026-03-01
@@ -156,24 +161,28 @@
   items:
     - type: rejected
       note: Presented 2 talks. Both rejected.
+      note_es: Presenté 2 charlas. Ambas rechazadas.
 
 - conference: Gophercon UK '25
   date: 2025-04-01
   items:
     - type: rejected
       note: Presented 1 talk. Rejected.
+      note_es: Presenté 1 charla. Rechazada.
 
 - conference: Gophercon EU '25
   date: 2025-04-01
   items:
     - type: rejected
       note: Presented 2 talks. Both rejected.
+      note_es: Presenté 2 charlas. Ambas rechazadas.
 
 - conference: Gophercon US '25
   date: 2025-04-01
   items:
     - type: rejected
       note: Presented 1 talk. Rejected.
+      note_es: Presenté 1 charla. Rechazada.
 
 - conference: Conf42 Golang 2025
   date: 2025-03-01
@@ -228,6 +237,7 @@
   items:
     - type: booth
       description: Presented Testcontainers to the attendees.
+      description_es: Presenté Testcontainers a los asistentes.
       url: https://devoxx.be/
 
 - conference: Gophercon US '24
@@ -236,6 +246,7 @@
   items:
     - type: booth
       description: Booth work presenting Testcontainers for Go to the attendees.
+      description_es: Trabajo en el stand presentando Testcontainers for Go a los asistentes.
 
 - conference: London Gophers Meetup
   date: 2024-03-20
@@ -251,18 +262,21 @@
   items:
     - type: rejected
       note: Presented 2 talks. Both rejected.
+      note_es: Presenté 2 charlas. Ambas rechazadas.
 
 - conference: Gophercon US '24
   date: 2024-04-01
   items:
     - type: rejected
       note: Presented 1 talk. Rejected.
+      note_es: Presenté 1 charla. Rechazada.
 
 - conference: Gophercon EU Greece '24
   date: 2024-04-01
   items:
     - type: rejected
       note: Presented 1 talk. Rejected.
+      note_es: Presenté 1 charla. Rechazada.
 
 - conference: GDG Go Berlin Devfest
   date: 2023-11-01
@@ -310,12 +324,14 @@
   items:
     - type: rejected
       note: Presented 3 talks and a lightning talk sharing experiences with testing in Go. None accepted.
+      note_es: Presenté 3 charlas y una lightning talk compartiendo experiencias con testing en Go. Ninguna aceptada.
 
 - conference: FOSDEM 23
   date: 2023-02-01
   items:
     - type: rejected
       note: Presented 3 talks and a lightning talk to the Go dev room. None accepted.
+      note_es: Presenté 3 charlas y una lightning talk para la Go dev room. Ninguna aceptada.
 
 - conference: AtomicJar Interview
   date: 2023-01-01
@@ -331,6 +347,7 @@
     - type: talk
       title: OpenTelemetry and your tests
       note: Presented how to get OTEL traces from the jUnit XML test report, reading it using mdelapenya/junit2otlp.
+      note_es: Presenté cómo obtener trazas de OTEL a partir del informe XML de tests de jUnit, leyéndolo con mdelapenya/junit2otlp.
       video: https://www.youtube.com/watch?v=Bt5QjlEtgHM&t=100s&ab_channel=ContinuousDeliveryFoundation
 
 - conference: "Growth: el podcast de Product Hackers"

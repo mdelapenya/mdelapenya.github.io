@@ -22,7 +22,7 @@
             <div class="cf-turnstile" data-sitekey="{{ .Site.Params.turnstileSiteKey }}" data-size="compact" data-theme="auto"></div>
         </form>
         <p class="subscribe-footer">
-            {{ i18n "subscribeCommitment" (dict "URL" "/subscribe/") | safeHTML }}
+            {{ i18n "subscribeCommitment" (dict "URL" ("subscribe/" | relLangURL)) | safeHTML }}
         </p>
     </div>
     <div class="subscribe-content subscribe-hidden" id="subscribe-success-state">

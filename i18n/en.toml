@@ -79,3 +79,56 @@
   other = "Type to search posts..."
 [searchNoResults]
   other = "No results found for"
+
+[tag]
+  other = "Tag"
+[projectsHeading]
+  other = "Projects"
+[tagOnlyInProjects]
+  other = 'This tag is only used in projects. Check out <a href="{{ .PostsURL }}">all posts</a> or <a href="{{ .TagsURL }}">browse other tags</a>.'
+
+[talkConferencePage]
+  other = "conference page"
+[talkRepo]
+  other = "repo"
+[talkVideo]
+  other = "video"
+[talkSlides]
+  other = "slides"
+[talkPodcast]
+  other = "podcast"
+[langSpanish]
+  other = "Spanish"
+[langEnglish]
+  other = "English"
+
+[talksLegendAria]
+  other = "Entry type legend. Click a chip to toggle visibility of that type."
+[talksLegendLabel]
+  other = "type legend"
+[talksLegendHint]
+  other = "to show/hide"
+[talksLegendClick]
+  other = "click"
+[talksLegendReset]
+  other = "reset"
+[talksLegendResetAria]
+  other = "Show all entry types"
+[talksDescTalk]
+  other = "a talk I gave"
+[talksDescWorkshop]
+  other = "a hands-on workshop I ran"
+[talksDescBooth]
+  other = "booth duty at a sponsor event"
+[talksDescPodcast]
+  other = "podcast or audio interview"
+[talksDescReject]
+  other = "submission that didn't make the cut"
+[talksDescDeclined]
+  other = "accepted, had to decline for personal reasons"
+[talksRoadmap]
+  other = "Roadmap"
+[talksReleased]
+  other = "Released"
+[talksShowing]
+  other = "showing {{ .Visible }} of {{ .Total }} entries"

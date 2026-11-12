@@ -195,18 +195,16 @@ timeout = "120s"
       url = "/es/posts/"
       weight = 2
 
-    # Projects, talks and the subscribe page are not translated yet, so these
-    # point at the English pages.
     [[languages.es.menus.main]]
       name = "Proyectos"
       pre = "<span data-feather='code'></span>"
-      url = "/projects/"
+      url = "/es/projects/"
       weight = 3
 
     [[languages.es.menus.main]]
       name = "Charlas"
       pre = "<span data-feather='mic'></span>"
-      url = "/talks/"
+      url = "/es/talks/"
       weight = 4
 
     [[languages.es.menus.main]]
@@ -230,7 +228,7 @@ timeout = "120s"
     [[languages.es.menus.main]]
       identifier = "subscribe"
       pre = "<span data-feather='mail'></span>"
-      url = "/subscribe/"
+      url = "/es/subscribe/"
       weight = 8
 
     [[languages.es.menus.main]]
