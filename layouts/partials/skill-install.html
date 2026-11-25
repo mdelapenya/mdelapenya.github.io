@@ -1,0 +1,23 @@
+{{- /* Install box of the Skills section. The context is a string: the skill's directory name in
+       mdelapenya/coding-skills for a single skill, or "" for the whole plugin.
+       Use: {{ partial "skill-install.html" "" }} or {{ partial "skill-install.html" $skill }}.
+       Never written in markdown: both commands live here only. */ -}}
+{{- $skill := cast.ToString . -}}
+{{- $skillsCmd := "npx skills add mdelapenya/coding-skills" -}}
+{{- $tesslCmd := "tessl install mdelapenya/coding-skills" -}}
+{{- if $skill -}}
+    {{- $skillsCmd = printf "%s --skill %s" $skillsCmd $skill -}}
+    {{- $tesslCmd = printf "tessl install github:mdelapenya/coding-skills --skill %s" $skill -}}
+{{- end -}}
+{{- $commands := slice (dict "label" "skills.sh" "cmd" $skillsCmd) (dict "label" "Tessl" "cmd" $tesslCmd) -}}
+<section class="skill-install" aria-labelledby="skill-install-title" data-copied="{{ i18n "skillsCopied" }}">
+    <h2 class="skill-install-title" id="skill-install-title">{{ if $skill }}{{ i18n "skillsInstallSkillTitle" }}{{ else }}{{ i18n "skillsInstallPluginTitle" }}{{ end }}</h2>
+    {{ range $commands }}
+    <div class="skill-install-row">
+        <span class="skill-install-label">{{ .label }}</span>
+        <code class="skill-install-cmd">{{ .cmd }}</code>
+        <button type="button" class="skill-install-copy" hidden aria-label="{{ i18n "skillsCopyAria" (dict "Label" .label) }}">{{ i18n "skillsCopy" }}</button>
+    </div>
+    {{ end }}
+    <span class="skill-install-status" role="status" aria-live="polite"></span>
+</section>

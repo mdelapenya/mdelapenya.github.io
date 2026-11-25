@@ -1,0 +1,59 @@
+{{ define "main" }}
+<div class="post container skills-index">
+
+    <div class="post-header-section">
+        <h1>{{ .Title | markdownify }}</h1>
+    </div>
+
+    <div class="post-content">
+        <div class="skills-hero">
+            {{ .Content }}
+        </div>
+
+        {{ partial "skill-install.html" "" }}
+
+        {{/* Grouped by the `category` front matter key, in this order. The Spanish pages
+             carry no `category`: source-param reads it from the English page. */}}
+        {{ $categories := slice
+            (dict "slug" "orchestration" "title" (i18n "skillsCategoryOrchestration"))
+            (dict "slug" "pull-requests" "title" (i18n "skillsCategoryPullRequests"))
+            (dict "slug" "ci" "title" (i18n "skillsCategoryCi")) }}
+        {{ $known := slice "pull-requests" "ci" "orchestration" }}
+        {{ $pages := .Pages.ByWeight }}
+
+        {{ range $pages }}
+            {{ if not (in $known (partial "source-param.html" (dict "page" . "key" "category"))) }}
+                {{ errorf "skills: %q has no valid `category` (one of: %s)" .File.Path (delimit $known ", ") }}
+            {{ end }}
+        {{ end }}
+
+        {{ range $categories }}
+            {{ $slug := .slug }}
+            {{ $inCategory := slice }}
+            {{ range $pages }}
+                {{ if eq (partial "source-param.html" (dict "page" . "key" "category")) $slug }}
+                    {{ $inCategory = $inCategory | append . }}
+                {{ end }}
+            {{ end }}
+            <section class="skills-category" aria-labelledby="skills-category-{{ $slug }}">
+                <h2 class="skills-category-title" id="skills-category-{{ $slug }}">{{ .title }}</h2>
+                {{ with $inCategory }}
+                <ul class="skills-list">
+                    {{ range . }}
+                    <li class="skills-item">
+                        <a class="skills-item-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        <p class="skills-item-description">{{ .Description }}</p>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </section>
+        {{ end }}
+    </div>
+
+    {{ if .Site.Params.ShowBackToTopButton }}
+        {{ partial "back-to-top.html" . }}
+    {{ end }}
+</div>
+<script src="/js/skill-install.js" defer></script>
+{{ end }}

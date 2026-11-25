@@ -136,3 +136,44 @@
   other = "Publicadas"
 [talksShowing]
   other = "mostrando {{ .Visible }} de {{ .Total }} entradas"
+
+[skillsInstallPluginTitle]
+  other = "Instala el plugin"
+[skillsInstallSkillTitle]
+  other = "Instala esta skill"
+[skillsCopy]
+  other = "Copiar"
+[skillsCopied]
+  other = "Copiado"
+[skillsCopyAria]
+  other = "Copiar el comando de {{ .Label }}"
+[skillsCategoryPullRequests]
+  other = "Pull requests"
+[skillsCategoryCi]
+  other = "CI"
+[skillsCategoryOrchestration]
+  other = "Orquestación"
+[skillsPanelAria]
+  other = "Sobre esta skill"
+[skillsLinksHeading]
+  other = "Enlaces"
+[skillsLinkSkillMd]
+  other = "SKILL.md en GitHub"
+[skillsLinkTessl]
+  other = "Registro de Tessl"
+[skillsLinkIssue]
+  other = "Abrir una issue"
+[skillsEvidenceHeading]
+  other = "Qué midieron las evals"
+[skillsEvidenceCaption]
+  other = "Medido con el plugin {{ .Plugin }} (skill {{ .Version }}), cifras tomadas de Tessl el {{ .Date }}."
+[skillsEvidenceScenario]
+  other = "Escenario"
+[skillsEvidenceWithout]
+  other = "Sin"
+[skillsEvidenceWith]
+  other = "Con"
+[skillsEvidenceCost]
+  other = "Coste, sin → con"
+[skillsEvidenceNote]
+  other = "El coste es por resolución. Una ejecución por brazo desde el registro de Tessl. Las puntuaciones varían hasta unos 10 puntos entre ejecuciones."

@@ -10,7 +10,7 @@ import { loadGroups, langOf, POSTS_DIR } from "./translation-sync.mjs";
 export const INHERITED_KEYS = ["image", "related", "ai", "showTableOfContents", "language"];
 
 // Links that must carry the /es prefix in a Spanish page.
-const ENGLISH_SECTION = /^\/(projects|talks|subscribe)(\/|#|\?|$)/;
+const ENGLISH_SECTION = /^\/(projects|talks|subscribe|skills)(\/|#|\?|$)/;
 
 const FENCE = /^\s*(```+|~~~+)/;
 
@@ -174,8 +174,8 @@ export function checkContent(dir = POSTS_DIR) {
   return { errors, spanish, spanishKeys };
 }
 
-// Spanish pages of the sections that are translated alongside the posts (projects, talks, subscribe).
-export const PAGE_SECTIONS = ["projects", "talks", "subscribe"];
+// Spanish pages of the sections that are translated alongside the posts (projects, talks, subscribe, skills).
+export const PAGE_SECTIONS = ["projects", "talks", "subscribe", "skills"];
 
 export function checkPageLinks(contentDir) {
   const errors = [];

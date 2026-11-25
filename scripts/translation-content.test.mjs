@@ -128,3 +128,14 @@ test("Spanish pages of projects, talks and subscribe are checked for links", () 
   const image = pagesFixture("x.es.md", PAGE("Hola.", "image: /images/x.png\n"));
   assert.match(checkPageLinks(image).errors.join("\n"), /repeats "image"/);
 });
+
+test("Spanish skills pages are checked for links to the English section", () => {
+  const ok = pagesFixture("x.es.md", PAGE("Mira [la skill](/es/skills/x/)."), "skills");
+  assert.deepEqual(checkPageLinks(ok).errors, []);
+
+  const english = pagesFixture("x.es.md", PAGE("Mira [la skill](/skills/x/)."), "skills");
+  assert.match(checkPageLinks(english).errors.join("\n"), /use \/es\/skills\/x\//);
+
+  const related = pagesFixture("x.es.md", PAGE("Hola.", 'related: ["/posts/2026-01-01-hello"]\n'), "skills");
+  assert.match(checkPageLinks(related).errors.join("\n"), /repeats "related"/);
+});

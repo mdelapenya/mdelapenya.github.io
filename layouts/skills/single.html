@@ -1,0 +1,95 @@
+{{ define "main" }}
+{{/* Everything except title, description and weight is read through source-param, so the
+     Spanish twin only carries those three keys and falls back to the English page. */}}
+{{ $skill := partial "source-param.html" (dict "page" . "key" "skill") }}
+{{ $version := partial "source-param.html" (dict "page" . "key" "version") }}
+{{ $evidence := partial "source-param.html" (dict "page" . "key" "evidence") }}
+{{ if not $skill }}{{ errorf "skills: %q has no `skill` front matter key" .File.Path }}{{ end }}
+{{ $repo := "https://github.com/mdelapenya/coding-skills" }}
+<div class="post container skill-page">
+
+    <div class="post-header-section">
+        {{ if .Parent }}
+            {{ if ne .Parent.Kind "home" }}
+                <div class="page-breadcrumb">
+                    <a href="{{ .Parent.RelPermalink }}" class="breadcrumb-link">
+                        <span aria-hidden="true">←</span> {{ i18n "backTo" (dict "Title" .Parent.Title) }}
+                    </a>
+                </div>
+            {{ end }}
+        {{ end }}
+
+        <h1>{{ .Title | markdownify }}</h1>
+        {{ with .Description }}<small role="doc-subtitle">{{ . }}</small>{{ end }}
+    </div>
+
+    {{ partial "skill-install.html" $skill }}
+
+    <div class="skill-layout">
+        <div class="post-content skill-body">
+            {{ .Content }}
+        </div>
+
+        <aside class="skill-panel" aria-label="{{ i18n "skillsPanelAria" }}">
+            {{/* Versions appear only in the evidence caption, as the release the numbers were
+                 measured on, so they stay true after the next release. */}}
+            <h2 class="skill-panel-heading">{{ i18n "skillsLinksHeading" }}</h2>
+            <ul class="skill-links">
+                <li><a href="{{ $repo }}/blob/main/skills/{{ $skill }}/SKILL.md">{{ i18n "skillsLinkSkillMd" }}</a></li>
+                <li><a href="https://tessl.io/registry/mdelapenya/coding-skills">{{ i18n "skillsLinkTessl" }}</a></li>
+                <li><a href="https://skills.sh/mdelapenya/coding-skills">skills.sh</a></li>
+                <li><a href="{{ $repo }}/issues/new">{{ i18n "skillsLinkIssue" }}</a></li>
+            </ul>
+
+            {{ with $evidence }}
+            {{ $date := time .date }}
+            <h2 class="skill-panel-heading">{{ i18n "skillsEvidenceHeading" }}</h2>
+            <div class="skill-evidence-wrap">
+                <table class="skill-evidence">
+                    <caption>{{ i18n "skillsEvidenceCaption" (dict "Plugin" .plugin "Version" $version "Date" (dateFormat (or $.Site.Params.dateFormat "January 2, 2006") $date)) }}</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">{{ i18n "skillsEvidenceScenario" }}</th>
+                            <th scope="col" class="skill-evidence-num">{{ i18n "skillsEvidenceWithout" }}</th>
+                            <th scope="col" class="skill-evidence-num">{{ i18n "skillsEvidenceWith" }}</th>
+                            <th scope="col" class="skill-evidence-num">{{ i18n "skillsEvidenceCost" }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{/* The numbers and costs are data in the English front matter. The name has an optional
+                             Spanish twin (`name_es`), like `note_es` in data/talks.yaml. Costs are written
+                             "$0.76" there; the Spanish page shows them as "0,76 $". */}}
+                        {{ $lang := site.Language.Lang }}
+                        {{ range .scenarios }}
+                        {{ $name := or (index . (printf "name_%s" $lang)) .name }}
+                        {{ $costWithout := .cost_without }}
+                        {{ $costWith := .cost_with }}
+                        {{ if eq $lang "es" }}
+                            {{ $costWithout = printf "%s $" (replace (strings.TrimPrefix "$" .cost_without) "." ",") }}
+                            {{ $costWith = printf "%s $" (replace (strings.TrimPrefix "$" .cost_with) "." ",") }}
+                        {{ end }}
+                        <tr>
+                            <th scope="row">{{ if isset . "id" }}<span class="skill-evidence-id">{{ .id }} · </span>{{ end }}{{ $name }}</th>
+                            <td class="skill-evidence-num">{{ .without }}%</td>
+                            <td class="skill-evidence-num">{{ .with }}%</td>
+                            {{/* Each cost in its own span: KaTeX pairs two `$` in one text node into inline math. */}}
+                            <td class="skill-evidence-num skill-evidence-cost"><span>{{ $costWithout }}</span> → <span>{{ $costWith }}</span></td>
+                        </tr>
+                        {{ end }}
+                    </tbody>
+                </table>
+            </div>
+            <p class="skill-evidence-note">{{ i18n "skillsEvidenceNote" }}</p>
+            {{ end }}
+        </aside>
+    </div>
+
+    {{/* Outside the panel on purpose: the partial renders a three-card grid that needs the full width. */}}
+    {{ partial "related-posts.html" . }}
+
+    {{ if .Site.Params.ShowBackToTopButton }}
+        {{ partial "back-to-top.html" . }}
+    {{ end }}
+</div>
+<script src="/js/skill-install.js" defer></script>
+{{ end }}

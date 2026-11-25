@@ -132,3 +132,44 @@
   other = "Released"
 [talksShowing]
   other = "showing {{ .Visible }} of {{ .Total }} entries"
+
+[skillsInstallPluginTitle]
+  other = "Install the plugin"
+[skillsInstallSkillTitle]
+  other = "Install this skill"
+[skillsCopy]
+  other = "Copy"
+[skillsCopied]
+  other = "Copied"
+[skillsCopyAria]
+  other = "Copy the {{ .Label }} command"
+[skillsCategoryPullRequests]
+  other = "Pull requests"
+[skillsCategoryCi]
+  other = "CI"
+[skillsCategoryOrchestration]
+  other = "Orchestration"
+[skillsPanelAria]
+  other = "About this skill"
+[skillsLinksHeading]
+  other = "Links"
+[skillsLinkSkillMd]
+  other = "SKILL.md on GitHub"
+[skillsLinkTessl]
+  other = "Tessl registry"
+[skillsLinkIssue]
+  other = "Open an issue"
+[skillsEvidenceHeading]
+  other = "What the evals measured"
+[skillsEvidenceCaption]
+  other = "Measured on plugin {{ .Plugin }} (skill {{ .Version }}), numbers taken from Tessl on {{ .Date }}."
+[skillsEvidenceScenario]
+  other = "Scenario"
+[skillsEvidenceWithout]
+  other = "Without"
+[skillsEvidenceWith]
+  other = "With"
+[skillsEvidenceCost]
+  other = "Cost, without → with"
+[skillsEvidenceNote]
+  other = "Cost is per solve. One run per arm from the Tessl registry. Scores move by up to about 10 points between runs."
