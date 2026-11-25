@@ -103,7 +103,7 @@ test.describe("Modal UI state", () => {
     await openSearch(page);
     await expect(page.locator(".search-hint")).toBeVisible();
     await expect(page.locator(".search-hint")).toHaveText(
-      "Type to search posts...",
+      "Type to search posts, skills and projects...",
     );
   });
 
@@ -224,7 +224,8 @@ test.describe("Search results", () => {
   });
 
   test("clicking a result navigates to the post", async ({ page }) => {
-    await searchFor(page, "the");
+    // "the" would rank the-mister (a skill) first; "docker" ranks posts first.
+    await searchFor(page, "docker");
 
     const firstResult = page.locator(".search-result-item").first();
     await expect(firstResult).toBeVisible({ timeout: 5000 });
@@ -235,6 +236,22 @@ test.describe("Search results", () => {
 
     await firstResult.click();
     await expect(page).toHaveURL(new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  });
+
+  test("skills are searchable and labelled as skills", async ({ page }) => {
+    await searchFor(page, "pr-reviewer");
+
+    const result = page.locator('.search-result-item[href$="/skills/pr-reviewer/"]');
+    await expect(result).toBeVisible({ timeout: 5000 });
+    await expect(result.locator(".search-result-kind")).toHaveText("Skill");
+  });
+
+  test("projects are searchable and labelled as projects", async ({ page }) => {
+    await searchFor(page, "Testcontainers for Go");
+
+    const result = page.locator('.search-result-item[href$="/projects/testcontainers-go/"]');
+    await expect(result).toBeVisible({ timeout: 5000 });
+    await expect(result.locator(".search-result-kind")).toHaveText("Project");
   });
 });
 

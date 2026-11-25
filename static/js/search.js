@@ -80,7 +80,7 @@
     var html = results
       .map(function (r) {
         var item = r.item;
-        var tags = (item.tags || [])
+        var tags = (Array.isArray(item.tags) ? item.tags : [])
           .slice(0, 3)
           .map(function (t) {
             return '<span class="search-result-tag">' + escapeHtml(t) + "</span>";
@@ -100,9 +100,11 @@
               "</div>"
             : "") +
           '<div class="search-result-meta">' +
-          "<span>" +
-          escapeHtml(item.date) +
-          "</span>" +
+          (item.kind
+            ? '<span class="search-result-tag search-result-kind">' +
+              escapeHtml(item.kind === "skill" ? modal.dataset.skillLabel : modal.dataset.projectLabel) +
+              "</span>"
+            : "<span>" + escapeHtml(item.date) + "</span>") +
           (tags ? " " + tags : "") +
           "</div>" +
           "</a>"

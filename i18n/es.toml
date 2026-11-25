@@ -80,7 +80,11 @@
   other = "Inténtalo de nuevo más tarde."
 
 [searchHint]
-  other = "Escribe para buscar posts..."
+  other = "Escribe para buscar posts, skills y proyectos..."
+[searchSkillLabel]
+  other = "Skill"
+[searchProjectLabel]
+  other = "Proyecto"
 [searchNoResults]
   other = "No hay resultados para"
 

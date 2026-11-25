@@ -76,7 +76,11 @@
   other = "Please try again later."
 
 [searchHint]
-  other = "Type to search posts..."
+  other = "Type to search posts, skills and projects..."
+[searchSkillLabel]
+  other = "Skill"
+[searchProjectLabel]
+  other = "Project"
 [searchNoResults]
   other = "No results found for"
 

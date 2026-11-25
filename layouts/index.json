@@ -2,6 +2,11 @@
 {{- range .Site.RegularPages -}}
   {{- if eq .Type "post" -}}
     {{- $.Scratch.Add "index" (dict "title" .Title "description" .Description "tags" .Params.tags "categories" .Params.categories "url" .Permalink "date" (.Date.Format "2006-01-02") "content" .Plain "image" (partial "source-param.html" (dict "page" . "key" "image"))) -}}
+  {{- else if eq .Section "skills" "projects" -}}
+    {{- /* Skills and projects have no date; "kind" lets search.js label them instead.
+         Project tags live on the English page, so read them through source-param. */ -}}
+    {{- $kind := cond (eq .Section "skills") "skill" "project" -}}
+    {{- $.Scratch.Add "index" (dict "title" .Title "description" .Description "tags" (partial "source-param.html" (dict "page" . "key" "tags")) "url" .Permalink "kind" $kind "content" .Plain) -}}
   {{- end -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}
